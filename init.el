@@ -1404,7 +1404,7 @@ Originates from gnu.emacs.help group 2006."
 (global-set-key (kbd "\C-cw") #'delete-region)
 ;; #+END_SRC
 
-;;; metatail:
+;;; metatail:                                                         :noexport:
 
 ;; # Local Variables:
 ;; # lentic-init: lentic-orgel-org-init
