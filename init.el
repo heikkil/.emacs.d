@@ -2,6 +2,7 @@
 
 ;; Copyright (c) 2015 Marco Wahl <marcowahlsoft@gmail.com>
 
+;; #+TITLE: Personal Emacs Config
 ;; #+AUTHOR: Marco Wahl 
 ;; #+EMAIL: marcowahlsoft@gmail.com
 
