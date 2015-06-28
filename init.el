@@ -1365,7 +1365,46 @@ Originates from gnu.emacs.help group 2006."
 (global-set-key (kbd "C-c o") 'org-open-at-point-global)
 ;; #+END_SRC
 
-;; ***** dired key for alternate up
+;; **** individual keymap
+
+;; #+BEGIN_SRC emacs-lisp
+(defvar mw-individual-keymap
+  (let ((map (make-sparse-keymap)))
+    (define-key map "r" #'mw/auxies-toggle-default-frame-reverse-state)
+    (define-key map "d" #'mw-display-mode-line-as-message)
+    (define-key map "m" #'menu-bar-mode)
+    (define-key map "h" #'hidden-mode-line-mode)
+    (define-key map "f" #'fringe-mode)
+    (define-key map "b"
+      (lambda ()
+        (interactive)
+        (if emms-player-playing-p
+            (emms-player-pause)
+          (progn
+            (mw-sound-set-enjoyable-volume)
+            (emms-play-url "http://www.bassdrive.com/BassDrive.m3u")))))
+    (define-key map "p" #'password-store-copy)
+    (define-key map "z" #'mw/auxies-delete-to-point-max)
+    (define-key map "k" #'key-chord-mode)
+    (define-key map "c" #'calendar)
+    (define-key map "q" #'bury-buffer)
+    (define-key map "u" #'unexpand-abbrev)
+    (define-key map "i" #'ido-hacks-mode)
+    (define-key map "w" #'org-refile-goto-last-stored)
+                                        ; recall: from org-files there is already C-u C-u C-c C-w.
+    (define-key map "<" #'mw-screen-exchange-slurp-insert)
+    (define-key map ">" #'mw-screen-exchange-write-region)
+    map
+    )
+  "Personal convenience keymap.")
+(global-set-key (kbd "\C-z") mw-individual-keymap)
+;; #+END_SRC
+
+;; idea: the next two guys could go into a hydra. e.g. C-z +-
+;; (g lobal-set-key (kbd "M-n") 'next-buffer)
+;; (g lobal-set-key (kbd "M-p") 'previous-buffer)
+
+;; *** dired key for alternate up
 
 ;; #+BEGIN_SRC emacs-lisp
 (add-hook
