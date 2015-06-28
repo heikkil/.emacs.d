@@ -24,7 +24,7 @@
 
 ;;; firstfirst:
 
-;; ** debuging
+;; ** debugging
 
 ;; #+BEGIN_SRC emacs-lisp
 (setq debug-on-error t)
@@ -38,7 +38,7 @@
 (setq load-prefer-newer t)
 ;; #+END_SRC
 
-;; found the abovev in lunaryorn's config at
+;; found the above in lunaryorn's config at
 ;; https://github.com/lunaryorn/.emacs.d/blob/master/init.el
 ;; [2015-05-18 Mon 21:56].
 
