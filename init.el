@@ -1140,6 +1140,18 @@ window."
             (prettify-symbols-mode 1)))
 ;; #+END_SRC
 
+;; *** org
+
+;; try out using the symbol for 'element of'.
+
+;; #+BEGIN_SRC emacs-lisp
+(add-hook 'org-mode-hook
+          (lambda ()
+            (setq-local prettify-symbols-alist
+                        '(("\\in" . ?∈)))
+            (prettify-symbols-mode 1)))
+;; #+END_SRC
+
 ;; ** language environment change
 
 ;; Convenient switching of the input-method and the spell-checking.
