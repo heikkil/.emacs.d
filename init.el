@@ -53,8 +53,7 @@
 (load custom-file)
 ;; #+END_SRC
 
-;; the customization file gets read early to be able to do some
-;; modification.
+;; the customization file gets read early to be able to change it.
 
 ;; ** org from source
 
@@ -78,6 +77,8 @@
 
 ;; ** use-package
 
+;; for convenient emacs package configuration.
+
 ;; #+BEGIN_SRC emacs-lisp
 (require 'use-package)
 ;; #+END_SRC
@@ -86,15 +87,17 @@
 
 ;; ** browse-kill-ring
 
+;; activate any time with M-x browse-kill-ring or with M-y but _not_ immediately after yank.
+
 ;; #+BEGIN_SRC emacs-lisp
 (use-package browse-kill-ring
-:config
-(browse-kill-ring-default-keybindings))
+  :config
+  (browse-kill-ring-default-keybindings)) ; M-y
 ;; #+END_SRC
 
 ;; ** expand-region
 
-;; Expand-region is expected to be installed, possibly as package.
+;; expand-region often expands the region to what i mean.
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package expand-region
@@ -104,8 +107,8 @@
 
 ;; ** ido-hacks
 
-;; ido-hacks sits on top of ido and makes the ido even cooler.
-;; when ido-hacks-mode comes into the way then just switch it off.
+;; ido-hacks sits on top of ido and makes ido even cooler.  when
+;; ido-hacks-mode comes into the way then just switch it off.
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package ido-hacks
@@ -172,12 +175,16 @@
 
 ;; ** paredit
 
+;; very helpful mode for editing elisp.
+
 ;; #+BEGIN_SRC emacs-lisp
 (use-package paredit
   :config (add-hook 'emacs-lisp-mode-hook (lambda () (paredit-mode t))))
 ;; #+END_SRC
 
 ;; ** gnorb
+
+;; gnus-org-bbdb integration.
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package gnorb)
@@ -268,9 +275,6 @@
 
 ;; ** AUR access
 
-;; [2014-04-07 Mon 22:26] Just installed a package that might help with
-;; AUR-packages.
-
 ;; #+BEGIN_SRC emacs-lisp
 (use-package aurel
   :config
@@ -281,9 +285,12 @@
   (setq aurel-download-directory "~/AUR"))
 ;; #+END_SRC
 
-;; ** slime
+;; *** history
 
-;; Using the elpa package.
+;; - [2014-04-07 Mon 22:26] Just installed a package that might help with
+;; AUR-packages.
+
+;; ** slime
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package slime
@@ -324,15 +331,6 @@
 ;;; fromsource:
 
 ;; ** org
-
-;; *** org standard keys
-
-;; #+BEGIN_SRC emacs-lisp
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-cc" 'org-capture)
-(global-set-key "\C-ca" 'org-agenda)
-(global-set-key "\C-cb" 'org-iswitchb)
-;; #+END_SRC
 
 ;; *** org timestamp handling
 
@@ -414,26 +412,27 @@ Much taken from `org-table-sum'."
 
 ;; *** org velocity
 
-;; org velocity is a package.
+;; org velocity is a org-mode contrib extension.
 
 ;; #+BEGIN_SRC emacs-lisp
 (setq org-velocity-bucket (expand-file-name "bucket.org" org-directory))
 ;; #+END_SRC
 
-;; I hung the C-c v on org-mode-hook [2014-10-22 Wed 10:25] as
+;; **** history
 
+;; first i hung the C-c v in on org-mode-hook [2014-10-22 Wed 10:25] like
+
+;; #+BEGIN_SRC text
 ;; (add-hook 'org-mode-hook (lambda () (local-set-key (kbd "C-c v") 'org-velocity)))
-
-;; which is nice but actually org-velocity is also capable of a global
-;; alternative capturing into the org-velocity-bucket.
-
-;; So I use the global key setting of C-c v.
-
-;; #+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "C-c v") 'org-velocity)
 ;; #+END_SRC
 
-;; *** trigger edit properties from headline
+;; which is nice but actually org-velocity is also capable of a global
+;; capturing into the org-velocity-bucket.  this is a further possibility
+;; to capture something.
+
+;; I use the global key setting C-c v for org-velocity.
+
+;; *** trigger property edit from the headline
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-org-property-action ()
@@ -533,19 +532,19 @@ Much taken from `org-table-sum'."
 
 ;; ** emms
 
-;;  Emms is for playing sound.  I use emms mostly for playing internet
-;;  radio and sometimes for playing recordings of the answering machine.
+;; Emms is for playing sound.  I use emms mostly for playing internet
+;; radio.
 
-;;  BTW =emms-streams= has configured some nice stations AFAICT.
+;; BTW =emms-streams= has configured some nice stations AFAICT.
 
 ;; #+BEGIN_SRC emacs-lisp
- (add-to-list 'load-path "~/p/elisp/external/emms/lisp")
- (require 'emms-setup)
- (emms-devel)				; adds +/- in emms-buffer.
- (emms-default-players)
- (eval-after-load 'info
-   '(progn (info-initialize)
-           (add-to-list 'Info-directory-list "~/p/elisp/external/emms/doc")))
+(add-to-list 'load-path "~/p/elisp/external/emms/lisp")
+(require 'emms-setup)
+(emms-devel)				; adds +/- in emms-buffer.
+(emms-default-players)
+(eval-after-load 'info
+  '(progn (info-initialize)
+          (add-to-list 'Info-directory-list "~/p/elisp/external/emms/doc")))
 ;; #+END_SRC
 
 ;; ** big brother db
@@ -567,7 +566,7 @@ Much taken from `org-table-sum'."
 
 ;; ** zen reward mode
 
-;; get points for action.  but where is the zen here?
+;; get points for task-status-changes in org.  but where is the zen here?
 
 ;; #+BEGIN_SRC emacs-lisp
 (add-to-list 'load-path
@@ -683,11 +682,11 @@ window."
 
 ;; ** pomodoro
 
-;; Support for the famous tomato-technique.  The idea is to work
-;; concentrated for a while (tomato) and then take a break.  This shall
+;; support for the famous tomato-technique.  the idea is to work
+;; concentrated for a while (tomato) and then take a break.  this shall
 ;; be repeated some times a day.  
 
-;; The functions here support pomodoro based on org.
+;; the functions here support pomodoro based on org.
 
 ;; source: http://www.couchet.org/blog/index.php?post/2010/08/04/Pomodoro-et-org-mode
 ;; author there: Frédéric Couchet le mercredi, août 4 2010, 22:53
@@ -783,25 +782,9 @@ window."
 ;(require 'navi-mode)
 ;; #+END_SRC
 
-;; ** following org-mode links given in other modes
+;; ** Quickly access the web through w3m                                 :weak:
 
-;; The following key-setting allows e.g. following an org-mode link
-;; placed in a generated Emacs-lisp file.  This can be suitable for
-;; tangled files.
-
-;; #+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "C-c o") 'org-open-at-point-global)
-;; #+END_SRC
-
-;; *** TODO Find out: How do you configure the usage of org-ids in the tangle?
-
-;; - [2014-04-07 Mon 17:54] I only get text-based links for some tangles.
-;;   But not for the rope-mode.  This is confusing.  Clarification
-;;   wanted.
-
-;; ** Quickly access the web through w3m
-
-;; A for ask the default search engine.
+;; Ask the default search engine.
 
 ;; #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "<Scroll_Lock> a") 'w3m-search)
@@ -1013,7 +996,8 @@ window."
 
 ;; *** Rename Current Page
 
-;; This is for somehow saving the page.
+;; This is for somehow saving the page to not loosing it at the next eww
+;; call.
 
 ;; #+BEGIN_SRC emacs-lisp
 (require 'eww)
@@ -1154,106 +1138,6 @@ window."
                           ("math.pi" . ?π)
                           ("sum" . ?Σ)))
             (prettify-symbols-mode 1)))
-;; #+END_SRC
-
-;; ** personal tweaks
-
-;; #+BEGIN_SRC emacs-lisp
-(defalias 'yes-or-no-p 'y-or-n-p)
-(ffap-bindings)
-(require 'page-ext)
-(display-time)
-;; #+END_SRC
-
-;; ** keysettings
-
-;; #+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "<f1>") (lambda () (interactive))) ;; e.g. leave zone effortless.
-(global-set-key (kbd "<f6>") 'flyspell-mode)
-(global-set-key (kbd "<f7>") 'cycle-ispell-language-and-input-method)
-(global-set-key (kbd "M-<f7>") 'mw-cycle-ispell-completion-dict)
-(global-set-key (kbd "C-$") 'ispell-complete-word)
-(global-set-key (kbd "<f8>") 'other-window)
-(global-set-key (kbd "S-<f11>") 'mw-rotate-split)
-(global-set-key (kbd "<f12>") 'other-frame)
-
-(global-set-key (kbd "<XF86AudioLowerVolume>") #'emms-volume-lower)
-(global-set-key (kbd "<XF86AudioRaiseVolume>") #'emms-volume-raise)
-(global-set-key (kbd "<XF86AudioMute>") #'mw-sound-100%)
-
-(global-set-key (kbd "C-x o") 'ace-window)
-(global-set-key (kbd "C-x j") 'ace-jump-mode)
-
-(global-set-key (kbd "C-x C-c") #'save-buffers-kill-emacs) ; also kill the daemon
-
-;; cycle through amounts of spacing
-(global-set-key (kbd "M-SPC") 'cycle-spacing)
-
-(setq org-agenda-skip-additional-timestamps nil) ; does this line have an effect?
-
-(define-key global-map (kbd "<f9>")
-  '(lambda (&optional prefix)
-     "Try insert org-inactive-timestamp.  With prefix argument
-  try insert yyyymmddhhmm.  Special in org-agenda: toggle
-  inactive-timestamps-display."
-     (interactive "P")
-     (cond
-      ((eq major-mode 'org-agenda-mode)
-       (setq org-agenda-include-inactive-timestamps (eq nil org-agenda-include-inactive-timestamps))
-       (org-agenda-redo))
-      (t (if prefix
-             (insert (format-time-string "%Y%m%d%H%M"))
-           (org-insert-time-stamp nil t t))))))
-;; #+END_SRC
-
-;; *** individual keymap
-
-;; #+BEGIN_SRC emacs-lisp
-  (defvar mw-individual-keymap
-    (let ((map (make-sparse-keymap)))
-      (define-key map "r" #'mw/auxies-toggle-default-frame-reverse-state)
-      (define-key map "d" #'mw-display-mode-line-as-message)
-      (define-key map "m" #'menu-bar-mode)
-      (define-key map "h" #'hidden-mode-line-mode)
-      (define-key map "f" #'fringe-mode)
-      (define-key map "b" 
-        (lambda ()
-          (interactive)
-          (if emms-player-playing-p
-              (emms-player-pause)
-            (progn
-              (mw-sound-set-enjoyable-volume)
-              (emms-play-url "http://www.bassdrive.com/BassDrive.m3u")))))
-      (define-key map "p" #'password-store-copy)
-      (define-key map "z" #'mw/auxies-delete-to-point-max)
-      (define-key map "k" #'key-chord-mode)
-      (define-key map "c" #'calendar)
-      (define-key map "q" #'bury-buffer)
-      (define-key map "u" #'unexpand-abbrev)
-      (define-key map "i" #'ido-hacks-mode)
-      (define-key map "w" #'org-refile-goto-last-stored)
-      ; recall: from org-files there is already C-u C-u C-c C-w.
-      (define-key map "<" #'mw-screen-exchange-slurp-insert)
-      (define-key map ">" #'mw-screen-exchange-write-region)
-      map
-      )
-    "Personal convenience keymap.")
-
-  (global-set-key (kbd "\C-z") mw-individual-keymap)
-;; #+END_SRC
-
-;; idea: the next two guys could go into a hydra. e.g. C-z +-
-;; (g lobal-set-key (kbd "M-n") 'next-buffer)
-;; (g lobal-set-key (kbd "M-p") 'previous-buffer)
-
-;; *** dired key for alternate up
-
-;; #+BEGIN_SRC emacs-lisp
-(add-hook
- 'dired-mode-hook
- (lambda ()
-   (define-key dired-mode-map "`"
-     #'mw-dired-zoom-out-as-alternate)))
 ;; #+END_SRC
 
 ;; ** language environment change
@@ -1403,6 +1287,92 @@ Originates from gnu.emacs.help group 2006."
 
 ;; #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "\C-cw") #'delete-region)
+;; #+END_SRC
+
+;; ** more tweaks
+
+;; #+BEGIN_SRC emacs-lisp
+(defalias 'yes-or-no-p 'y-or-n-p)
+(ffap-bindings)
+(require 'page-ext)
+(display-time)
+;; #+END_SRC
+
+;; ** keysettings
+
+;; *** global keys
+
+;; **** rest
+
+;; #+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "<f1>") (lambda () (interactive))) ;; e.g. leave zone effortless.
+(global-set-key (kbd "<f6>") 'flyspell-mode)
+(global-set-key (kbd "<f7>") 'cycle-ispell-language-and-input-method)
+(global-set-key (kbd "M-<f7>") 'mw-cycle-ispell-completion-dict)
+(global-set-key (kbd "C-$") 'ispell-complete-word)
+(global-set-key (kbd "<f8>") 'other-window)
+(global-set-key (kbd "S-<f11>") 'mw-rotate-split)
+(global-set-key (kbd "<f12>") 'other-frame)
+
+(global-set-key (kbd "<XF86AudioLowerVolume>") #'emms-volume-lower)
+(global-set-key (kbd "<XF86AudioRaiseVolume>") #'emms-volume-raise)
+(global-set-key (kbd "<XF86AudioMute>") #'mw-sound-100%)
+
+(global-set-key (kbd "C-x o") 'ace-window)
+(global-set-key (kbd "C-x j") 'ace-jump-mode)
+
+(global-set-key (kbd "C-x C-c") #'save-buffers-kill-emacs) ; also kill the daemon
+
+;; cycle through amounts of spacing
+(global-set-key (kbd "M-SPC") 'cycle-spacing)
+
+(setq org-agenda-skip-additional-timestamps nil) ; does this line have an effect?
+
+(define-key global-map (kbd "<f9>")
+  '(lambda (&optional prefix)
+     "Try insert org-inactive-timestamp.  With prefix argument
+  try insert yyyymmddhhmm.  Special in org-agenda: toggle
+  inactive-timestamps-display."
+     (interactive "P")
+     (cond
+      ((eq major-mode 'org-agenda-mode)
+       (setq org-agenda-include-inactive-timestamps (eq nil org-agenda-include-inactive-timestamps))
+       (org-agenda-redo))
+      (t (if prefix
+             (insert (format-time-string "%Y%m%d%H%M"))
+           (org-insert-time-stamp nil t t))))))
+;; #+END_SRC
+
+;; **** org
+
+;; #+BEGIN_SRC emacs-lisp
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-cc" 'org-capture)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
+;; #+END_SRC
+
+;; #+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "C-c v") 'org-velocity)
+;; #+END_SRC
+
+;; **** following org-mode links given in other modes
+
+;; to be able to follow an org-mode link in an arbitrary file can be
+;; nice, e.g. to get to the original from within a tangled file.
+
+;; #+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "C-c o") 'org-open-at-point-global)
+;; #+END_SRC
+
+;; ***** dired key for alternate up
+
+;; #+BEGIN_SRC emacs-lisp
+(add-hook
+ 'dired-mode-hook
+ (lambda ()
+   (define-key dired-mode-map "`"
+     #'mw-dired-zoom-out-as-alternate)))
 ;; #+END_SRC
 
 ;;; metatail:                                                         :noexport:
