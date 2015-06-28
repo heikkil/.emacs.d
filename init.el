@@ -1406,6 +1406,25 @@ Originates from gnu.emacs.help group 2006."
 
 ;;; metatail:                                                         :noexport:
 
+;; ** compile documentation
+
+;; call function mw-compile-readme.org-from-init.el to get a readme
+;; for file init.el suitable for github.com.
+
+;; #+BEGIN_SRC emacs-lisp
+(defun mw-compile-readme.org-from-init.el ()
+  "Create org-docu from init.el."
+  (interactive)
+  (set-buffer "init.el")
+  (lentic-garbage-collect-config)
+  (unless lentic-config
+    (lentic-mode-create-from-init))
+  (set-buffer "init.org")
+  (org-org-export-to-org) ;; -> .org.org
+  (let ((ask-user-before-override 23))
+    (rename-file "init.org.org" "readme.org" ask-user-before-override)))
+;; #+END_SRC
+
 ;; # Local Variables:
 ;; # lentic-init: lentic-orgel-org-init
 ;; # End:
