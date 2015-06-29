@@ -164,8 +164,6 @@
   :config 
   (key-chord-mode 1)
 
-  ;; (key-chord-define-global "oo" "oo") ; for undef a key-chord.
-
   (key-chord-define-global "ao" #'other-window)
   (key-chord-define-global "qq" #'other-frame)
   (key-chord-define-global "''" #'rope-read-mode)
@@ -1074,7 +1072,7 @@ window."
 
 ;;; rest:
 
-;; ** enable more emacs
+;; ** enable more emacs features
 
 ;; these features are disabled by default.
 
