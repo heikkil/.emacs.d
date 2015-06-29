@@ -85,6 +85,16 @@
 
 ;;; packages:
 
+;; ** ace
+
+;; taken from https://github.com/jwiegley/use-package.
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package ace-jump-mode
+:bind ("C-." . ace-jump-mode))
+;; #+END_SRC
+
+;; ** 
 ;; ** browse-kill-ring
 
 ;; activate any time with M-x browse-kill-ring or with M-y but _not_ immediately after yank.
