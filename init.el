@@ -1353,7 +1353,6 @@ Originates from gnu.emacs.help group 2006."
 (global-set-key (kbd "<XF86AudioMute>") #'mw-sound-100%)
 
 (global-set-key (kbd "C-x o") 'ace-window)
-(global-set-key (kbd "C-x j") 'ace-jump-mode)
 
 (global-set-key (kbd "C-x C-c") #'save-buffers-kill-emacs) ; also kill the daemon
 
