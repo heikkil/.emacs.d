@@ -159,6 +159,7 @@
   (key-chord-define-global "ao" #'other-window)
   (key-chord-define-global "qq" #'other-frame)
   (key-chord-define-global "''" #'rope-read-mode)
+  (key-chord-define-global "yy" #'mw-duplicate-line)
   (key-chord-define-global "uu" (lambda (&optional in-place)
                                   (interactive "P")
                                   (if in-place (mw/translate-in-place-eng+deu)
