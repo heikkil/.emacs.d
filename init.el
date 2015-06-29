@@ -1322,6 +1322,16 @@ Originates from gnu.emacs.help group 2006."
 (display-time)
 ;; #+END_SRC
 
+;; ** zone
+
+;; zone is builtin.  zone can be used as signal.
+
+;; setting zone to stop after some seconds.
+
+;; #+BEGIN_SRC emacs-lisp
+(setq  zone-timeout 5)
+;; #+END_SRC
+
 ;; ** keysettings
 
 ;; *** global keys
