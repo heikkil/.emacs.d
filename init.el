@@ -53,7 +53,7 @@
 (load custom-file)
 ;; #+END_SRC
 
-;; the customization file gets read early to be able to change it.
+;; the customization file gets read early to be able to overwrite.
 
 ;; ** org from source
 
@@ -65,7 +65,7 @@
     '(progn (info-initialize)
   	    (add-to-list
 	     'Info-directory-list
-	     (concat (expand-file-name "~/p/org/org-mode"); orgmodelocation
+	     (concat (expand-file-name "~/p/org/org-mode") ; orgmodelocation
 		     "/doc")))))
 ;; #+END_SRC
 
@@ -102,7 +102,8 @@
 
 ;; ** browse-kill-ring
 
-;; activate any time with M-x browse-kill-ring or with M-y but _not_ immediately after yank.
+;; activate any time with M-x browse-kill-ring or with M-y but the
+;; latter only if _not_ immediately after yank.
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package browse-kill-ring
