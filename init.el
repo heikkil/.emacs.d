@@ -94,7 +94,12 @@
 :bind ("C-." . ace-jump-mode))
 ;; #+END_SRC
 
-;; ** 
+;; ** nyan-mode
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package nyan-mode)
+;; #+END_SRC
+
 ;; ** browse-kill-ring
 
 ;; activate any time with M-x browse-kill-ring or with M-y but _not_ immediately after yank.
