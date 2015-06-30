@@ -97,7 +97,8 @@
 ;; ** nyan-mode
 
 ;; #+BEGIN_SRC emacs-lisp
-(use-package nyan-mode)
+(use-package nyan-mode
+  :config (nyan-mode))
 ;; #+END_SRC
 
 ;; ** browse-kill-ring
