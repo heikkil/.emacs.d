@@ -1,4 +1,4 @@
-# Created 2015-06-28 Sun 15:34
+# Created 2015-06-30 Tue 08:34
 #+TITLE: Personal Emacs Config
 #+AUTHOR: Marco Wahl
 Copyright (c) 2015 Marco Wahl <marcowahlsoft@gmail.com>
@@ -50,7 +50,7 @@ customization in the main init-file.
 (load custom-file)
 #+END_SRC
 
-the customization file gets read early to be able to change it.
+the customization file gets read early to be able to overwrite.
 
 ** org from source
 
@@ -62,7 +62,7 @@ the customization file gets read early to be able to change it.
     '(progn (info-initialize)
   	    (add-to-list
 	     'Info-directory-list
-	     (concat (expand-file-name "~/p/org/org-mode"); orgmodelocation
+	     (concat (expand-file-name "~/p/org/org-mode") ; orgmodelocation
 		     "/doc")))))
 #+END_SRC
 
@@ -82,9 +82,25 @@ for convenient emacs package configuration.
 
 * packages
 
+** ace
+
+taken from [[https://github.com/jwiegley/use-package]].
+
+#+BEGIN_SRC emacs-lisp
+(use-package ace-jump-mode
+:bind ("C-." . ace-jump-mode))
+#+END_SRC
+
+** nyan-mode
+
+#+BEGIN_SRC emacs-lisp
+(use-package nyan-mode)
+#+END_SRC
+
 ** browse-kill-ring
 
-activate any time with M-x browse-kill-ring or with M-y but _not_ immediately after yank.
+activate any time with M-x browse-kill-ring or with M-y but the
+latter only if _not_ immediately after yank.
 
 #+BEGIN_SRC emacs-lisp
 (use-package browse-kill-ring
@@ -151,11 +167,10 @@ activating lentic as proposed in lentics documentation lentic.el.
   :config 
   (key-chord-mode 1)
 
-  ;; (key-chord-define-global "oo" "oo") ; for undef a key-chord.
-
-  (key-chord-define-global "ao" 'other-window)
-  (key-chord-define-global "qq" 'other-frame)
-  (key-chord-define-global "''" 'rope-read-mode)
+  (key-chord-define-global "ao" #'other-window)
+  (key-chord-define-global "qq" #'other-frame)
+  (key-chord-define-global "''" #'rope-read-mode)
+  (key-chord-define-global "yy" #'mw-duplicate-line)
   (key-chord-define-global "uu" (lambda (&optional in-place)
                                   (interactive "P")
                                   (if in-place (mw/translate-in-place-eng+deu)
@@ -167,7 +182,10 @@ activating lentic as proposed in lentics documentation lentic.el.
   (key-chord-define-global "p4" #'delete-other-windows)
   (key-chord-define-global "g7" #'delete-window) ; for kinesis keyboard
   (key-chord-define-global "g8" #'delete-window) ; for cherry keyboard
-  (key-chord-define-global "m1" #'magit-status))
+  (key-chord-define-global "m1" #'magit-status)
+  (key-chord-define-global "xx" #'org-edit-special)
+  (key-chord-define-global "zz" #'org-edit-src-exit)
+)  ;; recall key-chord-unset-global for undef a key-chord.
 #+END_SRC
 
 ** paredit
@@ -1055,7 +1073,7 @@ found the following mode line hiding function at
 
 * rest
 
-** enable more emacs
+** enable more emacs features
 
 these features are disabled by default.
 
@@ -1290,6 +1308,16 @@ kill-ring' stuff.
 (display-time)
 #+END_SRC
 
+** zone
+
+zone is builtin.  zone can be used as signal.
+
+setting zone to stop after some seconds.
+
+#+BEGIN_SRC emacs-lisp
+(setq  zone-timeout 5)
+#+END_SRC
+
 ** keysettings
 
 *** global keys
@@ -1311,7 +1339,6 @@ kill-ring' stuff.
 (global-set-key (kbd "<XF86AudioMute>") #'mw-sound-100%)
 
 (global-set-key (kbd "C-x o") 'ace-window)
-(global-set-key (kbd "C-x j") 'ace-jump-mode)
 
 (global-set-key (kbd "C-x C-c") #'save-buffers-kill-emacs) ; also kill the daemon
 
