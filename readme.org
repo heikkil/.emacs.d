@@ -1,23 +1,7 @@
-# Created 2015-06-30 Tue 08:34
+# Created 2015-06-30 Tue 09:10
 #+TITLE: Personal Emacs Config
 #+AUTHOR: Marco Wahl
 Copyright (c) 2015 Marco Wahl <marcowahlsoft@gmail.com>
-
-* metahead
-
-this section is about this file itself.
-
-this emacs configuration file is written in lentic style of type org/el.
-
-this file is an emacs-lisp program.  but this is not an ordinary
-emacs-lisp program.  this emacs-lisp is enriched with comments which
-allow the interpretation of this file as org mode file.  lentic-mode
-allows to edit this file as org-file.
-
-- [2015-06-10 Wed 11:14]: activate lentic via
-  lentic-mode-create-from-init (C-c , c).  this creates an org-mode
-  view of the source file.  switch between the views with
-  lentic-mode-move-lentic-window (C-c , h).
 
 * firstfirst
 
@@ -94,7 +78,8 @@ taken from [[https://github.com/jwiegley/use-package]].
 ** nyan-mode
 
 #+BEGIN_SRC emacs-lisp
-(use-package nyan-mode)
+(use-package nyan-mode
+  :config (nyan-mode))
 #+END_SRC
 
 ** browse-kill-ring
