@@ -1457,9 +1457,7 @@ Originates from gnu.emacs.help group 2006."
   (unless lentic-config
     (lentic-mode-create-from-init))
   (set-buffer "init.org")
-  (org-org-export-to-org) ;; -> .org.org
-  (let ((ask-user-before-override 23))
-    (rename-file "init.org.org" "readme.org" ask-user-before-override)))
+  (org-export-to-file 'org "readme.org"))
 ;; #+END_SRC
 
 ;; # Local Variables:
