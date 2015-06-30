@@ -6,7 +6,7 @@
 ;; #+AUTHOR: Marco Wahl 
 ;; #+EMAIL: marcowahlsoft@gmail.com
 
-;;; metahead:
+;;; metahead:                                                         :noexport:
 
 ;; this section is about this file itself.
 
