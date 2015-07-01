@@ -6,31 +6,32 @@
 ;; #+AUTHOR: Marco Wahl 
 ;; #+EMAIL: marcowahlsoft@gmail.com
 
-;;; metahead:                                                         :noexport:
+;;; Metahead:                                                         :noexport:
 
-;; this section is about this file itself.
+;; This section is about this file itself.
 
-;; this emacs configuration file is written in lentic style of type org/el.
+;; This emacs configuration file is written in lentic style of type
+;; org/el.
 
-;; this file is an emacs-lisp program.  but this is not an ordinary
-;; emacs-lisp program.  this emacs-lisp is enriched with comments which
-;; allow the interpretation of this file as org mode file.  lentic-mode
+;; This file is an emacs-lisp program.  But this is not an ordinary
+;; emacs-lisp program.  This emacs-lisp is enriched with comments which
+;; allow the interpretation of this file as org mode file.  Lentic-mode
 ;; allows to edit this file as org-file.
 
-;; - [2015-06-10 Wed 11:14]: activate lentic via
-;;   lentic-mode-create-from-init (C-c , c).  this creates an org-mode
-;;   view of the source file.  switch between the views with
+;; - [2015-06-10 Wed 11:14]: Activate lentic via
+;;   lentic-mode-create-from-init (C-c , c).  This creates an org-mode
+;;   view of the source file.  Switch between the views with
 ;;   lentic-mode-move-lentic-window (C-c , h).
 
-;;; firstfirst:
+;;; Firstfirst:
 
-;; ** debugging
+;; ** Debugging
 
 ;; #+BEGIN_SRC emacs-lisp
 (setq debug-on-error t)
 ;; #+END_SRC
 
-;; ** use newest elisp-file
+;; ** Use newest elisp-file
 
 ;; don't load outdated byte code.
 
@@ -42,7 +43,7 @@
 ;; https://github.com/lunaryorn/.emacs.d/blob/master/init.el
 ;; [2015-05-18 Mon 21:56].
 
-;; ** customize settings
+;; ** Customize settings
 
 ;; emacs allows to specify the storage-location of customization done via
 ;; the emacs-customize interface.  the default is to keep the
@@ -55,7 +56,7 @@
 
 ;; the customization file gets read early to be able to overwrite.
 
-;; ** org from source
+;; ** Org from source
 
 ;; #+BEGIN_SRC emacs-lisp
 (let ((orgmodelocation (expand-file-name "~/p/org/org-mode")))
@@ -69,7 +70,7 @@
 		     "/doc")))))
 ;; #+END_SRC
 
-;; ** package initialization
+;; ** Package initialization
 
 ;; #+BEGIN_SRC emacs-lisp
 (package-initialize)
@@ -77,17 +78,17 @@
 
 ;; ** use-package
 
-;; for convenient emacs package configuration.
+;; use-package allows convenient emacs package configuration.
 
 ;; #+BEGIN_SRC emacs-lisp
 (require 'use-package)
 ;; #+END_SRC
 
-;;; packages:
+;;; Packages:
 
 ;; ** ace
 
-;; taken from https://github.com/jwiegley/use-package.
+;; Taken from https://github.com/jwiegley/use-package.
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package ace-jump-mode
@@ -103,7 +104,7 @@
 
 ;; ** browse-kill-ring
 
-;; activate any time with M-x browse-kill-ring or with M-y but the
+;; Activate any time with M-x browse-kill-ring or with M-y but the
 ;; latter only if _not_ immediately after yank.
 
 ;; #+BEGIN_SRC emacs-lisp
@@ -124,7 +125,7 @@
 
 ;; ** ido-hacks
 
-;; ido-hacks sits on top of ido and makes ido even cooler.  when
+;; ido-hacks sits on top of ido and makes ido even cooler.  When
 ;; ido-hacks-mode comes into the way then just switch it off.
 
 ;; #+BEGIN_SRC emacs-lisp
@@ -135,7 +136,7 @@
 
 ;; ** lentic
 
-;; activating lentic as proposed in lentics documentation lentic.el.
+;; Activating lentic as proposed in lentics documentation lentic.el.
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package lentic
@@ -194,7 +195,7 @@
 
 ;; ** paredit
 
-;; very helpful mode for editing elisp.
+;; Very helpful mode for editing elisp.
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package paredit
@@ -203,7 +204,7 @@
 
 ;; ** gnorb
 
-;; gnus-org-bbdb integration.
+;; gnorb is integration of gnus and org and bbdb .
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package gnorb)
@@ -328,7 +329,7 @@
 
 ;; ** helm
 
-;; actually i don't use helm consciously.  [2015-06-27 Sat 10:57]
+;; Actually i don't use helm consciously.  [2015-06-27 Sat 10:57]
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package helm)
@@ -336,7 +337,7 @@
 
 ;; ** gnuplot
 
-;; the following lines go back to a recommendation of an arch linux
+;; The following lines go back to a recommendation of an arch linux
 ;; install.
 
 ;; #+BEGIN_SRC emacs-lisp
@@ -358,7 +359,7 @@
 ;; (setq org-agenda-include-inactive-timestamps nil) ;; for not seeing them.
 ;; #+END_SRC
 
-;; *** jump to org block bound
+;; *** Jump to org block bound
 
 ;; #+BEGIN_SRC emacs-lisp
 (add-hook
@@ -383,7 +384,7 @@
       (re-search-backward "#\\+")))))
 ;; #+END_SRC
 
-;; *** tab jump from code-block 'end' to 'begin'
+;; *** Tab jump from code-block 'end' to 'begin'
 
 ;; #+BEGIN_SRC emacs-lisp
 ;; Experimentation for more convenient block handling.
@@ -407,7 +408,7 @@
 (add-to-list 'org-tab-first-hook 'mw-org-jump-to-beginning-of-block-maybe)
 ;; #+END_SRC
 
-;; *** mark a table column
+;; *** Mark a table column
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-org-table-mark-column ()
@@ -451,7 +452,7 @@ Much taken from `org-table-sum'."
 
 ;; I use the global key setting C-c v for org-velocity.
 
-;; *** trigger property edit from the headline
+;; *** Trigger property edit from the headline
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-org-property-action ()
@@ -463,7 +464,7 @@ Much taken from `org-table-sum'."
     (org-property-action)))
 ;; #+END_SRC
 
-;; this function can be bound to a speed key via org-speed-commands-user.
+;; This function can be bound to a speed key via org-speed-commands-user.
 
 ;; *** org-protocol
 
@@ -471,10 +472,10 @@ Much taken from `org-table-sum'."
 (require 'org-protocol)
 ;; #+END_SRC
 
-;; the org-protocol is useful for actions which come from the outside.
-;; e.g. capturing from conkeror into org.
+;; The org-protocol is useful for actions which come from the outside.
+;; E.g. capturing from conkeror into org.
 
-;; *** more key bindings for babeling
+;; *** More key bindings for babeling
 
 ;; #+BEGIN_SRC emacs-lisp
 (require 'ob-keys)
@@ -519,7 +520,7 @@ Much taken from `org-table-sum'."
 (gnus-registry-initialize) ; gnorb wants that, see (info "(gnorb)Setup").
 ;; #+END_SRC
 
-;; *** to html mail in gnus
+;; *** To html mail in gnus
 
 ;; The following helps with html-mail in some cases.
 
@@ -536,7 +537,7 @@ Much taken from `org-table-sum'."
 
 ;; ** ledger
 
-;; refer to a local version of ledger.
+;; Refer to a local version of ledger.
 
 ;; #+BEGIN_SRC emacs-lisp
 (push  (expand-file-name "~/p/ledger/lisp") load-path)
@@ -566,7 +567,7 @@ Much taken from `org-table-sum'."
           (add-to-list 'Info-directory-list "~/p/elisp/external/emms/doc")))
 ;; #+END_SRC
 
-;; ** big brother db
+;; ** Big brother db
 
 ;; #+BEGIN_SRC emacs-lisp
 (require 'bbdb-loaddefs (expand-file-name "~/p/elisp/external/bbdb/lisp/bbdb-loaddefs.el"))
@@ -583,9 +584,9 @@ Much taken from `org-table-sum'."
 (add-hook 'message-setup-hook 'bbdb-mail-aliases)
 ;; #+END_SRC
 
-;; ** zen reward mode
+;; ** Zen reward mode
 
-;; get points for task-status-changes in org.  but where is the zen here?
+;; Get points for task-status-changes in org.  But where is the zen here?
 
 ;; #+BEGIN_SRC emacs-lisp
 (add-to-list 'load-path
@@ -593,7 +594,7 @@ Much taken from `org-table-sum'."
 (load-library "zen-reward-mode")
 ;; #+END_SRC
 
-;; ** little helpers
+;; ** Little helpers
 
 ;; #+BEGIN_SRC emacs-lisp
 (push  "~/p/elisp/mw/little-helpers" load-path)
@@ -605,16 +606,16 @@ Much taken from `org-table-sum'."
 (require 'auxies-rest)
 ;; #+END_SRC
 
-;; ** auxies-eww
+;; ** Auxies-eww
 
 ;; #+BEGIN_SRC emacs-lisp
 (add-to-list 'load-path "~/p/elisp/mw/auxies")
 (require 'auxies-eww)
 ;; #+END_SRC
 
-;;; lab:
+;;; Lab:
 
-;; ** toggle-letter-case
+;; ** Toggle-letter-case
 
 ;; #+BEGIN_SRC emacs-lisp
 ;; http://www.star.bris.ac.uk/bjm/emacs-tips.html#sec-1-14
@@ -656,7 +657,7 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
 (global-set-key "\M-C" #'toggle-letter-case)
 ;; #+END_SRC
 
-;; ** drag windows
+;; ** Drag windows
 
 ;; Found [2015-03-03 Tue 17:18]
 ;; Link: https://tsdh.wordpress.com/2015/03/03/swapping-emacs-windows-using-dragndrop/
@@ -696,19 +697,19 @@ window."
 (global-set-key (kbd "<C-S-drag-mouse-1>") #'th/swap-window-buffers-by-dnd)
 ;; #+END_SRC
 
-;; so that drag’n’drop with the left mouse button and control and shift
+;; So that drag’n’drop with the left mouse button and control and shift
 ;; pressed is bound to the command above.
 
-;; ** pomodoro
+;; ** Pomodoro
 
-;; support for the famous tomato-technique.  the idea is to work
-;; concentrated for a while (tomato) and then take a break.  this shall
+;; Support the famous tomato-technique.  The idea is to work
+;; concentrated for a while (tomato) and then take a break.  This shall
 ;; be repeated some times a day.  
 
-;; the functions here support pomodoro based on org.
+;; The functions here support pomodoro based on org.
 
-;; source: http://www.couchet.org/blog/index.php?post/2010/08/04/Pomodoro-et-org-mode
-;; author there: Frédéric Couchet le mercredi, août 4 2010, 22:53
+;; Source: http://www.couchet.org/blog/index.php?post/2010/08/04/Pomodoro-et-org-mode
+;; Author there: Frédéric Couchet le mercredi, août 4 2010, 22:53
 
 ;; #+BEGIN_SRC emacs-lisp
 ;;; (add-to-list 'org-modules 'org-timer) ;; done via customize
@@ -818,7 +819,7 @@ window."
 (global-set-key (kbd "<Scroll_Lock> l") 'mw-ask-leo)
 ;; #+END_SRC
 
-;; ** rope read to save eye-movements
+;; ** Rope read to save eye-movements
 
 ;; #+BEGIN_SRC emacs-lisp
 (add-to-list 'load-path "~/p/elisp/mw/rope-read-mode")
@@ -826,7 +827,7 @@ window."
 (global-set-key (kbd "<Scroll_Lock> <Scroll_Lock>") 'rope-read-mode)
 ;; #+END_SRC
 
-;; ** convenient snapshot of emacs from within
+;; ** Convenient snapshot of emacs from within
 
 ;; #+BEGIN_SRC emacs-lisp
 (add-to-list 'load-path "~/p/elisp/mw/emacsshot")
@@ -839,7 +840,7 @@ window."
      (emacsshot-snap-frame))))
 ;; #+END_SRC
 
-;; ** hippie expand
+;; ** Hippie expand
 
 ;; Hippie expand is using various sources as potential for expansion.
 
@@ -847,7 +848,7 @@ window."
 (global-set-key (kbd "M-/") 'hippie-expand)
 ;; #+END_SRC
 
-;; ** special holidays
+;; ** Special holidays
 
 ;; Special Holidays can be defined in a function.  Hooking can be done
 ;; via variable `holiday-other-holidays'.
@@ -863,7 +864,7 @@ window."
             '(((8 15 2014) "Mariä Himmelfahrt"))))))
 ;; #+END_SRC
 
-;; ** switch sound on/off
+;; ** Switch sound on/off
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-sound-100% ()
@@ -905,7 +906,7 @@ window."
                  "amixer" "set" "PCM" "0" ))
 ;; #+END_SRC
 
-;; ** personalize the sound of the bell
+;; ** Personalize the sound of the bell
 ;; :PROPERTIES:
 ;; :ID:       f5e3d91a-1137-4640-b453-96c64eba2d16
 ;; :END:
@@ -924,11 +925,12 @@ window."
 
 ;; This is activation of the 'bbdb-csv-import'-package.  I found it BTW
 ;; today [2014-04-24 Thu].
+
 ;; #+BEGIN_SRC emacs-lisp
 (require 'bbdb-csv-import)
 ;; #+END_SRC
 
-;; ** kill an url at point
+;; ** Kill an url at point
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-kill-url-at-point ()
@@ -938,7 +940,7 @@ window."
 (global-set-key (kbd "C-c M-w") 'mw-kill-url-at-point)
 ;; #+END_SRC
 
-;; ** duplicate a w3m-session
+;; ** Duplicate a w3m-session
 
 ;; - [2014-07-18 Fri 17:14] It looks like the defun below is already
 ;;   there in w3m: "M-n runs the command w3m-copy-buffer."
@@ -982,7 +984,7 @@ window."
 	  (nil)))))
 ;; #+END_SRC
 
-;; ** additions around eww
+;; ** Additions around eww
 
 ;; *** Switch from w3m to eww and vice versa
 
@@ -1038,7 +1040,7 @@ window."
       shr-external-browser 'browse-url-generic)
 ;; #+END_SRC
 
-;; ** hidden mode line
+;; ** Hidden mode line
 
 ;; found the following mode line hiding function at
 ;; http://bzg.fr/emacs-hide-mode-line.html.  (Bastien)
@@ -1072,7 +1074,7 @@ window."
 ;; (add-hook 'after-change-major-mode-hook 'hidden-mode-line-mode)
 ;; #+END_SRC
 
-;; ** key sequences to open browser
+;; ** Key sequences to open browser
 
 ;; #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "\C-cg") 'eww)
@@ -1080,11 +1082,11 @@ window."
 (global-set-key (kbd "\C-cF") 'browse-url-firefox)
 ;; #+END_SRC
 
-;;; rest:
+;;; Rest:
 
-;; ** enable more emacs features
+;; ** Enable more emacs features
 
-;; these features are disabled by default.
+;; Enable features that are disabled by default.
 
 ;; #+BEGIN_SRC emacs-lisp
 (put 'narrow-to-region 'disabled nil)
@@ -1096,7 +1098,7 @@ window."
 (put 'set-goal-column 'disabled nil)
 ;; #+END_SRC
 
-;; ** abbrevs
+;; ** Abbrevs
 
 ;; Started with the suggestion about abbreviations on
 ;; http://www.star.bris.ac.uk/bjm/emacs-tips.html#sec-1-19.
@@ -1111,7 +1113,7 @@ window."
 (quietly-read-abbrev-file)       ;; reads the abbreviations file on startup
 ;; #+END_SRC
 
-;; ** appointments from org
+;; ** Appointments from org
 
 ;; take into account the appointments for today from the org-agenda.
 ;; note that this is done for the current org-agenda files.
@@ -1126,15 +1128,15 @@ window."
 ;; See also [[id:f5e3d91a-1137-4640-b453-96c64eba2d16][Personalize the sound of the bell]] for the configuration of
 ;; the respective audio signal.
 
-;; ** battery
+;; ** Battery
 
 ;; #+BEGIN_SRC emacs-lisp
 (display-battery-mode)
 ;; #+END_SRC
 
-;; ** beautification
+;; ** Beautification
 
-;; *** elisp
+;; *** Elisp
 
 ;; #+BEGIN_SRC emacs-lisp
 (add-hook 'emacs-lisp-mode-hook
@@ -1144,7 +1146,7 @@ window."
             (prettify-symbols-mode 1)))
 ;; #+END_SRC
 
-;; *** python
+;; *** Python
 
 ;; [[gnus:nntp+news.aioe.org:gnu.emacs.help#mailman.17951.1421331793.1147.help-gnu-emacs@gnu.org][Email from Stefan Monnier: Re: can emacs do this]]
 
@@ -1159,7 +1161,7 @@ window."
             (prettify-symbols-mode 1)))
 ;; #+END_SRC
 
-;; ** language environment change
+;; ** Language environment change
 
 ;; Convenient switching of the input-method and the spell-checking.
 
@@ -1201,15 +1203,15 @@ window."
     (message (concat dict " set for ispell completion."))))
 ;; #+END_SRC
 
-;; ** scroll-lock-mode
+;; ** Scroll-lock-mode
 
-;; scroll lock mode gives another buffer movement feeling.
+;; Scroll lock mode gives another buffer movement feeling.
 
 ;; #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "<Scroll_Lock> m") 'scroll-lock-mode)
 ;; #+END_SRC
 
-;; ** rotate windows
+;; ** Rotate windows
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-rotate-split ()
@@ -1232,9 +1234,9 @@ Originates from gnu.emacs.help group 2006."
       (message "Root window not split"))))
 ;; #+END_SRC
 
-;; ** screen
+;; ** Screen
 
-;; seamless exchange with screen.
+;; Seamless exchange with screen.
 
 ;; #+BEGIN_SRC emacs-lisp
 (defvar mw-screen-exchange-filename
@@ -1242,7 +1244,7 @@ Originates from gnu.emacs.help group 2006."
   "Name of the file used by screen copy and paste.")
 ;; #+END_SRC
 
-;; *** screen like commands for slurp and write
+;; *** Screen like commands for slurp and write
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-screen-exchange-slurp-insert ()
@@ -1254,7 +1256,7 @@ Originates from gnu.emacs.help group 2006."
   (write-region start end mw-screen-exchange-filename))
 ;; #+END_SRC
 
-;; *** editing the screen-exchange file
+;; *** Editing the screen-exchange file
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-screen-exchange-open-buffer ()
@@ -1264,9 +1266,9 @@ Originates from gnu.emacs.help group 2006."
   (auto-revert-mode))
 ;; #+END_SRC
 
-;; ** timeclock
+;; ** Timeclock
 
-;; use the timeclock keymap as noted in the timeclock source.
+;; Use the timeclock keymap as noted in the timeclock source.
 
 ;; #+BEGIN_SRC emacs-lisp
 (define-key ctl-x-map "ti" 'timeclock-in)
@@ -1278,12 +1280,13 @@ Originates from gnu.emacs.help group 2006."
 (define-key ctl-x-map "tt" 'timeclock-mode-line-display)
 ;; #+END_SRC
 
-;; ** diary
+;; ** Diary
 
-;; diary entries are useful sometimes.  e.g. it's possible to import ics
+;; Diary entries are useful sometimes.  E.g. it's possible to import ics
 ;; files into a diary.
 
-;; recall that in the org agenda the d key switches diary inclusion on or off.
+;; Recall that in the org agenda the d key switches diary inclusion on or
+;; off.
 
 ;; #+BEGIN_SRC emacs-lisp
 ;; for diary to include other diaries
@@ -1293,22 +1296,22 @@ Originates from gnu.emacs.help group 2006."
 
 ;; ** erc
 
-;; direct client-to-client support for erc.
+;; Direct client-to-client support for erc.
 
 ;; #+BEGIN_SRC emacs-lisp
 (eval-after-load "erc" '(require 'erc-dcc))
 ;; #+END_SRC
 
-;; ** real delete
+;; ** Real delete
 
-;; real delete of region, not this 'play it save and put the delete into
+;; Real delete of region, not this 'play it save and put the delete into
 ;; kill-ring' stuff.
 
 ;; #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "\C-cw") #'delete-region)
 ;; #+END_SRC
 
-;; ** more tweaks
+;; ** More tweaks
 
 ;; #+BEGIN_SRC emacs-lisp
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -1317,7 +1320,7 @@ Originates from gnu.emacs.help group 2006."
 (display-time)
 ;; #+END_SRC
 
-;; ** zone
+;; ** Zone
 
 ;; zone is builtin.  zone can be used as signal.
 
@@ -1327,11 +1330,11 @@ Originates from gnu.emacs.help group 2006."
 (setq  zone-timeout 5)
 ;; #+END_SRC
 
-;; ** keysettings
+;; ** Keysettings
 
-;; *** global keys
+;; *** Global keys
 
-;; **** rest
+;; **** Rest
 
 ;; #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "<f1>") (lambda () (interactive))) ;; e.g. leave zone effortless.
@@ -1384,16 +1387,16 @@ Originates from gnu.emacs.help group 2006."
 (global-set-key (kbd "C-c v") 'org-velocity)
 ;; #+END_SRC
 
-;; **** following org-mode links given in other modes
+;; **** Following org-mode links given in other modes
 
-;; to be able to follow an org-mode link in an arbitrary file can be
+;; To be able to follow an org-mode link in an arbitrary file can be
 ;; nice, e.g. to get to the original from within a tangled file.
 
 ;; #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "C-c o") 'org-open-at-point-global)
 ;; #+END_SRC
 
-;; **** individual keymap
+;; **** Individual keymap
 
 ;; #+BEGIN_SRC emacs-lisp
 (defvar mw-individual-keymap
@@ -1428,11 +1431,11 @@ Originates from gnu.emacs.help group 2006."
 (global-set-key (kbd "\C-z") mw-individual-keymap)
 ;; #+END_SRC
 
-;; idea: the next two guys could go into a hydra. e.g. C-z +-
+;; Idea: the next two guys could go into a hydra. e.g. C-z +-
 ;; (g lobal-set-key (kbd "M-n") 'next-buffer)
 ;; (g lobal-set-key (kbd "M-p") 'previous-buffer)
 
-;; *** dired key for alternate up
+;; *** Dired key for alternate up
 
 ;; #+BEGIN_SRC emacs-lisp
 (add-hook
@@ -1442,11 +1445,11 @@ Originates from gnu.emacs.help group 2006."
      #'mw-dired-zoom-out-as-alternate)))
 ;; #+END_SRC
 
-;;; metatail:                                                         :noexport:
+;;; Metatail:                                                         :noexport:
 
-;; ** compile documentation
+;; ** Compile documentation of this file
 
-;; call function mw-compile-readme.org-from-init.el to get a readme
+;; Call function mw-compile-readme.org-from-init.el to get a readme.org
 ;; for file init.el suitable for github.com.
 
 ;; #+BEGIN_SRC emacs-lisp
@@ -1465,4 +1468,4 @@ Originates from gnu.emacs.help group 2006."
 ;; # lentic-init: lentic-orgel-org-init
 ;; # End:
 
-;;; init.el ends here
+;;; init:.el ends here
