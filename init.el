@@ -348,7 +348,7 @@
               (setq auto-mode-alist (append '(("\\.gp$" . gnuplot-mode)) auto-mode-alist))))
 ;; #+END_SRC
 
-;;; fromsource:
+;;; Fromsource:
 
 ;; ** org
 
