@@ -729,7 +729,7 @@ window."
 (defcustom mw-podomoros-pause-duration "3"
   "Duration in minutes of standard pauses between podomoros.")
 
-(setq org-timer-default-timer "25")
+(setq org-timer-default-timer "29")
 (add-hook 'org-clock-in-hook
           '(lambda ()
              (if (not ;org-timer-timer-is-countdown ; 201501151654 maint
