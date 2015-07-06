@@ -154,15 +154,7 @@
   ;; https://github.com/lunaryorn/.emacs.d/blob/master/init.el
   ;; [2015-05-18 Mon 23:07]) Is this related somehow to the auto
   ;; revert in magit?
-  (setq magit-last-seen-setup-instructions "1.4.0")
-  :config (add-hook
-           'magit-mode-hook
-           (lambda ()
-             (local-set-key
-              (kbd "C")
-              (lambda ()
-                (interactive)
-                (magit-commit-add-log))))))
+  (setq magit-last-seen-setup-instructions "1.4.0"))
 ;; #+END_SRC
 
 ;; ** company mode
