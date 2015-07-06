@@ -1415,6 +1415,7 @@ Originates from gnu.emacs.help group 2006."
             (mw-sound-set-enjoyable-volume)
             (emms-play-url "http://www.bassdrive.com/BassDrive.m3u")))))
     (define-key map "p" #'password-store-copy)
+    (define-key map "P" #'org-toggle-pretty-entities)
     (define-key map "z" #'mw/auxies-delete-to-point-max)
     (define-key map "k" #'key-chord-mode)
     (define-key map "c" #'calendar)
