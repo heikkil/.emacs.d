@@ -464,7 +464,8 @@ Much taken from `org-table-sum'."
     (org-property-action)))
 ;; #+END_SRC
 
-;; This function can be bound to a speed key via org-speed-commands-user.
+;; This function can be bound to a speed key.  See variable
+;; org-speed-commands-user.
 
 ;; *** org-protocol
 
