@@ -1427,6 +1427,7 @@ Originates from gnu.emacs.help group 2006."
                                         ; recall: from org-files there is already C-u C-u C-c C-w.
     (define-key map "<" #'mw-screen-exchange-slurp-insert)
     (define-key map ">" #'mw-screen-exchange-write-region)
+    (define-key map "e" (lambda () (interactive) (setq org-stored-links nil)))
     map
     )
   "Personal convenience keymap.")
