@@ -178,8 +178,8 @@
   (key-chord-define-global "yy" #'mw-duplicate-line)
   (key-chord-define-global "uu" (lambda (&optional in-place)
                                   (interactive "P")
-                                  (if in-place (mw/translate-in-place-eng+deu)
-                                    (mw/translate-as-message-eng+deu))))
+                                  (if in-place (mw-translate-in-place-eng+deu)
+                                    (mw-translate-as-message-eng+deu))))
   (key-chord-define-global "hh" #'recenter-top-bottom)
   (key-chord-define-global "``" #'mw-dired-zoom-out-as-alternate)
   (key-chord-define-global "~~" #'dired-jump)
@@ -187,6 +187,7 @@
   (key-chord-define-global "p4" #'delete-other-windows)
   (key-chord-define-global "g7" #'delete-window) ; for kinesis keyboard
   (key-chord-define-global "g8" #'delete-window) ; for cherry keyboard
+  (key-chord-define-global "kk" #'ido-kill-buffer)
   (key-chord-define-global "m1" #'magit-status)
   (key-chord-define-global "xx" #'org-edit-special)
   (key-chord-define-global "zz" #'org-edit-src-exit)
@@ -1004,7 +1005,7 @@ window."
 ;; *** Duplicate eww buffer
 
 ;; #+BEGIN_SRC emacs-lisp
-(defun mw/eww-duplicate-buffer ()
+(defun mw-eww-duplicate-buffer ()
   "Duplicate an eww buffer."
   (interactive)
   (when (eq major-mode 'eww-mode)
@@ -1025,7 +1026,7 @@ window."
 (require 'eww)
 (if (boundp 'eww-mode-map)
     (progn
-      (define-key eww-mode-map "x" #'mw/eww-duplicate-buffer);'rename-uniquely
+      (define-key eww-mode-map "x" #'mw-eww-duplicate-buffer);'rename-uniquely
       (message "Added 'x' in eww-mode-map."))
   (message
    (concat
@@ -1081,6 +1082,16 @@ window."
 (global-set-key (kbd "\C-cg") 'eww)
 (global-set-key (kbd "\C-cG") 'browse-url)
 (global-set-key (kbd "\C-cF") 'browse-url-firefox)
+;; #+END_SRC
+
+;; ** mpages
+
+;; Using a local branch and not the package to test a version with
+;; encryption.
+
+;; #+BEGIN_SRC emacs-lisp
+(push  "~/p/elisp/mw/mpages" load-path)
+(autoload 'mpages "mpages" "For writing morning pages." t nil)
 ;; #+END_SRC
 
 ;;; Rest:
@@ -1402,7 +1413,7 @@ Originates from gnu.emacs.help group 2006."
 ;; #+BEGIN_SRC emacs-lisp
 (defvar mw-individual-keymap
   (let ((map (make-sparse-keymap)))
-    (define-key map "r" #'mw/auxies-toggle-default-frame-reverse-state)
+    (define-key map "r" #'mw-auxies-toggle-default-frame-reverse-state)
     (define-key map "d" #'mw-display-mode-line-as-message)
     (define-key map "m" #'menu-bar-mode)
     (define-key map "h" #'hidden-mode-line-mode)
@@ -1417,7 +1428,7 @@ Originates from gnu.emacs.help group 2006."
             (emms-play-url "http://www.bassdrive.com/BassDrive.m3u")))))
     (define-key map "p" #'password-store-copy)
     (define-key map "P" #'org-toggle-pretty-entities)
-    (define-key map "z" #'mw/auxies-delete-to-point-max)
+    (define-key map "z" #'mw-auxies-delete-to-point-max)
     (define-key map "k" #'key-chord-mode)
     (define-key map "c" #'calendar)
     (define-key map "q" #'bury-buffer)
