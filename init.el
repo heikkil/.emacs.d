@@ -60,8 +60,8 @@
 
 ;; #+BEGIN_SRC emacs-lisp
 (let ((orgmodelocation (expand-file-name "~/p/org/org-mode")))
-  (add-to-list 'load-path (concat orgmodelocation "/lisp"))
-  (add-to-list 'load-path (concat orgmodelocation "/contrib/lisp"))
+  (push (concat orgmodelocation "/lisp") load-path)
+  (push (concat orgmodelocation "/contrib/lisp") load-path)
   (eval-after-load 'info
     '(progn (info-initialize)
   	    (add-to-list
@@ -514,7 +514,7 @@ Much taken from `org-table-sum'."
 ;; ** gnus
 
 ;; #+BEGIN_SRC emacs-lisp
-(setq load-path (cons (expand-file-name "~/p/elisp/external/gnus/lisp") load-path))
+(push (expand-file-name "~/p/elisp/external/gnus/lisp") load-path)
 (require 'gnus-load)
 (require 'info)
 (add-to-list 'Info-default-directory-list "~/p/elisp/external/gnus/texi/")
@@ -560,7 +560,7 @@ Much taken from `org-table-sum'."
 ;; BTW =emms-streams= has configured some nice stations AFAICT.
 
 ;; #+BEGIN_SRC emacs-lisp
-(add-to-list 'load-path "~/p/elisp/external/emms/lisp")
+(push "~/p/elisp/external/emms/lisp" load-path)
 (require 'emms-setup)
 (emms-devel)				; adds +/- in emms-buffer.
 (emms-default-players)
@@ -591,8 +591,7 @@ Much taken from `org-table-sum'."
 ;; Get points for task-status-changes in org.  But where is the zen here?
 
 ;; #+BEGIN_SRC emacs-lisp
-(add-to-list 'load-path
- (expand-file-name "~/p/elisp/external/zen-reward-mode/"))
+(push (expand-file-name "~/p/elisp/external/zen-reward-mode/") load-path)
 (load-library "zen-reward-mode")
 ;; #+END_SRC
 
@@ -604,14 +603,14 @@ Much taken from `org-table-sum'."
 ;; #+END_SRC
 
 ;; #+BEGIN_SRC emacs-lisp
-(add-to-list 'load-path "~/p/elisp/mw/auxies")
+(push "~/p/elisp/mw/auxies" load-path)
 (require 'auxies-rest)
 ;; #+END_SRC
 
 ;; ** Auxies-eww
 
 ;; #+BEGIN_SRC emacs-lisp
-(add-to-list 'load-path "~/p/elisp/mw/auxies")
+(push "~/p/elisp/mw/auxies" load-path)
 (require 'auxies-eww)
 ;; #+END_SRC
 
@@ -748,7 +747,8 @@ window."
           (message "Pause over at %s.  What about another tomato?"
                    (format-time-string "%T"))
           (start-process "play-a-sound" "*play-a-sound-output*"
-                         "mplayer" (expand-file-name  "~/media/sound/technical/aoogah.wav"))
+                         "mplayer" (expand-file-name
+                                    "~/media/sound/technical/aoogah.wav"))
                                         ;(play-sound '(sound :file
                                         ;".../aoogah.wav")) ;
                                         ;[2014-06-02 Mon 15:14] this
@@ -824,7 +824,7 @@ window."
 ;; ** Rope read to save eye-movements
 
 ;; #+BEGIN_SRC emacs-lisp
-(add-to-list 'load-path "~/p/elisp/mw/rope-read-mode")
+(push "~/p/elisp/mw/rope-read-mode" load-path)
 (require 'rope-read-mode)
 (global-set-key (kbd "<Scroll_Lock> <Scroll_Lock>") 'rope-read-mode)
 ;; #+END_SRC
@@ -832,7 +832,7 @@ window."
 ;; ** Convenient snapshot of emacs from within
 
 ;; #+BEGIN_SRC emacs-lisp
-(add-to-list 'load-path "~/p/elisp/mw/emacsshot")
+(push "~/p/elisp/mw/emacsshot" load-path)
 (require 'emacsshot)
 (global-set-key
  [print] ; (kbd "<print>")
