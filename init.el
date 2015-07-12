@@ -278,7 +278,9 @@
      (cond ((eq sun-event 'sunrise)
             (setf (cdr (assoc 'reverse default-frame-alist)) nil))
            ((eq sun-event 'sunset)
-            (setf (cdr (assoc 'reverse default-frame-alist)) t))))
+            (setf (cdr (assoc 'reverse default-frame-alist)) t)))))
+  (add-hook
+   'rase-functions
    (lambda (sun-event &optional first-run)
      (unless first-run (make-frame))))
 
