@@ -181,7 +181,7 @@
                                   (if in-place (mw-translate-in-place-eng+deu)
                                     (mw-translate-as-message-eng+deu))))
   (key-chord-define-global "hh" #'recenter-top-bottom)
-  (key-chord-define-global "``" #'mw-dired-zoom-out-as-alternate)
+  (key-chord-define-global "``" #'mw-dired-up-directory-as-alternate)
   (key-chord-define-global "~~" #'dired-jump)
   (key-chord-define-global ",," #'lentic-mode-move-lentic-window)
   (key-chord-define-global "p4" #'delete-other-windows)
@@ -1478,7 +1478,7 @@ Originates from gnu.emacs.help group 2006."
  'dired-mode-hook
  (lambda ()
    (define-key dired-mode-map "`"
-     #'mw-dired-zoom-out-as-alternate)))
+     #'mw-dired-up-directory-as-alternate)))
 ;; #+END_SRC
 
 ;;; Metatail:                                                         :noexport:
