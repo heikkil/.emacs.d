@@ -1460,8 +1460,9 @@ Originates from gnu.emacs.help group 2006."
     (define-key map "<" #'mw-screen-exchange-slurp-insert)
     (define-key map ">" #'mw-screen-exchange-write-region)
     (define-key map "e" (lambda () "Erase org-stored-links" (interactive) (setq org-stored-links nil)))
-    map
-    )
+    (define-key map "(" (lambda () (interactive) (paredit-mode)))
+    (define-key map ")" (lambda () (interactive) (disable-paredit-mode)))
+    map)
   "Personal convenience keymap.")
 (global-set-key (kbd "\C-z") mw-individual-keymap)
 ;; #+END_SRC
