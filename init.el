@@ -282,7 +282,9 @@
   (add-hook
    'rase-functions
    (lambda (sun-event &optional first-run)
-     (unless first-run (make-frame))))
+     (unless first-run
+       (run-at-time "1 sec" ; one sec after the event the parameters shall be ready.
+                    nil #'make-frame))))
 
   ;; The following lines are here for remember how to use 'advice'.
   ;; Possibly an alternative is `before-make-frame-hook'.
