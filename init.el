@@ -1113,6 +1113,14 @@ window."
                   ))
 ;; #+END_SRC
 
+;; ** Delete blank lines also above
+
+;; #+BEGIN_SRC emacs-lisp
+(global-set-key  (kbd "C-x C-o") #'mw-delete-blank-lines)
+;; #+END_SRC
+
+;; [2015-07-13 Mon 11:54] Activation.  Let's see if the removal of the
+;; blank lines above proves useful.
 
 ;;; Rest:
 
