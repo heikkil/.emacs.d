@@ -269,6 +269,9 @@
 
 ;; rase is for triggering actions at sunrise and sunset.
 
+;; Reverse the frame at sunrise and at sunset.  Pop up a frame with the
+;; new setting.
+
 ;; #+BEGIN_SRC emacs-lisp
 (use-package rase 
   :config

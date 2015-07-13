@@ -351,6 +351,9 @@ gnorb is integration of gnus and org and bbdb .
 
 rase is for triggering actions at sunrise and sunset.
 
+Reverse the frame at sunrise and at sunset.  Pop up a frame with the
+new setting.
+
     (use-package rase 
       :config
       (add-hook
@@ -363,7 +366,9 @@ rase is for triggering actions at sunrise and sunset.
       (add-hook
        'rase-functions
        (lambda (sun-event &optional first-run)
-         (unless first-run (make-frame))))
+         (unless first-run
+           (run-at-time "1 sec" ; one sec after the event the parameters shall be ready.
+                        nil #'make-frame))))
     
       ;; The following lines are here for remember how to use 'advice'.
       ;; Possibly an alternative is `before-make-frame-hook'.
