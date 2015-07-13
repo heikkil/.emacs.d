@@ -66,7 +66,7 @@
 <li><a href="#orgheadline46">3.8. Auxies-eww</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline72">4. Lab</a>
+<li><a href="#orgheadline73">4. Lab</a>
 <ul>
 <li><a href="#orgheadline48">4.1. Toggle-letter-case</a></li>
 <li><a href="#orgheadline49">4.2. Drag windows</a></li>
@@ -95,39 +95,40 @@
 <li><a href="#orgheadline69">4.19. Key sequences to open browser</a></li>
 <li><a href="#orgheadline70">4.20. mpages</a></li>
 <li><a href="#orgheadline71">4.21. dired-x</a></li>
+<li><a href="#orgheadline72">4.22. Delete blank lines also above</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline99">5. Rest</a>
+<li><a href="#orgheadline100">5. Rest</a>
 <ul>
-<li><a href="#orgheadline73">5.1. Enable more emacs features</a></li>
-<li><a href="#orgheadline74">5.2. Abbrevs</a></li>
-<li><a href="#orgheadline75">5.3. Appointments from org</a></li>
-<li><a href="#orgheadline76">5.4. Battery</a></li>
-<li><a href="#orgheadline79">5.5. Beautification</a>
+<li><a href="#orgheadline74">5.1. Enable more emacs features</a></li>
+<li><a href="#orgheadline75">5.2. Abbrevs</a></li>
+<li><a href="#orgheadline76">5.3. Appointments from org</a></li>
+<li><a href="#orgheadline77">5.4. Battery</a></li>
+<li><a href="#orgheadline80">5.5. Beautification</a>
 <ul>
-<li><a href="#orgheadline77">5.5.1. Elisp</a></li>
-<li><a href="#orgheadline78">5.5.2. Python</a></li>
+<li><a href="#orgheadline78">5.5.1. Elisp</a></li>
+<li><a href="#orgheadline79">5.5.2. Python</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline80">5.6. Language environment change</a></li>
-<li><a href="#orgheadline81">5.7. Scroll-lock-mode</a></li>
-<li><a href="#orgheadline82">5.8. Rotate windows</a></li>
-<li><a href="#orgheadline85">5.9. Screen</a>
+<li><a href="#orgheadline81">5.6. Language environment change</a></li>
+<li><a href="#orgheadline82">5.7. Scroll-lock-mode</a></li>
+<li><a href="#orgheadline83">5.8. Rotate windows</a></li>
+<li><a href="#orgheadline86">5.9. Screen</a>
 <ul>
-<li><a href="#orgheadline83">5.9.1. Screen like commands for slurp and write</a></li>
-<li><a href="#orgheadline84">5.9.2. Editing the screen-exchange file</a></li>
+<li><a href="#orgheadline84">5.9.1. Screen like commands for slurp and write</a></li>
+<li><a href="#orgheadline85">5.9.2. Editing the screen-exchange file</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline86">5.10. Timeclock</a></li>
-<li><a href="#orgheadline87">5.11. Diary</a></li>
-<li><a href="#orgheadline88">5.12. erc</a></li>
-<li><a href="#orgheadline89">5.13. Real delete</a></li>
-<li><a href="#orgheadline90">5.14. More tweaks</a></li>
-<li><a href="#orgheadline91">5.15. Zone</a></li>
-<li><a href="#orgheadline98">5.16. Keysettings</a>
+<li><a href="#orgheadline87">5.10. Timeclock</a></li>
+<li><a href="#orgheadline88">5.11. Diary</a></li>
+<li><a href="#orgheadline89">5.12. erc</a></li>
+<li><a href="#orgheadline90">5.13. Real delete</a></li>
+<li><a href="#orgheadline91">5.14. More tweaks</a></li>
+<li><a href="#orgheadline92">5.15. Zone</a></li>
+<li><a href="#orgheadline99">5.16. Keysettings</a>
 <ul>
-<li><a href="#orgheadline96">5.16.1. Global keys</a></li>
-<li><a href="#orgheadline97">5.16.2. Dired key for alternate up</a></li>
+<li><a href="#orgheadline97">5.16.1. Global keys</a></li>
+<li><a href="#orgheadline98">5.16.2. Dired key for alternate up</a></li>
 </ul>
 </li>
 </ul>
@@ -267,7 +268,7 @@ Activating lentic as proposed in lentics documentation lentic.el.
                                       (if in-place (mw-translate-in-place-eng+deu)
                                         (mw-translate-as-message-eng+deu))))
       (key-chord-define-global "hh" #'recenter-top-bottom)
-      (key-chord-define-global "``" #'mw-dired-zoom-out-as-alternate)
+      (key-chord-define-global "``" #'mw-dired-up-directory-as-alternate)
       (key-chord-define-global "~~" #'dired-jump)
       (key-chord-define-global ",," #'lentic-mode-move-lentic-window)
       (key-chord-define-global "p4" #'delete-other-windows)
@@ -643,7 +644,7 @@ Get points for task-status-changes in org.  But where is the zen here?
     (push "~/p/elisp/mw/auxies" load-path)
     (require 'auxies-eww)
 
-# Lab<a id="orgheadline72"></a>
+# Lab<a id="orgheadline73"></a>
 
 ## Toggle-letter-case<a id="orgheadline48"></a>
 
@@ -1085,9 +1086,16 @@ encryption.
                  ;; (dired-omit-mode 1)
                  ))
 
-# Rest<a id="orgheadline99"></a>
+## Delete blank lines also above<a id="orgheadline72"></a>
 
-## Enable more emacs features<a id="orgheadline73"></a>
+    (global-set-key  (kbd "C-x C-o") #'mw-delete-blank-lines)
+
+<span class="timestamp-wrapper"><span class="timestamp">[2015-07-13 Mon 11:54] </span></span> Activation.  Let's see if the removal of the
+blank lines above proves useful.
+
+# Rest<a id="orgheadline100"></a>
+
+## Enable more emacs features<a id="orgheadline74"></a>
 
 Enable features that are disabled by default.
 
@@ -1100,7 +1108,7 @@ Enable features that are disabled by default.
     (put 'set-goal-column 'disabled nil)
     (put 'erase-buffer 'disabled nil)
 
-## Abbrevs<a id="orgheadline74"></a>
+## Abbrevs<a id="orgheadline75"></a>
 
 Started with the suggestion about abbreviations on
 <http://www.star.bris.ac.uk/bjm/emacs-tips.html#sec-1-19>.
@@ -1113,7 +1121,7 @@ Started with the suggestion about abbreviations on
     ;; abbrev-file-name ; using the default setting.
     (quietly-read-abbrev-file)       ;; reads the abbreviations file on startup
 
-## Appointments from org<a id="orgheadline75"></a>
+## Appointments from org<a id="orgheadline76"></a>
 
 take into account the appointments for today from the org-agenda.
 note that this is done for the current org-agenda files.
@@ -1126,13 +1134,13 @@ activate the appointment checking.
 See also Personalize the sound of the bell (See section 4.11) for the configuration of
 the respective audio signal.
 
-## Battery<a id="orgheadline76"></a>
+## Battery<a id="orgheadline77"></a>
 
     (display-battery-mode)
 
-## Beautification<a id="orgheadline79"></a>
+## Beautification<a id="orgheadline80"></a>
 
-### Elisp<a id="orgheadline77"></a>
+### Elisp<a id="orgheadline78"></a>
 
     (add-hook 'emacs-lisp-mode-hook
               (lambda ()
@@ -1140,7 +1148,7 @@ the respective audio signal.
                             '(("lambda" . ?λ)))
                 (prettify-symbols-mode 1)))
 
-### Python<a id="orgheadline78"></a>
+### Python<a id="orgheadline79"></a>
 
 [Email from Stefan Monnier: Re: can emacs do this](nntp+news.aioe.org:gnu.emacs.help#mailman.17951.1421331793.1147.help-gnu-emacs@gnu.org)
 
@@ -1153,7 +1161,7 @@ the respective audio signal.
                               ("sum" . ?Σ)))
                 (prettify-symbols-mode 1)))
 
-## Language environment change<a id="orgheadline80"></a>
+## Language environment change<a id="orgheadline81"></a>
 
 Convenient switching of the input-method and the spell-checking.
 
@@ -1191,13 +1199,13 @@ This code is derived from <http://www.emacswiki.org/emacs/FlySpell>
               dict)
         (message (concat dict " set for ispell completion."))))
 
-## Scroll-lock-mode<a id="orgheadline81"></a>
+## Scroll-lock-mode<a id="orgheadline82"></a>
 
 Scroll lock mode gives another buffer movement feeling.
 
     (global-set-key (kbd "<Scroll_Lock> m") 'scroll-lock-mode)
 
-## Rotate windows<a id="orgheadline82"></a>
+## Rotate windows<a id="orgheadline83"></a>
 
     (defun mw-rotate-split ()
       "Somehow rotate buffers in the emacs-window.
@@ -1218,7 +1226,7 @@ Scroll lock mode gives another buffer movement feeling.
                      (set-window-buffer (split-window-vertically) b1))))
           (message "Root window not split"))))
 
-## Screen<a id="orgheadline85"></a>
+## Screen<a id="orgheadline86"></a>
 
 Seamless exchange with screen.
 
@@ -1226,7 +1234,7 @@ Seamless exchange with screen.
       "/tmp/screen-exchange"
       "Name of the file used by screen copy and paste.")
 
-### Screen like commands for slurp and write<a id="orgheadline83"></a>
+### Screen like commands for slurp and write<a id="orgheadline84"></a>
 
     (defun mw-screen-exchange-slurp-insert ()
       (interactive)
@@ -1236,7 +1244,7 @@ Seamless exchange with screen.
       (interactive "r")
       (write-region start end mw-screen-exchange-filename))
 
-### Editing the screen-exchange file<a id="orgheadline84"></a>
+### Editing the screen-exchange file<a id="orgheadline85"></a>
 
     (defun mw-screen-exchange-open-buffer ()
       "Open the screen exchange file in auto revert mode."
@@ -1244,7 +1252,7 @@ Seamless exchange with screen.
       (set-buffer (find-file mw-screen-exchange-filename))
       (auto-revert-mode))
 
-## Timeclock<a id="orgheadline86"></a>
+## Timeclock<a id="orgheadline87"></a>
 
 Use the timeclock keymap as noted in the timeclock source.
 
@@ -1256,7 +1264,7 @@ Use the timeclock keymap as noted in the timeclock source.
     (define-key ctl-x-map "tw" 'timeclock-when-to-leave-string)
     (define-key ctl-x-map "tt" 'timeclock-mode-line-display)
 
-## Diary<a id="orgheadline87"></a>
+## Diary<a id="orgheadline88"></a>
 
 Diary entries are useful sometimes.  E.g. it's possible to import ics
 files into a diary.
@@ -1268,27 +1276,27 @@ off.
     (add-hook 'diary-list-entries-hook 'diary-include-other-diary-files)
     (add-hook 'diary-mark-entries-hook 'diary-mark-included-diary-files)
 
-## erc<a id="orgheadline88"></a>
+## erc<a id="orgheadline89"></a>
 
 Direct client-to-client support for erc.
 
     (eval-after-load "erc" '(require 'erc-dcc))
 
-## Real delete<a id="orgheadline89"></a>
+## Real delete<a id="orgheadline90"></a>
 
 Real delete of region, not this 'play it save and put the delete into
 kill-ring' stuff.
 
     (global-set-key (kbd "\C-cw") #'delete-region)
 
-## More tweaks<a id="orgheadline90"></a>
+## More tweaks<a id="orgheadline91"></a>
 
     (defalias 'yes-or-no-p 'y-or-n-p)
     (ffap-bindings)
     (require 'page-ext)
     (display-time)
 
-## Zone<a id="orgheadline91"></a>
+## Zone<a id="orgheadline92"></a>
 
 zone is builtin.  zone can be used as signal.
 
@@ -1296,9 +1304,9 @@ setting zone to stop after some seconds.
 
     (setq  zone-timeout 5)
 
-## Keysettings<a id="orgheadline98"></a>
+## Keysettings<a id="orgheadline99"></a>
 
-### Global keys<a id="orgheadline96"></a>
+### Global keys<a id="orgheadline97"></a>
 
 1.  Rest
 
@@ -1394,10 +1402,10 @@ setting zone to stop after some seconds.
     (g lobal-set-key (kbd "M-n") 'next-buffer)
     (g lobal-set-key (kbd "M-p") 'previous-buffer)
 
-### Dired key for alternate up<a id="orgheadline97"></a>
+### Dired key for alternate up<a id="orgheadline98"></a>
 
     (add-hook
      'dired-mode-hook
      (lambda ()
        (define-key dired-mode-map "`"
-         #'mw-dired-zoom-out-as-alternate)))
+         #'mw-dired-up-directory-as-alternate)))
