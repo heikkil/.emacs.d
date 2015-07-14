@@ -86,7 +86,7 @@
 
 ;;; Packages:
 
-;; ** ace
+;; ** ace-jump-mode
 
 ;; Taken from https://github.com/jwiegley/use-package.
 
@@ -94,6 +94,18 @@
 (use-package ace-jump-mode
 :bind ("C-." . ace-jump-mode))
 ;; #+END_SRC
+
+;; ** ace-jump-zap
+
+;; A more ace'y replacement of zap to char on M-z.
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package ace-jump-zap
+:bind ("M-z" . ace-jump-zap-up-to-char))
+;; #+END_SRC
+
+;; Note the subtle difference that 'up-to-char' means to not delete the
+;; target char.
 
 ;; ** nyan-mode
 
