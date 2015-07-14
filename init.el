@@ -1129,6 +1129,16 @@ window."
 ;; [2015-07-13 Mon 11:54] Activation.  Let's see if the removal of the
 ;; blank lines above proves useful.
 
+;; ** Disable query about active processes at quit
+
+;; #+BEGIN_SRC emacs-lisp
+(require 'cl)
+(defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
+           (flet ((process-list ())) ad-do-it))
+;; #+END_SRC
+
+;; Source: [[http://timothypratley.blogspot.de/2015/07/seven-specialty-emacs-settings-with-big.html][Programming: Seven specialty Emacs settings with big payoffs]].
+
 ;;; Rest:
 
 ;; ** Enable more emacs features
