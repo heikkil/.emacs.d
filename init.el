@@ -92,7 +92,10 @@
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package ace-jump-mode
-:bind ("C-." . ace-jump-mode))
+  :bind ("C-." . ace-jump-mode)
+  :config (setq ace-jump-mode-submode-list
+                '(ace-jump-char-mode ace-jump-word-mode ace-jump-line-mode)))
+
 ;; #+END_SRC
 
 ;; ** ace-jump-zap
