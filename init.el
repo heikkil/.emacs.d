@@ -1116,6 +1116,16 @@ window."
 ;; #+BEGIN_SRC emacs-lisp
 (push  "~/p/elisp/mw/mpages" load-path)
 (autoload 'mpages "mpages" "For writing morning pages." t nil)
+
+(defadvice mpages (after ctrlc-ctrlc-to-finish activate)
+  "Set C-c C-c to close the mpage writing.
+Set the key for encrytion, then save and kill the buffer.
+This binding shall make the close more convenient."
+  (local-set-key [?\C-c ?\C-c] (lambda ()
+                                 (interactive)
+                                 (setq epa-file-encrypt-to '("49010A040A3AE6F2"))
+                                 (save-buffer)
+                                 (kill-buffer))))
 ;; #+END_SRC
 
 ;; ** dired-x
