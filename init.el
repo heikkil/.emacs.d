@@ -1431,7 +1431,9 @@ Originates from gnu.emacs.help group 2006."
 
 (global-set-key (kbd "<XF86AudioLowerVolume>") #'emms-volume-lower)
 (global-set-key (kbd "<XF86AudioRaiseVolume>") #'emms-volume-raise)
-(global-set-key (kbd "<XF86AudioMute>") #'mw-sound-100%)
+(global-set-key (kbd "<XF86AudioMute>") #'mw-sound-0%)
+(global-set-key (kbd "<XF86AudioNext>") #'mw-sound-100%)
+(global-set-key (kbd "<XF86AudioPlay>") #'mw-sound-set-enjoyable-volume)
 
 (global-set-key (kbd "C-x o") 'ace-window)
 
