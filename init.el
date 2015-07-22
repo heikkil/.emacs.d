@@ -375,7 +375,7 @@
 
 ;;; Fromsource:
 
-;; ** org
+;; ** org                                                                 :org:
 
 ;; *** org timestamp handling
 
@@ -535,6 +535,15 @@ Much taken from `org-table-sum'."
 (require 'org-screenshot)
 ;; #+END_SRC
 
+;; *** disable key C-,
+
+;; Want C-, not bound to org-cycle-agenda-files, which is also on C-'
+;; anyways.
+
+;; #+BEGIN_SRC emacs-lisp
+(add-hook 'org-mode-hook (lambda () (local-unset-key (kbd "C-,"))))
+;; #+END_SRC
+
 ;; ** gnus
 
 ;; #+BEGIN_SRC emacs-lisp
@@ -636,6 +645,18 @@ Much taken from `org-table-sum'."
 ;; #+BEGIN_SRC emacs-lisp
 (push "~/p/elisp/mw/auxies" load-path)
 (require 'auxies-eww)
+;; #+END_SRC
+
+;;; LabPkgs:
+
+;; ** avy
+
+;; avy has functionality similar to ace-jump-mode.  These days I read
+;; that avy is the variant that gets maintained.
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package avy
+  :bind ("C-," . avy-goto-char))
 ;; #+END_SRC
 
 ;;; Lab:
