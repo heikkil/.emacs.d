@@ -18,10 +18,13 @@
 ;; allow the interpretation of this file as org mode file.  Lentic-mode
 ;; allows to edit this file as org-file.
 
-;; - [2015-06-10 Wed 11:14]: Activate lentic via
-;;   lentic-mode-create-from-init (C-c , c).  This creates an org-mode
-;;   view of the source file.  Switch between the views with
-;;   lentic-mode-move-lentic-window (C-c , h).
+;; [2015-06-10 Wed 11:14]: Activate lentic via
+;; lentic-mode-create-from-init (C-c , c).  This creates an org-mode view
+;; of the source file.  Switch between the views with
+;; lentic-mode-move-lentic-window (C-c , h).
+
+;; [2015-07-23 Thu 12:19] Currently for lentic to work reasonably the top
+;; level headings may contain at most one word.
 
 ;;; Firstfirst:
 
