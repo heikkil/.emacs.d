@@ -1188,6 +1188,11 @@ This binding shall make the close more convenient."
 
 ;; Source: [[http://timothypratley.blogspot.de/2015/07/seven-specialty-emacs-settings-with-big.html][Programming: Seven specialty Emacs settings with big payoffs]].
 
+;; ** Open line below
+
+;; #+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "C-S-o") #'mw-auxies-open-line-below)
+;; #+END_SRC
 ;;; Rest:
 
 ;; ** Enable more emacs features
