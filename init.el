@@ -705,6 +705,16 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
 (define-key epa-key-list-mode-map "N" #'mw-epa-mark-next-key)
 ;; #+END_SRC
 
+;; ** ediff
+
+;; #+BEGIN_SRC emacs-lisp
+(add-hook 'ediff-keymap-setup-hook
+          (lambda ()
+            (define-key
+              ediff-mode-map "8"
+              #'mw-ediff-set-visible-mode-in-ediff-buffers)))
+;; #+END_SRC
+
 ;; ** Drag windows
 
 ;; Found [2015-03-03 Tue 17:18]
