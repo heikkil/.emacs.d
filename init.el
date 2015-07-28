@@ -166,21 +166,14 @@
 ;; #+BEGIN_SRC emacs-lisp
 (use-package magit
   :bind (("C-c j" . magit-status))
-  :init
-  ;; Seriously, Magit?! Set this variable before Magit is loaded to
-  ;; silence the most stupid warning ever (from
-  ;; https://github.com/lunaryorn/.emacs.d/blob/master/init.el
-  ;; [2015-05-18 Mon 23:07]) Is this related somehow to the auto
-  ;; revert in magit?
-  (setq magit-last-seen-setup-instructions "1.4.0"))
+  :config (define-key magit-file-section-map "C" 'magit-commit-add-log)) ;; "C" also on filename-lines
 ;; #+END_SRC
 
 ;; ** company mode
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package company
-  :config
-  (global-company-mode))
+  :config (global-company-mode))
 ;; #+END_SRC
 
 ;; ** key chord
