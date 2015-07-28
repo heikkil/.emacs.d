@@ -883,7 +883,8 @@ window."
 ;; #+BEGIN_SRC emacs-lisp
 (push "~/p/elisp/mw/rope-read-mode" load-path)
 (require 'rope-read-mode)
-(global-set-key (kbd "<Scroll_Lock> <Scroll_Lock>") 'rope-read-mode)
+(define-key rope-read-mode-map "d" 'rope-read-reol) ;; start from current line with rope-read
+(define-key rope-read-mode-map "r" 'rope-read-delete-overlays)
 ;; #+END_SRC
 
 ;; ** Convenient snapshot of emacs from within
