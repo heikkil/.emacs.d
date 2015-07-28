@@ -699,6 +699,12 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
 (global-set-key "\M-C" #'toggle-letter-case)
 ;; #+END_SRC
 
+;; ** epa
+
+;; #+BEGIN_SRC emacs-lisp
+(define-key epa-key-list-mode-map "N" #'mw-epa-mark-next-key)
+;; #+END_SRC
+
 ;; ** Drag windows
 
 ;; Found [2015-03-03 Tue 17:18]
