@@ -1282,9 +1282,10 @@ This binding shall make the close more convenient."
 ;; #+BEGIN_SRC emacs-lisp
 (defvar mw-lang-inputmethod-ring)
 
-(let ((langs-inputmethods '(("deutsch" "german-prefix") ("american" nil))))
+(let ((langs-inputmethods '(("deutsch" "german-postfix") ("american" nil))))
   (setq mw-lang-inputmethod-ring (make-ring (length langs-inputmethods)))
-  (dolist (elem langs-inputmethods) (ring-insert mw-lang-inputmethod-ring elem)))
+  (dolist (elem langs-inputmethods)
+    (ring-insert mw-lang-inputmethod-ring elem)))
 
 (defun cycle-ispell-language-and-input-method ()
   (interactive)
