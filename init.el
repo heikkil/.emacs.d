@@ -702,6 +702,7 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
 ;; ** epa
 
 ;; #+BEGIN_SRC emacs-lisp
+(require 'epa)
 (define-key epa-key-list-mode-map "N" #'mw-epa-mark-next-key)
 ;; #+END_SRC
 
