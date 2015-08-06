@@ -239,13 +239,13 @@
 (eval-after-load "gnorb-org"
   '(progn
      (org-defkey org-mode-map (kbd "C-c C") 'gnorb-org-contact-link)
-     (org-defkey org-mode-map (kbd "C-c t") 'gnorb-org-handle-mail)
+     (org-defkey org-mode-map (kbd "C-c m") 'gnorb-org-handle-mail)
      (org-defkey org-mode-map (kbd "C-c e") 'gnorb-org-view)
      (org-defkey org-mode-map (kbd "C-c E") 'gnorb-org-email-subtree)
      (org-defkey org-mode-map (kbd "C-c V") 'gnorb-org-popup-bbdb)
      (setq gnorb-org-agenda-popup-bbdb t)
      (eval-after-load "org-agenda"
-       '(progn (org-defkey org-agenda-mode-map (kbd "C-c t") 'gnorb-org-handle-mail)
+       '(progn ;; (org-defkey org-agenda-mode-map (kbd "C-c t") 'gnorb-org-handle-mail)
                (org-defkey org-agenda-mode-map (kbd "C-c v") 'gnorb-org-popup-bbdb)
                (org-defkey org-agenda-mode-map (kbd "V") 'gnorb-org-view)))))
 
