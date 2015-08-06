@@ -1549,6 +1549,8 @@ Originates from gnu.emacs.help group 2006."
     (define-key map "k" #'key-chord-mode)
     (define-key map "c" #'calendar)
     (define-key map "q" #'bury-buffer)
+    (define-key map "n" (lambda () "Append buffer-filename to kill-ring."
+                          (interactive) (kill-new buffer-file-name)))
     (define-key map "u" #'unexpand-abbrev)
     (define-key map "i" #'ido-hacks-mode)
     (define-key map "w" #'org-refile-goto-last-stored)
