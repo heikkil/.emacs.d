@@ -938,7 +938,8 @@ window."
   (start-process "" "*mw-amixer*"
                  "amixer" "set" "Headphone" "64" )
   (start-process "" "*mw-amixer*"
-                 "amixer" "set" "PCM" "255" ))
+                 "amixer" "set" "PCM" "255" )
+  (message "sound set to 100%%"))
 
 (defun mw-sound-set-enjoyable-volume ()
   "Enjoyable volume for listening with headphones.
@@ -952,7 +953,8 @@ window."
   (start-process "" "*mw-amixer*"
                  "amixer" "set" "Headphone" "64" )
   (start-process "" "*mw-amixer*"
-                 "amixer" "set" "PCM" "255" ))
+                 "amixer" "set" "PCM" "255" )
+  (message "personal sound level set"))
 
 (defun mw-sound-0% ()
   "Pull all rulers in the amixer to 0 ."
@@ -964,7 +966,8 @@ window."
   (start-process "" "*mw-amixer*"
                  "amixer" "set" "Headphone" "0" )
   (start-process "" "*mw-amixer*"
-                 "amixer" "set" "PCM" "0" ))
+                 "amixer" "set" "PCM" "0" )
+  (message "sound set to 0%%"))
 ;; #+END_SRC
 
 ;; ** Personalize the sound of the bell
