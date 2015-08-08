@@ -1603,7 +1603,7 @@ Originates from gnu.emacs.help group 2006."
   (unless lentic-config
     (lentic-mode-create-from-init))
   (set-buffer "init.org")
-  (org-export-to-file 'org "readme.org"))
+  (org-export-to-file 'md "readme.md"))
 ;; #+END_SRC
 
 ;; # Local Variables:
