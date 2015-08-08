@@ -380,7 +380,11 @@
 ;; (setq org-agenda-include-inactive-timestamps nil) ;; for not seeing them.
 ;; #+END_SRC
 
-;; *** Jump to org block bound
+;; *** org babel
+;; **** Jump to org block bound
+
+;; The following bindings allow to find the next occurance of string '#+'
+;; which typically indicate an org-block meta thing.
 
 ;; #+BEGIN_SRC emacs-lisp
 (add-hook
@@ -405,7 +409,11 @@
       (re-search-backward "#\\+")))))
 ;; #+END_SRC
 
-;; *** Tab jump from code-block 'end' to 'begin'
+;; There are useful bindings in connection with org-blocks already built
+;; in, e.g. org-next-block which sets point to the /beginning/ of the
+;; next block.
+
+;; **** Tab jump from code-block 'end' to 'begin'
 
 ;; #+BEGIN_SRC emacs-lisp
 ;; Experimentation for more convenient block handling.
@@ -427,6 +435,25 @@
 ;; #+BEGIN_SRC emacs-lisp
 ;; Use tab-key for trigger the action.  This is done via hooking.
 (add-to-list 'org-tab-first-hook 'mw-org-jump-to-beginning-of-block-maybe)
+;; #+END_SRC
+
+;; **** More key bindings for babeling
+
+;; #+BEGIN_SRC emacs-lisp
+(require 'ob-keys)
+
+(setq
+ org-babel-key-bindings
+ (append
+  org-babel-key-bindings
+  (list
+   (cons "m" #'org-babel-mark-block)
+   (cons "N" #'org-narrow-to-block)
+   (cons "'" #'org-edit-special)
+   (cons ">" ; jump to the end.
+         (lambda () (let ((case-fold-search t)) ; don't care about case.
+                 (search-forward-regexp "#\\+end_src")
+                 (beginning-of-line)))))))
 ;; #+END_SRC
 
 ;; *** Mark a table column
@@ -496,25 +523,6 @@ Much taken from `org-table-sum'."
 
 ;; The org-protocol is useful for actions which come from the outside.
 ;; E.g. capturing from conkeror into org.
-
-;; *** More key bindings for babeling
-
-;; #+BEGIN_SRC emacs-lisp
-(require 'ob-keys)
-
-(setq
- org-babel-key-bindings
- (append
-  org-babel-key-bindings
-  (list
-   (cons "m" #'org-babel-mark-block)
-   (cons "N" #'org-narrow-to-block)
-   (cons "'" #'org-edit-special)
-   (cons ">" ; jump to the end.
-         (lambda () (let ((case-fold-search t)) ; don't care about case.
-                 (search-forward-regexp "#\\+end_src")
-                 (beginning-of-line)))))))
-;; #+END_SRC
 
 ;; *** hl-line in agenda
 
