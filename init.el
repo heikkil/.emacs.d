@@ -707,6 +707,35 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
 (global-set-key "\M-C" #'toggle-letter-case)
 ;; #+END_SRC
 
+;; ** ispell and org
+
+;; [[gnus:nntp+news.gwene.org:gwene.org.emacsen.planet#x1-OJQzcaDHUGvOvCmRSA6fSHKcoWE@gwene.org][Email from Artur Malabarba: Endless Parentheses: Making Is]]
+
+;; Subject: Endless Parentheses: Making Ispell work with org-mode
+;; Newsgroups: gwene.org.emacsen.planet
+;; Date: Mon, 24 Aug 2015 02:00:00 +0200 (15 hours, 49 minutes, 21 seconds ago)
+;; Archived-at: <http://endlessparentheses.com/ispell-and-org-mode.html?source=rss>
+
+;; [1. text/html]
+
+;; If you’ve every tried to do some spell-checking in org-mode you know
+;; how finicky that can be. Ispell is happy to
+
+;; check absolutely anything, even code blocks and property drawers! When
+;; you’re blogging about code-snippets from an org file this annoyance
+;; quickly turns into irritation. Here’s how you fix it.
+
+;; #+BEGIN_SRC emacs-lisp
+(defun endless/org-ispell ()
+  "Configure `ispell-skip-region-alist' for `org-mode'."
+  (make-local-variable 'ispell-skip-region-alist)
+  (add-to-list 'ispell-skip-region-alist '(org-property-drawer-re))
+  (add-to-list 'ispell-skip-region-alist '("~" "~"))
+  (add-to-list 'ispell-skip-region-alist '("=" "="))
+  (add-to-list 'ispell-skip-region-alist '("^#\\+BEGIN_SRC" . "^#\\+END_SRC")))
+(add-hook 'org-mode-hook #'endless/org-ispell)
+;; #+END_SRC
+
 ;; ** epa
 
 ;; #+BEGIN_SRC emacs-lisp
@@ -1610,4 +1639,4 @@ Originates from gnu.emacs.help group 2006."
 ;; # lentic-init: lentic-orgel-org-init
 ;; # End:
 
-;;; init.el ends here
+;;; init:.el ends here
