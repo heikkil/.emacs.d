@@ -204,6 +204,7 @@
   (key-chord-define-global "m1" #'magit-status)
   (key-chord-define-global "xx" #'org-edit-special)
   (key-chord-define-global "zz" #'org-edit-src-exit)
+  (key-chord-define-global "c8" #'calc-embedded-word)
 )  ;; recall key-chord-unset-global for undef a key-chord.
 ;; #+END_SRC
 
