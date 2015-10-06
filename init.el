@@ -673,6 +673,16 @@ Much taken from `org-table-sum'."
   :bind ("C-," . avy-goto-char))
 ;; #+END_SRC
 
+;; ** emr
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package emr
+   :config (progn
+            ;; (autoload 'emr-show-refactor-menu "emr")
+             (eval-after-load "emr" '(emr-initialize)))
+   :bind ("M-RET" . emr-show-refactor-menu))
+;; #+END_SRC
+
 ;;; Lab:
 
 ;; ** Toggle-letter-case
