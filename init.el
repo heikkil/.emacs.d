@@ -107,7 +107,7 @@
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package ace-jump-zap
-:bind ("M-z" . ace-jump-zap-up-to-char))
+  :bind ("M-z" . ace-jump-zap-to-char))
 ;; #+END_SRC
 
 ;; Note the subtle difference that 'up-to-char' means to not delete the
