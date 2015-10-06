@@ -652,6 +652,15 @@ Much taken from `org-table-sum'."
 (require 'auxies-eww)
 ;; #+END_SRC
 
+;; ** region-linum
+
+;; #+BEGIN_SRC emacs-lisp
+(push "~/p/elisp/mw/region-linum" load-path)
+(require 'region-linum)
+
+(global-set-key (kbd "<f5>") #'region-linum-toggle)
+;; #+END_SRC
+
 ;;; LabPkgs:
 
 ;; ** avy
