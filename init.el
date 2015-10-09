@@ -24,7 +24,7 @@
 ;; lentic-mode-move-lentic-window (C-c , h).
 
 ;; [2015-07-23 Thu 12:19] Currently for lentic to work reasonably the top
-;; level headings may contain at most one word.
+;; level headings must consist of exactly one word.
 
 ;;; Firstfirst:
 
