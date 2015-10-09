@@ -689,6 +689,12 @@ Much taken from `org-table-sum'."
 
 ;;; Lab:
 
+;; ** lob
+
+;; #+BEGIN_SRC emacs-lisp
+(org-babel-lob-ingest "~/org/mw-lob.org")
+;; #+END_SRC
+
 ;; ** Toggle-letter-case
 
 ;; #+BEGIN_SRC emacs-lisp
@@ -730,7 +736,6 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
 ;;set this to M-c
 (global-set-key "\M-C" #'toggle-letter-case)
 ;; #+END_SRC
-
 ;; ** ispell and org
 
 ;; [[gnus:nntp+news.gwene.org:gwene.org.emacsen.planet#x1-OJQzcaDHUGvOvCmRSA6fSHKcoWE@gwene.org][Email from Artur Malabarba: Endless Parentheses: Making Is]]
