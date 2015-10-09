@@ -107,6 +107,10 @@
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package ace-jump-zap
+  :config (progn (advice-remove
+                  'ace-jump-tree-breadth-first-construct #'ajz/maybe-limit-candidate-length)
+                 (advice-remove
+                  'ace-jump-populate-overlay-to-search-tree #'ajz/maybe-sort-candidate-list))
   :bind ("M-z" . ace-jump-zap-to-char))
 ;; #+END_SRC
 
