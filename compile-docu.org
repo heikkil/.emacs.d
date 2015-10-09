@@ -1,0 +1,31 @@
+* Create Documentation
+
+This section is about compiling a documentation of file init.el which
+is suitable for the release on github.
+
+** The Flow
+
+- Start with file init.el.
+- Switch to the org representation via lentic.
+- Export to a corresponding markup file.
+
+** Pull the Trigger
+
+#+CALL: extract-init-documentation()
+
+Call with C-c C-c in Org mode.
+
+** Technical Realization
+
+#+NAME:  extract-init-documentation
+#+BEGIN_SRC emacs-lisp
+(set-buffer "init.el")
+(lentic-garbage-collect-config)
+(unless lentic-config
+  (lentic-mode-create-from-init))
+(set-buffer "init.org")
+(org-export-to-file 'md "readme.md")
+#+END_SRC
+
+
+

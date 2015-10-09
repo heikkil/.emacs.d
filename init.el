@@ -1646,23 +1646,6 @@ Originates from gnu.emacs.help group 2006."
 
 ;;; Metatail:                                                         :noexport:
 
-;; ** Compile documentation of this file
-
-;; Call function mw-compile-readme.org-from-init.el to get a readme.org
-;; for file init.el suitable for github.com.
-
-;; #+BEGIN_SRC emacs-lisp
-(defun mw-compile-readme.org-from-init.el ()
-  "Create org-docu from init.el."
-  (interactive)
-  (set-buffer "init.el")
-  (lentic-garbage-collect-config)
-  (unless lentic-config
-    (lentic-mode-create-from-init))
-  (set-buffer "init.org")
-  (org-export-to-file 'md "readme.md"))
-;; #+END_SRC
-
 ;; # Local Variables:
 ;; # lentic-init: lentic-orgel-org-init
 ;; # End:
