@@ -114,8 +114,11 @@
   :bind ("M-z" . ace-jump-zap-to-char))
 ;; #+END_SRC
 
-;; Note the subtle difference that 'up-to-char' means to not delete the
-;; target char.
+;; The advice has been removed because it limits the available targets,
+;; which I find unfavorable.
+
+;; Note the subtle difference of 'zap-to-char' and 'zap-up-to-char'.
+;; The latter means to not delete the target char.
 
 ;; ** nyan-mode
 
