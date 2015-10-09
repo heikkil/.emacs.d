@@ -378,7 +378,7 @@
 
 ;; ** org                                                                 :org:
 
-;; *** org timestamp handling
+;; *** org agenda include inactive timestamps
 
 ;; #+BEGIN_SRC emacs-lisp
 (setq org-agenda-include-inactive-timestamps t) ;; 
@@ -520,7 +520,7 @@ Much taken from `org-table-sum'."
 ;; This function can be bound to a speed key.  See variable
 ;; org-speed-commands-user.
 
-;; *** org-protocol
+;; *** org-protocol for receiving from the outside
 
 ;; #+BEGIN_SRC emacs-lisp
 (require 'org-protocol)
@@ -529,7 +529,7 @@ Much taken from `org-table-sum'."
 ;; The org-protocol is useful for actions which come from the outside.
 ;; E.g. capturing from conkeror into org.
 
-;; *** hl-line in agenda
+;; *** highlight current line in agenda
 
 ;; From [[gnus:nntp+news.gmane.org:gmane.emacs.orgmode#87egnh7oos.fsf@mbork.pl][Email from Marcin Borkowski: Hl-line mode in agenda]]:
 
