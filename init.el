@@ -515,6 +515,16 @@
 (add-hook 'org-finalize-agenda-hook (lambda () (hl-line-mode 1)))
 ;; #+END_SRC
 
+;; *** save the o-press when opening the agenda
+
+;; #+BEGIN_SRC emacs-lisp
+(add-hook 'org-agenda-finalize-hook (lambda () (delete-other-windows)))
+;; #+END_SRC
+
+;; **** source
+
+;; http://mbork.pl/2015-09-26_A_few_org-agenda_hacks
+
 ;; *** org-screenshot
 
 ;; #+BEGIN_SRC emacs-lisp
