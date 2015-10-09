@@ -461,28 +461,6 @@
                  (beginning-of-line)))))))
 ;; #+END_SRC
 
-;; *** Mark a table column
-
-;; #+BEGIN_SRC emacs-lisp
-(defun mw-org-table-mark-column ()
-  "Set a region that spans the column with point if in a org-table.
-Much taken from `org-table-sum'."
-  (interactive)
-  (let (col beg)
-    (setq col (org-table-current-column))
-    (goto-char (org-table-begin))
-    (unless (re-search-forward "^[ \t]*|[^-]" nil t)
-      (user-error "No table data"))
-    (org-table-goto-column col)
-    (setq beg (point))
-    (goto-char (org-table-end))
-    (unless (re-search-backward "^[ \t]*|[^-]" nil t)
-      (user-error "No table data"))
-    (org-table-goto-column col)
-    (re-search-forward "|" nil t)
-    (set-mark beg)))
-;; #+END_SRC
-
 ;; *** org velocity
 
 ;; org velocity is a org-mode contrib extension.
