@@ -531,6 +531,16 @@
 (add-hook 'org-mode-hook (lambda () (local-unset-key (kbd "C-,"))))
 ;; #+END_SRC
 
+;; *** Jump from the agenda to the stars
+
+;; In the agenda 'tab' per default jumps to the beginning of the headline
+;; text.  For me it's a bit more convenient to jump to the beginning of
+;; the stars.  Fortunately there is org-agenda-after-show-hook.
+
+;; #+BEGIN_SRC emacs-lisp
+(push #'beginning-of-line org-agenda-after-show-hook)
+;; #+END_SRC
+
 ;; ** gnus
 
 ;; #+BEGIN_SRC emacs-lisp
