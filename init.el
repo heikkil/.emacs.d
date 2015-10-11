@@ -378,6 +378,12 @@
             (setq auto-mode-alist (append '(("\\.gp$" . gnuplot-mode)) auto-mode-alist))))
 ;; #+END_SRC
 
+;; ** hydra
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package hydra)
+;; #+END_SRC
+
 ;;; Fromsource:
 
 ;; ** org                                                                 :org:
@@ -1644,9 +1650,16 @@ Originates from gnu.emacs.help group 2006."
 (global-set-key (kbd "\C-z") mw-individual-keymap)
 ;; #+END_SRC
 
-;; Idea: the next two guys could go into a hydra. e.g. C-z +-
-;; (g lobal-set-key (kbd "M-n") 'next-buffer)
-;; (g lobal-set-key (kbd "M-p") 'previous-buffer)
+;; #+BEGIN_SRC emacs-lisp
+(defhydra hydra-zoom (global-map "C-x <right>")
+  "buffer-switch-entry-right"
+  ("<right>" next-buffer)
+  ("<left>" previous-buffer))
+(defhydra hydra-zoom (global-map "C-x <left>")
+  "buffer-switch-entry-left"
+  ("<right>" next-buffer)
+  ("<left>" previous-buffer))
+;; #+END_SRC
 
 ;; *** Dired key for alternate up
 
