@@ -651,6 +651,12 @@
 (require 'auxies-rest)
 ;; #+END_SRC
 
+;; ** Bindings
+
+;; #+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "C->") #'mw-recenter-jump-to-top)
+;; #+END_SRC
+
 ;; ** Auxies-eww
 
 ;; #+BEGIN_SRC emacs-lisp
