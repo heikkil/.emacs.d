@@ -551,7 +551,8 @@
 ;; the stars.  Fortunately there is org-agenda-after-show-hook.
 
 ;; #+BEGIN_SRC emacs-lisp
-(push #'beginning-of-line org-agenda-after-show-hook)
+(eval-after-load "org-agenda"
+  '(push #'beginning-of-line org-agenda-after-show-hook))
 ;; #+END_SRC
 
 ;; ** gnus
