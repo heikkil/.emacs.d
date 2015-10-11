@@ -13,12 +13,16 @@ is suitable for the release on github.
 
 #+CALL: extract-init-documentation()
 
+#+RESULTS:
+: readme.md
+
 Call with C-c C-c in Org mode.
 
 ** Technical Realization
 
 #+NAME:  extract-init-documentation
 #+BEGIN_SRC emacs-lisp
+(find-file "init.el")
 (set-buffer "init.el")
 (lentic-garbage-collect-config)
 (unless lentic-config
