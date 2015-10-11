@@ -1,4 +1,5 @@
 ;;; init.el --- personal emacs config file
+;; #+options: toc:2
 
 ;; Copyright (c) 2015 Marco Wahl <marcowahlsoft@gmail.com>
 
@@ -36,20 +37,20 @@
 
 ;; ** Use newest elisp-file
 
-;; don't load outdated byte code.
+;; Don't load outdated byte code.
 
 ;; #+BEGIN_SRC emacs-lisp
 (setq load-prefer-newer t)
 ;; #+END_SRC
 
-;; found the above in lunaryorn's config at
+;; Found the above in lunaryorn's config at
 ;; https://github.com/lunaryorn/.emacs.d/blob/master/init.el
 ;; [2015-05-18 Mon 21:56].
 
-;; ** Customize settings
+;; ** Customize Settings
 
-;; emacs allows to specify the storage-location of customization done via
-;; the emacs-customize interface.  the default is to keep the
+;; Emacs allows to specify the storage-location of customization done via
+;; the emacs-customize interface.  The default is to keep the
 ;; customization in the main init-file.
 
 ;; #+BEGIN_SRC emacs-lisp
@@ -57,7 +58,7 @@
 (load custom-file)
 ;; #+END_SRC
 
-;; the customization file gets read early to be able to overwrite.
+;; The customization file gets read early to be able to overwrite.
 
 ;; ** Org from source
 
@@ -81,7 +82,7 @@
 
 ;; ** use-package
 
-;; use-package allows convenient emacs package configuration.
+;; =use-package= allows convenient emacs package configuration.
 
 ;; #+BEGIN_SRC emacs-lisp
 (require 'use-package)
@@ -140,7 +141,7 @@
 
 ;; ** expand-region
 
-;; expand-region often expands the region to what i mean.
+;; =expand-region= often expands the region to what i mean.
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package expand-region
@@ -389,6 +390,7 @@
 ;; #+END_SRC
 
 ;; *** org babel
+
 ;; **** Jump to org block bound
 
 ;; The following bindings allow to find the next occurance of string '#+'
@@ -472,16 +474,16 @@
 (setq org-velocity-bucket (expand-file-name "bucket.org" org-directory))
 ;; #+END_SRC
 
-;; **** history
+;; **** History
 
-;; first i hung the C-c v in on org-mode-hook [2014-10-22 Wed 10:25] like
+;; First i hung the C-c v in on org-mode-hook [2014-10-22 Wed 10:25] like
 
 ;; #+BEGIN_SRC text
 ;; (add-hook 'org-mode-hook (lambda () (local-set-key (kbd "C-c v") 'org-velocity)))
 ;; #+END_SRC
 
 ;; which is nice but actually org-velocity is also capable of a global
-;; capturing into the org-velocity-bucket.  this is a further possibility
+;; capturing into the org-velocity-bucket.  This is a further possibility
 ;; to capture something.
 
 ;; I use the global key setting C-c v for org-velocity.
@@ -510,7 +512,7 @@
 ;; The org-protocol is useful for actions which come from the outside.
 ;; E.g. capturing from conkeror into org.
 
-;; *** highlight current line in agenda
+;; *** Highlight current line in agenda
 
 ;; From [[gnus:nntp+news.gmane.org:gmane.emacs.orgmode#87egnh7oos.fsf@mbork.pl][Email from Marcin Borkowski: Hl-line mode in agenda]]:
 
@@ -518,13 +520,13 @@
 (add-hook 'org-finalize-agenda-hook (lambda () (hl-line-mode 1)))
 ;; #+END_SRC
 
-;; *** save the o-press when opening the agenda
+;; *** Save the o-press when opening the agenda
 
 ;; #+BEGIN_SRC emacs-lisp
 (add-hook 'org-agenda-finalize-hook (lambda () (delete-other-windows)))
 ;; #+END_SRC
 
-;; **** source
+;; **** Source
 
 ;; http://mbork.pl/2015-09-26_A_few_org-agenda_hacks
 
@@ -535,7 +537,7 @@
 (require 'org-screenshot)
 ;; #+END_SRC
 
-;; *** disable key C-,
+;; *** Disable key C-,
 
 ;; Want C-, not bound to org-cycle-agenda-files, which is also on C-'
 ;; anyways.
@@ -686,6 +688,8 @@
 ;; #+END_SRC
 
 ;; ** emr
+
+;; emr is a refactoring tool.
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package emr
@@ -1181,7 +1185,7 @@ window."
 
 ;; ** Hidden mode line
 
-;; found the following mode line hiding function at
+;; Found the following mode line hiding function at
 ;; http://bzg.fr/emacs-hide-mode-line.html.  (Bastien)
 
 ;; #+BEGIN_SRC emacs-lisp
@@ -1244,18 +1248,18 @@ This binding shall make the close more convenient."
 ;; ** dired-x
 
 ;; #+BEGIN_SRC emacs-lisp
-     (add-hook 'dired-load-hook
-                (lambda ()
-                  (load "dired-x")
-                  ;; Set dired-x global variables here.  For example:
-                  ;; (setq dired-guess-shell-gnutar "gtar")
-                  ;; (setq dired-x-hands-off-my-keys nil)
-                  ))
-      (add-hook 'dired-mode-hook
-                (lambda ()
-                  ;; Set dired-x buffer-local variables here.  For example:
-                  ;; (dired-omit-mode 1)
-                  ))
+(add-hook 'dired-load-hook
+          (lambda ()
+            (load "dired-x")
+            ;; Set dired-x global variables here.  For example:
+            ;; (setq dired-guess-shell-gnutar "gtar")
+            ;; (setq dired-x-hands-off-my-keys nil)
+            ))
+(add-hook 'dired-mode-hook
+          (lambda ()
+            ;; Set dired-x buffer-local variables here.  For example:
+            ;; (dired-omit-mode 1)
+            ))
 ;; #+END_SRC
 
 ;; ** Delete blank lines also above
@@ -1316,10 +1320,10 @@ This binding shall make the close more convenient."
 
 ;; ** Appointments from org
 
-;; take into account the appointments for today from the org-agenda.
-;; note that this is done for the current org-agenda files.
+;; Take into account the appointments for today from the org-agenda.
+;; Note that this is done for the current org-agenda files.
 
-;; activate the appointment checking.
+;; Activate the appointment checking.
 
 ;; #+BEGIN_SRC emacs-lisp
 (appt-activate 1)
@@ -1526,7 +1530,7 @@ Originates from gnu.emacs.help group 2006."
 
 ;; zone is builtin.  zone can be used as signal.
 
-;; setting zone to stop after some seconds.
+;; Setting zone to stop after some seconds.
 
 ;; #+BEGIN_SRC emacs-lisp
 (setq  zone-timeout 5)
