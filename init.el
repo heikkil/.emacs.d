@@ -193,8 +193,8 @@
 
   (key-chord-define-global "ao" #'other-window)
   (key-chord-define-global "qq" #'other-frame)
-  (key-chord-define-global "vv" #'next-buffer)
-  (key-chord-define-global "VV" #'previous-buffer)
+  (key-chord-define-global "wv" #'next-buffer)
+  (key-chord-define-global "q;" #'previous-buffer)
   (key-chord-define-global "''" #'rope-read-mode)
   (key-chord-define-global "yy" #'mw-duplicate-line)
   (key-chord-define-global "uu" (lambda (&optional in-place)
@@ -1581,6 +1581,11 @@ Originates from gnu.emacs.help group 2006."
 (global-set-key (kbd "S-<f11>") 'mw-rotate-split)
 (global-set-key (kbd "<f12>") 'other-frame)
 
+;; the following collides with parmode:
+;; (global-set-key (kbd "C-M-<right>") #'next-buffer)
+;; (global-set-key (kbd "C-M-<left>") #'previous-buffer)
+;; [2015-10-12 Mon 15:03] trying key chords.
+
 (global-set-key (kbd "<XF86AudioLowerVolume>") #'emms-volume-lower)
 (global-set-key (kbd "<XF86AudioRaiseVolume>") #'emms-volume-raise)
 (global-set-key (kbd "<XF86AudioMute>") #'mw-sound-0%)
@@ -1672,6 +1677,11 @@ Originates from gnu.emacs.help group 2006."
   "Personal convenience keymap.")
 (global-set-key (kbd "\C-z") mw-individual-keymap)
 ;; #+END_SRC
+
+;; ***** hydras
+
+;; This was thought to switch buffers quickly.  The overhead at start is
+;; too much for me though.  [2015-10-12 Mon 14:55]
 
 ;; #+BEGIN_SRC emacs-lisp
 (defhydra hydra-zoom (global-map "C-x <right>")
