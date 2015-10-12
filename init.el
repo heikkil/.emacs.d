@@ -655,14 +655,25 @@
 ;; #+END_SRC
 
 ;; #+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "C->") #'mw-recenter-jump-to-top)
+;; #+END_SRC
+
+;; ** Auxies
+
+;; #+BEGIN_SRC emacs-lisp
 (push "~/p/elisp/mw/auxies" load-path)
 (require 'auxies-rest)
 ;; #+END_SRC
 
-;; ** Bindings
+;; ** Hacks
 
 ;; #+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "C->") #'mw-recenter-jump-to-top)
+(push "~/p/elisp/mw/hacks" load-path)
+(require 'hacks)
+;; #+END_SRC
+
+;; #+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "C-\"") #'org-cycle-agenda-files-backwards)
 ;; #+END_SRC
 
 ;; ** Auxies-eww
