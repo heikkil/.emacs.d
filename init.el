@@ -724,6 +724,18 @@
 (org-babel-lob-ingest "~/org/mw-lob.org")
 ;; #+END_SRC
 
+;; ** linum experiments                                                 :linum:
+
+;; #+BEGIN_SRC emacs-lisp
+(defun delta (line pointline)
+  (format "%d" (- line pointline)))
+
+(defun delta5 (line pointline)
+  (format "%5d" (- line pointline)))
+
+(setq linum-format 'delta5)
+;; #+END_SRC
+
 ;; ** Toggle-letter-case
 
 ;; #+BEGIN_SRC emacs-lisp
