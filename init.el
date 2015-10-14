@@ -213,6 +213,7 @@
   (key-chord-define-global "xx" #'org-edit-special)
   (key-chord-define-global "zz" #'org-edit-src-exit)
   (key-chord-define-global "c8" #'calc-embedded-word)
+  (key-chord-define-global "`1" #'org-previous-visible-heading)
 )  ;; recall key-chord-unset-global for undef a key-chord.
 ;; #+END_SRC
 
@@ -1579,7 +1580,7 @@ Originates from gnu.emacs.help group 2006."
 ;; **** Rest
 
 ;; #+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "<f1>") (lambda () (interactive))) ;; e.g. leave zone effortless.
+(global-set-key (kbd "<f1>") #'ignore) ;; e.g. for leaving the zone.
 (global-set-key (kbd "<f6>") 'flyspell-mode)
 (global-set-key (kbd "<f7>") 'cycle-ispell-language-and-input-method)
 (global-set-key (kbd "M-<f7>") 'mw-cycle-ispell-completion-dict)
