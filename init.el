@@ -563,6 +563,13 @@
   '(push #'beginning-of-line org-agenda-after-show-hook))
 ;; #+END_SRC
 
+;; *** Delete other windows after jump from agenda
+
+;; #+BEGIN_SRC emacs-lisp
+(eval-after-load "org-agenda"
+  '(push #'delete-other-windows org-agenda-after-show-hook))
+;; #+END_SRC
+
 ;; ** gnus
 
 ;; #+BEGIN_SRC emacs-lisp
