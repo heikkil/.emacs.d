@@ -927,7 +927,8 @@ window."
                                         ;[2014-06-02 Mon 15:14] this
                                         ;line played the sound also.
                                         ;But sychronously.
-          (zone))
+          ;; (zone)
+          )
       (progn
         (setq mw-podomoros-completed-in-session
               (1+ mw-podomoros-completed-in-session))
@@ -940,7 +941,8 @@ window."
          (format-time-string "%T"))
         (start-process "play-a-sound" "*play-a-sound-output*"
                        "mplayer" (expand-file-name "~/media/sound/human/shutdown.wav"))
-        (zone)))))
+        ;; (zone)
+        ))))
 
 (setq mw-org-pause-state nil) ; global.  TODO: can this be more locally, please?
 
