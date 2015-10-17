@@ -664,6 +664,7 @@
 
 ;; #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "C->") #'mw-recenter-jump-to-top)
+(global-set-key (kbd "C-<") #'avy-goto-line)
 ;; #+END_SRC
 
 ;; ** Auxies
