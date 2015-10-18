@@ -747,6 +747,10 @@
 (defun delta5 (line pointline)
   (format "%5d" (- line pointline)))
 
+(defun the-line (line)
+  (format "%4d" line))
+
+(setq linum-format 'the-line)
 (setq linum-format 'delta5)
 ;; #+END_SRC
 
