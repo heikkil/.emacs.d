@@ -98,8 +98,8 @@
 ;; #+BEGIN_SRC emacs-lisp
 (use-package avy
   :ensure t
-  :bind ("C-," . avy-goto-char)
-  :bind( "C-<" . avy-goto-line))
+  :bind (("C-," . avy-goto-char)
+         ("C-<" . avy-goto-line)))
 ;; #+END_SRC
 
 ;; ** ace-jump-mode
