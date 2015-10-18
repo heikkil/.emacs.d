@@ -714,8 +714,10 @@
 
 ;;; LabPkgs:
 
+;; ** sotlisp
 
 ;; #+BEGIN_SRC emacs-lisp
+(use-package sotlisp)
 ;; #+END_SRC
 
 ;; ** emr
