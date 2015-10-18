@@ -102,6 +102,20 @@
          ("C-<" . avy-goto-line)))
 ;; #+END_SRC
 
+;; ** page-break-lines
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package page-break-lines
+  :ensure t)
+;; #+END_SRC
+
+;; ** form-feed-mode
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package form-feed
+  :ensure t)
+;; #+END_SRC
+
 ;; ** ace-jump-mode
 
 ;; Taken from https://github.com/jwiegley/use-package.
