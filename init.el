@@ -90,6 +90,18 @@
 
 ;;; Packages:
 
+;; ** avy
+
+;; =avy= has functionality similar to ace-jump-mode.  I read that avy is
+;; the variant that gets maintained.
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package avy
+  :ensure t
+  :bind ("C-," . avy-goto-char)
+  :bind( "C-<" . avy-goto-line))
+;; #+END_SRC
+
 ;; ** ace-jump-mode
 
 ;; Taken from https://github.com/jwiegley/use-package.
@@ -664,7 +676,6 @@
 
 ;; #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "C->") #'mw-recenter-jump-to-top)
-(global-set-key (kbd "C-<") #'avy-goto-line)
 ;; #+END_SRC
 
 ;; ** Auxies
@@ -703,14 +714,8 @@
 
 ;;; LabPkgs:
 
-;; ** avy
-
-;; avy has functionality similar to ace-jump-mode.  These days I read
-;; that avy is the variant that gets maintained.
 
 ;; #+BEGIN_SRC emacs-lisp
-(use-package avy
-  :bind ("C-," . avy-goto-char))
 ;; #+END_SRC
 
 ;; ** emr
