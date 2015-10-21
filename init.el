@@ -696,7 +696,7 @@
 ;; #+END_SRC
 
 ;; #+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "C->") #'mw-recenter-jump-to-top)
+(global-set-key (kbd "C-<") #'mw-recenter-jump-to-top)
 ;; #+END_SRC
 
 ;; ** Auxies
