@@ -66,6 +66,9 @@
 (let ((orgmodelocation (expand-file-name "~/p/org/org-mode")))
   (push (concat orgmodelocation "/lisp") load-path)
   (push (concat orgmodelocation "/contrib/lisp") load-path)
+  (eval-after-load "org-agenda"
+    '(progn
+       (org-defkey org-agenda-mode-map (kbd "Y") 'org-agenda)))
   (eval-after-load 'info
     '(progn (info-initialize)
   	    (add-to-list
