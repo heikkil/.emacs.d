@@ -98,8 +98,12 @@
 ;; #+BEGIN_SRC emacs-lisp
 (use-package avy
   :ensure t
-  :bind (("C-," . avy-goto-char)
-         ("C-<" . avy-goto-line)))
+  :bind (("C-." . avy-goto-char)
+         ("C-," . avy-goto-line))
+  :config (setq avy-keys
+                '(?e ?t ?h ?u ?n ?o ?s ?a ?d ?i ?-
+                     ?. ?c ?, ?r ?l ?' ?p ?y ?f ?g
+                     ?m ?j ?b ?k ?w ?q ?v ?x ?z)))
 ;; #+END_SRC
 
 ;; ** page-break-lines
