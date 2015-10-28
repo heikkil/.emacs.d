@@ -753,6 +753,20 @@
    :bind ("M-RET" . emr-show-refactor-menu))
 ;; #+END_SRC
 
+;; ** beacon
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package beacon
+:ensure t)
+;; #+END_SRC
+
+;; ** elmacro
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package elmacro
+:ensure t)
+;; #+END_SRC
+
 ;;; Lab:
 
 ;; ** lob
