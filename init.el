@@ -418,6 +418,40 @@
 (use-package hydra)
 ;; #+END_SRC
 
+;;; LabPkgs:
+
+;; ** sotlisp
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package sotlisp)
+;; #+END_SRC
+
+;; ** emr
+
+;; emr is a refactoring tool.
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package emr
+   :config (progn
+            ;; (autoload 'emr-show-refactor-menu "emr")
+             (eval-after-load "emr" '(emr-initialize)))
+   :bind ("M-RET" . emr-show-refactor-menu))
+;; #+END_SRC
+
+;; ** beacon
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package beacon
+:ensure t)
+;; #+END_SRC
+
+;; ** elmacro
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package elmacro
+:ensure t)
+;; #+END_SRC
+
 ;;; Fromsource:
 
 ;; ** org                                                                 :org:
@@ -731,40 +765,6 @@
 (require 'region-linum)
 
 (global-set-key (kbd "<f5>") #'region-linum-toggle)
-;; #+END_SRC
-
-;;; LabPkgs:
-
-;; ** sotlisp
-
-;; #+BEGIN_SRC emacs-lisp
-(use-package sotlisp)
-;; #+END_SRC
-
-;; ** emr
-
-;; emr is a refactoring tool.
-
-;; #+BEGIN_SRC emacs-lisp
-(use-package emr
-   :config (progn
-            ;; (autoload 'emr-show-refactor-menu "emr")
-             (eval-after-load "emr" '(emr-initialize)))
-   :bind ("M-RET" . emr-show-refactor-menu))
-;; #+END_SRC
-
-;; ** beacon
-
-;; #+BEGIN_SRC emacs-lisp
-(use-package beacon
-:ensure t)
-;; #+END_SRC
-
-;; ** elmacro
-
-;; #+BEGIN_SRC emacs-lisp
-(use-package elmacro
-:ensure t)
 ;; #+END_SRC
 
 ;;; Lab:
