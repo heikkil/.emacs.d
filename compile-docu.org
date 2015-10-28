@@ -1,13 +1,7 @@
 * Create Documentation
 
-This section is about compiling a documentation of file init.el which
-is suitable for the release on github.
-
-** The Flow
-
-- Start with file init.el.
-- Switch to the org representation via lentic.
-- Export to a corresponding markup file.
+This section is about compiling an extra documentation from file init.el.
+The result is suitable e.g. for github.
 
 ** Pull the Trigger
 
@@ -30,6 +24,12 @@ Call with C-c C-c in Org mode.
 (set-buffer "init.org")
 (org-export-to-file 'md "readme.md")
 #+END_SRC
+
+** Create Documentation (Human Style)
+
+- Start with file init.el.
+- Switch to the org representation via lentic.
+- Export to a corresponding markup file.
 
 
 
