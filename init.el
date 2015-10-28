@@ -242,6 +242,7 @@
   (key-chord-define-global "g8" #'delete-window) ; for cherry keyboard
   (key-chord-define-global "kk" #'ido-kill-buffer)
   (key-chord-define-global "m1" #'magit-status)
+  (key-chord-define-global "y5" #'org-agenda)
   (key-chord-define-global "xx" #'org-edit-special)
   (key-chord-define-global "zz" #'org-edit-src-exit)
   (key-chord-define-global "c8" #'calc-embedded-word)
