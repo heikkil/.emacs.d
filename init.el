@@ -444,7 +444,8 @@
 ;; #+BEGIN_SRC emacs-lisp
 (use-package beacon
   :ensure t
-  :config (beacon-mode))
+  :defer 1
+  :config (beacon-mode 1))
 ;; #+END_SRC
 
 ;; ** elmacro
