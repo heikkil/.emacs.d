@@ -443,7 +443,8 @@
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package beacon
-:ensure t)
+  :ensure t
+  :config (beacon-mode))
 ;; #+END_SRC
 
 ;; ** elmacro
