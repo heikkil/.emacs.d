@@ -68,7 +68,8 @@
   (push (concat orgmodelocation "/contrib/lisp") load-path)
   (eval-after-load "org-agenda"
     '(progn
-       (org-defkey org-agenda-mode-map (kbd "Y") 'org-agenda)))
+       (org-defkey org-agenda-mode-map (kbd "Y") #'org-agenda)
+       (org-defkey org-agenda-mode-map (kbd "C-,") #'ignore)))
   (eval-after-load 'info
     '(progn (info-initialize)
   	    (add-to-list
