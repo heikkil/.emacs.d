@@ -444,7 +444,7 @@
 ;; #+BEGIN_SRC emacs-lisp
 (use-package beacon
   :ensure t
-  :defer 1
+  :defer 1 ; else can't start as daemon like /home/b/p/emacs-build/lib-src/emacsclient -c -n -a \"\"
   :config (beacon-mode 1))
 ;; #+END_SRC
 
