@@ -989,10 +989,14 @@ window."
         (message
          "Tomato done at %s.  Il est vraiment temps de prendre une pause."
          (format-time-string "%T"))
+        ;; (start-process "play-a-sound" "*play-a-sound-output*"
+        ;;                "mplayer" (expand-file-name "~/media/sound/human/shutdown.wav"))
         (start-process "play-a-sound" "*play-a-sound-output*"
-                       "mplayer" (expand-file-name "~/media/sound/human/shutdown.wav"))
-        ;; (zone)
-        ))))
+                       "espeak" "-v"
+                       "en"
+                       ;; "en-swedish"
+                       "the tomato is so totally over.  take a rest, please.")
+        (zone-nyan-preview)))))
 
 (setq mw-org-pause-state nil) ; global.  TODO: can this be more locally, please?
 
