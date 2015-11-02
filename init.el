@@ -1621,12 +1621,13 @@ Originates from gnu.emacs.help group 2006."
 
 ;; ** Zone
 
-;; zone is builtin.  zone can be used as signal.
+;; zone is builtin.  I use zone as signal.
 
-;; Setting zone to stop after some seconds.
+;; Set =zone-timeout= to a number to have zone stop after =zone-timeout=
+;; seconds.
 
 ;; #+BEGIN_SRC emacs-lisp
-(setq  zone-timeout 5)
+(setq  zone-timeout 300)
 ;; #+END_SRC
 
 ;; ** Keysettings
