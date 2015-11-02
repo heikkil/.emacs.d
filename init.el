@@ -992,10 +992,13 @@ window."
         ;; (start-process "play-a-sound" "*play-a-sound-output*"
         ;;                "mplayer" (expand-file-name "~/media/sound/human/shutdown.wav"))
         (start-process "play-a-sound" "*play-a-sound-output*"
-                       "espeak" "-v"
-                       "en"
+                       "espeak"
+                       "-v"
                        ;; "en-swedish"
-                       "the tomato is so totally over.  take a rest, please.")
+                       "en"
+                       "-s"
+                       "125" ;; word speed
+                       "The tomato rings.  Take a rest, now, please.")
         (zone-nyan-preview)))))
 
 (setq mw-org-pause-state nil) ; global.  TODO: can this be more locally, please?
