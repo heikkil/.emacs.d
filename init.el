@@ -110,6 +110,17 @@
                      ?m ?j ?b ?k ?w ?q ?v ?x ?z)))
 ;; #+END_SRC
 
+;; ** on-screen
+
+;; Adds a visual symbol about the previous page after scrolling a page.
+;; This might help sometimes.  Try together with rope-read.
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package on-screen
+  :ensure t
+  :config (global-on-screen-mode))
+;; #+END_SRC
+
 ;; ** page-break-lines
 
 ;; #+BEGIN_SRC emacs-lisp
