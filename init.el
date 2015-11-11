@@ -1739,11 +1739,13 @@ Originates from gnu.emacs.help group 2006."
     (define-key map "P" #'org-toggle-pretty-entities)
     (define-key map "j" #'org-clock-goto)
     (define-key map "z" #'mw-auxies-delete-to-point-max)
-    (define-key map "k" #'key-chord-mode)
+    (define-key map "k" #'key-chord-mode) ; sometimes i need turning it off and on again.
     (define-key map "c" #'calendar)
     (define-key map "q" #'bury-buffer)
     (define-key map "n" (lambda () "Append buffer-filename to kill-ring."
-                          (interactive) (kill-new buffer-file-name)))
+                          (interactive)
+                          (kill-new buffer-file-name)
+                          (message "%s entered kill-ring" buffer-file-name)))
     (define-key map "u" #'unexpand-abbrev)
     (define-key map "i" #'ido-hacks-mode)
     (define-key map "w" #'org-refile-goto-last-stored)
