@@ -94,6 +94,16 @@
 
 ;;; Packages:
 
+;; ** wrap-region
+
+;; Decorate region for certain key presses.
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package wrap-region
+  :ensure t
+  :config (wrap-region-global-mode t))
+;; #+END_SRC
+
 ;; ** avy
 
 ;; =avy= has functionality similar to ace-jump-mode.  I read that avy is
