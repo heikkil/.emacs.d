@@ -1594,13 +1594,14 @@ Originates from gnu.emacs.help group 2006."
 ;; Use the timeclock keymap as noted in the timeclock source.
 
 ;; #+BEGIN_SRC emacs-lisp
-(define-key ctl-x-map "ti" 'timeclock-in)
-(define-key ctl-x-map "to" 'timeclock-out)
-(define-key ctl-x-map "tc" 'timeclock-change)
-(define-key ctl-x-map "tr" 'timeclock-reread-log)
-(define-key ctl-x-map "tu" 'timeclock-update-mode-line)
-(define-key ctl-x-map "tw" 'timeclock-when-to-leave-string)
-(define-key ctl-x-map "tt" 'timeclock-mode-line-display)
+(define-key ctl-x-map "ti" #'timeclock-in)
+(define-key ctl-x-map "to" #'timeclock-out)
+(define-key ctl-x-map "tc" #'timeclock-change)
+(define-key ctl-x-map "tr" #'timeclock-reread-log)
+(define-key ctl-x-map "tu" #'timeclock-update-mode-line)
+(define-key ctl-x-map "tv" #'timeclock-visit-timelog)
+(define-key ctl-x-map "tw" #'timeclock-when-to-leave-string)
+(define-key ctl-x-map "tt" #'timeclock-mode-line-display)
 ;; #+END_SRC
 
 ;; ** Diary
