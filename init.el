@@ -277,8 +277,16 @@
 ;; Very helpful mode for editing elisp.
 
 ;; #+BEGIN_SRC emacs-lisp
-(use-package paredit
-  :config (add-hook 'emacs-lisp-mode-hook (lambda () (paredit-mode t))))
+;; (use-package paredit
+;;   :config (add-hook 'emacs-lisp-mode-hook (lambda () (paredit-mode t))))
+;; #+END_SRC
+
+;; ** smartparen
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package smartparens
+  :ensure t
+  :config (turn-on-smartparens-mode))
 ;; #+END_SRC
 
 ;; ** gnorb
