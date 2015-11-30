@@ -1663,11 +1663,14 @@ Originates from gnu.emacs.help group 2006."
 (setq  zone-timeout 300)
 ;; #+END_SRC
 
-;; ** Keysettings
+;;; Keysettings:
+;; :PROPERTIES:
+;; :ID:       87eef969-ff13-4812-9c4e-2c79f9c3f7c6
+;; :END:
 
-;; *** Global keys
+;; ** Global keys
 
-;; **** Rest
+;; *** Rest
 
 ;; #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "<f1>") #'ignore) ;; e.g. for leaving the zone.
@@ -1714,7 +1717,7 @@ Originates from gnu.emacs.help group 2006."
            (org-insert-time-stamp nil t t))))))
 ;; #+END_SRC
 
-;; **** org
+;; *** org
 
 ;; #+BEGIN_SRC emacs-lisp
 (global-set-key "\C-cl" 'org-store-link)
@@ -1727,7 +1730,7 @@ Originates from gnu.emacs.help group 2006."
 (global-set-key (kbd "C-c v") 'org-velocity)
 ;; #+END_SRC
 
-;; **** Following org-mode links given in other modes
+;; *** Following org-mode links given in other modes
 
 ;; To be able to follow an org-mode link in an arbitrary file can be
 ;; nice, e.g. to get to the original from within a tangled file.
@@ -1736,7 +1739,7 @@ Originates from gnu.emacs.help group 2006."
 (global-set-key (kbd "C-c o") 'org-open-at-point-global)
 ;; #+END_SRC
 
-;; **** Individual keymap
+;; *** Individual keymap
 
 ;; #+BEGIN_SRC emacs-lisp
 (defvar mw-individual-keymap
@@ -1781,7 +1784,7 @@ Originates from gnu.emacs.help group 2006."
 (global-set-key (kbd "\C-z") mw-individual-keymap)
 ;; #+END_SRC
 
-;; ***** hydras
+;; **** hydras
 
 ;; This was thought to switch buffers quickly.  The overhead at start is
 ;; too much for me though.  [2015-10-12 Mon 14:55]
@@ -1797,7 +1800,7 @@ Originates from gnu.emacs.help group 2006."
   ("<left>" previous-buffer))
 ;; #+END_SRC
 
-;; *** Dired key for alternate up
+;; ** Dired key for alternate up
 
 ;; #+BEGIN_SRC emacs-lisp
 (add-hook
