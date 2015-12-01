@@ -670,6 +670,18 @@
   '(push #'delete-other-windows org-agenda-after-show-hook))
 ;; #+END_SRC
 
+;; *** Speed commands also on first char
+
+;; #+BEGIN_SRC emacs-lisp
+(setq org-use-speed-commands
+      (lambda () (or (= 1 (point))
+                (and (looking-at org-outline-regexp)
+                     (looking-back "^\**")))))
+;; #+END_SRC
+
+;; Taken the looking around code from the documentation of
+;; ~org-use-speed-commands~.
+
 ;; ** gnus
 
 ;; #+BEGIN_SRC emacs-lisp
