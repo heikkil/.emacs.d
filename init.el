@@ -1744,6 +1744,7 @@ Originates from gnu.emacs.help group 2006."
 ;; #+BEGIN_SRC emacs-lisp
 (defvar mw-individual-keymap
   (let ((map (make-sparse-keymap)))
+    (define-key map "l" #'clone-indirect-buffer)
     (define-key map "a" #'mw-append-to-scratch)
     (define-key map "r" #'mw-auxies-toggle-default-frame-reverse-state)
     (define-key map "d" #'mw-display-mode-line-as-message)
