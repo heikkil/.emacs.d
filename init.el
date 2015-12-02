@@ -227,7 +227,7 @@
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package magit
-  :bind (("C-c j" . magit-status))
+  :ensure t
   :config (define-key magit-file-section-map "C" 'magit-commit-add-log)) ;; "C" also on filename-lines
 ;; #+END_SRC
 
