@@ -1793,6 +1793,7 @@ Originates from gnu.emacs.help group 2006."
     (define-key map "(" (lambda () (interactive) (paredit-mode)))
     (define-key map ")" (lambda () (interactive) (disable-paredit-mode)))
     (define-key map "W" #'calc-embedded-word)
+    (define-key map "s" (lambda () (interactive) (switch-to-buffer "*scratch*")))
     map)
   "Personal convenience keymap.")
 (global-set-key (kbd "\C-z") mw-individual-keymap)
