@@ -1316,15 +1316,6 @@ window."
     "  REASON: eww-mode-map is not bound yet.")))
 ;; #+END_SRC
 
-;; ** External Browser
-
-;; #+BEGIN_SRC emacs-lisp
-(setq shr-external-browser 'browse-url-generic)
-;; #+END_SRC
-
-;; The setting of browse-url-generic-program has been done via customize.
-;; [2015-10-06 Tue 15:04]: set to conkeror.sh.
-
 ;; ** Hidden mode line
 
 ;; Found the following mode line hiding function at
