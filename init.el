@@ -102,7 +102,11 @@
 ;; #+BEGIN_SRC emacs-lisp
 (use-package wrap-region
   :ensure t
-  :config (wrap-region-global-mode t))
+  :config (progn
+            (wrap-region-global-mode t)
+            (wrap-region-add-wrapper "`" "'")
+            (wrap-region-add-wrapper "~" "~" nil 'org-mode)
+            (wrap-region-add-wrapper "=" "=" nil 'org-mode)))
 ;; #+END_SRC
 
 ;; ** avy
