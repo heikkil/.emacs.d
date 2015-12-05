@@ -35,9 +35,7 @@
 (setq debug-on-error t)
 ;; #+END_SRC
 
-;; ** Use newest elisp-file
-
-;; Don't load outdated byte code.
+;; ** Don't load outdated byte code
 
 ;; #+BEGIN_SRC emacs-lisp
 (setq load-prefer-newer t)
@@ -51,7 +49,7 @@
 
 ;; Emacs allows to specify the storage-location of customization done via
 ;; the emacs-customize interface.  The default is to keep the
-;; customization in the main init-file.
+;; customization in the init-file.
 
 ;; #+BEGIN_SRC emacs-lisp
 (setq custom-file "~/.emacs.d/init/.emacs-custom.el")
@@ -83,6 +81,9 @@
 ;; #+BEGIN_SRC emacs-lisp
 (package-initialize)
 ;; #+END_SRC
+
+;; '(package-initialize)' gets added automatically according to
+;; [[help:package-initialize]].  But maybe too late.
 
 ;; ** use-package
 
