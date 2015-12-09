@@ -267,14 +267,14 @@
   (key-chord-define-global "p4" #'delete-other-windows)
   (key-chord-define-global "g7" #'delete-window) ; for kinesis keyboard
   (key-chord-define-global "g8" #'delete-window) ; for cherry keyboard
-  (key-chord-define-global "kk" #'ido-kill-buffer)
   (key-chord-define-global "m1" #'magit-status)
   (key-chord-define-global "y5" #'org-agenda)
   (key-chord-define-global "xx" #'org-edit-special)
   (key-chord-define-global "zz" #'org-edit-src-exit)
   (key-chord-define-global "c8" #'calc-embedded-word)
   (key-chord-define-global "`1" #'org-previous-visible-heading)
-)  ;; recall key-chord-unset-global for undef a key-chord.
+  (key-chord-define-global "bb" #'mw-exchange-to-buddy)
+)  ;; recall (key-chord-unset-global "kk") for undef a key-chord.
 ;; #+END_SRC
 
 ;; ** paredit
