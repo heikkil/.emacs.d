@@ -489,6 +489,30 @@
 :ensure t)
 ;; #+END_SRC
 
+;; ** elisp-slime-nav
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package elisp-slime-nav
+:ensure t)
+;; #+END_SRC
+
+;; ** git-auto-commit
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package git-auto-commit
+:ensure t
+:config (git-auto-commit-mode))
+;; #+END_SRC
+
+;; ** git-timemachine
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package git-timemachine
+:ensure t)
+;; #+END_SRC
+
+;; Start git-timemachine on a file to travel time on it.
+
 ;;; Fromsource:
 
 ;; ** org                                                                 :org:
