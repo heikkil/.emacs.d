@@ -848,6 +848,25 @@
 (org-babel-lob-ingest "~/org/mw-lob.org")
 ;; #+END_SRC
 
+;; ** Switch buffers between frames
+
+;; Found at [[http://www.emacswiki.org/emacs/SwitchingBuffers#toc5][EmacsWiki: Switching Buffers]] provided by YoniRabkinKatzenell
+;; AFAICS.  I think this can be useful for me.
+
+;; #+BEGIN_SRC emacs-lisp
+(defun yrk-switch-buffers-between-frames ()
+  "yrk-switch-buffers-between-frames switches the buffers between the two last frames"
+  (interactive)
+  (let ((this-frame-buffer nil)
+        (other-frame-buffer nil))
+    (setq this-frame-buffer (car (frame-parameter nil 'buffer-list)))
+    (other-frame 1)
+    (setq other-frame-buffer (car (frame-parameter nil 'buffer-list)))
+    (switch-to-buffer this-frame-buffer)
+    (other-frame 1)
+    (switch-to-buffer other-frame-buffer)))
+;; #+END_SRC
+
 ;; ** linum experiments                                                 :linum:
 
 ;; #+BEGIN_SRC emacs-lisp
