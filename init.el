@@ -1851,4 +1851,4 @@ Originates from gnu.emacs.help group 2006."
 ;; # lentic-init: lentic-orgel-org-init
 ;; # End:
 
-;;; init:.el ends here
+;;; init.el ends here
