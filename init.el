@@ -273,8 +273,8 @@
   (key-chord-define-global "zz" #'org-edit-src-exit)
   (key-chord-define-global "c8" #'calc-embedded-word)
   (key-chord-define-global "`1" #'org-previous-visible-heading)
-  (key-chord-define-global "bb" #'mw-exchange-to-buddy)
-)  ;; recall (key-chord-unset-global "kk") for undef a key-chord.
+  (key-chord-define-global "/=" #'mw-exchange-to-buddy)
+)  ;; recall (key-chord-unset-global "bb") for undef a key-chord.
 ;; #+END_SRC
 
 ;; ** paredit
@@ -496,12 +496,12 @@
 :ensure t)
 ;; #+END_SRC
 
-;; ** git-auto-commit
+;; ** git-auto-commit-mode
 
 ;; #+BEGIN_SRC emacs-lisp
-(use-package git-auto-commit
+(use-package git-auto-commit-mode
 :ensure t
-:config (git-auto-commit-mode))
+:config (git-auto-commit-mode t))
 ;; #+END_SRC
 
 ;; ** git-timemachine
@@ -652,13 +652,14 @@
 ;; From [[gnus:nntp+news.gmane.org:gmane.emacs.orgmode#87egnh7oos.fsf@mbork.pl][Email from Marcin Borkowski: Hl-line mode in agenda]]:
 
 ;; #+BEGIN_SRC emacs-lisp
-(add-hook 'org-finalize-agenda-hook (lambda () (hl-line-mode 1)))
+(add-hook 'org-agenda-finalize-hook (lambda () (hl-line-mode 1)))
 ;; #+END_SRC
 
 ;; *** Save the o-press when opening the agenda
 
 ;; #+BEGIN_SRC emacs-lisp
-(add-hook 'org-agenda-finalize-hook (lambda () (delete-other-windows)))
+;(add-hook 'org-agenda-finalize-hook (lambda () (delete-other-windows)))
+(setq org-agenda-window-setup 'only-window)     
 ;; #+END_SRC
 
 ;; **** Source
@@ -750,6 +751,44 @@
           (add-to-list
            'Info-directory-list
            (expand-file-name "~/p/ledger/doc"))))
+
+(setq ledger-reports
+      '(("bal" "ledger -f %(ledger-file) bal")
+        ("monthly bal" "ledger -p \"monthly from jan to jul\" -f %(ledger-file) bal")
+        ("bal-2015" "ledger -p 2015 -f %(ledger-file) bal")
+        ("bal-2014" "ledger -p 2014 -f %(ledger-file) bal")
+        ("bal-2014-01" "ledger -p jan -f %(ledger-file) bal")
+        ("bal-2014-02" "ledger -p feb -f %(ledger-file) bal")
+        ("bal-2014-03" "ledger -p mar -f %(ledger-file) bal")
+        ("bal-2014-04" "ledger -p apr -f %(ledger-file) bal")
+        ("bal-2014-05" "ledger -p may -f %(ledger-file) bal")
+        ("bal-2014-06" "ledger -p jun -f %(ledger-file) bal")
+        ("bal-2014-07" "ledger -p jul -f %(ledger-file) bal")
+        ("bal-2014-08" "ledger -p aug -f %(ledger-file) bal")
+        ("bal-2014-09" "ledger -p sep -f %(ledger-file) bal")
+        ("bal-2014-10" "ledger -p oct -f %(ledger-file) bal")
+        ("bal-2014-11" "ledger -p nov -f %(ledger-file) bal")
+        ("bal-2014-12" "ledger -p dec -f %(ledger-file) bal")
+        ("bal01" "ledger -p jan -f %(ledger-file) bal")
+        ("bal02" "ledger -p feb -f %(ledger-file) bal")
+        ("bal03" "ledger -p mar -f %(ledger-file) bal")
+        ("bal04" "ledger -p apr -f %(ledger-file) bal")
+        ("bal05" "ledger -p may -f %(ledger-file) bal")
+        ("bal06" "ledger -p jun -f %(ledger-file) bal")
+        ("bal07" "ledger -p jul -f %(ledger-file) bal")
+        ("bal08" "ledger -p aug -f %(ledger-file) bal")
+        ("bal09" "ledger -p sep -f %(ledger-file) bal")
+        ("bal10" "ledger -p oct -f %(ledger-file) bal")
+        ("bal11" "ledger -p nov -f %(ledger-file) bal")
+        ("bal12" "ledger -p dec -f %(ledger-file) bal")
+        ("Vermögen Feb" "ledger -p feb -f %(ledger-file) bal Vermögen")
+        ("Barkasse" "ledger -f %(ledger-file) bal Vermögen:Barkasse")
+        ("Giro" "ledger -f %(ledger-file) bal Vermögen:GiroPB")
+        ("Giro up to date" "ledger -f %(ledger-file) --end 2014-11-18 bal Vermögen:GiroPB")
+        ("reg" "ledger -f %(ledger-file) reg")
+        ("payee" "ledger -f %(ledger-file) reg @%(payee)")
+        ("account" "ledger -f %(ledger-file) reg %(account)")
+        ("bal toplevel only" "ledger -f %(ledger-file) --depth 1 bal")))
 ;; #+END_SRC
 
 ;; ** emms
@@ -1795,6 +1834,7 @@ Originates from gnu.emacs.help group 2006."
 ;; #+BEGIN_SRC emacs-lisp
 (defvar mw-individual-keymap
   (let ((map (make-sparse-keymap)))
+    (define-key map "g" #'git-auto-commit-mode)
     (define-key map "l" #'clone-indirect-buffer)
     (define-key map "a" #'mw-append-to-scratch)
     (define-key map "r" #'mw-auxies-toggle-default-frame-reverse-state)
@@ -1870,4 +1910,4 @@ Originates from gnu.emacs.help group 2006."
 ;; # lentic-init: lentic-orgel-org-init
 ;; # End:
 
-;;; init.el ends here
+;;; init:.el ends here
