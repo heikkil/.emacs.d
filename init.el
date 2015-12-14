@@ -582,6 +582,18 @@
 (add-to-list 'org-tab-first-hook 'mw-org-jump-to-beginning-of-block-maybe)
 ;; #+END_SRC
 
+;; **** Convenient go up to the beginning of a block
+
+;; #+BEGIN_SRC emacs-lisp
+;; Experimentation for more convenient block handling.
+(defun mw-org-search-backward-beginning-of-block ()
+  "When on a closing line of a block jump to the opening line of the block."
+  (interactive)
+  (let ((case-fold-search t)
+        (org-block-begin-line-regexp  "^[ \t]*#\\+begin_"))
+        (search-backward-regexp org-block-begin-line-regexp)))
+;; #+END_SRC
+
 ;; **** More key bindings for babeling
 
 ;; #+BEGIN_SRC emacs-lisp
