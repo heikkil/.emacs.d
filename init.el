@@ -1772,54 +1772,7 @@ Originates from gnu.emacs.help group 2006."
 
 ;; ** Global keys
 
-;; *** Rest
-
-;; #+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "<f1>") #'ignore) ;; e.g. for leaving the zone.
-(global-set-key (kbd "<f6>") 'flyspell-mode)
-(global-set-key (kbd "<f7>") 'cycle-ispell-language-and-input-method)
-(global-set-key (kbd "M-<f7>") 'mw-cycle-ispell-completion-dict)
-(global-set-key (kbd "C-$") 'ispell-complete-word)
-(global-set-key (kbd "<f8>") 'other-window)
-(global-set-key (kbd "S-<f11>") 'mw-rotate-split)
-(global-set-key (kbd "<f12>") 'other-frame)
-
-;; the following collides with parmode:
-;; (global-set-key (kbd "C-M-<right>") #'next-buffer)
-;; (global-set-key (kbd "C-M-<left>") #'previous-buffer)
-;; [2015-10-12 Mon 15:03] trying key chords.
-
-(global-set-key (kbd "<XF86AudioLowerVolume>") #'emms-volume-lower)
-(global-set-key (kbd "<XF86AudioRaiseVolume>") #'emms-volume-raise)
-(global-set-key (kbd "<XF86AudioMute>") #'mw-sound-0%)
-(global-set-key (kbd "<XF86AudioNext>") #'mw-sound-100%)
-(global-set-key (kbd "<XF86AudioPlay>") #'mw-sound-set-enjoyable-volume)
-
-(global-set-key (kbd "C-x o") 'ace-window)
-
-(global-set-key (kbd "C-x C-c") #'save-buffers-kill-emacs) ; also kill the daemon
-
-;; cycle through amounts of spacing
-(global-set-key (kbd "M-SPC") 'cycle-spacing)
-
-(setq org-agenda-skip-additional-timestamps nil) ; does this line have an effect?
-
-(define-key global-map (kbd "<f9>")
-  '(lambda (&optional prefix)
-     "Try insert org-inactive-timestamp.  With prefix argument
-  try insert yyyymmddhhmm.  Special in org-agenda: toggle
-  inactive-timestamps-display."
-     (interactive "P")
-     (cond
-      ((eq major-mode 'org-agenda-mode)
-       (setq org-agenda-include-inactive-timestamps (eq nil org-agenda-include-inactive-timestamps))
-       (org-agenda-redo))
-      (t (if prefix
-             (insert (format-time-string "%Y%m%d%H%M"))
-           (org-insert-time-stamp nil t t))))))
-;; #+END_SRC
-
-;; *** org
+;; *** Org
 
 ;; #+BEGIN_SRC emacs-lisp
 (global-set-key "\C-cl" 'org-store-link)
@@ -1904,6 +1857,53 @@ Originates from gnu.emacs.help group 2006."
   "buffer-switch-entry-left"
   ("<right>" next-buffer)
   ("<left>" previous-buffer))
+;; #+END_SRC
+
+;; *** Rest
+
+;; #+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "<f1>") #'ignore) ;; e.g. for leaving the zone.
+(global-set-key (kbd "<f6>") 'flyspell-mode)
+(global-set-key (kbd "<f7>") 'cycle-ispell-language-and-input-method)
+(global-set-key (kbd "M-<f7>") 'mw-cycle-ispell-completion-dict)
+(global-set-key (kbd "C-$") 'ispell-complete-word)
+(global-set-key (kbd "<f8>") #'mw-umlautify-before-point)
+(global-set-key (kbd "S-<f11>") 'mw-rotate-split)
+(global-set-key (kbd "<f12>") 'other-frame)
+
+;; the following collides with parmode:
+;; (global-set-key (kbd "C-M-<right>") #'next-buffer)
+;; (global-set-key (kbd "C-M-<left>") #'previous-buffer)
+;; [2015-10-12 Mon 15:03] trying key chords.
+
+(global-set-key (kbd "<XF86AudioLowerVolume>") #'emms-volume-lower)
+(global-set-key (kbd "<XF86AudioRaiseVolume>") #'emms-volume-raise)
+(global-set-key (kbd "<XF86AudioMute>") #'mw-sound-0%)
+(global-set-key (kbd "<XF86AudioNext>") #'mw-sound-100%)
+(global-set-key (kbd "<XF86AudioPlay>") #'mw-sound-set-enjoyable-volume)
+
+(global-set-key (kbd "C-x o") 'ace-window)
+
+(global-set-key (kbd "C-x C-c") #'save-buffers-kill-emacs) ; also kill the daemon
+
+;; cycle through amounts of spacing
+(global-set-key (kbd "M-SPC") 'cycle-spacing)
+
+(setq org-agenda-skip-additional-timestamps nil) ; does this line have an effect?
+
+(define-key global-map (kbd "<f9>")
+  '(lambda (&optional prefix)
+     "Try insert org-inactive-timestamp.  With prefix argument
+  try insert yyyymmddhhmm.  Special in org-agenda: toggle
+  inactive-timestamps-display."
+     (interactive "P")
+     (cond
+      ((eq major-mode 'org-agenda-mode)
+       (setq org-agenda-include-inactive-timestamps (eq nil org-agenda-include-inactive-timestamps))
+       (org-agenda-redo))
+      (t (if prefix
+             (insert (format-time-string "%Y%m%d%H%M"))
+           (org-insert-time-stamp nil t t))))))
 ;; #+END_SRC
 
 ;; ** Dired key for alternate up
