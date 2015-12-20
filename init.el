@@ -274,6 +274,7 @@
   (key-chord-define-global "c8" #'calc-embedded-word)
   (key-chord-define-global "`1" #'org-previous-visible-heading)
   (key-chord-define-global "qj" #'mw-exchange-to-buddy)
+  (key-chord-define-global "mw" #'list-buffers)
 )  ;; recall (key-chord-unset-global "bb") for undef a key-chord.
 ;; #+END_SRC
 
