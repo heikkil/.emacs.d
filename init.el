@@ -1919,8 +1919,19 @@ Originates from gnu.emacs.help group 2006."
 
 ;;; Metatail:                                                         :noexport:
 
+;; ** Correct a typical editing error
+
+;; The error can occur at save of the lentic-org representation.
+
+;; #+BEGIN_SRC emacs-lisp
+(replace-string "init:.el" "init.el")
+;; #+END_SRC
+
+;; ** Local Variables
 ;; # Local Variables:
 ;; # lentic-init: lentic-orgel-org-init
 ;; # End:
 
-;;; init:.el ends here
+;; ** Last line
+
+;;; init.el ends here
