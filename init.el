@@ -4,7 +4,7 @@
 ;; Copyright (c) 2015 Marco Wahl <marcowahlsoft@gmail.com>
 
 ;; #+TITLE: Personal Emacs Config
-;; #+AUTHOR: Marco Wahl 
+;; #+AUTHOR: Marco Wahl
 ;; #+EMAIL: marcowahlsoft@gmail.com
 
 ;;; Metahead:                                                         :noexport:
@@ -32,6 +32,8 @@
 ;; ** Debugging
 
 ;; #+BEGIN_SRC emacs-lisp
+;;; Code:
+
 (setq debug-on-error t)
 ;; #+END_SRC
 
@@ -90,6 +92,10 @@
 ;; =use-package= allows convenient emacs package configuration.
 
 ;; #+BEGIN_SRC emacs-lisp
+
+;;; Commentary:
+;;
+
 (require 'use-package)
 ;; #+END_SRC
 
@@ -204,7 +210,7 @@
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package expand-region
-  :config 
+  :config
   (global-set-key (kbd "C-=") #'er/expand-region))
 ;; #+END_SRC
 
@@ -247,7 +253,7 @@
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package key-chord
-  :config 
+  :config
   (key-chord-mode 1)
 
   (key-chord-define-global "ao" #'other-window)
@@ -365,7 +371,7 @@
 ;; new setting.
 
 ;; #+BEGIN_SRC emacs-lisp
-(use-package rase 
+(use-package rase
   :config
   (add-hook
    'rase-functions
@@ -383,7 +389,7 @@
 
   ;; The following lines are here for remember how to use 'advice'.
   ;; Possibly an alternative is `before-make-frame-hook'.
-  ;; 
+  ;;
   ;; (advice-add 'make-frame :before
   ;;             (lambda (&optional parameters) (when mw-make-frame-first-call
   ;;                          (setq mw-make-frame-first-call nil)
@@ -414,7 +420,7 @@
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package slime
-  :config  
+  :config
   (setq inferior-lisp-program "/usr/bin/sbcl")
   (setq slime-contribs '(slime-fancy)))
 ;; #+END_SRC
@@ -521,7 +527,7 @@
 ;; *** org agenda include inactive timestamps
 
 ;; #+BEGIN_SRC emacs-lisp
-(setq org-agenda-include-inactive-timestamps t) ;; 
+(setq org-agenda-include-inactive-timestamps t) ;;
 ;; (setq org-agenda-include-inactive-timestamps nil) ;; for not seeing them.
 ;; #+END_SRC
 
@@ -640,7 +646,7 @@
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-org-property-action ()
-  "Activate org-property-action from headline."
+  "Activate ‘org-property-action’ from headline."
   (interactive)
   (save-excursion
     (org-insert-drawer t)
@@ -672,7 +678,7 @@
 
 ;; #+BEGIN_SRC emacs-lisp
 ;(add-hook 'org-agenda-finalize-hook (lambda () (delete-other-windows)))
-(setq org-agenda-window-setup 'only-window)     
+(setq org-agenda-window-setup 'only-window)
 ;; #+END_SRC
 
 ;; **** Source
@@ -907,7 +913,7 @@
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun yrk-switch-buffers-between-frames ()
-  "yrk-switch-buffers-between-frames switches the buffers between the two last frames"
+  "Switch the buffers between the two last frames."
   (interactive)
   (let ((this-frame-buffer nil)
         (other-frame-buffer nil))
@@ -923,12 +929,18 @@
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun delta (line pointline)
+  "LINE is the processed line.
+POINTLINE is the line containing point."
   (format "%d" (- line pointline)))
 
 (defun delta5 (line pointline)
+  "LINE is the processed line.
+POINTLINE is the line containing point."
   (format "%5d" (- line pointline)))
 
 (defun the-line (line)
+  "LINE is the processed line.
+pointline is the line containing point."
   (format "%4d" line))
 
 (setq linum-format 'the-line)
@@ -1039,8 +1051,8 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun th/swap-window-buffers-by-dnd (drag-event)
-  "Swaps the buffers displayed in the DRAG-EVENT's start and end
-window."
+  "Swaps the buffers displayed in the DRAG-EVENT's start and end window."
+
   (interactive "e")
   (let ((start-win (cl-caadr drag-event))
         (end-win   (cl-caaddr drag-event)))
@@ -1069,7 +1081,7 @@ window."
 
 ;; Support the famous tomato-technique.  The idea is to work
 ;; concentrated for a while (tomato) and then take a break.  This shall
-;; be repeated some times a day.  
+;; be repeated some times a day.
 
 ;; The functions here support pomodoro based on org.
 
@@ -1152,11 +1164,10 @@ window."
 
      It looks to me that the org-timer thing is broken.  I can't set
    a new timer with org-timer-set-timer from an org-buffer any
-   more except with the triple C-u prefix AKA '(64).
+   more except with the triple universal prefix AKA '(64).
 
    [2014-06-27 Fri 11:12] Good news: I could use M-x
-   org-timer-set-timer today and it did the expected thing.
-   "
+   org-timer-set-timer today and it did the expected thing."
   (interactive)
   (if (derived-mode-p 'org-mode)
       (let ((saved-org-timer-default-timer org-timer-default-timer)
@@ -1166,7 +1177,7 @@ window."
         (org-timer-set-timer '(64))
         (setq org-timer-default-timer saved-org-timer-default-timer)
         (setq mw-org-pause-state t))
-    (error "mw: Not in an Org buffer")))
+    (error "Mw-org-trigger-timer-for-pause: Not in an Org buffer")))
 ;; #+END_SRC
 
 ;; ** navi-mode
@@ -1189,6 +1200,7 @@ window."
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-ask-leo ()
+  "Call leo word engine using w3m."
   (interactive)
   (w3m-search "leo" (thing-at-point 'word)))
 (global-set-key (kbd "<Scroll_Lock> l") 'mw-ask-leo)
@@ -1258,7 +1270,7 @@ window."
 
 (defun mw-sound-set-enjoyable-volume ()
   "Enjoyable volume for listening with headphones.
-      
+
   The effect of this function is somewhat subjective."
   (interactive)
   (start-process "" "*mw-amixer*"
@@ -1291,13 +1303,14 @@ window."
 ;; :END:
 
 ;; #+BEGIN_SRC emacs-lisp
-(defun mw-play-some-sound ()
+(defun mw-play-little-bird-sound ()
+  "Play a little bird sound."
   (interactive)
   (start-process
    "play-a-sound" "*play-a-sound-output*"
    "mplayer" "-af" "volume=-15"
    (expand-file-name "~/media/sound/birds/Tufted-Tit-Mouse-web-II.wav")))
-(setq ring-bell-function 'mw-play-some-sound)
+(setq ring-bell-function 'mw-play-little-bird-sound)
 ;; #+END_SRC
 
 ;; ** bbdb csv feature
@@ -1326,7 +1339,8 @@ window."
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-w3m-duplicate-session (&optional reload)
-  "Duplicate the w3m-session"
+  "Duplicate the w3m-session.
+Optional argument RELOAD for w3m-view-this-url-1."
   (interactive "P")
   (if (not (eq major-mode 'w3m-mode))
       (message "This command applies resonably to w3m mode only")
@@ -1369,12 +1383,14 @@ window."
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-w3m-switch-to-eww ()
+  "Switch to eww from w3m."
   (interactive)
   (eww w3m-current-url))
 ;; #+END_SRC
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-eww-switch-to-w3m ()
+  "Switch to w3m from eww."
   (interactive)
   (w3m (eww-current-url)))
 ;; #+END_SRC
@@ -1609,6 +1625,7 @@ This binding shall make the close more convenient."
     (ring-insert mw-lang-inputmethod-ring elem)))
 
 (defun cycle-ispell-language-and-input-method ()
+  "Use the next language setting from mw-langs-inputmethod-ring."
   (interactive)
   (let ((lang-inputmethod (ring-ref mw-lang-inputmethod-ring -1)))
     (ring-insert mw-lang-inputmethod-ring lang-inputmethod)
