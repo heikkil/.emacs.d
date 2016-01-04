@@ -27,14 +27,20 @@
 ;; [2015-07-23 Thu 12:19] Currently for lentic to work reasonably the top
 ;; level headings must consist of exactly one word.
 
+;;; Commentary:
+
+;; This section exists to please checkdoc.
+
+;;; Code:
+
+;; This section exists to please checkdoc.
+
 ;;; Firstfirst:
 
 ;; ** Debugging
 
 ;; #+BEGIN_SRC emacs-lisp
-;;; Code:
-
-(setq debug-on-error t)
+;; (setq debug-on-error t)
 ;; #+END_SRC
 
 ;; ** Don't load outdated byte code
@@ -92,9 +98,6 @@
 ;; =use-package= allows convenient emacs package configuration.
 
 ;; #+BEGIN_SRC emacs-lisp
-
-;;; Commentary:
-;;
 
 (require 'use-package)
 ;; #+END_SRC
