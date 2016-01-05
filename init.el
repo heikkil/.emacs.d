@@ -525,7 +525,15 @@
 
 ;;; Fromsource:
 
-;; ** org                                                                 :org:
+;; ** Org                                                                 :org:
+
+;; *** Personal Org Indentation
+
+;; #+BEGIN_SRC emacs-lisp
+(setq org-adapt-indentation nil
+      org-hide-leading-stars t
+      org-odd-levels-only t)
+;; #+END_SRC
 
 ;; *** org agenda include inactive timestamps
 
