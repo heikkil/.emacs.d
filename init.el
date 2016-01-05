@@ -84,7 +84,6 @@
 		     "/doc")))))
 ;; #+END_SRC
 
-
 ;; ** Package initialization
 
 ;; #+BEGIN_SRC emacs-lisp
@@ -1742,6 +1741,10 @@ Originates from gnu.emacs.help group 2006."
 (define-key ctl-x-map "tv" #'timeclock-visit-timelog)
 (define-key ctl-x-map "tw" #'timeclock-when-to-leave-string)
 (define-key ctl-x-map "tt" #'timeclock-mode-line-display)
+;; #+END_SRC
+
+;; #+BEGIN_SRC emacs-lisp
+(setq timeclock-file "/home/b/busi/archiv/timelogs/timelog")
 ;; #+END_SRC
 
 ;; ** Diary
