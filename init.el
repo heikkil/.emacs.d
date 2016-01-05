@@ -66,7 +66,7 @@
 
 ;; The customization file gets read early to be able to overwrite.
 
-;; ** Org from source
+;; ** Org from Source
 
 ;; #+BEGIN_SRC emacs-lisp
 (let ((orgmodelocation (expand-file-name "~/p/org/org-mode")))
@@ -83,6 +83,7 @@
 	     (concat (expand-file-name "~/p/org/org-mode") ; orgmodelocation
 		     "/doc")))))
 ;; #+END_SRC
+
 
 ;; ** Package initialization
 
@@ -696,6 +697,13 @@
 
 ;; http://mbork.pl/2015-09-26_A_few_org-agenda_hacks
 
+;; *** Delete other windows after jump from agenda
+
+;; #+BEGIN_SRC emacs-lisp
+(eval-after-load "org-agenda"
+  '(push #'delete-other-windows org-agenda-after-show-hook))
+;; #+END_SRC
+
 ;; *** org-screenshot
 
 ;; #+BEGIN_SRC emacs-lisp
@@ -721,13 +729,6 @@
 ;; #+BEGIN_SRC emacs-lisp
 (eval-after-load "org-agenda"
   '(push #'beginning-of-line org-agenda-after-show-hook))
-;; #+END_SRC
-
-;; *** Delete other windows after jump from agenda
-
-;; #+BEGIN_SRC emacs-lisp
-(eval-after-load "org-agenda"
-  '(push #'delete-other-windows org-agenda-after-show-hook))
 ;; #+END_SRC
 
 ;; *** Speed commands also on first char
