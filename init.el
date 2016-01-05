@@ -1582,7 +1582,7 @@ This binding shall make the close more convenient."
 
 ;; #+BEGIN_SRC emacs-lisp
 (appt-activate 1)
-(org-agenda-to-appt)
+;; (org-agenda-to-appt)
 ;; #+END_SRC
 
 ;; See also [[id:f5e3d91a-1137-4640-b453-96c64eba2d16][Personalize the sound of the bell]] for the configuration of
