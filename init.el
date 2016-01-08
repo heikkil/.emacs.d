@@ -923,12 +923,23 @@
 
 ;;; Lab:
 
+;; ** Org Lab
+
+;; ***** org-show-context-detail
+
+;; #+BEGIN_SRC emacs-lisp
+(setq org-show-context-detail
+      '((isearch . lineage)
+        (bookmark-jump . lineage)
+        (occur-tree . minimal)
+        (default . ancestors)))
+;; #+END_SRC
+
 ;; ** lob
 
 ;; #+BEGIN_SRC emacs-lisp
 (org-babel-lob-ingest "~/org/mw-lob.org")
 ;; #+END_SRC
-
 ;; ** Switch buffers between frames
 
 ;; Found at [[http://www.emacswiki.org/emacs/SwitchingBuffers#toc5][EmacsWiki: Switching Buffers]] provided by YoniRabkinKatzenell
