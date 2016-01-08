@@ -1850,6 +1850,23 @@ Originates from gnu.emacs.help group 2006."
 (global-set-key (kbd "C-c o") 'org-open-at-point-global)
 ;; #+END_SRC
 
+;; ***** For Org Files
+
+;; #+BEGIN_SRC emacs-lisp
+(setq org-speed-commands-user
+'(("S" . widen)
+ ("y" . mw-org-property-action)
+ (";" . org-timer-set-timer)
+ ("d" . org-attach)
+ ("z" . org-add-note)
+ ("J" . org-clock-goto)
+ ("T" . org-tree-to-indirect-buffer)
+ ("q" . org-columns-quit)
+ ("H" . org-rise)
+ ("N" org-speed-move-safe 'outline-next-visible-heading)
+ ("P" org-speed-move-safe 'outline-previous-visible-heading)))
+;; #+END_SRC
+
 ;; *** Individual keymap
 
 ;; #+BEGIN_SRC emacs-lisp
