@@ -539,14 +539,22 @@
       org-odd-levels-only t)
 ;; #+END_SRC
 
-;; *** org agenda include inactive timestamps
+;; *** Org Agenda include inactive timestamps
 
 ;; #+BEGIN_SRC emacs-lisp
 (setq org-agenda-include-inactive-timestamps t) ;;
 ;; (setq org-agenda-include-inactive-timestamps nil) ;; for not seeing them.
 ;; #+END_SRC
 
-;; *** org babel
+;; *** Org column settings
+
+;; #+BEGIN_SRC emacs-lisp
+(setq
+ org-columns-ellipses "…"
+ org-columns-default-format "%ITEM %TODO %PRIORITY %TAGS")
+;; #+END_SRC
+
+;; *** Org Babel
 
 ;; **** Jump to org block bound
 
