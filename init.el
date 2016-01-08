@@ -292,11 +292,15 @@
 ;; Very helpful mode for editing elisp.
 
 ;; #+BEGIN_SRC emacs-lisp
-;; (use-package paredit
-;;   :config (add-hook 'emacs-lisp-mode-hook (lambda () (paredit-mode t))))
+(use-package paredit
+  :ensure t
+  :config (add-hook 'emacs-lisp-mode-hook (lambda () (paredit-mode t))))
 ;; #+END_SRC
 
-;; ** smartparen
+;; ** smartparens
+
+;; [2016-01-08 Fri 14:49] At first I thought smartparens-mode will replace paredit for me.  But
+;; somehow I always come back to paredit.
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package smartparens
