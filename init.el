@@ -935,6 +935,18 @@
         (default . ancestors)))
 ;; #+END_SRC
 
+;; ***** Agenda for deadlines only
+
+;; #+BEGIN_SRC emacs-lisp
+(add-to-list 'org-agenda-custom-commands
+             '("A" "Agenda; only deadlines"
+               agenda ""
+               ((org-agenda-entry-types '(:deadline)))))
+;; #+END_SRC
+
+;; Source:
+;; http://emacs.stackexchange.com/questions/12930/display-org-todo-list-of-entries-with-deadlines
+
 ;; ** lob
 
 ;; #+BEGIN_SRC emacs-lisp
