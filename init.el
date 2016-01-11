@@ -1875,6 +1875,7 @@ Originates from gnu.emacs.help group 2006."
  ("T" . org-tree-to-indirect-buffer)
  ("q" . org-columns-quit)
  ("H" . org-rise)
+ ("x" . org-export-dispatch)
  ("N" org-speed-move-safe 'outline-next-visible-heading)
  ("P" org-speed-move-safe 'outline-previous-visible-heading)))
 ;; #+END_SRC
