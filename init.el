@@ -952,10 +952,11 @@
 ;; ***** Agenda for deadlines only
 
 ;; #+BEGIN_SRC emacs-lisp
-(add-to-list 'org-agenda-custom-commands
+     (eval-after-load "org-agenda"
+'(add-to-list 'org-agenda-custom-commands
              '("A" "Agenda; only deadlines"
                agenda ""
-               ((org-agenda-entry-types '(:deadline)))))
+               ((org-agenda-entry-types '(:deadline))))))
 ;; #+END_SRC
 
 ;; Source:
