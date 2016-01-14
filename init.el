@@ -128,7 +128,8 @@
             (wrap-region-global-mode t)
             (wrap-region-add-wrapper "`" "'")
             (wrap-region-add-wrapper "~" "~" nil 'org-mode)
-            (wrap-region-add-wrapper "=" "=" nil 'org-mode)))
+            (wrap-region-add-wrapper "=" "=" nil 'org-mode)
+            (wrap-region-add-wrapper "#+BEGIN_QUOTE\n" "\n#+END_QUOTE" "q" 'org-mode)))
 ;; #+END_SRC
 
 ;; ** avy
