@@ -1589,7 +1589,8 @@ This binding shall make the close more convenient."
 ;; ** Open line below
 
 ;; #+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "C-S-o") #'mw-auxies-open-line-below)
+(global-set-key (kbd "C-S-o") #'mw-open-line-below)
+(global-set-key (kbd "C-S-a") #'mw-open-line-above)
 ;; #+END_SRC
 ;;; Rest:
 
