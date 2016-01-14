@@ -1633,7 +1633,6 @@ This binding shall make the close more convenient."
 
 ;; #+BEGIN_SRC emacs-lisp
 (appt-activate 1)
-;; (org-agenda-to-appt)
 ;; #+END_SRC
 
 ;; See also [[id:f5e3d91a-1137-4640-b453-96c64eba2d16][Personalize the sound of the bell]] for the configuration of
@@ -2019,14 +2018,23 @@ Originates from gnu.emacs.help group 2006."
      #'mw-dired-up-directory-as-alternate)))
 ;; #+END_SRC
 
+;;; Trigger:
+
+;; #+BEGIN_SRC emacs-lisp
+(org-agenda-list)
+(org-agenda-to-appt) ; I want this!
+(switch-to-buffer "*Org Agenda*")
+;; #+END_SRC
+
 ;;; Metatail:                                                         :noexport:
 
 ;; ** Correct a typical editing error
 
-;; The error can occur at save of the lentic-org representation.
+;; The error can occur at save of the lentic-org representation.  This
+;; is not part of the Emacs config.  Just evaluate to fix the last line.
 
 ;; #+BEGIN_SRC emacs-lisp
-(replace-string "init:.el" "init.el")
+; (replace-string "init:.el" "init.el")
 ;; #+END_SRC
 
 ;; ** Local Variables
