@@ -986,6 +986,32 @@
     (switch-to-buffer other-frame-buffer)))
 ;; #+END_SRC
 
+;; ** vcs
+
+;; ***** Automate typical procedere with commit message
+
+;; Do the right thing.  ^_^
+
+;; #+BEGIN_SRC emacs-lisp
+(defun mw-dtrt-commit-msg-prepare()
+  "This function applied to a commit-msg buffer shall dtrt."
+  (interactive)
+  (let ((beg (point)))
+    (search-forward-regexp "modified: *")
+;;     (delete-region beg (point)))
+;;   (end-of-line)
+;;   (let ((end (point)))
+;;     (search-backward-regexp "\\.")
+;;     (delete-region (point) end))
+;;   (insert ":\n")
+;;   (backward-char))
+;; #+END_SRC
+
+;; #+BEGIN_SRC emacs-lisp
+(add-hook 'git-commit-mode-hook
+          (lambda () (key-chord-define-local "pp" #'mw-dtrt-commit-msg-prepare)))
+;; #+END_SRC
+
 ;; ** linum experiments                                                 :linum:
 
 ;; #+BEGIN_SRC emacs-lisp
