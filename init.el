@@ -1009,7 +1009,7 @@
 
 ;; #+BEGIN_SRC emacs-lisp
 (add-hook 'git-commit-mode-hook
-          (lambda () (key-chord-define-local "pp" #'mw-dtrt-commit-msg-prepare)))
+          (lambda () (key-chord-define-local "p8" #'mw-dtrt-commit-msg-prepare)))
 ;; #+END_SRC
 
 ;; ** linum experiments                                                 :linum:
