@@ -998,13 +998,13 @@
   (interactive)
   (let ((beg (point)))
     (search-forward-regexp "modified: *")
-;;     (delete-region beg (point)))
-;;   (end-of-line)
-;;   (let ((end (point)))
-;;     (search-backward-regexp "\\.")
-;;     (delete-region (point) end))
-;;   (insert ":\n")
-;;   (backward-char))
+    (delete-region beg (point)))
+  (end-of-line)
+  (let ((end (point)))
+    (search-backward-regexp "\\.")
+    (delete-region (point) end))
+  (insert ":\n")
+  (backward-char))
 ;; #+END_SRC
 
 ;; #+BEGIN_SRC emacs-lisp
