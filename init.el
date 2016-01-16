@@ -2017,8 +2017,6 @@ Originates from gnu.emacs.help group 2006."
 ;; cycle through amounts of spacing
 (global-set-key (kbd "M-SPC") 'cycle-spacing)
 
-(setq org-agenda-skip-additional-timestamps nil) ; does this line have an effect?
-
 (define-key global-map (kbd "<f9>")
   '(lambda (&optional prefix)
      "Try insert org-inactive-timestamp.  With prefix argument
