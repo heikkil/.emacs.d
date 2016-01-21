@@ -1926,6 +1926,7 @@ Originates from gnu.emacs.help group 2006."
 ;; #+BEGIN_SRC emacs-lisp
 (defvar mw-individual-keymap
   (let ((map (make-sparse-keymap)))
+    (define-key map "f" #'mw-auxies-kill-buffer-file-name)
     (define-key map "g" #'git-auto-commit-mode)
     (define-key map "l" #'clone-indirect-buffer)
     (define-key map "a" #'mw-append-to-scratch)
@@ -1933,7 +1934,7 @@ Originates from gnu.emacs.help group 2006."
     (define-key map "d" #'mw-display-mode-line-as-message)
     (define-key map "m" #'menu-bar-mode)
     (define-key map "h" #'hidden-mode-line-mode)
-    (define-key map "f" #'fringe-mode)
+    (define-key map "F" #'fringe-mode)
     (define-key map "b"
       (lambda ()
         (interactive)
