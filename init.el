@@ -272,7 +272,7 @@
 (use-package key-chord
   :config
   (key-chord-mode 1)
-
+  (key-chord-define-global "s-" #'beacon-blink)
   (key-chord-define-global "ao" #'other-window)
   (key-chord-define-global "qq" #'other-frame)
   (key-chord-define-global "wv" #'next-buffer)
