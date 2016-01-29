@@ -1926,7 +1926,7 @@ Originates from gnu.emacs.help group 2006."
 ;; #+BEGIN_SRC emacs-lisp
 (defvar mw-individual-keymap
   (let ((map (make-sparse-keymap)))
-    (define-key map "f" #'mw-auxies-kill-buffer-file-name)
+    (define-key map "f" #'mw-kill-buffer-filename)
     (define-key map "g" #'git-auto-commit-mode)
     (define-key map "l" #'clone-indirect-buffer)
     (define-key map "a" #'mw-append-to-scratch)
@@ -1950,10 +1950,6 @@ Originates from gnu.emacs.help group 2006."
     (define-key map "k" #'key-chord-mode) ; sometimes i need turning it off and on again.
     (define-key map "c" #'calendar)
     (define-key map "q" #'bury-buffer)
-    (define-key map "n" (lambda () "Append buffer-filename to kill-ring."
-                          (interactive)
-                          (kill-new buffer-file-name)
-                          (message "%s entered kill-ring" buffer-file-name)))
     (define-key map "u" #'unexpand-abbrev)
     (define-key map "i" #'ido-hacks-mode)
     (define-key map "w" #'org-refile-goto-last-stored)
@@ -1962,8 +1958,8 @@ Originates from gnu.emacs.help group 2006."
     (define-key map ">" #'mw-screen-exchange-write-region)
     (define-key map "e" #'evil-mode)
     (define-key map "E" (lambda () "Erase org-stored-links" (interactive) (setq org-stored-links nil)))
-    (define-key map "(" (lambda () (interactive) (paredit-mode)))
-    (define-key map ")" (lambda () (interactive) (disable-paredit-mode)))
+    (define-key map "(" #'paredit-mode)
+    (define-key map ")" #'disable-paredit-mode)
     (define-key map "W" #'calc-embedded-word) ; recall 'q' to leave the mode.
     (define-key map "s" (lambda () (interactive) (switch-to-buffer "*scratch*")))
     (define-key map "o" #'mw-org-kill-new-outline-path) ; Has been useful for refile.
