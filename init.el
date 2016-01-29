@@ -451,7 +451,7 @@
 ;; zeitgeist keeps track of file-operations.
 
 ;; #+BEGIN_SRC emacs-lisp
-(use-package zeitgeist)
+(use-package zeitgeist :disabled)
 ;; #+END_SRC
 
 ;; ** helm
