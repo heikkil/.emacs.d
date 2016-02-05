@@ -877,8 +877,12 @@
       bbdb-update-records-p 'query
       ;; bbdb-ignore-message-alist
       ;;    '(("From" . "bugzilla-daemon"))
-         )
+      )
 (add-hook 'message-setup-hook 'bbdb-mail-aliases)
+;; [2016-02-05 Fri 13:15] this is a try...
+(add-hook 'bbdb-after-change-hook 'bbdb-save)
+;; Source [[gnus:nntp+news.gmane.org:gmane.emacs.bbdb.user#m28u2z8m57.fsf@charm-ecran.irisa.fr][Email from Alan Schmitt: Re: can I auto save the bbdb f]]
+;; ...[2016-02-05 Fri 13:15]
 ;; #+END_SRC
 
 ;; ** Zen reward mode
