@@ -870,8 +870,8 @@
 (require 'bbdb-loaddefs (expand-file-name "~/p/elisp/external/bbdb/lisp/bbdb-loaddefs.el"))
 (bbdb-initialize 'gnus 'message 'anniv)
 (bbdb-mua-auto-update-init 'gnus 'message)
-(setq bbdb-mua-pop-up t
-      bbdb-mua-pop-up-window-size 0.1
+(setq ;; bbdb-mua-pop-up t
+      ;; bbdb-mua-pop-up-window-size 0.1
       bbdb-mua-update-interactive-p '(query . create)
       bbdb-mua-auto-update-p 'create ; nil
       bbdb-update-records-p 'query
