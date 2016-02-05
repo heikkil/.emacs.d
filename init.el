@@ -1,4 +1,5 @@
 ;;; init.el --- personal emacs config file
+;; #+STARTUP: oddeven
 ;; #+options: toc:2
 
 ;;; Copyright:                                                        :noexport:
@@ -49,6 +50,9 @@
 ;; This section exists to please checkdoc.
 
 ;;; Firstfirst:
+;; :PROPERTIES:
+;; :ID:       bd4a3fcf-1669-40b8-a1c1-d9adf07fd947
+;; :END:
 
 ;; ** Debugging
 
@@ -1878,12 +1882,12 @@ Originates from gnu.emacs.help group 2006."
 (setq  zone-timeout 300)
 ;; #+END_SRC
 
-;;; Keysettings:
+;; ** Keysettings
 ;; :PROPERTIES:
 ;; :ID:       87eef969-ff13-4812-9c4e-2c79f9c3f7c6
 ;; :END:
 
-;; ** Global keys
+;; *** Global keys
 
 ;; *** Org
 
@@ -1907,7 +1911,7 @@ Originates from gnu.emacs.help group 2006."
 (global-set-key (kbd "C-c o") 'org-open-at-point-global)
 ;; #+END_SRC
 
-;; ***** For Org Files
+;; *** For Org Files
 
 ;; #+BEGIN_SRC emacs-lisp
 (setq org-speed-commands-user
@@ -1972,7 +1976,7 @@ Originates from gnu.emacs.help group 2006."
 (global-set-key (kbd "\C-z") mw-individual-keymap)
 ;; #+END_SRC
 
-;; **** hydras
+;; *** Hydras
 
 ;; This was thought to switch buffers quickly.  The overhead at start is
 ;; too much for me though.  [2015-10-12 Mon 14:55]
@@ -2033,7 +2037,7 @@ Originates from gnu.emacs.help group 2006."
            (org-insert-time-stamp nil t t))))))
 ;; #+END_SRC
 
-;; ** Dired key for alternate up
+;; *** Dired key for alternate up
 
 ;; #+BEGIN_SRC emacs-lisp
 (add-hook
