@@ -18,7 +18,7 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-;;; Metahead:                                                         :noexport:
+;;; Meta:                                                             :noexport:
 
 ;; This section is about this file itself.
 
@@ -40,11 +40,11 @@
 ;; [2015-07-23 Thu 12:19] Currently for lentic to work reasonably the top
 ;; level headings must consist of exactly one word.
 
-;;; Commentary:
+;;; Commentary:                                                       :noexport:
 
 ;; This section exists to please checkdoc.
 
-;;; Code:
+;;; Code:                                                             :noexport:
 
 ;; This section exists to please checkdoc.
 
@@ -2051,7 +2051,7 @@ Originates from gnu.emacs.help group 2006."
 (switch-to-buffer "*Org Agenda*")
 ;; #+END_SRC
 
-;;; Metatail:                                                         :noexport:
+;;; Meta:                                                             :noexport:
 
 ;; ** Correct a typical editing error
 
