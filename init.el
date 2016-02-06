@@ -118,6 +118,8 @@
 (require 'use-package)
 ;; #+END_SRC
 
+;;; Packages:
+
 ;; ** wrap-region
 
 ;; Decorate region for certain key presses.
@@ -1645,10 +1647,8 @@ This binding shall make the close more convenient."
 (setq initial-frame-alist '((minibuffer . nil)))
 (setq default-frame-alist '((minibuffer . nil)))
 ;; #+END_SRC
-;; ss
-;;; Packages:
 
-;; ** Enable more emacs features
+;; ** Enable more Emacs features
 
 ;; Enable features that are disabled by default.
 
@@ -2067,7 +2067,7 @@ Originates from gnu.emacs.help group 2006."
      #'mw-dired-up-directory-as-alternate)))
 ;; #+END_SRC
 
-;;; Trigger:
+;;; Triggers:
 
 ;; #+BEGIN_SRC emacs-lisp
 (org-agenda-list)
