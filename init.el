@@ -115,11 +115,8 @@
 ;; =use-package= allows convenient emacs package configuration.
 
 ;; #+BEGIN_SRC emacs-lisp
-
 (require 'use-package)
 ;; #+END_SRC
-
-;;; Packages:
 
 ;; ** wrap-region
 
