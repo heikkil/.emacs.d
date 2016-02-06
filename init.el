@@ -1553,6 +1553,18 @@ Rename a possibly existing buffer *eww*."
 ;; (add-hook 'after-change-major-mode-hook 'hidden-mode-line-mode)
 ;; #+END_SRC
 
+;; ** Strip
+
+;; #+BEGIN_SRC emacs-lisp
+(defun mw-strip ()
+  "Strip window and frame."
+     (interactive)
+     (hidden-mode-line-mode)
+     (when hidden-mode-line-mode
+       (fringe-mode 0)
+       (scroll-bar-mode -1)))
+;; #+END_SRC
+
 ;; ** Key sequences to open browser
 
 ;; #+BEGIN_SRC emacs-lisp
@@ -1624,6 +1636,17 @@ This binding shall make the close more convenient."
 (global-set-key (kbd "C-S-a") #'mw-open-line-above)
 ;; #+END_SRC
 ;;; Rest:
+
+;; ** Initial Frame
+
+;; [2016-02-05 Fri 22:53] Try with minibuffer in extra frame.
+
+;; #+BEGIN_SRC emacs-lisp
+(setq initial-frame-alist '((minibuffer . nil)))
+(setq default-frame-alist '((minibuffer . nil)))
+;; #+END_SRC
+;; ss
+;;; Packages:
 
 ;; ** Enable more emacs features
 
@@ -1938,7 +1961,7 @@ Originates from gnu.emacs.help group 2006."
     (define-key map "r" #'mw-auxies-toggle-default-frame-reverse-state)
     (define-key map "d" #'mw-display-mode-line-as-message)
     (define-key map "m" #'menu-bar-mode)
-    (define-key map "h" #'hidden-mode-line-mode)
+    (define-key map "h" #'mw-strip)
     (define-key map "F" #'fringe-mode)
     (define-key map "b"
       (lambda ()
