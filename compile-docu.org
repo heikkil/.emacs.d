@@ -3,7 +3,7 @@
 This section is about compiling an extra documentation from file init.el.
 The result is suitable e.g. for github.
 
-** Pull the Trigger
+*** Pull the Trigger
 
 #+CALL: extract-init-documentation()
 
@@ -12,7 +12,7 @@ The result is suitable e.g. for github.
 
 Call with C-c C-c in Org mode.
 
-** Technical Realization
+*** Technical Realization
 
 #+NAME:  extract-init-documentation
 #+BEGIN_SRC emacs-lisp
@@ -25,7 +25,7 @@ Call with C-c C-c in Org mode.
 (org-export-to-file 'md "readme.md")
 #+END_SRC
 
-** Create Documentation (Human Style)
+*** Create Documentation (Human Style)
 
 - Start with file init.el.
 - Switch to the org representation via lentic.
