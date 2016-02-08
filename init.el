@@ -784,6 +784,8 @@
 
 ;; *** Delete trailing ws for org-files
 
+;; This is thought as contribution to keep the Org files clean.
+
 ;; #+BEGIN_SRC emacs-lisp
 (push
  (lambda () (if (eq major-mode 'org-mode) (delete-trailing-whitespace)))
