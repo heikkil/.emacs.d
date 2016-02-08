@@ -671,7 +671,7 @@
                  (beginning-of-line)))))))
 ;; #+END_SRC
 
-;; *** org velocity
+;; *** Org Velocity
 
 ;; org velocity is a org-mode contrib extension.
 
