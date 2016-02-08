@@ -391,32 +391,47 @@
 ;; new setting.
 
 ;; #+BEGIN_SRC emacs-lisp
-;; (use-package rase
-;;   :config
-;;   (add-hook
-;;    'rase-functions
-;;    (lambda (sun-event &optional first-run)
-;;      (cond ((eq sun-event 'sunrise)
-;;             (setf (cdr (assoc 'reverse default-frame-alist)) nil))
-;;            ((eq sun-event 'sunset)
-;;             (setf (cdr (assoc 'reverse default-frame-alist)) t)))))
-;;   (add-hook
-;;    'rase-functions
-;;    (lambda (sun-event &optional first-run)
-;;      (unless first-run
-;;        (run-at-time "1 sec" ; one sec after the event the parameters shall be ready.
-;;                     nil #'make-frame))))
+(use-package rase
+  :config
+  (add-hook
+   'rase-functions
+   (lambda (sun-event &optional first-run)
+     (cond
+      (first-run (let ((solar-rise-set  (solar-sunrise-sunset (calendar-current-date)))
+                       (time-of-day (mw-current-time-of-day-decimal)))
+                   ;; ((7.749999999068677 "CET") (17.5166666675359 "CET") "9:46")
+                   (if (or (< time-of-day (caar solar-rise-set))
+                           (<= (caadr solar-rise-set) time-of-day))
+                    (load-theme 'reverse))))
+      ((eq sun-event 'sunrise)
+       (disable-theme 'reverse)
+       ;; (setf (cdr (assoc 'reverse default-frame-alist)) nil) ;; Change params for next frame creation.
+       )
+      ((eq sun-event 'sunset)
+       (load-theme 'reverse t)
+       ;; (setf (cdr (assoc 'reverse default-frame-alist)) t) ;; Change params for next frame creation.
+       ))))
 
-;;   ;; The following lines are here for remember how to use 'advice'.
-;;   ;; Possibly an alternative is `before-make-frame-hook'.
-;;   ;;
-;;   ;; (advice-add 'make-frame :before
-;;   ;;             (lambda (&optional parameters) (when mw-make-frame-first-call
-;;   ;;                          (setq mw-make-frame-first-call nil)
-;;   ;;                          (rase-start t))))
+  ;; Realization with make-frame which is a bit hackish.
+  ;; (add-hook
+  ;;  'rase-functions
+  ;;  (lambda (sun-event &optional first-run)
+  ;;    (unless first-run
+  ;;      (if (or (eq sun-event 'sunrise) (eq sun-event 'sunset))
+  ;;          (run-at-time "1 sec" ; one sec after the event the parameters shall be ready.
+  ;;                       nil #'make-frame)))))
 
-;;   (rase-start t))
+  ;; The following lines are here for remember how to use 'advice'.
+  ;; Possibly an alternative is `before-make-frame-hook'.
+  ;;
+  ;; (advice-add 'make-frame :before
+  ;;             (lambda (&optional parameters) (when mw-make-frame-first-call
+  ;;                          (setq mw-make-frame-first-call nil)
+  ;;                          (rase-start t))))
 
+  (run-at-time "8 sec" nil (lambda () (rase-start t))) ;; Pragmatic, not nice.
+  ;; (rase-start t) ;; This line is not enough to change the theme.
+  )
 ;; #+END_SRC
 
 ;; ** AUR access
