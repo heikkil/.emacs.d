@@ -70,18 +70,14 @@
 ;; https://github.com/lunaryorn/.emacs.d/blob/master/init.el
 ;; [2015-05-18 Mon 21:56].
 
-;; ** Customize Settings
+;; ** Frame Config
 
-;; Emacs allows to specify the storage-location of customization done via
-;; the emacs-customize interface.  The default is to keep the
-;; customization in the init-file.
+;; [2016-02-05 Fri 22:53] Try out minibuffer in extra frame.
 
 ;; #+BEGIN_SRC emacs-lisp
-(setq custom-file "~/.emacs.d/init/.emacs-custom.el")
-(load custom-file)
+(setq initial-frame-alist '((minibuffer . nil)))
+(setq default-frame-alist '((minibuffer . nil)))
 ;; #+END_SRC
-
-;; The customization file gets read early to be able to overwrite.
 
 ;; ** Org from Source
 
@@ -1638,15 +1634,6 @@ This binding shall make the close more convenient."
 (global-set-key (kbd "C-S-a") #'mw-open-line-above)
 ;; #+END_SRC
 ;;; Rest:
-
-;; ** Initial Frame
-
-;; [2016-02-05 Fri 22:53] Try with minibuffer in extra frame.
-
-;; #+BEGIN_SRC emacs-lisp
-;; (setq initial-frame-alist '((minibuffer . nil) (reverse . nil)))
-;; (setq default-frame-alist '((minibuffer . nil) (reverse . nil)))
-;; #+END_SRC
 
 ;; ** Enable more Emacs features
 
