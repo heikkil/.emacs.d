@@ -131,6 +131,15 @@
             (wrap-region-add-wrapper "#+BEGIN_QUOTE\n" "\n#+END_QUOTE" "q" 'org-mode)))
 ;; #+END_SRC
 
+;; ** auth-password-store
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package auth-password-store
+  :ensure t
+  :config
+  (auth-pass-enable))
+;; #+END_SRC
+
 ;; ** avy
 
 ;; =avy= has functionality similar to ace-jump-mode.  I read that avy is
