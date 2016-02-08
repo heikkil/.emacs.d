@@ -395,31 +395,31 @@
 ;; new setting.
 
 ;; #+BEGIN_SRC emacs-lisp
-(use-package rase
-  :config
-  (add-hook
-   'rase-functions
-   (lambda (sun-event &optional first-run)
-     (cond ((eq sun-event 'sunrise)
-            (setf (cdr (assoc 'reverse default-frame-alist)) nil))
-           ((eq sun-event 'sunset)
-            (setf (cdr (assoc 'reverse default-frame-alist)) t)))))
-  (add-hook
-   'rase-functions
-   (lambda (sun-event &optional first-run)
-     (unless first-run
-       (run-at-time "1 sec" ; one sec after the event the parameters shall be ready.
-                    nil #'make-frame))))
+;; (use-package rase
+;;   :config
+;;   (add-hook
+;;    'rase-functions
+;;    (lambda (sun-event &optional first-run)
+;;      (cond ((eq sun-event 'sunrise)
+;;             (setf (cdr (assoc 'reverse default-frame-alist)) nil))
+;;            ((eq sun-event 'sunset)
+;;             (setf (cdr (assoc 'reverse default-frame-alist)) t)))))
+;;   (add-hook
+;;    'rase-functions
+;;    (lambda (sun-event &optional first-run)
+;;      (unless first-run
+;;        (run-at-time "1 sec" ; one sec after the event the parameters shall be ready.
+;;                     nil #'make-frame))))
 
-  ;; The following lines are here for remember how to use 'advice'.
-  ;; Possibly an alternative is `before-make-frame-hook'.
-  ;;
-  ;; (advice-add 'make-frame :before
-  ;;             (lambda (&optional parameters) (when mw-make-frame-first-call
-  ;;                          (setq mw-make-frame-first-call nil)
-  ;;                          (rase-start t))))
+;;   ;; The following lines are here for remember how to use 'advice'.
+;;   ;; Possibly an alternative is `before-make-frame-hook'.
+;;   ;;
+;;   ;; (advice-add 'make-frame :before
+;;   ;;             (lambda (&optional parameters) (when mw-make-frame-first-call
+;;   ;;                          (setq mw-make-frame-first-call nil)
+;;   ;;                          (rase-start t))))
 
-  (rase-start t))
+;;   (rase-start t))
 
 ;; #+END_SRC
 
@@ -883,7 +883,7 @@
       )
 (add-hook 'message-setup-hook 'bbdb-mail-aliases)
 ;; [2016-02-05 Fri 13:15] this is a try...
-(add-hook 'bbdb-after-change-hook 'bbdb-save)
+(add-hook 'bbdb-after-change-hook (lambda (arg) (bbdb-save)))
 ;; Source [[gnus:nntp+news.gmane.org:gmane.emacs.bbdb.user#m28u2z8m57.fsf@charm-ecran.irisa.fr][Email from Alan Schmitt: Re: can I auto save the bbdb f]]
 ;; ...[2016-02-05 Fri 13:15]
 ;; #+END_SRC
@@ -1644,8 +1644,8 @@ This binding shall make the close more convenient."
 ;; [2016-02-05 Fri 22:53] Try with minibuffer in extra frame.
 
 ;; #+BEGIN_SRC emacs-lisp
-(setq initial-frame-alist '((minibuffer . nil)))
-(setq default-frame-alist '((minibuffer . nil)))
+;; (setq initial-frame-alist '((minibuffer . nil) (reverse . nil)))
+;; (setq default-frame-alist '((minibuffer . nil) (reverse . nil)))
 ;; #+END_SRC
 
 ;; ** Enable more Emacs features
