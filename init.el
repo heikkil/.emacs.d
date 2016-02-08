@@ -782,6 +782,14 @@
 ;; Taken the looking around code from the documentation of
 ;; ~org-use-speed-commands~.
 
+;; *** Delete trailing ws for org-files
+
+;; #+BEGIN_SRC emacs-lisp
+(push
+ (lambda () (if (eq major-mode 'org-mode) (delete-trailing-whitespace)))
+ before-save-hook)
+;; #+END_SRC
+
 ;; ** gnus
 
 ;; #+BEGIN_SRC emacs-lisp
