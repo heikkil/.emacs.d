@@ -2054,6 +2054,20 @@ Originates from gnu.emacs.help group 2006."
      #'mw-dired-up-directory-as-alternate)))
 ;; #+END_SRC
 
+;;; Customize: Settings
+
+;; Emacs allows to specify the storage-location of customization done via
+;; the emacs-customize interface.  The default is to keep the
+;; customization in the init-file.
+
+;; #+BEGIN_SRC emacs-lisp
+(setq custom-file "~/.emacs.d/init/.emacs-custom.el")
+(load custom-file)
+;; #+END_SRC
+
+;; [2016-02-08 Mon 12:57] Possibly drop usage of the custom file
+;; entirely for more clarity in the init process.
+
 ;;; Triggers:
 
 ;; #+BEGIN_SRC emacs-lisp
