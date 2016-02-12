@@ -438,7 +438,7 @@
   ;;                          (setq mw-make-frame-first-call nil)
   ;;                          (rase-start t))))
 
-  (run-at-time "8 sec" nil (lambda () (rase-start t))) ;; Pragmatic, not nice.
+  (run-at-time "10 sec" nil (lambda () (rase-start t))) ;; Pragmatic, not nice.
   ;; (rase-start t) ;; This line is not enough to change the theme.
   )
 ;; #+END_SRC
