@@ -521,8 +521,11 @@
    :config (progn
             ;; (autoload 'emr-show-refactor-menu "emr")
              (eval-after-load "emr" '(emr-initialize)))
-   :bind ("M-RET" . emr-show-refactor-menu))
+   ;; :bind ("M-RET" . emr-show-refactor-menu)
+   )
 ;; #+END_SRC
+
+;; *** TODO Show the emr menu with M-RET
 
 ;; ** beacon
 
