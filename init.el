@@ -579,6 +579,12 @@
       org-odd-levels-only t)
 ;; #+END_SRC
 
+;; *** To Org Attachments
+
+;; #+BEGIN_SRC emacs-lisp
+(setq org-attach-commit nil)
+;; #+END_SRC
+
 ;; *** Org Agenda include inactive timestamps
 
 ;; #+BEGIN_SRC emacs-lisp
