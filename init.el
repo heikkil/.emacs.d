@@ -23,7 +23,7 @@
 
 ;; This section is about this file itself.
 
-;; *** Style
+;; *** Lentic Style
 
 ;; This emacs configuration file is written in lentic style of type
 ;; org/el.
@@ -43,11 +43,11 @@
 
 ;;; Commentary:                                                       :noexport:
 
-;; This section exists to please checkdoc.
+;; This section exists to please checkdoc, the elisp documentation checker.
 
 ;;; Code:                                                             :noexport:
 
-;; This section exists to please checkdoc.
+;; This section exists to please checkdoc, the elisp documentation checker.
 
 ;;; Firstfirst:
 ;; :PROPERTIES:
