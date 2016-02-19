@@ -807,10 +807,10 @@
 ;; ** gnus
 
 ;; #+BEGIN_SRC emacs-lisp
-(push (expand-file-name "~/p/elisp/external/gnus/lisp") load-path)
-(require 'gnus-load)
-(require 'info)
-(add-to-list 'Info-default-directory-list "~/p/elisp/external/gnus/texi/")
+;; (push (expand-file-name "~/p/elisp/external/gnus/lisp") load-path)
+;; (require 'gnus-load)
+;; (require 'info)
+;; (add-to-list 'Info-default-directory-list "~/p/elisp/external/gnus/texi/")
 (setq gnus-registry-max-entries 500000)
 (gnus-registry-initialize) ; gnorb wants that, see (info "(gnorb)Setup").
 ;; #+END_SRC
