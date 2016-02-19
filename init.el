@@ -381,8 +381,8 @@
            gnus-mime-button-commands)
      (setq gnus-mime-button-map
            (let ((map (make-sparse-keymap)))
-             (define-key map gnus-mouse-2 'gnus-article-push-button)
-             (define-key map gnus-down-mouse-3 'gnus-mime-button-menu)
+             ;; (define-key map gnus-mouse-2 'gnus-article-push-button)
+             ;; (define-key map gnus-down-mouse-3 'gnus-mime-button-menu)
              (dolist (c gnus-mime-button-commands)
                (define-key map (cadr c) (car c)))
              map))))
