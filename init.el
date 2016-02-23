@@ -75,8 +75,8 @@
 ;; [2016-02-05 Fri 22:53] Try out minibuffer in extra frame.
 
 ;; #+BEGIN_SRC emacs-lisp
-(setq initial-frame-alist '((minibuffer . nil)))
-(setq default-frame-alist '((minibuffer . nil)))
+;; (setq initial-frame-alist '((minibuffer . nil)))
+;; (setq default-frame-alist '((minibuffer . nil)))
 ;; #+END_SRC
 
 ;; ** Org from Source
@@ -970,15 +970,6 @@
 ;; #+BEGIN_SRC emacs-lisp
 (push "~/p/elisp/mw/auxies" load-path)
 (require 'auxies-eww)
-;; #+END_SRC
-
-;; ** region-linum
-
-;; #+BEGIN_SRC emacs-lisp
-(push "~/p/elisp/mw/region-linum" load-path)
-(require 'region-linum)
-
-(global-set-key (kbd "<f5>") #'region-linum-toggle)
 ;; #+END_SRC
 
 ;;; Lab:
@@ -2097,6 +2088,7 @@ easily create a new frame."
 (global-set-key (kbd "<f8>") #'mw-umlautify-before-point)
 (global-set-key (kbd "S-<f11>") 'mw-rotate-split)
 (global-set-key (kbd "<f12>") 'other-frame)
+(global-set-key (kbd "<f5>") #'mw-ephermal-numbers-region)
 
 ;; the following collides with parmode:
 ;; (global-set-key (kbd "C-M-<right>") #'next-buffer)
