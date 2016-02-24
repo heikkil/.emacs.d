@@ -2088,7 +2088,7 @@ easily create a new frame."
 (global-set-key (kbd "<f8>") #'mw-umlautify-before-point)
 (global-set-key (kbd "S-<f11>") 'mw-rotate-split)
 (global-set-key (kbd "<f12>") 'other-frame)
-(global-set-key (kbd "<f5>") #'mw-ephermal-numbers-region)
+(global-set-key (kbd "<f5>") #'mw-ephermal-rectangle-number-lines)
 
 ;; the following collides with parmode:
 ;; (global-set-key (kbd "C-M-<right>") #'next-buffer)
