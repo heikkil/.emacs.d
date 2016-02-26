@@ -116,6 +116,20 @@
 
 ;;; Packages:
 
+;; ** keyfreq
+
+;; From the documentation at https://github.com/dacap/keyfreq:
+
+;; #+BEGIN_QUOTE
+;; ...use keyfreq-show to see how many times you used a command.
+;; #+END_QUOTE
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package keyfreq
+  :config (progn (keyfreq-mode 1)
+                 (keyfreq-autosave-mode 1)))
+;; #+END_SRC
+
 ;; ** wrap-region
 
 ;; Decorate region for certain key presses.
@@ -130,7 +144,6 @@
             (wrap-region-add-wrapper "=" "=" nil 'org-mode)
             (wrap-region-add-wrapper "#+BEGIN_QUOTE\n" "\n#+END_QUOTE" "q" 'org-mode)))
 ;; #+END_SRC
-
 ;; ** auth-password-store
 
 ;; #+BEGIN_SRC emacs-lisp
