@@ -116,6 +116,16 @@
 
 ;;; Packages:
 
+;; ** stumpwm-mode
+
+;; Stumpish integration.
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package stumpwm-mode
+  :config (setq stumpwm-shell-program
+                (expand-file-name "~/.stumpwm.d/modules/util/stumpish/stumpish")))
+;; #+END_SRC
+
 ;; ** keyfreq
 
 ;; From the documentation at https://github.com/dacap/keyfreq:
