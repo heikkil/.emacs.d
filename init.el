@@ -823,16 +823,6 @@
 ;; Taken the looking around code from the documentation of
 ;; ~org-use-speed-commands~.
 
-;; *** Delete trailing ws for org-files
-
-;; This is thought as contribution to keep the Org files clean.
-
-;; #+BEGIN_SRC emacs-lisp
-(push
- (lambda () (if (eq major-mode 'org-mode) (delete-trailing-whitespace)))
- before-save-hook)
-;; #+END_SRC
-
 ;; ** gnus
 
 ;; #+BEGIN_SRC emacs-lisp
@@ -1720,6 +1710,19 @@ This binding shall make the close more convenient."
 (global-set-key (kbd "C-S-a") #'mw-open-line-above)
 ;; #+END_SRC
 ;;; Rest:
+
+;; ** Delete trailing ws at save for some modes
+
+;; This is thought as contribution to keep the Org files clean.
+
+;; #+BEGIN_SRC emacs-lisp
+(push
+ (lambda ()
+   (if (or (eq major-mode 'org-mode)
+           (eq major-mode 'ledger-mode))
+       (delete-trailing-whitespace)))
+ before-save-hook)
+;; #+END_SRC
 
 ;; ** Enable more Emacs features
 
