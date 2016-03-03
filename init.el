@@ -2112,6 +2112,13 @@ easily create a new frame."
   ("<left>" previous-buffer))
 ;; #+END_SRC
 
+;; #+BEGIN_SRC emacs-lisp
+(defhydra hydra-winsize (global-map "C-x {")
+  "Shrink window."
+  ("{" shrink-window-horizontally)
+  ("}" enlarge-window-horizontally))
+;; #+END_SRC
+
 ;; ** Rest
 
 ;; #+BEGIN_SRC emacs-lisp
