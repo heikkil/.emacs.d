@@ -116,6 +116,15 @@
 
 ;;; Packages:
 
+;; ** dired-narrow
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package dired-narrow
+  :ensure t
+  :bind (:map dired-mode-map
+              ("/" . dired-narrow)))
+;; #+END_SRC
+
 ;; ** stumpwm-mode
 
 ;; Stumpish integration.
