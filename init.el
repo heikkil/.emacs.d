@@ -333,7 +333,7 @@
   (key-chord-define-global "m1" #'magit-status)
   (key-chord-define-global "y5" #'org-agenda)
   (key-chord-define-global "xx" #'org-edit-special)
-  (key-chord-define-global "zz" #'org-edit-src-exit)
+  (key-chord-define-global "vv" #'org-edit-src-exit)
   (key-chord-define-global "c8" #'calc-embedded-word)
   (key-chord-define-global "`1" #'org-previous-visible-heading)
   (key-chord-define-global "qj" #'mw-exchange-to-buddy)
