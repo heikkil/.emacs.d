@@ -937,7 +937,7 @@
 (setq bbdb-mua-pop-up nil
       ;; bbdb-mua-pop-up-window-size 0.1
       bbdb-mua-update-interactive-p '(query . create)
-      bbdb-mua-auto-update-p 'create ; nil
+      bbdb-mua-auto-update-p 'create ; st annoying.  disable with (setf bbdb-mua-auto-update-p nil)
       bbdb-update-records-p 'query
       ;; bbdb-ignore-message-alist
       ;;    '(("From" . "bugzilla-daemon"))
