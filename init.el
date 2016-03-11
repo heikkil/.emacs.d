@@ -1720,17 +1720,24 @@ This binding shall make the close more convenient."
 ;; #+END_SRC
 ;;; Rest:
 
-;; ** Delete trailing ws at save for some modes
+;; ** Delete trailing ws on save
 
-;; This is thought as contribution to keep the Org files clean.
+;; This is thought to keep the files cleaner.  This is thought to need
+;; no more thought about trailing whitespace.
 
 ;; #+BEGIN_SRC emacs-lisp
 (push
  (lambda ()
-   (if (or (eq major-mode 'org-mode)
-           (eq major-mode 'ledger-mode))
-       (delete-trailing-whitespace)))
+   (delete-trailing-whitespace))
  before-save-hook)
+
+;; More care taken at first.  Ws cleanup only for a few modes:
+;; (push
+;;  (lambda ()
+;;    (if (or (eq major-mode 'org-mode)
+;;            (eq major-mode 'ledger-mode))
+;;        (delete-trailing-whitespace)))
+;;  before-save-hook)
 ;; #+END_SRC
 
 ;; ** Enable more Emacs features
