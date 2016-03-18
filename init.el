@@ -116,6 +116,15 @@
 
 ;;; Packages:
 
+;; ** chronos
+;; #+BEGIN_SRC emacs-lisp
+(use-package chronos
+  :config (setf chronos-text-to-speech-program "espeak"
+                chronos-text-to-speech-program-parameters "-s 111"
+                chronos-expiry-functions '(chronos-buffer-notify
+                                           chronos-text-to-speech-notify)))
+;; #+END_SRC
+
 ;; ** dired-narrow
 
 ;; #+BEGIN_SRC emacs-lisp
