@@ -1280,6 +1280,10 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
   (with-current-buffer (get-buffer-create "*Hanoi*")
     (special-mode)))
 
+;; disable org's standard notification [2016-03-17 Thu 10:32] TODO
+;; improve and go into the details...
+(setf org-show-notification-handler #'ignore)
+
 (add-hook
  'org-timer-done-hook
  '(lambda ()
