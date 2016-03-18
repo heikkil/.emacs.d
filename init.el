@@ -2121,6 +2121,20 @@ easily create a new frame."
   ("}" enlarge-window-horizontally))
 ;; #+END_SRC
 
+;; ** Go to last line in Buffer List
+
+;; #+BEGIN_SRC emacs-lisp
+(add-hook
+ 'Buffer-menu-mode-hook
+ (lambda ()
+   (local-set-key
+    ">" (lambda () (interactive)
+          (end-of-buffer)
+          (backward-char)))))
+;; #+END_SRC
+
+;; With M-> point goes to the last char (and not one before that.)
+
 ;; ** Rest
 
 ;; #+BEGIN_SRC emacs-lisp
