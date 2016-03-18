@@ -125,6 +125,13 @@
                                            chronos-text-to-speech-notify)))
 ;; #+END_SRC
 
+;; ** swiper
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package swiper
+  :bind ("C->" . swiper))
+;; #+END_SRC
+
 ;; ** dired-narrow
 
 ;; #+BEGIN_SRC emacs-lisp
