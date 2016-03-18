@@ -199,6 +199,16 @@
                      ?m ?j ?b ?k ?w ?q ?v ?x ?z)))
 ;; #+END_SRC
 
+;; ** avy-zap
+
+;; A replacement of zap-to-char.
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package avy-zap
+  :bind (("M-z" . avy-zap-to-char-dwim)
+         ("M-Z" . avy-zap-up-to-char-dwim)))
+;; #+END_SRC
+
 ;; ** on-screen
 
 ;; Adds a visual symbol about the previous page after scrolling a page.
@@ -223,36 +233,6 @@
 (use-package form-feed
   :ensure t)
 ;; #+END_SRC
-
-;; ** ace-jump-mode
-
-;; Taken from https://github.com/jwiegley/use-package.
-
-;; #+BEGIN_SRC emacs-lisp
-;; (use-package ace-jump-mode
-;;   :bind ("C-." . ace-jump-mode)
-;;   :config (setq ace-jump-mode-submode-list
-;;                 '(ace-jump-char-mode ace-jump-word-mode ace-jump-line-mode)))
-;; #+END_SRC
-
-;; ** ace-jump-zap
-
-;; A more ace'y replacement of zap to char on M-z.
-
-;; #+BEGIN_SRC emacs-lisp
-(use-package ace-jump-zap
-  :config (progn (advice-remove
-                  'ace-jump-tree-breadth-first-construct #'ajz/maybe-limit-candidate-length)
-                 (advice-remove
-                  'ace-jump-populate-overlay-to-search-tree #'ajz/maybe-sort-candidate-list))
-  :bind ("M-z" . ace-jump-zap-to-char))
-;; #+END_SRC
-
-;; The advice has been removed because it limits the available targets,
-;; which I find unfavorable.
-
-;; Note the subtle difference of 'zap-to-char' and 'zap-up-to-char'.
-;; The latter means to not delete the target char.
 
 ;; ** nyan-mode
 
