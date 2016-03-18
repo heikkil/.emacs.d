@@ -1989,6 +1989,20 @@ Originates from gnu.emacs.help group 2006."
 (setq  zone-timeout 300)
 ;; #+END_SRC
 
+;; ** Customize Settings
+
+;; Emacs allows to specify the storage-location of customization done via
+;; the emacs-customize interface.  The default is to keep the
+;; customization in the init-file.
+
+;; #+BEGIN_SRC emacs-lisp
+(setq custom-file "~/.emacs.d/init/.emacs-custom.el")
+(load custom-file)
+;; #+END_SRC
+
+;; [2016-02-08 Mon 12:57] Possibly drop usage of the custom file
+;; entirely for more clarity in the init process.
+
 ;;; Keysettings:
 ;; :PROPERTIES:
 ;; :ID:       87eef969-ff13-4812-9c4e-2c79f9c3f7c6
@@ -2121,6 +2135,16 @@ easily create a new frame."
   ("}" enlarge-window-horizontally))
 ;; #+END_SRC
 
+;; ** Dired key for alternate up
+
+;; #+BEGIN_SRC emacs-lisp
+(add-hook
+ 'dired-mode-hook
+ (lambda ()
+   (define-key dired-mode-map "`"
+     #'mw-dired-up-directory-as-alternate)))
+;; #+END_SRC
+
 ;; ** Go to last line in Buffer List
 
 ;; #+BEGIN_SRC emacs-lisp
@@ -2180,30 +2204,6 @@ easily create a new frame."
              (insert (format-time-string "%Y%m%d%H%M"))
            (org-insert-time-stamp nil t t))))))
 ;; #+END_SRC
-
-;; ** Dired key for alternate up
-
-;; #+BEGIN_SRC emacs-lisp
-(add-hook
- 'dired-mode-hook
- (lambda ()
-   (define-key dired-mode-map "`"
-     #'mw-dired-up-directory-as-alternate)))
-;; #+END_SRC
-
-;;; Customize: Settings
-
-;; Emacs allows to specify the storage-location of customization done via
-;; the emacs-customize interface.  The default is to keep the
-;; customization in the init-file.
-
-;; #+BEGIN_SRC emacs-lisp
-(setq custom-file "~/.emacs.d/init/.emacs-custom.el")
-(load custom-file)
-;; #+END_SRC
-
-;; [2016-02-08 Mon 12:57] Possibly drop usage of the custom file
-;; entirely for more clarity in the init process.
 
 ;;; Triggers:
 
