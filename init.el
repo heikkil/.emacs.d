@@ -134,6 +134,8 @@
               ("/" . dired-narrow)))
 ;; #+END_SRC
 
+;; *** TODO Check if / works also at first invocation
+
 ;; ** stumpwm-mode
 
 ;; Stumpish integration.
