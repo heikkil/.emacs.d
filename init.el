@@ -1996,11 +1996,21 @@ Originates from gnu.emacs.help group 2006."
 (setq  zone-timeout 300)
 ;; #+END_SRC
 
-;; ** Customize Settings
+;; ** Emacs Lisp Hook
+
+;; #+BEGIN_SRC emacs-lisp
+(add-hook 'emacs-lisp-mode-hook #'eldoc-mode)
+(add-hook 'emacs-lisp-mode-hook #'imenu-add-menubar-index)
+(add-hook 'emacs-lisp-mode-hook #'checkdoc-minor-mode)
+;; #+END_SRC
+
+;;; Customize: Settings
 
 ;; Emacs allows to specify the storage-location of customization done via
 ;; the emacs-customize interface.  The default is to keep the
 ;; customization in the init-file.
+
+;; Take care about overrides due to customizations.
 
 ;; #+BEGIN_SRC emacs-lisp
 (setq custom-file "~/.emacs.d/init/.emacs-custom.el")
