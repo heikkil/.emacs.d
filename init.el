@@ -310,11 +310,13 @@
 (use-package key-chord
   :config
   (key-chord-mode 1)
-  (key-chord-define-global "s-" #'beacon-blink)
+  (key-chord-define-global "s-" #'beacon-blink) ; find cursor quickly
   (key-chord-define-global "ao" #'other-window)
   (key-chord-define-global "qq" #'other-frame)
-  (key-chord-define-global "wv" #'next-buffer)
-  (key-chord-define-global "q;" #'previous-buffer)
+  (key-chord-define-global "qj" #'mw-exchange-to-buddy)
+  (key-chord-define-global "wv" #'mw-pop-buddy)
+  (key-chord-define-global "><" #'previous-buffer)
+  (key-chord-define-global ".," #'next-buffer)
   (key-chord-define-global "''" #'rope-read-mode)
   (key-chord-define-global "yy" #'mw-duplicate-line)
   (key-chord-define-global "uu" (lambda (&optional in-place)
@@ -331,11 +333,15 @@
   (key-chord-define-global "m1" #'magit-status)
   (key-chord-define-global "y5" #'org-agenda)
   (key-chord-define-global "xx" #'org-edit-special)
+  (key-chord-define-global "kx" (lambda () (interactive)
+                                  (if (eq major-mode 'org-mode)
+                                      (org-edit-special)
+                                    (org-edit-src-exit))))
   (key-chord-define-global "vv" #'org-edit-src-exit)
   (key-chord-define-global "c8" #'calc-embedded-word)
   (key-chord-define-global "`1" #'org-previous-visible-heading)
-  (key-chord-define-global "qj" #'mw-exchange-to-buddy)
   (key-chord-define-global "mw" #'list-buffers)
+  (key-chord-define-global "n1" #'sp-narrow-to-sexp)
 )  ;; recall (key-chord-unset-global "bb") for undef a key-chord.
 ;; #+END_SRC
 
@@ -346,7 +352,7 @@
 ;; #+BEGIN_SRC emacs-lisp
 (use-package paredit
   :ensure t
-  :config (add-hook 'emacs-lisp-mode-hook (lambda () (paredit-mode t))))
+  :init (add-hook 'emacs-lisp-mode-hook (lambda () (paredit-mode t))))
 ;; #+END_SRC
 
 ;; ** smartparens
