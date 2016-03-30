@@ -344,6 +344,8 @@
   (key-chord-define-global "`1" #'org-previous-visible-heading)
   (key-chord-define-global "mw" #'list-buffers)
   (key-chord-define-global "n1" #'sp-narrow-to-sexp)
+  (key-chord-define-global "a6" #'mw-set-ariadne-point)
+  (key-chord-define-global "a7" #'mw-goto-ariadne-point)
 )  ;; recall (key-chord-unset-global "bb") for undef a key-chord.
 ;; #+END_SRC
 
