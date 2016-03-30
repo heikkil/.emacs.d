@@ -331,7 +331,10 @@
   (key-chord-define-global "c8" #'delete-window) ; for kinesis keyboard
   (key-chord-define-global "g8" #'delete-window) ; for cherry keyboard
   (key-chord-define-global "m1" #'magit-status)
-  (key-chord-define-global "y5" #'org-agenda)
+  (key-chord-define-global "y5" (lambda () (interactive)
+                                  (if (get-buffer "*Org Agenda*")
+                                      (switch-to-buffer (get-buffer "*Org Agenda*"))
+                                    (org-agenda-list))))
   (key-chord-define-global "xx" #'org-edit-special)
   (key-chord-define-global "kx" (lambda () (interactive)
                                   (if (eq major-mode 'org-mode)
