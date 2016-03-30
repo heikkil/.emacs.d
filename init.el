@@ -328,7 +328,7 @@
   (key-chord-define-global "~~" #'dired-jump)
   (key-chord-define-global ",," #'lentic-mode-move-lentic-window)
   (key-chord-define-global "p4" #'delete-other-windows)
-  (key-chord-define-global "g7" #'delete-window) ; for kinesis keyboard
+  (key-chord-define-global "c8" #'delete-window) ; for kinesis keyboard
   (key-chord-define-global "g8" #'delete-window) ; for cherry keyboard
   (key-chord-define-global "m1" #'magit-status)
   (key-chord-define-global "y5" #'org-agenda)
@@ -338,7 +338,6 @@
                                       (org-edit-special)
                                     (org-edit-src-exit))))
   (key-chord-define-global "vv" #'org-edit-src-exit)
-  (key-chord-define-global "c8" #'calc-embedded-word)
   (key-chord-define-global "`1" #'org-previous-visible-heading)
   (key-chord-define-global "mw" #'list-buffers)
   (key-chord-define-global "n1" #'sp-narrow-to-sexp)
