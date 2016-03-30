@@ -346,6 +346,7 @@
   (key-chord-define-global "n1" #'sp-narrow-to-sexp)
   (key-chord-define-global "a6" #'mw-set-ariadne-point)
   (key-chord-define-global "a7" #'mw-goto-ariadne-point)
+  (key-chord-define-global "c1" #'chronos-add-timer)
 )  ;; recall (key-chord-unset-global "bb") for undef a key-chord.
 ;; #+END_SRC
 
