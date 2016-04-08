@@ -1304,11 +1304,17 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
 ;;; (add-to-list 'org-modules 'org-timer) ;; done via customize
 
 (require 'org-timer)
-(defvar mw-podomoros-completed-in-session 0
-  "Number of podomoros in the current emacs-session.")
+(defvar *mw-pomodoros-completed-in-session* 0
+  "Number of pomodoros in the current emacs-session.")
 
-(defcustom mw-podomoros-pause-duration "3"
-  "Duration in minutes of standard pauses between podomoros.")
+(defvar *mw-pomodoros-before-longer-break* 4
+  "Number of pomodoros to reach for a longer break.")
+
+(defcustom *mw-pomodoro-pause-duration* "3"
+  "Duration in minutes of standard pauses between pomodoros.")
+
+(defcustom *mw-pomodoro-longer-pause-duration* "15"
+  "Duration in minutes of standard pauses between pomodoros.")
 
 (setq org-timer-default-timer "29")
 (add-hook 'org-clock-in-hook
@@ -1349,12 +1355,16 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
           ;; (zone)
           )
       (progn
-        (setq mw-podomoros-completed-in-session
-              (1+ mw-podomoros-completed-in-session))
+        (setq *mw-pomodoros-completed-in-session*
+              (if (= *mw-pomodoros-before-longer-break* (1+ *mw-pomodoros-completed-in-session*))
+                  0
+                (1+ *mw-pomodoros-completed-in-session*)))
         (org-clock-goto)
         ;; going to an org buffer is necessary for starting
         ;; an org timer.
-        (mw-org-trigger-timer-for-pause)
+        (mw-org-trigger-timer-for-pause (if (= 0 *mw-pomodoros-completed-in-session*)
+                                            *mw-pomodoro-longer-pause-duration*
+                                          *mw-pomodoro-pause-duration*))
         (message
          "Tomato done at %s.  Il est vraiment temps de prendre une pause."
          (format-time-string "%T"))
@@ -1387,7 +1397,7 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
   (interactive)
   (if (derived-mode-p 'org-mode)
       (let ((saved-org-timer-default-timer org-timer-default-timer)
-            (duration (if (not duration) mw-podomoros-pause-duration
+            (duration (if (not duration) *mw-pomodoro-pause-duration*
                         (number-to-string duration))))
         (setq org-timer-default-timer duration)
         (org-timer-set-timer '(64))
