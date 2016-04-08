@@ -350,6 +350,7 @@
 )  ;; recall (key-chord-unset-global "bb") for undef a key-chord.
 ;; #+END_SRC
 
+
 ;; ** paredit
 
 ;; Very helpful mode for editing elisp.
@@ -357,9 +358,14 @@
 ;; #+BEGIN_SRC emacs-lisp
 (use-package paredit
   :ensure t
-  :init (add-hook 'emacs-lisp-mode-hook (lambda () (paredit-mode t))))
+  :config (progn
+            (add-hook 'emacs-lisp-mode-hook (lambda () (paredit-mode t)))
+            (define-key paredit-mode-map  (kbd "M-s") nil) ; Unshadow all the M-s standard stuff.
+            )
+  :bind ("C-M-<up>" . paredit-splice-sexp))
 ;; #+END_SRC
 
+
 ;; ** smartparens
 
 ;; [2016-01-08 Fri 14:49] At first I thought smartparens-mode will replace paredit for me.  But
