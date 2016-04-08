@@ -1310,10 +1310,10 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
 (defvar *mw-pomodoros-before-longer-break* 4
   "Number of pomodoros to reach for a longer break.")
 
-(defcustom *mw-pomodoro-pause-duration* "3"
+(defcustom *mw-pomodoro-pause-duration* 3
   "Duration in minutes of standard pauses between pomodoros.")
 
-(defcustom *mw-pomodoro-longer-pause-duration* "15"
+(defcustom *mw-pomodoro-longer-pause-duration* 15
   "Duration in minutes of standard pauses between pomodoros.")
 
 (setq org-timer-default-timer "29")
