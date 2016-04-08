@@ -1011,6 +1011,28 @@
 
 ;;; Lab:
 
+;; ** A key for Info-search-next                                          :info:
+
+;; *** Example
+
+;; X wants to find "mysearchstring" muliple times.  It's possible already
+;; by typing
+
+;; s mysearchstring
+;; s RET
+;; s RET
+
+;; With the key setting below the sequence above simplifies to
+
+;; s mysearchstring
+;; a
+;; a
+
+;; #+BEGIN_SRC emacs-lisp
+(eval-after-load 'info
+  '(progn (define-key Info-mode-map (kbd "a") #'Info-search-next)))
+;; #+END_SRC
+
 ;; ** Org Lab
 
 ;; ***** org-show-context-detail
@@ -1035,7 +1057,7 @@
 
 ;; Source:
 ;; http://emacs.stackexchange.com/questions/12930/display-org-todo-list-of-entries-with-deadlines
-
+;; ;;
 ;; ** Registers
 
 ;; *** Unset Register
