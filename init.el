@@ -1042,18 +1042,12 @@ Note: This function has been derived from
 `org-agenda-drag-line-forward'.
 "
   (interactive)
-  (let ((inhibit-read-only t) lst line)
-    (if (or (not (get-text-property (point) 'txt))
-	    (save-excursion
-	      (move-beginning-of-line 2)
-              (push (not (get-text-property (point) 'txt)) lst)
-	      (delq nil lst)))
-	(message "Cannot move line forward")
-      (let ((end (save-excursion (move-beginning-of-line 2) (point))))
-	(move-beginning-of-line 1)
-	(delete-region (point) end)
-	(org-agenda-reapply-filters)
-	(org-agenda-mark-clocking-task)))))
+  (let ((inhibit-read-only t)
+        (end (save-excursion (move-beginning-of-line 2) (point))))
+    (move-beginning-of-line 1)
+    (delete-region (point) end)
+    (org-agenda-reapply-filters)
+    (org-agenda-mark-clocking-task)))
 ;; #+END_SRC
 
 ;; *** Keybinding
