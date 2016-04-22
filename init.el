@@ -1056,7 +1056,8 @@ Note: This function has been derived from
 ;; to popup holidays, but they are still accessable on key 'H'.
 
 ;; #+BEGIN_SRC emacs-lisp
-(org-defkey org-agenda-mode-map (kbd "h") #'mw-org-agenda-hide-line)
+(eval-after-load "org-agenda"
+  '(org-defkey org-agenda-mode-map (kbd "h") #'mw-org-agenda-hide-line))
 ;; #+END_SRC
 
 ;; ** A key for Info-search-next                                          :info:
