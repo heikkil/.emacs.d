@@ -361,7 +361,7 @@
 )  ;; recall (key-chord-unset-global "bb") for undef a key-chord.
 ;; #+END_SRC
 
-
+;; 
 ;; ** paredit
 
 ;; Very helpful mode for editing elisp.
@@ -376,7 +376,7 @@
   :bind ("C-M-<up>" . paredit-splice-sexp))
 ;; #+END_SRC
 
-
+;; 
 ;; ** smartparens
 
 ;; [2016-01-08 Fri 14:49] At first I thought smartparens-mode will replace paredit for me.  But
@@ -1021,6 +1021,49 @@
 ;; #+END_SRC
 
 ;;; Lab:
+
+;; ** Hide a Line in the Agenda
+
+;; Be able to hide a line of the org agenda.
+
+;; This is a functionality that affects only the display in an agenda
+;; buffer only.
+
+;; Thought to help when scanning an agenda with the "scan to nothing"
+;; technique.
+
+;; #+BEGIN_SRC emacs-lisp
+(defun mw-org-agenda-hide-line ()
+  "Delete the line containing point from the agenda.
+This action just affects the agenda buffer and not the source of the data.
+I.e. the hidden lines appear again at the next request for an agenda.
+
+Note: This function has been derived from
+`org-agenda-drag-line-forward'.
+"
+  (interactive)
+  (let ((inhibit-read-only t) lst line)
+    (if (or (not (get-text-property (point) 'txt))
+	    (save-excursion
+	      (move-beginning-of-line 2)
+              (push (not (get-text-property (point) 'txt)) lst)
+	      (delq nil lst)))
+	(message "Cannot move line forward")
+      (let ((end (save-excursion (move-beginning-of-line 2) (point))))
+	(move-beginning-of-line 1)
+	(delete-region (point) end)
+	(org-agenda-reapply-filters)
+	(org-agenda-mark-clocking-task)))))
+;; #+END_SRC
+
+;; *** Keybinding
+
+;; Using the key 'h' which reminds of hide.  'h' is the standard binding
+;; to popup holidays, but they are still accessable on key 'H'.
+
+;; #+BEGIN_SRC emacs-lisp
+(org-defkey org-agenda-mode-map (kbd "h") #'mw-org-agenda-hide-line)
+;; #+END_SRC
 
 ;; ** A key for Info-search-next                                          :info:
 
