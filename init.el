@@ -2293,6 +2293,18 @@ easily create a new frame."
 (org-agenda-list)
 (org-agenda-to-appt) ; I want this!
 (switch-to-buffer "*Org Agenda*")
+
+;; Vision: Extend the following code to be like the computer in the
+;; Heart of Gold.  E.g. be able to start a conversation like "Hey
+;; Emacs, please make some tee!"
+(start-process "play-a-sound" "*play-a-sound-output*"
+               "espeak"
+               "-v"
+               ;; "en-swedish"
+               "en"
+               "-s"
+               "155" ;; word speed
+               "Hi guys! This is a fantastic day! Let's do something!")
 ;; #+END_SRC
 
 ;;; Meta:                                                             :noexport:
