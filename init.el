@@ -205,10 +205,14 @@
   :ensure t
   :bind (("C-." . avy-goto-char)
          ("C-," . avy-goto-line))
-  :config (setq avy-keys
+  :config
+  (setq avy-keys
                 '(?e ?t ?h ?u ?n ?o ?s ?a ?d ?i ?-
                      ?. ?c ?, ?r ?l ?' ?p ?y ?f ?g
-                     ?m ?j ?b ?k ?w ?q ?v ?x ?z)))
+                     ?m ?j ?b ?k ?w ?q ?v ?x ?z))
+  (setf avy-all-windows nil)
+  (setf avy-all-windows-alt t) ; hint: behavior prefix arg
+  )
 ;; #+END_SRC
 
 ;; ** avy-zap
