@@ -59,10 +59,11 @@
 ;; #+BEGIN_SRC emacs-lisp
 ;; (setq debug-on-error t)
 
-(defun ert--activate-font-lock-keywords()
-  ;; [2016-04-16 Sat 14:40] wtf?
-  ;; some change with emacs?  function missing?
-  )
+;; (defun ert--activate-font-lock-keywords ()
+;;   ;; [2016-04-16 Sat 14:40] wtf?
+;;   ;; some change with emacs?  function missing?
+;;   )
+(require ''ert)
 ;; #+END_SRC
 
 ;; ** Don't load outdated byte code
@@ -2364,4 +2365,3 @@ easily create a new frame."
 ;; ** Last line
 
 ;;; init.el ends here
-
