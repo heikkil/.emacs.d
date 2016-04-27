@@ -2200,6 +2200,9 @@ Originates from gnu.emacs.help group 2006."
     (define-key map "p" #'password-store-copy)
     (define-key map "P" #'org-toggle-pretty-entities)
     (define-key map "j" #'org-clock-goto)
+    (define-key map  (kbd "C-j")
+      (lambda nil "Add a note to the Org currently clocked."
+        (interactive) (org-clock-goto) (org-add-note)))
     (define-key map "z" #'mw-auxies-delete-to-direction)
     (define-key map "k" #'key-chord-mode) ; sometimes i need turning it off and on again.
     (define-key map "c" #'calendar)
