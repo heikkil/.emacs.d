@@ -60,10 +60,10 @@
 ;; (setq debug-on-error t)
 
 ;; (defun ert--activate-font-lock-keywords ()
-;;   ;; [2016-04-16 Sat 14:40] wtf?
+;;   ;; [2016-04-16 Sat 14:40] wtf?  startup breaks.
 ;;   ;; some change with emacs?  function missing?
 ;;   )
-(require ''ert)
+(require 'ert)
 ;; #+END_SRC
 
 ;; ** Don't load outdated byte code
