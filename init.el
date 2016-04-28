@@ -140,15 +140,19 @@
 
 ;; ** dired-narrow
 
-
 ;; #+BEGIN_SRC emacs-lisp
 (use-package dired-narrow
   :ensure t
   :bind (:map dired-mode-map
-              ("/" . dired-narrow)))
+              ("/" . dired-narrow-regexp)))
 ;; #+END_SRC
 
-;; *** TODO Check if / works also at first invocation
+;; *** TODO Make / work also at very first invocation
+
+;; [2016-04-28 Thu 11:24] Actually I need to literally do M-x
+;; dired-narrow-regexp at the very first time I use the command.
+
+;; This is annoying and easily forgotten.
 
 ;; ** stumpwm-mode
 
@@ -2370,4 +2374,4 @@ easily create a new frame."
 
 ;; ** Last line
 
-;;; init.el ends here
+;;; init:.el ends here
