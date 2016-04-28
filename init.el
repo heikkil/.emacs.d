@@ -1752,7 +1752,7 @@ Rename a possibly existing buffer *eww*."
 (defun mw-strip ()
   "Strip window and frame."
   (interactive)
-  (hidden-mode-line-mode)
+  (hidden-mode-line-mode hidden-mode-line-mode)
   (when hidden-mode-line-mode
     (fringe-mode 0)
     (scroll-bar-mode -1)))
