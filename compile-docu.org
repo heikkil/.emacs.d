@@ -5,10 +5,7 @@ The result is suitable e.g. for github.
 
 *** Pull the Trigger
 
-#+CALL: extract-init-documentation()
-
-#+RESULTS:
-: readme.md
+#+CALL: extract-init-documentation() :results silent
 
 Call with C-c C-c in Org mode.
 
@@ -30,6 +27,3 @@ Call with C-c C-c in Org mode.
 - Start with file init.el.
 - Switch to the org representation via lentic.
 - Export to a corresponding markup file.
-
-
-
