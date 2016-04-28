@@ -1751,11 +1751,11 @@ Rename a possibly existing buffer *eww*."
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-strip ()
   "Strip window and frame."
-     (interactive)
-     (hidden-mode-line-mode)
-     (when hidden-mode-line-mode
-       (fringe-mode 0)
-       (scroll-bar-mode -1)))
+  (interactive)
+  (hidden-mode-line-mode)
+  (when hidden-mode-line-mode
+    (fringe-mode 0)
+    (scroll-bar-mode -1)))
 ;; #+END_SRC
 
 ;; ** Key sequences to open browser
