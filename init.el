@@ -1036,9 +1036,9 @@
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-org-agenda-hide-line ()
-  "Delete the line containing point from the agenda.
+  "Hide the line containing point from the agenda.
 This action just affects the agenda buffer and not the source of the data.
-I.e. the hidden lines appear again at the next request for an agenda.
+I.e. the lines appear again at the next refresh for an agenda.
 
 Note: This function has been derived from
 `org-agenda-drag-line-forward'.
