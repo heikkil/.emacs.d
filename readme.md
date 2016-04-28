@@ -2,158 +2,158 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org1af3daa">1. Firstfirst</a>
+<li><a href="#orge4fe8ab">1. Firstfirst</a>
 <ul>
-<li><a href="#org39f5aaa">1.1. Debugging</a></li>
-<li><a href="#org8ce1f2a">1.2. Don't load outdated byte code</a></li>
-<li><a href="#org6e46f2a">1.3. Frame Config</a></li>
-<li><a href="#orgcc37161">1.4. Org from Source</a></li>
-<li><a href="#orgf067080">1.5. Package initialization</a></li>
-<li><a href="#org99762bd">1.6. use-package</a></li>
+<li><a href="#org5f69869">1.1. Debugging</a></li>
+<li><a href="#org1261aff">1.2. Don't load outdated byte code</a></li>
+<li><a href="#org72073e3">1.3. Frame Config</a></li>
+<li><a href="#orgb879298">1.4. Org from Source</a></li>
+<li><a href="#orgef74cf8">1.5. Package initialization</a></li>
+<li><a href="#orgd70635a">1.6. use-package</a></li>
 </ul>
 </li>
-<li><a href="#org79237eb">2. Packages</a>
+<li><a href="#orgdb27f9d">2. Packages</a>
 <ul>
-<li><a href="#orgcb89cc6">2.1. chronos</a></li>
-<li><a href="#org8b1a0fe">2.2. swiper</a></li>
-<li><a href="#org1dfa876">2.3. dired-narrow</a></li>
-<li><a href="#org2815405">2.4. stumpwm-mode</a></li>
-<li><a href="#orgdb24732">2.5. keyfreq</a></li>
-<li><a href="#orgf9f49ad">2.6. wrap-region</a></li>
-<li><a href="#orgbd3fca5">2.7. auth-password-store</a></li>
-<li><a href="#org4279659">2.8. avy</a></li>
-<li><a href="#orgade4c17">2.9. avy-zap</a></li>
-<li><a href="#org3174cbe">2.10. on-screen</a></li>
-<li><a href="#org5dedaf3">2.11. page-break-lines</a></li>
-<li><a href="#orge717e50">2.12. form-feed-mode</a></li>
-<li><a href="#orgd2a0bd0">2.13. nyan-mode</a></li>
-<li><a href="#org2b2f6e4">2.14. browse-kill-ring</a></li>
-<li><a href="#org2299d65">2.15. expand-region</a></li>
-<li><a href="#org4d32341">2.16. ido-hacks</a></li>
-<li><a href="#orgc83468c">2.17. lentic</a></li>
-<li><a href="#org2e63d04">2.18. magit</a></li>
-<li><a href="#org27b32d2">2.19. company mode</a></li>
-<li><a href="#org2bd9c81">2.20. key chord</a></li>
-<li><a href="#orgf1a48d5">2.21. paredit</a></li>
-<li><a href="#org4ada89">2.22. smartparens</a></li>
-<li><a href="#org4ddac4c">2.23. gnorb</a></li>
-<li><a href="#orgb0b0b62">2.24. rase</a></li>
-<li><a href="#orgd655d8c">2.25. AUR access</a></li>
-<li><a href="#org1b6e68e">2.26. slime</a></li>
-<li><a href="#org1d463be">2.27. zeitgeist</a></li>
-<li><a href="#org8bfd7a0">2.28. helm</a></li>
-<li><a href="#orgf346142">2.29. gnuplot</a></li>
-<li><a href="#org36ab36c">2.30. hydra</a></li>
+<li><a href="#org38fee51">2.1. chronos</a></li>
+<li><a href="#org903d4c0">2.2. swiper</a></li>
+<li><a href="#org563de9">2.3. dired-narrow</a></li>
+<li><a href="#orgd18b2b1">2.4. stumpwm-mode</a></li>
+<li><a href="#orgcd185d">2.5. keyfreq</a></li>
+<li><a href="#org8a50e83">2.6. wrap-region</a></li>
+<li><a href="#org87e5a04">2.7. auth-password-store</a></li>
+<li><a href="#org87c7cd">2.8. avy</a></li>
+<li><a href="#orgb378330">2.9. avy-zap</a></li>
+<li><a href="#orgb3bd7af">2.10. on-screen</a></li>
+<li><a href="#org687581c">2.11. page-break-lines</a></li>
+<li><a href="#org38a616d">2.12. form-feed-mode</a></li>
+<li><a href="#org13408c3">2.13. nyan-mode</a></li>
+<li><a href="#orgad1f799">2.14. browse-kill-ring</a></li>
+<li><a href="#orga485bc3">2.15. expand-region</a></li>
+<li><a href="#org9e0379f">2.16. ido-hacks</a></li>
+<li><a href="#org24d9f9">2.17. lentic</a></li>
+<li><a href="#org82c89d2">2.18. magit</a></li>
+<li><a href="#org24febd1">2.19. company mode</a></li>
+<li><a href="#orgf9d0c1d">2.20. key chord</a></li>
+<li><a href="#orgf6d3de2">2.21. paredit</a></li>
+<li><a href="#orgb1ad580">2.22. smartparens</a></li>
+<li><a href="#org5d128ea">2.23. gnorb</a></li>
+<li><a href="#orgf64dac2">2.24. rase</a></li>
+<li><a href="#orgbca17a8">2.25. AUR access</a></li>
+<li><a href="#orgab8c17d">2.26. slime</a></li>
+<li><a href="#orgc847d8">2.27. zeitgeist</a></li>
+<li><a href="#org92e1fe6">2.28. helm</a></li>
+<li><a href="#org99e8803">2.29. gnuplot</a></li>
+<li><a href="#org299383f">2.30. hydra</a></li>
 </ul>
 </li>
-<li><a href="#org83904c9">3. LabPkgs</a>
+<li><a href="#orgf14a4ea">3. LabPkgs</a>
 <ul>
-<li><a href="#org46ff8b6">3.1. sotlisp</a></li>
-<li><a href="#org4d51352">3.2. emr</a></li>
-<li><a href="#orgea4b00f">3.3. beacon</a></li>
-<li><a href="#org71ea7d9">3.4. elmacro</a></li>
-<li><a href="#orgd39cee9">3.5. elisp-slime-nav</a></li>
-<li><a href="#orge58c96c">3.6. git-auto-commit-mode</a></li>
-<li><a href="#org13e31d7">3.7. git-timemachine</a></li>
+<li><a href="#org5758ce1">3.1. sotlisp</a></li>
+<li><a href="#orgf7e548f">3.2. emr</a></li>
+<li><a href="#org2f3e198">3.3. beacon</a></li>
+<li><a href="#orgbd7347b">3.4. elmacro</a></li>
+<li><a href="#orgc86b7d8">3.5. elisp-slime-nav</a></li>
+<li><a href="#orgfaa86d6">3.6. git-auto-commit-mode</a></li>
+<li><a href="#orga7863fd">3.7. git-timemachine</a></li>
 </ul>
 </li>
-<li><a href="#orgd3b5ebe">4. Fromsource</a>
+<li><a href="#org53bbec3">4. Fromsource</a>
 <ul>
-<li><a href="#orga3aa521">4.1. Org&#xa0;&#xa0;&#xa0;<span class="tag"><span class="org">org</span></span></a></li>
-<li><a href="#org4f659e0">4.2. gnus</a></li>
-<li><a href="#orgf44c1af">4.3. ledger</a></li>
-<li><a href="#org611ff8d">4.4. emms</a></li>
-<li><a href="#org2288985">4.5. Big brother db</a></li>
-<li><a href="#orgfab0617">4.6. Zen reward mode</a></li>
-<li><a href="#org4a6d625">4.7. Little helpers</a></li>
-<li><a href="#orgbb9b56d">4.8. Auxies</a></li>
-<li><a href="#org67e1455">4.9. Hacks</a></li>
-<li><a href="#org41badac">4.10. Auxies-eww</a></li>
+<li><a href="#orgc390770">4.1. Org&#xa0;&#xa0;&#xa0;<span class="tag"><span class="org">org</span></span></a></li>
+<li><a href="#orga9f18a2">4.2. gnus</a></li>
+<li><a href="#orgc28fe7c">4.3. ledger</a></li>
+<li><a href="#org4524e44">4.4. emms</a></li>
+<li><a href="#org6bcf379">4.5. Big brother db</a></li>
+<li><a href="#orgedd3e6f">4.6. Zen reward mode</a></li>
+<li><a href="#org2602309">4.7. Little helpers</a></li>
+<li><a href="#org6c2db55">4.8. Auxies</a></li>
+<li><a href="#org6a6224c">4.9. Hacks</a></li>
+<li><a href="#org4be4886">4.10. Auxies-eww</a></li>
 </ul>
 </li>
-<li><a href="#orgb616b3b">5. Lab</a>
+<li><a href="#orga3aef14">5. Lab</a>
 <ul>
-<li><a href="#orgf818772">5.1. Hide a Line in the Agenda</a></li>
-<li><a href="#org5039531">5.2. A key for Info-search-next&#xa0;&#xa0;&#xa0;<span class="tag"><span class="info">info</span></span></a></li>
-<li><a href="#orgeff1c7e">5.3. Org Lab</a></li>
-<li><a href="#org6d2fafc">5.4. Registers</a></li>
-<li><a href="#org64e493e">5.5. Controlled Garbage Collection</a></li>
-<li><a href="#org3e2fcaf">5.6. lob</a></li>
-<li><a href="#org1335175">5.7. Switch buffers between frames</a></li>
-<li><a href="#orge2638e4">5.8. vcs</a></li>
-<li><a href="#org60acdb3">5.9. linum experiments&#xa0;&#xa0;&#xa0;<span class="tag"><span class="linum">linum</span></span></a></li>
-<li><a href="#orgba9c968">5.10. Toggle-letter-case</a></li>
-<li><a href="#orgcaec397">5.11. ispell and org</a></li>
-<li><a href="#orgc75a866">5.12. epa</a></li>
-<li><a href="#org74367c">5.13. ediff</a></li>
-<li><a href="#org3baa991">5.14. Drag windows</a></li>
-<li><a href="#org5f42575">5.15. Pomodoro</a></li>
-<li><a href="#org7a07853">5.16. navi-mode</a></li>
-<li><a href="#orgc7cf9b4">5.17. Quickly access the web through w3m&#xa0;&#xa0;&#xa0;<span class="tag"><span class="weak">weak</span></span></a></li>
-<li><a href="#orgb78e3e4">5.18. Rope read to save eye-movements</a></li>
-<li><a href="#orgf0fa407">5.19. Convenient snapshot of emacs from within</a></li>
-<li><a href="#org826719">5.20. Hippie expand</a></li>
-<li><a href="#org3696acc">5.21. Special holidays</a></li>
-<li><a href="#org5434838">5.22. Switch sound on/off</a></li>
-<li><a href="#org43a1db3">5.23. Personalize the sound of the bell</a></li>
-<li><a href="#orgca47d2c">5.24. bbdb csv feature</a></li>
-<li><a href="#org4946778">5.25. Kill an url at point</a></li>
-<li><a href="#orgc4deadd">5.26. Duplicate a w3m-session</a></li>
-<li><a href="#org7164727">5.27. wcheck</a></li>
-<li><a href="#org4ef26e9">5.28. Additions around eww</a></li>
-<li><a href="#org97aab14">5.29. Hidden mode line</a></li>
-<li><a href="#org23f788c">5.30. Strip</a></li>
-<li><a href="#orgac387a3">5.31. Key sequences to open browser</a></li>
-<li><a href="#org7d7121b">5.32. mpages</a></li>
-<li><a href="#orgaadd409">5.33. dired-x</a></li>
-<li><a href="#orgd1e05ee">5.34. Delete blank lines also above</a></li>
-<li><a href="#orge8ec01c">5.35. Disable query about active processes at quit</a></li>
-<li><a href="#org1017c6d">5.36. Open line below</a></li>
+<li><a href="#org8b05ee1">5.1. Hide a Line in the Agenda</a></li>
+<li><a href="#orge89e0b5">5.2. A key for Info-search-next&#xa0;&#xa0;&#xa0;<span class="tag"><span class="info">info</span></span></a></li>
+<li><a href="#orgdfd2924">5.3. Org Lab</a></li>
+<li><a href="#org4c6e905">5.4. Registers</a></li>
+<li><a href="#orge7f51ab">5.5. Controlled Garbage Collection</a></li>
+<li><a href="#org2ff1d07">5.6. lob</a></li>
+<li><a href="#orgd629295">5.7. Switch buffers between frames</a></li>
+<li><a href="#org476ed46">5.8. vcs</a></li>
+<li><a href="#org5a3a9a7">5.9. linum experiments&#xa0;&#xa0;&#xa0;<span class="tag"><span class="linum">linum</span></span></a></li>
+<li><a href="#orga334e07">5.10. Toggle-letter-case</a></li>
+<li><a href="#orgf07365e">5.11. ispell and org</a></li>
+<li><a href="#org600a140">5.12. epa</a></li>
+<li><a href="#org1aff812">5.13. ediff</a></li>
+<li><a href="#org819b317">5.14. Drag windows</a></li>
+<li><a href="#orge975cd1">5.15. Pomodoro</a></li>
+<li><a href="#orga55c45a">5.16. navi-mode</a></li>
+<li><a href="#orge015a74">5.17. Quickly access the web through w3m&#xa0;&#xa0;&#xa0;<span class="tag"><span class="weak">weak</span></span></a></li>
+<li><a href="#orgcfbd0cf">5.18. Rope read to save eye-movements</a></li>
+<li><a href="#org9975600">5.19. Convenient snapshot of emacs from within</a></li>
+<li><a href="#orgcc2b7e4">5.20. Hippie expand</a></li>
+<li><a href="#org7701477">5.21. Special holidays</a></li>
+<li><a href="#orgaa91fb">5.22. Switch sound on/off</a></li>
+<li><a href="#org87cf047">5.23. Personalize the sound of the bell</a></li>
+<li><a href="#orgee68a26">5.24. bbdb csv feature</a></li>
+<li><a href="#orgd9f4804">5.25. Kill an url at point</a></li>
+<li><a href="#orgcc79232">5.26. Duplicate a w3m-session</a></li>
+<li><a href="#org63f4838">5.27. wcheck</a></li>
+<li><a href="#orgcd57972">5.28. Additions around eww</a></li>
+<li><a href="#orgd146342">5.29. Hidden mode line</a></li>
+<li><a href="#org98fa314">5.30. Strip</a></li>
+<li><a href="#org73c9a5a">5.31. Key sequences to open browser</a></li>
+<li><a href="#org745325">5.32. mpages</a></li>
+<li><a href="#org8614015">5.33. dired-x</a></li>
+<li><a href="#org8f224ee">5.34. Delete blank lines also above</a></li>
+<li><a href="#orgec88a2e">5.35. Disable query about active processes at quit</a></li>
+<li><a href="#orgb424946">5.36. Open line below</a></li>
 </ul>
 </li>
-<li><a href="#orgaaee3ae">6. Rest</a>
+<li><a href="#org535c43b">6. Rest</a>
 <ul>
-<li><a href="#org24a168c">6.1. Delete trailing ws on save</a></li>
-<li><a href="#orgf85a1fb">6.2. Enable more Emacs features</a></li>
-<li><a href="#org58e42f1">6.3. Abbrevs</a></li>
-<li><a href="#org871af5f">6.4. Appointments from org</a></li>
-<li><a href="#org9d156c6">6.5. Battery</a></li>
-<li><a href="#orgc79e8a1">6.6. Beautification</a></li>
-<li><a href="#orgf847b12">6.7. Language environment change</a></li>
-<li><a href="#org7877cbf">6.8. Scroll-lock-mode</a></li>
-<li><a href="#org1def39f">6.9. Rotate windows</a></li>
-<li><a href="#org91845ed">6.10. Screen</a></li>
-<li><a href="#org916f927">6.11. Timeclock</a></li>
-<li><a href="#org32b2338">6.12. Diary</a></li>
-<li><a href="#org1647646">6.13. erc</a></li>
-<li><a href="#org8611334">6.14. Real delete</a></li>
-<li><a href="#orga0d6a55">6.15. More tweaks</a></li>
-<li><a href="#org4d89661">6.16. Zone</a></li>
-<li><a href="#org114c95d">6.17. Emacs Lisp Hook</a></li>
+<li><a href="#orgd36d0b6">6.1. Delete trailing ws on save</a></li>
+<li><a href="#orgfd65da1">6.2. Enable more Emacs features</a></li>
+<li><a href="#org9e9a7d2">6.3. Abbrevs</a></li>
+<li><a href="#org7777858">6.4. Appointments from org</a></li>
+<li><a href="#org4a34173">6.5. Battery</a></li>
+<li><a href="#orgcf82ce8">6.6. Beautification</a></li>
+<li><a href="#org34108dd">6.7. Language environment change</a></li>
+<li><a href="#orgae857a">6.8. Scroll-lock-mode</a></li>
+<li><a href="#orge73ce4f">6.9. Rotate windows</a></li>
+<li><a href="#orgff572d5">6.10. Screen</a></li>
+<li><a href="#orgee4c0a5">6.11. Timeclock</a></li>
+<li><a href="#org8aa7d0f">6.12. Diary</a></li>
+<li><a href="#org5467eb7">6.13. erc</a></li>
+<li><a href="#orgd03bb1f">6.14. Real delete</a></li>
+<li><a href="#orged5da38">6.15. More tweaks</a></li>
+<li><a href="#org831917d">6.16. Zone</a></li>
+<li><a href="#orgf3490be">6.17. Emacs Lisp Hook</a></li>
 </ul>
 </li>
-<li><a href="#org415d427">7. Keysettings</a>
+<li><a href="#org8f69a8d">7. Keysettings</a>
 <ul>
-<li><a href="#org713f528">7.1. Rectangle</a></li>
-<li><a href="#org63537ac">7.2. Org</a></li>
-<li><a href="#orgede1559">7.3. Following org-mode links given in other modes</a></li>
-<li><a href="#orgef9d139">7.4. For Org Files</a></li>
-<li><a href="#org28292da">7.5. Individual keymap</a></li>
-<li><a href="#org5fc9790">7.6. Hydras</a></li>
-<li><a href="#orgfe14e4">7.7. Dired key for alternate up</a></li>
-<li><a href="#orgff9d518">7.8. Go to last line in Buffer List</a></li>
-<li><a href="#org3c5c7e7">7.9. Rest</a></li>
+<li><a href="#orga152a84">7.1. Rectangle</a></li>
+<li><a href="#org6221057">7.2. Org</a></li>
+<li><a href="#org7036f1">7.3. Following org-mode links given in other modes</a></li>
+<li><a href="#orgd47cf25">7.4. For Org Files</a></li>
+<li><a href="#orgcde3aac">7.5. Individual keymap</a></li>
+<li><a href="#org465af4a">7.6. Hydras</a></li>
+<li><a href="#orgb0abda7">7.7. Dired key for alternate up</a></li>
+<li><a href="#org47f1f39">7.8. Go to last line in Buffer List</a></li>
+<li><a href="#orgba1a5f6">7.9. Rest</a></li>
 </ul>
 </li>
-<li><a href="#org4d3bce3">8. Triggers</a></li>
+<li><a href="#orga50e6d6">8. Triggers</a></li>
 </ul>
 </div>
 </div>
 
 
-# Firstfirst<a id="org1af3daa"></a>
+# Firstfirst<a id="orge4fe8ab"></a>
 
-## Debugging<a id="org39f5aaa"></a>
+## Debugging<a id="org5f69869"></a>
 
     ;; (setq debug-on-error t)
 
@@ -163,7 +163,7 @@
     ;;   )
     (require 'ert)
 
-## Don't load outdated byte code<a id="org8ce1f2a"></a>
+## Don't load outdated byte code<a id="org1261aff"></a>
 
     (setq load-prefer-newer t)
 
@@ -171,14 +171,14 @@ Found the above in lunaryorn's config at
 <https://github.com/lunaryorn/.emacs.d/blob/master/init.el>
 <span class="timestamp-wrapper"><span class="timestamp">[2015-05-18 Mon 21:56]</span></span>.
 
-## Frame Config<a id="org6e46f2a"></a>
+## Frame Config<a id="org72073e3"></a>
 
 <span class="timestamp-wrapper"><span class="timestamp">[2016-02-05 Fri 22:53] </span></span> Try out minibuffer in extra frame.
 
     ;; (setq initial-frame-alist '((minibuffer . nil)))
     ;; (setq default-frame-alist '((minibuffer . nil)))
 
-## Org from Source<a id="orgcc37161"></a>
+## Org from Source<a id="orgb879298"></a>
 
     (let ((orgmodelocation (expand-file-name "~/p/org/org-mode")))
       (push (concat orgmodelocation "/lisp") load-path)
@@ -194,22 +194,22 @@ Found the above in lunaryorn's config at
     	     (concat (expand-file-name "~/p/org/org-mode") ; orgmodelocation
     		     "/doc")))))
 
-## Package initialization<a id="orgf067080"></a>
+## Package initialization<a id="orgef74cf8"></a>
 
     (package-initialize)
 
 '(package-initialize)' gets added automatically according to
 <package-initialize>.  But maybe too late.
 
-## use-package<a id="org99762bd"></a>
+## use-package<a id="orgd70635a"></a>
 
 `use-package` allows convenient emacs package configuration.
 
     (require 'use-package)
 
-# Packages<a id="org79237eb"></a>
+# Packages<a id="orgdb27f9d"></a>
 
-## chronos<a id="orgcb89cc6"></a>
+## chronos<a id="org38fee51"></a>
 
     (use-package chronos
       :config (setf chronos-text-to-speech-program "espeak"
@@ -217,21 +217,21 @@ Found the above in lunaryorn's config at
                     chronos-expiry-functions '(chronos-buffer-notify
                                                chronos-text-to-speech-notify)))
 
-## swiper<a id="org8b1a0fe"></a>
+## swiper<a id="org903d4c0"></a>
 
     (use-package swiper
       :bind ("C->" . swiper))
 
-## dired-narrow<a id="org1dfa876"></a>
+## dired-narrow<a id="org563de9"></a>
 
     (use-package dired-narrow
       :ensure t
       :bind (:map dired-mode-map
                   ("/" . dired-narrow)))
 
-### TODO Check if / works also at first invocation<a id="org7daec75"></a>
+### TODO Check if / works also at first invocation<a id="orgb81c58c"></a>
 
-## stumpwm-mode<a id="org2815405"></a>
+## stumpwm-mode<a id="orgd18b2b1"></a>
 
 Stumpish integration.
 
@@ -239,7 +239,7 @@ Stumpish integration.
       :config (setq stumpwm-shell-program
                     (expand-file-name "~/.stumpwm.d/modules/util/stumpish/stumpish")))
 
-## keyfreq<a id="orgdb24732"></a>
+## keyfreq<a id="orgcd185d"></a>
 
 From the documentation at <https://github.com/dacap/keyfreq>:
 
@@ -249,7 +249,7 @@ From the documentation at <https://github.com/dacap/keyfreq>:
       :config (progn (keyfreq-mode 1)
                      (keyfreq-autosave-mode 1)))
 
-## wrap-region<a id="orgf9f49ad"></a>
+## wrap-region<a id="org8a50e83"></a>
 
 Decorate region for certain key presses.
 
@@ -262,14 +262,14 @@ Decorate region for certain key presses.
                 (wrap-region-add-wrapper "=" "=" nil 'org-mode)
                 (wrap-region-add-wrapper "#+BEGIN_QUOTE\n" "\n#+END_QUOTE" "q" 'org-mode)))
 
-## auth-password-store<a id="orgbd3fca5"></a>
+## auth-password-store<a id="org87e5a04"></a>
 
     (use-package auth-password-store
       :ensure t
       :config
       (auth-pass-enable))
 
-## avy<a id="org4279659"></a>
+## avy<a id="org87c7cd"></a>
 
 `avy` has functionality similar to ace-jump-mode.  I read that avy is
 the variant that gets maintained.
@@ -287,7 +287,7 @@ the variant that gets maintained.
       (setf avy-all-windows-alt t) ; hint: behavior prefix arg
       )
 
-## avy-zap<a id="orgade4c17"></a>
+## avy-zap<a id="orgb378330"></a>
 
 A replacement of zap-to-char.
 
@@ -295,7 +295,7 @@ A replacement of zap-to-char.
       :bind (("M-z" . avy-zap-to-char-dwim)
              ("M-Z" . avy-zap-up-to-char-dwim)))
 
-## on-screen<a id="org3174cbe"></a>
+## on-screen<a id="orgb3bd7af"></a>
 
 Adds a visual symbol about the previous page after scrolling a page.
 This might help sometimes.  Try together with rope-read.
@@ -304,22 +304,22 @@ This might help sometimes.  Try together with rope-read.
       :ensure t
       :config (global-on-screen-mode))
 
-## page-break-lines<a id="org5dedaf3"></a>
+## page-break-lines<a id="org687581c"></a>
 
     (use-package page-break-lines
       :ensure t)
 
-## form-feed-mode<a id="orge717e50"></a>
+## form-feed-mode<a id="org38a616d"></a>
 
     (use-package form-feed
       :ensure t)
 
-## nyan-mode<a id="orgd2a0bd0"></a>
+## nyan-mode<a id="org13408c3"></a>
 
     (use-package nyan-mode
       :config (nyan-mode))
 
-## browse-kill-ring<a id="org2b2f6e4"></a>
+## browse-kill-ring<a id="orgad1f799"></a>
 
 Activate any time with M-x browse-kill-ring or with M-y but the
 latter only if <span class="underline">not</span> immediately after yank.
@@ -328,7 +328,7 @@ latter only if <span class="underline">not</span> immediately after yank.
       :config
       (browse-kill-ring-default-keybindings)) ; M-y
 
-## expand-region<a id="org2299d65"></a>
+## expand-region<a id="orga485bc3"></a>
 
 `expand-region` often expands the region to what i mean.
 
@@ -336,7 +336,7 @@ latter only if <span class="underline">not</span> immediately after yank.
       :config
       (global-set-key (kbd "C-=") #'er/expand-region))
 
-## ido-hacks<a id="org4d32341"></a>
+## ido-hacks<a id="org9e0379f"></a>
 
 ido-hacks sits on top of ido and makes ido even cooler.  When
 ido-hacks-mode comes into the way then just switch it off.
@@ -345,25 +345,25 @@ ido-hacks-mode comes into the way then just switch it off.
       :init (ido-mode)
       :config (ido-hacks-mode))
 
-## lentic<a id="orgc83468c"></a>
+## lentic<a id="org24d9f9"></a>
 
 Activating lentic as proposed in lentics documentation lentic.el.
 
     (use-package lentic
       :config (global-lentic-mode))
 
-## magit<a id="org2e63d04"></a>
+## magit<a id="org82c89d2"></a>
 
     (use-package magit
       :ensure t
       :config (define-key magit-file-section-map "C" 'magit-commit-add-log)) ;; "C" also on filename-lines
 
-## company mode<a id="org27b32d2"></a>
+## company mode<a id="org24febd1"></a>
 
     (use-package company
       :config (global-company-mode))
 
-## key chord<a id="org2bd9c81"></a>
+## key chord<a id="orgf9d0c1d"></a>
 
     (use-package key-chord
       :config
@@ -412,7 +412,7 @@ Activating lentic as proposed in lentics documentation lentic.el.
 
 
 
-## paredit<a id="orgf1a48d5"></a>
+## paredit<a id="orgf6d3de2"></a>
 
 Very helpful mode for editing elisp.
 
@@ -426,7 +426,7 @@ Very helpful mode for editing elisp.
 
 
 
-## smartparens<a id="org4ada89"></a>
+## smartparens<a id="orgb1ad580"></a>
 
 <span class="timestamp-wrapper"><span class="timestamp">[2016-01-08 Fri 14:49] </span></span> At first I thought smartparens-mode will replace paredit for me.  But
 somehow I always come back to paredit.
@@ -435,7 +435,7 @@ somehow I always come back to paredit.
       :ensure t
       :config (turn-on-smartparens-mode))
 
-## gnorb<a id="org4ddac4c"></a>
+## gnorb<a id="org5d128ea"></a>
 
 gnorb is integration of gnus and org and bbdb .
 
@@ -495,7 +495,7 @@ gnorb is integration of gnus and org and bbdb .
       '(progn
          (define-key message-mode-map (kbd "C-c t") 'gnorb-gnus-outgoing-do-todo)))
 
-## rase<a id="orgb0b0b62"></a>
+## rase<a id="orgf64dac2"></a>
 
 rase is for triggering actions at sunrise and sunset.
 
@@ -544,7 +544,7 @@ new setting.
       ;; (rase-start t) ;; This line is not enough to change the theme.
       )
 
-## AUR access<a id="orgd655d8c"></a>
+## AUR access<a id="orgbca17a8"></a>
 
     (use-package aurel
       :config
@@ -554,32 +554,32 @@ new setting.
       (autoload 'aurel-installed-packages "aurel" nil t)
       (setq aurel-download-directory "~/AUR"))
 
-### history<a id="orgcaac07"></a>
+### history<a id="orgf3520d8"></a>
 
 -   <span class="timestamp-wrapper"><span class="timestamp">[2014-04-07 Mon 22:26] </span></span> Just installed a package that might help with
 
 AUR-packages.
 
-## slime<a id="org1b6e68e"></a>
+## slime<a id="orgab8c17d"></a>
 
     (use-package slime
       :config
       (setq inferior-lisp-program "/usr/bin/sbcl")
       (setq slime-contribs '(slime-fancy)))
 
-## zeitgeist<a id="org1d463be"></a>
+## zeitgeist<a id="orgc847d8"></a>
 
 zeitgeist keeps track of file-operations.
 
     (use-package zeitgeist :disabled)
 
-## helm<a id="org8bfd7a0"></a>
+## helm<a id="org92e1fe6"></a>
 
 Actually i don't use helm consciously.  <span class="timestamp-wrapper"><span class="timestamp">[2015-06-27 Sat 10:57]</span></span>
 
     (use-package helm)
 
-## gnuplot<a id="orgf346142"></a>
+## gnuplot<a id="org99e8803"></a>
 
 The following lines go back to a recommendation of an arch linux
 install.
@@ -590,17 +590,17 @@ install.
                 (autoload 'gnuplot-make-buffer "gnuplot" "open a buffer in gnuplot mode" t)
                 (setq auto-mode-alist (append '(("\\.gp$" . gnuplot-mode)) auto-mode-alist))))
 
-## hydra<a id="org36ab36c"></a>
+## hydra<a id="org299383f"></a>
 
     (use-package hydra)
 
-# LabPkgs<a id="org83904c9"></a>
+# LabPkgs<a id="orgf14a4ea"></a>
 
-## sotlisp<a id="org46ff8b6"></a>
+## sotlisp<a id="org5758ce1"></a>
 
     (use-package sotlisp)
 
-## emr<a id="org4d51352"></a>
+## emr<a id="orgf7e548f"></a>
 
 emr is a refactoring tool.
 
@@ -611,64 +611,64 @@ emr is a refactoring tool.
        ;; :bind ("M-RET" . emr-show-refactor-menu)
        )
 
-### TODO Show the emr menu with M-RET<a id="orgebeb4d0"></a>
+### TODO Show the emr menu with M-RET<a id="org36641a3"></a>
 
-## beacon<a id="orgea4b00f"></a>
+## beacon<a id="org2f3e198"></a>
 
     (use-package beacon
       :ensure t
       :defer 1 ; else can't start as daemon like /home/b/p/emacs-build/lib-src/emacsclient -c -n -a \"\"
       :config (beacon-mode 1))
 
-## elmacro<a id="org71ea7d9"></a>
+## elmacro<a id="orgbd7347b"></a>
 
     (use-package elmacro
     :ensure t)
 
-## elisp-slime-nav<a id="orgd39cee9"></a>
+## elisp-slime-nav<a id="orgc86b7d8"></a>
 
     (use-package elisp-slime-nav
     :ensure t)
 
-## git-auto-commit-mode<a id="orge58c96c"></a>
+## git-auto-commit-mode<a id="orgfaa86d6"></a>
 
     (use-package git-auto-commit-mode
     :ensure t
     :config (git-auto-commit-mode t))
 
-## git-timemachine<a id="org13e31d7"></a>
+## git-timemachine<a id="orga7863fd"></a>
 
     (use-package git-timemachine
     :ensure t)
 
 Start git-timemachine on a file to travel time on it.
 
-# Fromsource<a id="orgd3b5ebe"></a>
+# Fromsource<a id="org53bbec3"></a>
 
-## Org     :org:<a id="orga3aa521"></a>
+## Org     :org:<a id="orgc390770"></a>
 
-### Personal Org Indentation<a id="org1164bcb"></a>
+### Personal Org Indentation<a id="org85d7532"></a>
 
     (setq org-adapt-indentation nil
           org-hide-leading-stars t
           org-odd-levels-only t)
 
-### To Org Attachments<a id="orga7812ac"></a>
+### To Org Attachments<a id="org65a2db9"></a>
 
     (setq org-attach-commit nil)
 
-### Org Agenda include inactive timestamps<a id="org1e6dfa5"></a>
+### Org Agenda include inactive timestamps<a id="org352e6fe"></a>
 
     (setq org-agenda-include-inactive-timestamps t) ;;
     ;; (setq org-agenda-include-inactive-timestamps nil) ;; for not seeing them.
 
-### Org column settings<a id="org7412a7"></a>
+### Org column settings<a id="org564fd1b"></a>
 
     (setq
      org-columns-ellipses "…"
      org-columns-default-format "%ITEM %TODO %PRIORITY %TAGS")
 
-### Org Babel<a id="org4fe7951"></a>
+### Org Babel<a id="orge82037d"></a>
 
 1.  Jump to org block bound
 
@@ -747,7 +747,7 @@ Start git-timemachine on a file to travel time on it.
                          (search-forward-regexp "#\\+end_src")
                          (beginning-of-line)))))))
 
-### Org Velocity<a id="orgdd98644"></a>
+### Org Velocity<a id="org736baf6"></a>
 
 org velocity is a org-mode contrib extension.
 
@@ -765,7 +765,7 @@ org velocity is a org-mode contrib extension.
 
     I use the global key setting C-c v for org-velocity.
 
-### Trigger property edit from the headline<a id="org82bee62"></a>
+### Trigger property edit from the headline<a id="org13e9f0d"></a>
 
     (defun mw-org-property-action ()
       "Activate ‘org-property-action’ from headline."
@@ -778,20 +778,20 @@ org velocity is a org-mode contrib extension.
 This function can be bound to a speed key.  See variable
 org-speed-commands-user.
 
-### org-protocol for receiving from the outside<a id="org3d79c49"></a>
+### org-protocol for receiving from the outside<a id="org5f2d68c"></a>
 
     (require 'org-protocol)
 
 The org-protocol is useful for actions which come from the outside.
 E.g. capturing from conkeror into org.
 
-### Highlight current line in agenda<a id="org751b50"></a>
+### Highlight current line in agenda<a id="orgdafa464"></a>
 
 From [Email from Marcin Borkowski: Hl-line mode in agenda](nntp+news.gmane.org:gmane.emacs.orgmode#87egnh7oos.fsf@mbork.pl):
 
     (add-hook 'org-agenda-finalize-hook (lambda () (hl-line-mode 1)))
 
-### Save the o-press when opening the agenda<a id="orgd3a1cb1"></a>
+### Save the o-press when opening the agenda<a id="orgcd18ec"></a>
 
     ;(add-hook 'org-agenda-finalize-hook (lambda () (delete-other-windows)))
     (setq org-agenda-window-setup 'only-window)
@@ -800,24 +800,24 @@ From [Email from Marcin Borkowski: Hl-line mode in agenda](nntp+news.gmane.org:g
 
     <http://mbork.pl/2015-09-26_A_few_org-agenda_hacks>
 
-### Delete other windows after jump from agenda<a id="org1beaffc"></a>
+### Delete other windows after jump from agenda<a id="org90d2ccd"></a>
 
     ;; (eval-after-load "org-agenda"
     ;;   '(push #'delete-other-windows org-agenda-after-show-hook))
 
-### org-screenshot<a id="org4d10403"></a>
+### org-screenshot<a id="orgd37444"></a>
 
     (push "~/p/elisp/external/org-screenshot" load-path)
     (require 'org-screenshot)
 
-### Disable key C-,<a id="org8fedd98"></a>
+### Disable key C-,<a id="orgd07537f"></a>
 
 Want C-, not bound to org-cycle-agenda-files, which is also on C-'
 anyways.
 
     (add-hook 'org-mode-hook (lambda () (local-unset-key (kbd "C-,"))))
 
-### Jump from the agenda to the stars<a id="org6824dc8"></a>
+### Jump from the agenda to the stars<a id="orgde4588c"></a>
 
 In the agenda 'tab' per default jumps to the beginning of the headline
 text.  For me it's a bit more convenient to jump to the beginning of
@@ -826,7 +826,7 @@ the stars.  Fortunately there is org-agenda-after-show-hook.
     (eval-after-load "org-agenda"
       '(push #'beginning-of-line org-agenda-after-show-hook))
 
-### Speed commands also on first char<a id="org78171fb"></a>
+### Speed commands also on first char<a id="org8fc2259"></a>
 
     (setq org-use-speed-commands
           (lambda () (or (= 1 (point))
@@ -836,7 +836,7 @@ the stars.  Fortunately there is org-agenda-after-show-hook.
 Taken the looking around code from the documentation of
 `org-use-speed-commands`.
 
-## gnus<a id="org4f659e0"></a>
+## gnus<a id="orga9f18a2"></a>
 
     ;; (push (expand-file-name "~/p/elisp/external/gnus/lisp") load-path)
     ;; (require 'gnus-load)
@@ -845,7 +845,7 @@ Taken the looking around code from the documentation of
     (setq gnus-registry-max-entries 500000)
     (gnus-registry-initialize) ; gnorb wants that, see (info "(gnorb)Setup").
 
-### To html mail in gnus<a id="orgf2a377b"></a>
+### To html mail in gnus<a id="org6e57cf6"></a>
 
 The following helps with html-mail in some cases.
 
@@ -858,7 +858,7 @@ Source: [Email from Tassilo Horn: Re: a dark theme?](gnu.emacs.help#mailman.5546
     (setq shr-color-visible-distance-min 10
           shr-color-visible-luminance-min 60)
 
-## ledger<a id="orgf44c1af"></a>
+## ledger<a id="orgc28fe7c"></a>
 
 Refer to a local version of ledger.
 
@@ -909,7 +909,7 @@ Refer to a local version of ledger.
             ("account" "ledger -f %(ledger-file) reg %(account)")
             ("bal toplevel only" "ledger -f %(ledger-file) --depth 1 bal")))
 
-## emms<a id="org611ff8d"></a>
+## emms<a id="org4524e44"></a>
 
 Emms is for playing sound.  I use emms mostly for playing internet
 radio.
@@ -924,7 +924,7 @@ BTW `emms-streams` has configured some nice stations AFAICT.
       '(progn (info-initialize)
               (add-to-list 'Info-directory-list "~/p/elisp/external/emms/doc")))
 
-## Big brother db<a id="org2288985"></a>
+## Big brother db<a id="org6bcf379"></a>
 
     (require 'bbdb-loaddefs (expand-file-name "~/p/elisp/external/bbdb/lisp/bbdb-loaddefs.el"))
     (bbdb-initialize 'gnus 'message 'anniv)
@@ -943,40 +943,40 @@ BTW `emms-streams` has configured some nice stations AFAICT.
     ;; Source [[gnus:nntp+news.gmane.org:gmane.emacs.bbdb.user#m28u2z8m57.fsf@charm-ecran.irisa.fr][Email from Alan Schmitt: Re: can I auto save the bbdb f]]
     ;; ...[2016-02-05 Fri 13:15]
 
-## Zen reward mode<a id="orgfab0617"></a>
+## Zen reward mode<a id="orgedd3e6f"></a>
 
 Get points for task-status-changes in org.  But where is the zen here?
 
     (push (expand-file-name "~/p/elisp/external/zen-reward-mode/") load-path)
     (load-library "zen-reward-mode")
 
-## Little helpers<a id="org4a6d625"></a>
+## Little helpers<a id="org2602309"></a>
 
     (push  "~/p/elisp/mw/little-helpers" load-path)
     (require 'little-helpers)
 
     (global-set-key (kbd "C-<") #'mw-recenter-jump-to-top)
 
-## Auxies<a id="orgbb9b56d"></a>
+## Auxies<a id="org6c2db55"></a>
 
     (push "~/p/elisp/mw/auxies" load-path)
     (require 'auxies-rest)
 
-## Hacks<a id="org67e1455"></a>
+## Hacks<a id="org6a6224c"></a>
 
     (push "~/p/elisp/mw/hacks" load-path)
     (require 'hacks)
 
     (global-set-key (kbd "C-\"") #'org-cycle-agenda-files-backwards)
 
-## Auxies-eww<a id="org41badac"></a>
+## Auxies-eww<a id="org4be4886"></a>
 
     (push "~/p/elisp/mw/auxies" load-path)
     (require 'auxies-eww)
 
-# Lab<a id="orgb616b3b"></a>
+# Lab<a id="orga3aef14"></a>
 
-## Hide a Line in the Agenda<a id="orgf818772"></a>
+## Hide a Line in the Agenda<a id="org8b05ee1"></a>
 
 Be able to hide a line of the org agenda.
 
@@ -987,9 +987,9 @@ Thought to help when scanning an agenda with the "scan to nothing"
 technique.
 
     (defun mw-org-agenda-hide-line ()
-      "Delete the line containing point from the agenda.
+      "Hide the line containing point from the agenda.
     This action just affects the agenda buffer and not the source of the data.
-    I.e. the hidden lines appear again at the next request for an agenda.
+    I.e. the lines appear again at the next refresh for an agenda.
 
     Note: This function has been derived from
     `org-agenda-drag-line-forward'.
@@ -1002,7 +1002,7 @@ technique.
         (org-agenda-reapply-filters)
         (org-agenda-mark-clocking-task)))
 
-### Keybinding<a id="org4c8940e"></a>
+### Keybinding<a id="org1225093"></a>
 
 Using the key 'h' which reminds of hide.  'h' is the standard binding
 to popup holidays, but they are still accessable on key 'H'.
@@ -1010,9 +1010,9 @@ to popup holidays, but they are still accessable on key 'H'.
     (eval-after-load "org-agenda"
       '(org-defkey org-agenda-mode-map (kbd "h") #'mw-org-agenda-hide-line))
 
-## A key for Info-search-next     :info:<a id="org5039531"></a>
+## A key for Info-search-next     :info:<a id="orge89e0b5"></a>
 
-### Example<a id="org8976531"></a>
+### Example<a id="org5a7706a"></a>
 
 X wants to find "mysearchstring" muliple times.  It's possible already
 by typing
@@ -1030,7 +1030,7 @@ a
     (eval-after-load 'info
       '(progn (define-key Info-mode-map (kbd "a") #'Info-search-next)))
 
-## Org Lab<a id="orgeff1c7e"></a>
+## Org Lab<a id="orgdfd2924"></a>
 
 1.  org-show-context-detail
 
@@ -1052,9 +1052,9 @@ a
     <http://emacs.stackexchange.com/questions/12930/display-org-todo-list-of-entries-with-deadlines>
     ;;
 
-## Registers<a id="org6d2fafc"></a>
+## Registers<a id="org4c6e905"></a>
 
-### Unset Register<a id="org443733a"></a>
+### Unset Register<a id="org47e30b8"></a>
 
 I think this functionality is not in Emacs core yet.
 
@@ -1063,7 +1063,7 @@ I think this functionality is not in Emacs core yet.
       (interactive (list (register-read-with-preview "Clear register: ")))
       (setf register-alist (assq-delete-all register register-alist)))
 
-## Controlled Garbage Collection<a id="org64e493e"></a>
+## Controlled Garbage Collection<a id="orge7f51ab"></a>
 
 This is from
 <http://bling.github.io/blog/2016/01/18/why-are-you-changing-gc-cons-threshold/>.
@@ -1077,11 +1077,11 @@ This is from
     (add-hook 'minibuffer-setup-hook #'my-minibuffer-setup-hook)
     (add-hook 'minibuffer-exit-hook #'my-minibuffer-exit-hook)
 
-## lob<a id="org3e2fcaf"></a>
+## lob<a id="org2ff1d07"></a>
 
     (org-babel-lob-ingest "~/org/mw-lob.org")
 
-## Switch buffers between frames<a id="org1335175"></a>
+## Switch buffers between frames<a id="orgd629295"></a>
 
 Found at [EmacsWiki: Switching Buffers](http://www.emacswiki.org/emacs/SwitchingBuffers#toc5) provided by YoniRabkinKatzenell
 AFAICS.  I think this can be useful for me.
@@ -1098,7 +1098,7 @@ AFAICS.  I think this can be useful for me.
         (other-frame 1)
         (switch-to-buffer other-frame-buffer)))
 
-## vcs<a id="orge2638e4"></a>
+## vcs<a id="org476ed46"></a>
 
 1.  Automate typical procedere with commit message
 
@@ -1120,7 +1120,7 @@ AFAICS.  I think this can be useful for me.
         (add-hook 'git-commit-mode-hook
                   (lambda () (key-chord-define-local "p8" #'mw-dtrt-commit-msg-prepare)))
 
-## linum experiments     :linum:<a id="org60acdb3"></a>
+## linum experiments     :linum:<a id="org5a3a9a7"></a>
 
     (defun delta (line pointline)
       "LINE is the processed line.
@@ -1140,7 +1140,7 @@ AFAICS.  I think this can be useful for me.
     (setq linum-format 'the-line)
     (setq linum-format 'delta5)
 
-## Toggle-letter-case<a id="orgba9c968"></a>
+## Toggle-letter-case<a id="orga334e07"></a>
 
     ;; http://www.star.bris.ac.uk/bjm/emacs-tips.html#sec-1-14
 
@@ -1180,7 +1180,7 @@ AFAICS.  I think this can be useful for me.
     ;;set this to M-c
     (global-set-key "\M-C" #'toggle-letter-case)
 
-## ispell and org<a id="orgcaec397"></a>
+## ispell and org<a id="orgf07365e"></a>
 
 [Email from Artur Malabarba: Endless Parentheses: Making Is](nntp+news.gwene.org:gwene.org.emacsen.planet#x1-OJQzcaDHUGvOvCmRSA6fSHKcoWE@gwene.org)
 
@@ -1207,12 +1207,12 @@ quickly turns into irritation. Here’s how you fix it.
       (add-to-list 'ispell-skip-region-alist '("^#\\+BEGIN_SRC" . "^#\\+END_SRC")))
     (add-hook 'org-mode-hook #'endless/org-ispell)
 
-## epa<a id="orgc75a866"></a>
+## epa<a id="org600a140"></a>
 
     (require 'epa)
     (define-key epa-key-list-mode-map "N" #'mw-epa-mark-next-key)
 
-## ediff<a id="org74367c"></a>
+## ediff<a id="org1aff812"></a>
 
     (add-hook 'ediff-keymap-setup-hook
               (lambda ()
@@ -1220,7 +1220,7 @@ quickly turns into irritation. Here’s how you fix it.
                   ediff-mode-map "8"
                   #'mw-ediff-set-visible-mode-in-ediff-buffers)))
 
-## Drag windows<a id="org3baa991"></a>
+## Drag windows<a id="org819b317"></a>
 
 Found <span class="timestamp-wrapper"><span class="timestamp">[2015-03-03 Tue 17:18]</span></span>
 Link: <https://tsdh.wordpress.com/2015/03/03/swapping-emacs-windows-using-dragndrop/>
@@ -1259,7 +1259,7 @@ Bind it to some mouse drag event and have fun. For example, I use
 So that drag’n’drop with the left mouse button and control and shift
 pressed is bound to the command above.
 
-## Pomodoro<a id="org5f42575"></a>
+## Pomodoro<a id="orge975cd1"></a>
 
 Support the famous tomato-technique.  The idea is to work
 concentrated for a while (tomato) and then take a break.  This shall
@@ -1374,13 +1374,13 @@ Author there: Frédéric Couchet le mercredi, août 4 2010, 22:53
             (setq mw-org-pause-state t))
         (error "Mw-org-trigger-timer-for-pause: Not in an Org buffer")))
 
-## navi-mode<a id="org7a07853"></a>
+## navi-mode<a id="orga55c45a"></a>
 
 Recall function [navi-search-and-switch](navi-search-and-switch) to activate a navi-buffer.
 
     ;(require 'navi-mode)
 
-## Quickly access the web through w3m     :weak:<a id="orgc7cf9b4"></a>
+## Quickly access the web through w3m     :weak:<a id="orge015a74"></a>
 
 Ask the default search engine.
 
@@ -1394,7 +1394,7 @@ L for look up the word at point in leo.
       (w3m-search "leo" (thing-at-point 'word)))
     (global-set-key (kbd "<Scroll_Lock> l") 'mw-ask-leo)
 
-## Rope read to save eye-movements<a id="orgb78e3e4"></a>
+## Rope read to save eye-movements<a id="orgcfbd0cf"></a>
 
     (push "~/p/elisp/mw/rope-read-mode" load-path)
     (require 'rope-read-mode)
@@ -1402,7 +1402,7 @@ L for look up the word at point in leo.
     ;; (define-key rope-read-mode-map "r" 'rope-read-delete-overlays)
     ;; (global-set-key (kbd "<Scroll_Lock> <Scroll_Lock>") #'rope-read-mode)
 
-## Convenient snapshot of emacs from within<a id="orgf0fa407"></a>
+## Convenient snapshot of emacs from within<a id="org9975600"></a>
 
     (push "~/p/elisp/mw/emacsshot" load-path)
     (require 'emacsshot)
@@ -1413,13 +1413,13 @@ L for look up the word at point in leo.
        (if current-window (emacsshot-snap-window)
          (emacsshot-snap-frame))))
 
-## Hippie expand<a id="org826719"></a>
+## Hippie expand<a id="orgcc2b7e4"></a>
 
 Hippie expand is using various sources as potential for expansion.
 
     (global-set-key (kbd "M-/") 'hippie-expand)
 
-## Special holidays<a id="org3696acc"></a>
+## Special holidays<a id="org7701477"></a>
 
 Special Holidays can be defined in a function.  Hooking can be done
 via variable \`holiday-other-holidays'.
@@ -1433,7 +1433,7 @@ Note: The code here looks not so good.  Improvement would be good.
             (if (or (= 7 displayed-month) (= 8 displayed-month) (= 9 displayed-month))
                 '(((8 15 2014) "Mariä Himmelfahrt"))))))
 
-## Switch sound on/off<a id="org5434838"></a>
+## Switch sound on/off<a id="orgaa91fb"></a>
 
     (defun mw-sound-100% ()
       "Pull all rulers in the amixer to 100% ."
@@ -1476,7 +1476,7 @@ Note: The code here looks not so good.  Improvement would be good.
                      "amixer" "set" "PCM" "0" )
       (message "sound set to 0%%"))
 
-## Personalize the sound of the bell<a id="org43a1db3"></a>
+## Personalize the sound of the bell<a id="org87cf047"></a>
 
     (defun mw-play-little-bird-sound ()
       "Play a little bird sound."
@@ -1487,14 +1487,14 @@ Note: The code here looks not so good.  Improvement would be good.
        (expand-file-name "~/media/sound/birds/Tufted-Tit-Mouse-web-II.wav")))
     (setq ring-bell-function 'mw-play-little-bird-sound)
 
-## bbdb csv feature<a id="orgca47d2c"></a>
+## bbdb csv feature<a id="orgee68a26"></a>
 
 This is activation of the 'bbdb-csv-import'-package.  I found it BTW
 today <span class="timestamp-wrapper"><span class="timestamp">[2014-04-24 Thu]</span></span>.
 
     (require 'bbdb-csv-import)
 
-## Kill an url at point<a id="org4946778"></a>
+## Kill an url at point<a id="orgd9f4804"></a>
 
     (defun mw-kill-url-at-point ()
       "Try to interpret the thing at point as url and if so put to kill ring."
@@ -1502,7 +1502,7 @@ today <span class="timestamp-wrapper"><span class="timestamp">[2014-04-24 Thu]</
       (kill-new (thing-at-point 'url)))
     (global-set-key (kbd "C-c M-w") 'mw-kill-url-at-point)
 
-## Duplicate a w3m-session<a id="orgc4deadd"></a>
+## Duplicate a w3m-session<a id="orgcc79232"></a>
 
 -   <span class="timestamp-wrapper"><span class="timestamp">[2014-07-18 Fri 17:14] </span></span> It looks like the defun below is already
     there in w3m: "M-n runs the command w3m-copy-buffer."
@@ -1517,7 +1517,7 @@ today <span class="timestamp-wrapper"><span class="timestamp">[2014-04-24 Thu]</
             (w3m-view-this-url-1 w3m-current-url reload 'new-session)
           (message "No current URL"))))
 
-## wcheck<a id="org7164727"></a>
+## wcheck<a id="org63f4838"></a>
 
 wcheck is a mode for checking things in a buffer.  Might be worth to
 invest some energy into its configuration for spell checking.
@@ -1543,9 +1543,9 @@ trailing whitespace.
     	 (read-or-skip-faces
     	  (nil)))))
 
-## Additions around eww<a id="org4ef26e9"></a>
+## Additions around eww<a id="orgcd57972"></a>
 
-### Switch from w3m to eww and vice versa<a id="org62c838f"></a>
+### Switch from w3m to eww and vice versa<a id="org4665c51"></a>
 
     (defun mw-w3m-switch-to-eww ()
       "Switch to eww from w3m."
@@ -1557,7 +1557,7 @@ trailing whitespace.
       (interactive)
       (w3m (eww-current-url)))
 
-### Duplicate eww buffer<a id="orgb112581"></a>
+### Duplicate eww buffer<a id="orgdde7504"></a>
 
     (defun mw-eww-duplicate-buffer ()
       "In eww-mode create a new buffer *eww* with current url.
@@ -1570,7 +1570,7 @@ trailing whitespace.
             (rename-uniquely))
           (eww url))))
 
-### Rename Current Page<a id="org993fe06"></a>
+### Rename Current Page<a id="org3f34e53"></a>
 
 This is for somehow saving the page to not loosing it at the next eww
 call.
@@ -1585,7 +1585,7 @@ call.
         "FAILED adding 'x' to eww-mode-map."
         "  REASON: eww-mode-map is not bound yet.")))
 
-## Hidden mode line<a id="org97aab14"></a>
+## Hidden mode line<a id="orgd146342"></a>
 
 Found the following mode line hiding function at
 <http://bzg.fr/emacs-hide-mode-line.html>.  (Bastien)
@@ -1617,7 +1617,7 @@ Found the following mode line hiding function at
     ;; If you want to hide the mode-line in every buffer by default
     ;; (add-hook 'after-change-major-mode-hook 'hidden-mode-line-mode)
 
-## Strip<a id="org23f788c"></a>
+## Strip<a id="org98fa314"></a>
 
     (defun mw-strip ()
       "Strip window and frame."
@@ -1627,13 +1627,13 @@ Found the following mode line hiding function at
            (fringe-mode 0)
            (scroll-bar-mode -1)))
 
-## Key sequences to open browser<a id="orgac387a3"></a>
+## Key sequences to open browser<a id="org73c9a5a"></a>
 
     (global-set-key (kbd "\C-cg") 'eww)
     (global-set-key (kbd "\C-cG") 'browse-url)
     (global-set-key (kbd "\C-cF") 'browse-url-firefox)
 
-## mpages<a id="org7d7121b"></a>
+## mpages<a id="org745325"></a>
 
 Using a local branch and not the package to test a version with
 encryption.
@@ -1651,7 +1651,7 @@ encryption.
                                      (save-buffer)
                                      (kill-buffer))))
 
-## dired-x<a id="orgaadd409"></a>
+## dired-x<a id="org8614015"></a>
 
     (add-hook 'dired-load-hook
               (lambda ()
@@ -1666,14 +1666,14 @@ encryption.
                 ;; (dired-omit-mode 1)
                 ))
 
-## Delete blank lines also above<a id="orgd1e05ee"></a>
+## Delete blank lines also above<a id="org8f224ee"></a>
 
     (global-set-key  (kbd "C-x C-o") #'mw-delete-blank-lines)
 
 <span class="timestamp-wrapper"><span class="timestamp">[2015-07-13 Mon 11:54] </span></span> Activation.  Let's see if the removal of the
 blank lines above proves useful.
 
-## Disable query about active processes at quit<a id="orge8ec01c"></a>
+## Disable query about active processes at quit<a id="orgec88a2e"></a>
 
     (require 'cl)
     (defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
@@ -1681,14 +1681,14 @@ blank lines above proves useful.
 
 Source: [Programming: Seven specialty Emacs settings with big payoffs](http://timothypratley.blogspot.de/2015/07/seven-specialty-emacs-settings-with-big.html).
 
-## Open line below<a id="org1017c6d"></a>
+## Open line below<a id="orgb424946"></a>
 
     (global-set-key (kbd "C-S-o") #'mw-open-line-below)
     (global-set-key (kbd "C-S-a") #'mw-open-line-above)
 
-# Rest<a id="orgaaee3ae"></a>
+# Rest<a id="org535c43b"></a>
 
-## Delete trailing ws on save<a id="org24a168c"></a>
+## Delete trailing ws on save<a id="orgd36d0b6"></a>
 
 This is thought to keep the files cleaner.  This is thought to need
 no more thought about trailing whitespace.
@@ -1706,7 +1706,7 @@ no more thought about trailing whitespace.
     ;;        (delete-trailing-whitespace)))
     ;;  before-save-hook)
 
-## Enable more Emacs features<a id="orgf85a1fb"></a>
+## Enable more Emacs features<a id="orgfd65da1"></a>
 
 Enable features that are disabled by default.
 
@@ -1719,7 +1719,7 @@ Enable features that are disabled by default.
     (put 'set-goal-column 'disabled nil)
     (put 'erase-buffer 'disabled nil)
 
-## Abbrevs<a id="org58e42f1"></a>
+## Abbrevs<a id="org9e9a7d2"></a>
 
 Started with the suggestion about abbreviations on
 <http://www.star.bris.ac.uk/bjm/emacs-tips.html#sec-1-19>.
@@ -1732,7 +1732,7 @@ Started with the suggestion about abbreviations on
     ;; abbrev-file-name ; using the default setting.
     (quietly-read-abbrev-file)       ;; reads the abbreviations file on startup
 
-## Appointments from org<a id="org871af5f"></a>
+## Appointments from org<a id="org7777858"></a>
 
 Take into account the appointments for today from the org-agenda.
 Note that this is done for the current org-agenda files.
@@ -1741,16 +1741,16 @@ Activate the appointment checking.
 
     (appt-activate 1)
 
-See also [Personalize the sound of the bell](#org43a1db3) for the configuration of
+See also [Personalize the sound of the bell](#org87cf047) for the configuration of
 the respective audio signal.
 
-## Battery<a id="org9d156c6"></a>
+## Battery<a id="org4a34173"></a>
 
     (display-battery-mode)
 
-## Beautification<a id="orgc79e8a1"></a>
+## Beautification<a id="orgcf82ce8"></a>
 
-### Elisp<a id="org6a82e2f"></a>
+### Elisp<a id="orgfbc0507"></a>
 
     (add-hook 'emacs-lisp-mode-hook
               (lambda ()
@@ -1758,7 +1758,7 @@ the respective audio signal.
                             '(("lambda" . ?λ)))
                 (prettify-symbols-mode 1)))
 
-### Python<a id="org9f629bd"></a>
+### Python<a id="orga2ab3ff"></a>
 
 [Email from Stefan Monnier: Re: can emacs do this](nntp+news.aioe.org:gnu.emacs.help#mailman.17951.1421331793.1147.help-gnu-emacs@gnu.org)
 
@@ -1771,7 +1771,7 @@ the respective audio signal.
                               ("sum" . ?Σ)))
                 (prettify-symbols-mode 1)))
 
-## Language environment change<a id="orgf847b12"></a>
+## Language environment change<a id="org34108dd"></a>
 
 Convenient switching of the input-method and the spell-checking.
 
@@ -1811,13 +1811,13 @@ This code is derived from <http://www.emacswiki.org/emacs/FlySpell>
               dict)
         (message (concat dict " set for ispell completion."))))
 
-## Scroll-lock-mode<a id="org7877cbf"></a>
+## Scroll-lock-mode<a id="orgae857a"></a>
 
 Scroll lock mode gives another buffer movement feeling.
 
     (global-set-key (kbd "<Scroll_Lock> m") 'scroll-lock-mode)
 
-## Rotate windows<a id="org1def39f"></a>
+## Rotate windows<a id="orge73ce4f"></a>
 
     (defun mw-rotate-split ()
       "Somehow rotate buffers in the emacs-window.
@@ -1838,7 +1838,7 @@ Scroll lock mode gives another buffer movement feeling.
     		 (set-window-buffer (split-window-vertically) b1))))
           (message "Root window not split"))))
 
-## Screen<a id="org91845ed"></a>
+## Screen<a id="orgff572d5"></a>
 
 Seamless exchange with screen.
 
@@ -1846,7 +1846,7 @@ Seamless exchange with screen.
       "/tmp/screen-exchange"
       "Name of the file used by screen copy and paste.")
 
-### Screen like commands for slurp and write<a id="orga435254"></a>
+### Screen like commands for slurp and write<a id="org3f9b22e"></a>
 
     (defun mw-screen-exchange-slurp-insert ()
       (interactive)
@@ -1856,7 +1856,7 @@ Seamless exchange with screen.
       (interactive "r")
       (write-region start end mw-screen-exchange-filename))
 
-### Editing the screen-exchange file<a id="orgc971c96"></a>
+### Editing the screen-exchange file<a id="org29197aa"></a>
 
     (defun mw-screen-exchange-open-buffer ()
       "Open the screen exchange file in auto revert mode."
@@ -1864,7 +1864,7 @@ Seamless exchange with screen.
       (set-buffer (find-file mw-screen-exchange-filename))
       (auto-revert-mode))
 
-## Timeclock<a id="org916f927"></a>
+## Timeclock<a id="orgee4c0a5"></a>
 
 Use the timeclock keymap as noted in the timeclock source.
 
@@ -1879,7 +1879,7 @@ Use the timeclock keymap as noted in the timeclock source.
 
     (setq timeclock-file "/home/b/busi/archiv/timelogs/timelog")
 
-## Diary<a id="org32b2338"></a>
+## Diary<a id="org8aa7d0f"></a>
 
 Diary entries are useful sometimes.  E.g. it's possible to import ics
 files into a diary.
@@ -1891,27 +1891,27 @@ off.
     (add-hook 'diary-list-entries-hook 'diary-include-other-diary-files)
     (add-hook 'diary-mark-entries-hook 'diary-mark-included-diary-files)
 
-## erc<a id="org1647646"></a>
+## erc<a id="org5467eb7"></a>
 
 Direct client-to-client support for erc.
 
     (eval-after-load "erc" '(require 'erc-dcc))
 
-## Real delete<a id="org8611334"></a>
+## Real delete<a id="orgd03bb1f"></a>
 
 Real delete of region, not this 'play it save and put the delete into
 kill-ring' stuff.
 
     (global-set-key (kbd "\C-cw") #'delete-region)
 
-## More tweaks<a id="orga0d6a55"></a>
+## More tweaks<a id="orged5da38"></a>
 
     (defalias 'yes-or-no-p 'y-or-n-p)
     (ffap-bindings)
     (require 'page-ext)
     (display-time)
 
-## Zone<a id="org4d89661"></a>
+## Zone<a id="org831917d"></a>
 
 zone is builtin.  I use zone as signal.
 
@@ -1920,7 +1920,7 @@ seconds.
 
     (setq  zone-timeout 300)
 
-## Emacs Lisp Hook<a id="org114c95d"></a>
+## Emacs Lisp Hook<a id="orgf3490be"></a>
 
     (add-hook 'emacs-lisp-mode-hook #'eldoc-mode)
     (add-hook 'emacs-lisp-mode-hook #'imenu-add-menubar-index)
@@ -1940,13 +1940,13 @@ Take care about overrides due to customizations.
 <span class="timestamp-wrapper"><span class="timestamp">[2016-02-08 Mon 12:57] </span></span> Possibly drop usage of the custom file
 entirely for more clarity in the init process.
 
-# Keysettings<a id="org415d427"></a>
+# Keysettings<a id="org8f69a8d"></a>
 
-## Rectangle<a id="org713f528"></a>
+## Rectangle<a id="orga152a84"></a>
 
     (global-set-key (kbd "C-x r u") #'clear-register)
 
-## Org<a id="org63537ac"></a>
+## Org<a id="org6221057"></a>
 
     (global-set-key "\C-cl" 'org-store-link)
     (global-set-key "\C-cc" 'org-capture)
@@ -1955,14 +1955,14 @@ entirely for more clarity in the init process.
 
     (global-set-key (kbd "C-c v") 'org-velocity)
 
-## Following org-mode links given in other modes<a id="orgede1559"></a>
+## Following org-mode links given in other modes<a id="org7036f1"></a>
 
 To be able to follow an org-mode link in an arbitrary file can be
 nice, e.g. to get to the original from within a tangled file.
 
     (global-set-key (kbd "C-c o") 'org-open-at-point-global)
 
-## For Org Files<a id="orgef9d139"></a>
+## For Org Files<a id="orgd47cf25"></a>
 
     (setq org-speed-commands-user
     '(("S" . widen)
@@ -1979,7 +1979,7 @@ nice, e.g. to get to the original from within a tangled file.
      ("N" org-speed-move-safe 'outline-next-visible-heading)
      ("P" org-speed-move-safe 'outline-previous-visible-heading)))
 
-## Individual keymap<a id="org28292da"></a>
+## Individual keymap<a id="orgcde3aac"></a>
 
     (defvar mw-individual-keymap
       (let ((map (make-sparse-keymap)))
@@ -2040,7 +2040,7 @@ nice, e.g. to get to the original from within a tangled file.
       "Personal convenience keymap.")
     (global-set-key (kbd "\C-z") mw-individual-keymap)
 
-## Hydras<a id="org5fc9790"></a>
+## Hydras<a id="org465af4a"></a>
 
 This was thought to switch buffers quickly.  The overhead at start is
 too much for me though.  <span class="timestamp-wrapper"><span class="timestamp">[2015-10-12 Mon 14:55]</span></span>
@@ -2061,7 +2061,7 @@ too much for me though.  <span class="timestamp-wrapper"><span class="timestamp"
       ("{" shrink-window-horizontally)
       ("}" enlarge-window-horizontally))
 
-## Dired key for alternate up<a id="orgfe14e4"></a>
+## Dired key for alternate up<a id="orgb0abda7"></a>
 
     (add-hook
      'dired-mode-hook
@@ -2069,7 +2069,7 @@ too much for me though.  <span class="timestamp-wrapper"><span class="timestamp"
        (define-key dired-mode-map "`"
          #'mw-dired-up-directory-as-alternate)))
 
-## Go to last line in Buffer List<a id="orgff9d518"></a>
+## Go to last line in Buffer List<a id="org47f1f39"></a>
 
     (add-hook
      'Buffer-menu-mode-hook
@@ -2081,7 +2081,7 @@ too much for me though.  <span class="timestamp-wrapper"><span class="timestamp"
 
 With M-> point goes to the last char (and not one before that.)
 
-## Rest<a id="org3c5c7e7"></a>
+## Rest<a id="orgba1a5f6"></a>
 
     (global-set-key (kbd "<f1>") #'ignore) ;; e.g. for leaving the zone.
     (global-set-key (kbd "<f6>") 'flyspell-mode)
@@ -2124,7 +2124,7 @@ With M-> point goes to the last char (and not one before that.)
                  (insert (format-time-string "%Y%m%d%H%M"))
                (org-insert-time-stamp nil t t))))))
 
-# Triggers<a id="org4d3bce3"></a>
+# Triggers<a id="orga50e6d6"></a>
 
     (org-agenda-list)
     (org-agenda-to-appt) ; I want this!
