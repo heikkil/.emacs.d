@@ -149,6 +149,8 @@
 
 ;; *** TODO Make / work also at very first invocation
 
+;; **** Issue
+
 ;; [2016-04-28 Thu 11:24] Actually I need to literally do M-x
 ;; dired-narrow-regexp at the very first time I use the command.
 
