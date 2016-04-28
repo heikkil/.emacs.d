@@ -140,6 +140,7 @@
 
 ;; ** dired-narrow
 
+
 ;; #+BEGIN_SRC emacs-lisp
 (use-package dired-narrow
   :ensure t
