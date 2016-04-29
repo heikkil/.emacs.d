@@ -303,13 +303,6 @@
 (use-package form-feed)
 ;; #+END_SRC
 
-;; ** nyan-mode
-
-;; #+BEGIN_SRC emacs-lisp
-(use-package nyan-mode
-  :config (nyan-mode))
-;; #+END_SRC
-
 ;; ** browse-kill-ring
 
 ;; Activate any time with M-x browse-kill-ring or with M-y but the
@@ -506,10 +499,9 @@
 
 ;; ** rase
 
-;; rase is for triggering actions at sunrise and sunset.
+;; =rase= is for triggering actions at sunrise and sunset.
 
-;; Reverse the frame at sunrise and at sunset.  Pop up a frame with the
-;; new setting.
+;; Reversing the colors of Emacs at sunrise and at sunset.
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package rase
@@ -597,6 +589,8 @@
 (use-package helm)
 ;; #+END_SRC
 
+;; [2016-04-29 Fri 14:31] I do use helm-emms to switch on bassdrive.
+
 ;; ** gnuplot
 
 ;; The following lines go back to a recommendation of an arch linux
@@ -612,8 +606,17 @@
 
 ;; ** hydra
 
+;; Some clever key maps organization I guess.
+
 ;; #+BEGIN_SRC emacs-lisp
 (use-package hydra)
+;; #+END_SRC
+
+;; ** nyan-mode
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package nyan-mode
+  :config (nyan-mode))
 ;; #+END_SRC
 
 ;;; LabPkgs:
