@@ -41,11 +41,11 @@
 ;; [2015-07-23 Thu 12:19] Currently for lentic to work reasonably the top
 ;; level headings must consist of exactly one word.
 
-;;; Commentary:                                                       :noexport:
+;;; Commentary:                                            :artificial:noexport:
 
 ;; This section exists to please checkdoc, the elisp documentation checker.
 
-;;; Code:                                                             :noexport:
+;;; Code:                                                  :artificial:noexport:
 
 ;; This section exists to please checkdoc, the elisp documentation checker.
 
@@ -88,6 +88,8 @@
 ;; ** Frame Config
 
 ;; [2016-02-05 Fri 22:53] Try out minibuffer in extra frame.
+
+;; This has something!
 
 ;; #+BEGIN_SRC emacs-lisp
 ;; (setq initial-frame-alist '((minibuffer . nil)))
