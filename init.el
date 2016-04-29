@@ -632,6 +632,14 @@
   :config (nyan-mode))
 ;; #+END_SRC
 
+;; ** git-auto-commit-mode
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package git-auto-commit-mode
+:ensure t
+:config (git-auto-commit-mode t))
+;; #+END_SRC
+
 ;;; LabPkgs:
 
 ;; ** emr
@@ -660,24 +668,21 @@
 
 ;; ** elmacro
 
+;; I can only remember that I liked the name and the idea of this
+;; package.
+
 ;; #+BEGIN_SRC emacs-lisp
 (use-package elmacro
 :ensure t)
 ;; #+END_SRC
+
+;; *** TODO What is this?                                             :noexport:
 
 ;; ** elisp-slime-nav
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package elisp-slime-nav
 :ensure t)
-;; #+END_SRC
-
-;; ** git-auto-commit-mode
-
-;; #+BEGIN_SRC emacs-lisp
-(use-package git-auto-commit-mode
-:ensure t
-:config (git-auto-commit-mode t))
 ;; #+END_SRC
 
 ;; ** git-timemachine
