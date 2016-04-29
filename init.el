@@ -137,12 +137,17 @@
 
 ;; ** evil-numbers
 
-Quickly add integers in buffer.  Use negative prefix for subtraction.  There are more packages in
+;; Quickly add integers in buffer.  Use negative prefix for
+;; subtraction.
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package evil-numbers
   :bind ("C-+" . evil-numbers/inc-at-pt))
 ;; #+END_SRC
+
+;; *** TODO Check Similar Packages
+
+;; There are more packages in this field.
 
 ;; ** swiper
 
