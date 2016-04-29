@@ -1101,6 +1101,21 @@
 
 ;;; Lab:
 
+;; ** Jump to other Drawers
+
+;; #+BEGIN_SRC emacs-lisp
+(defun org-next-drawer (count)
+  (interactive "p")
+  (search-forward-regexp org-drawer-regexp nil nil count))
+;; #+END_SRC
+
+;; #+BEGIN_SRC emacs-lisp
+(defhydra hydra-zoom (global-map "C-c n")
+  "Move to next drawer."
+  ("n" org-next-drawer)
+  ("p" (lambda () (interactive) (org-next-drawer -1))))
+;; #+END_SRC
+
 ;; ** Hide a Line in the Agenda
 
 ;; Be able to hide a line of the org agenda.
