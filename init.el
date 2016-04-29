@@ -1917,6 +1917,17 @@ This binding shall make the close more convenient."
 (global-set-key (kbd "C-S-a") #'mw-open-line-above)
 ;; #+END_SRC
 
+;; ** Real delete
+
+;; Real delete of region, not this 'play it save and put the delete into
+;; kill-ring' stuff.
+
+;; #+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "\C-cw") #'delete-region)
+;; #+END_SRC
+
+;; *** TODO Test this                                                 :noexport:
+
 ;;; Rest:
 
 ;; ** Delete trailing ws on save
@@ -1969,7 +1980,7 @@ This binding shall make the close more convenient."
 (quietly-read-abbrev-file)       ;; reads the abbreviations file on startup
 ;; #+END_SRC
 
-;; ** Appointments from org
+;; ** Appointments from Org
 
 ;; Take into account the appointments for today from the org-agenda.
 ;; Note that this is done for the current org-agenda files.
@@ -2123,7 +2134,7 @@ Originates from gnu.emacs.help group 2006."
   (auto-revert-mode))
 ;; #+END_SRC
 
-;; ** ;;;imeclock:
+;; ** Timeclock
 
 ;; Use the timeclock keymap as noted in the timeclock source.
 
@@ -2156,7 +2167,7 @@ Originates from gnu.emacs.help group 2006."
 (add-hook 'diary-mark-entries-hook 'diary-mark-included-diary-files)
 ;; #+END_SRC
 
-;; ** erc
+;; ** ERC
 
 ;; Direct client-to-client support for erc.
 
@@ -2164,16 +2175,7 @@ Originates from gnu.emacs.help group 2006."
 (eval-after-load "erc" '(require 'erc-dcc))
 ;; #+END_SRC
 
-;; ** Real delete
-
-;; Real delete of region, not this 'play it save and put the delete into
-;; kill-ring' stuff.
-
-;; #+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "\C-cw") #'delete-region)
-;; #+END_SRC
-
-;; ** More tweaks
+;; ** Personal General Emacs Settings
 
 ;; #+BEGIN_SRC emacs-lisp
 (defalias 'yes-or-no-p 'y-or-n-p)
