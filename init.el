@@ -230,7 +230,7 @@
 ;; #+END_SRC
 ;; ** auth-password-store
 
-;; This is an enhan
+;; auth-stuff -> pass(word-store)
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package auth-password-store
