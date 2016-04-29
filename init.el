@@ -1566,7 +1566,7 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
 (global-set-key (kbd "<Scroll_Lock> l") 'mw-ask-leo)
 ;; #+END_SRC
 
-;; ** Rope read to save eye-movements
+;; ** Rope Read to save eye-movements
 
 ;; Most important package!  Save eye movements!
 
