@@ -1612,7 +1612,12 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
       (if (or (= 4 displayed-month) (= 5 displayed-month) (= 6 displayed-month))
           '(((5 29 2014) "Christi Himmelfahrt"))
         (if (or (= 7 displayed-month) (= 8 displayed-month) (= 9 displayed-month))
-            '(((8 15 2014) "Mariä Himmelfahrt"))))))
+            '(((8 15 2014) "Mariä Himmelfahrt"))))
+    (if (= 2016 displayed-year)
+        (if (or (= 4 displayed-month) (= 5 displayed-month) (= 6 displayed-month))
+            '(((5 29 2014) "Christi Himmelfahrt"))
+          (if (or (= 7 displayed-month) (= 8 displayed-month) (= 9 displayed-month))
+              '(((8 15 2014) "Mariä Himmelfahrt")))))))
 ;; #+END_SRC
 
 ;; ** Switch sound on/off
