@@ -1134,9 +1134,8 @@ Note: This function has been derived from
 ;; Source:
 ;; http://emacs.stackexchange.com/questions/12930/display-org-todo-list-of-entries-with-deadlines
 ;; ;;
-;; ** Registers
 
-;; *** Unset Register
+;; ** Unset a Register
 
 ;; I think this functionality is not in Emacs core yet.
 
