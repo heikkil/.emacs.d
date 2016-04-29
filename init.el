@@ -1085,7 +1085,7 @@
 ;;   - The name is not so promising AFAICS.
 ;; - Can auxies be restructured.
 
-;; ** Hacks
+;; *** Hacks
 
 ;; #+BEGIN_SRC emacs-lisp
 (push "~/p/elisp/mw/hacks" load-path)
