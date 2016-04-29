@@ -617,6 +617,14 @@
 (use-package hydra)
 ;; #+END_SRC
 
+;; ** sotlisp
+
+;; Helpful for jumping around!
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package sotlisp)
+;; #+END_SRC
+
 ;; ** nyan-mode
 
 ;; #+BEGIN_SRC emacs-lisp
@@ -625,12 +633,6 @@
 ;; #+END_SRC
 
 ;;; LabPkgs:
-
-;; ** sotlisp
-
-;; #+BEGIN_SRC emacs-lisp
-(use-package sotlisp)
-;; #+END_SRC
 
 ;; ** emr
 
