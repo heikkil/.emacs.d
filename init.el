@@ -230,11 +230,12 @@
 ;; #+END_SRC
 ;; ** auth-password-store
 
+;; This is an enhan
+
 ;; #+BEGIN_SRC emacs-lisp
 (use-package auth-password-store
   :ensure t
-  :config
-  (auth-pass-enable))
+  :config (auth-pass-enable))
 ;; #+END_SRC
 
 ;; ** avy
