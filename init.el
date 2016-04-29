@@ -123,6 +123,9 @@
 ;;; Packages:
 
 ;; ** chronos
+
+;; ~chronos~ allows to conveniently set timers and say a text when the timer is up.
+
 ;; #+BEGIN_SRC emacs-lisp
 (use-package chronos
   :config (setf chronos-text-to-speech-program "espeak"
@@ -131,6 +134,7 @@
                                            chronos-text-to-speech-notify)))
 ;; #+END_SRC
 
+;; **
 ;; ** swiper
 
 ;; #+BEGIN_SRC emacs-lisp
