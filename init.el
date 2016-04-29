@@ -1670,6 +1670,9 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
 ;; :ID:       f5e3d91a-1137-4640-b453-96c64eba2d16
 ;; :END:
 
+;; Bird sound is awesome.  In particular when the sound plays
+;; concurrently.
+
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-play-little-bird-sound ()
   "Play a little bird sound."
