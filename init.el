@@ -176,9 +176,7 @@
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package dired-narrow
-  :ensure t
-  :bind (:map dired-mode-map
-              ("/" . dired-narrow-regexp)))
+  :ensure t)
 ;; #+END_SRC
 
 ;; ** stumpwm-mode
