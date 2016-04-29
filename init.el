@@ -1916,6 +1916,7 @@ This binding shall make the close more convenient."
 (global-set-key (kbd "C-S-o") #'mw-open-line-below)
 (global-set-key (kbd "C-S-a") #'mw-open-line-above)
 ;; #+END_SRC
+
 ;;; Rest:
 
 ;; ** Delete trailing ws on save
