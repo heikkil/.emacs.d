@@ -2367,8 +2367,8 @@ easily create a new frame."
 (add-hook
  'dired-mode-hook
  (lambda ()
-   (define-key dired-mode-map "`"
-     #'mw-dired-up-directory-as-alternate)))
+   (define-key dired-mode-map "`" #'mw-dired-up-directory-as-alternate)
+   (define-key dired-mode-map "/" #'dired-narrow-regexp)))
 ;; #+END_SRC
 
 ;; ** Go to last line in Buffer List
