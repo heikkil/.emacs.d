@@ -1932,6 +1932,18 @@ This binding shall make the close more convenient."
 
 ;;; Rest:
 
+;; ** Mouse Avoidance
+
+;; Documentation says
+;; #+BEGIN_QUOTE
+;; Should be one of the symbols ‘banish’, ‘exile’, ‘jump’, ‘animate’,
+;; ‘cat-and-mouse’, ‘proteus’, or ‘none’.
+;; #+END_QUOTE
+
+;; #+BEGIN_SRC emacs-lisp
+(mouse-avoidance-mode 'proteus)
+;; #+END_SRC
+
 ;; ** Delete trailing ws on save
 
 ;; This is thought to keep the files cleaner.  This is thought to need
