@@ -1891,6 +1891,8 @@ This binding shall make the close more convenient."
 
 ;; *** TODO Define the key for dired-narrow here                      :noexport:
 
+;; See at [[id:0481cbe3-19d9-43ce-91a1-70fd845ff864][Dired Key for Alternate up and Narrow]] how that is going.
+
 ;; ** Delete blank lines also above
 
 ;; #+BEGIN_SRC emacs-lisp
@@ -2359,7 +2361,10 @@ easily create a new frame."
   ("}" enlarge-window-horizontally))
 ;; #+END_SRC
 
-;; ** Dired Key for Alternate up
+;; ** Dired Key for Alternate up and Narrow
+;; :PROPERTIES:
+;; :ID:       0481cbe3-19d9-43ce-91a1-70fd845ff864
+;; :END:
 
 ;; Expand ~dired-mode-map~ with a key for up as alternate dired.
 
