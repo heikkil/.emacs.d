@@ -282,17 +282,25 @@
 ;; #+END_SRC
 
 ;; ** page-break-lines
+;; :PROPERTIES:
+;; :ID:       1b9e0af1-1669-4b6e-bfcf-846f550f7c59
+;; :END:
+
+;; Display page breaks nicely.  Similar to [[id:5e169d24-bc68-42da-ae9d-2f3d190a9547][form-feed-mode]].
 
 ;; #+BEGIN_SRC emacs-lisp
-(use-package page-break-lines
-  :ensure t)
+(use-package page-break-lines)
 ;; #+END_SRC
 
 ;; ** form-feed-mode
+;; :PROPERTIES:
+;; :ID:       5e169d24-bc68-42da-ae9d-2f3d190a9547
+;; :END:
+
+;; Display page breaks nicely.  Similar to [[id:1b9e0af1-1669-4b6e-bfcf-846f550f7c59][page-break-lines]].
 
 ;; #+BEGIN_SRC emacs-lisp
-(use-package form-feed
-  :ensure t)
+(use-package form-feed)
 ;; #+END_SRC
 
 ;; ** nyan-mode
