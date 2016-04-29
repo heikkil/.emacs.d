@@ -2359,7 +2359,7 @@ easily create a new frame."
   ("}" enlarge-window-horizontally))
 ;; #+END_SRC
 
-;; ** Dired key for alternate up
+;; ** Dired Key for Alternate up
 
 ;; #+BEGIN_SRC emacs-lisp
 (add-hook
@@ -2383,7 +2383,7 @@ easily create a new frame."
 
 ;; With M-> point goes to the last char (and not one before that.)
 
-;; ** Rest
+;; ** Various Keysettings
 
 ;; #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "<f1>") #'ignore) ;; e.g. for leaving the zone.
@@ -2429,6 +2429,8 @@ easily create a new frame."
 ;; #+END_SRC
 
 ;;; Triggers:
+
+;; Let Emacs say something at start.
 
 ;; #+BEGIN_SRC emacs-lisp
 (org-agenda-list)
