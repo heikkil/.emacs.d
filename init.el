@@ -1684,7 +1684,7 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
 (setq ring-bell-function 'mw-play-little-bird-sound)
 ;; #+END_SRC
 
-;; ** bbdb csv feature
+;; ** BBDB csv Feature
 
 ;; This is activation of the 'bbdb-csv-import'-package.  I found it BTW
 ;; today [2014-04-24 Thu].
