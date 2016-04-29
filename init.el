@@ -640,6 +640,13 @@
 :config (git-auto-commit-mode t))
 ;; #+END_SRC
 
+;; ** epa
+
+;; #+BEGIN_SRC emacs-lisp
+(require 'epa)
+(define-key epa-key-list-mode-map "N" #'mw-epa-mark-next-key)
+;; #+END_SRC
+
 ;;; LabPkgs:
 
 ;; ** emr
@@ -1096,7 +1103,7 @@
 (global-set-key (kbd "C-\"") #'org-cycle-agenda-files-backwards)
 ;; #+END_SRC
 
-;; ** Auxies-eww
+;; *** Auxies-eww
 
 ;; #+BEGIN_SRC emacs-lisp
 (push "~/p/elisp/mw/auxies" load-path)
@@ -1363,13 +1370,6 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
 (add-hook 'org-mode-hook #'endless/org-ispell)
 ;; #+END_SRC
 
-;; ** epa
-
-;; #+BEGIN_SRC emacs-lisp
-(require 'epa)
-(define-key epa-key-list-mode-map "N" #'mw-epa-mark-next-key)
-;; #+END_SRC
-
 ;; ** ediff
 
 ;; #+BEGIN_SRC emacs-lisp
@@ -1567,6 +1567,8 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
 ;; #+END_SRC
 
 ;; ** Rope read to save eye-movements
+
+;; Most important package!  Save eye movements!
 
 ;; #+BEGIN_SRC emacs-lisp
 (push "~/p/elisp/mw/rope-read-mode" load-path)
