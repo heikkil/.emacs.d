@@ -240,8 +240,10 @@
 
 ;; ** avy
 
-;; =avy= has functionality similar to ace-jump-mode.  I read that avy is
-;; the variant that gets maintained.
+;; Move cursor onto a visible character.
+
+;; =avy= is similar to ace-jump-mode.  I read that avy is the variant
+;; that gets maintained.
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package avy
