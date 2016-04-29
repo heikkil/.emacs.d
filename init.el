@@ -56,6 +56,8 @@
 
 ;; ** Debugging
 
+;; Switch on debugging in case.
+
 ;; #+BEGIN_SRC emacs-lisp
 ;; (setq debug-on-error t)
 ;; #+END_SRC
