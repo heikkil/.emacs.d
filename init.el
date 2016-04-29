@@ -1023,7 +1023,7 @@
           (add-to-list 'Info-directory-list "~/p/elisp/external/emms/doc")))
 ;; #+END_SRC
 
-;; ** Big brother db
+;; ** Big Brother DB
 
 ;; #+BEGIN_SRC emacs-lisp
 (require 'bbdb-loaddefs (expand-file-name "~/p/elisp/external/bbdb/lisp/bbdb-loaddefs.el"))
