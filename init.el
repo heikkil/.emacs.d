@@ -2366,7 +2366,8 @@ easily create a new frame."
 ;; :ID:       0481cbe3-19d9-43ce-91a1-70fd845ff864
 ;; :END:
 
-;; Expand ~dired-mode-map~ with a key for up as alternate dired.  And also set the key for dired-narrow-regexp.
+;; Expand ~dired-mode-map~ with a key for up as alternate dired.  And
+;; also set the key for dired-narrow-regexp.
 
 ;; #+BEGIN_SRC emacs-lisp
 (add-hook
