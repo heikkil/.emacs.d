@@ -114,7 +114,7 @@
 		     "/doc")))))
 ;; #+END_SRC
 
-;; ** Package initialization
+;; ** Package Initialization
 
 ;; #+BEGIN_SRC emacs-lisp
 (package-initialize)
@@ -133,19 +133,6 @@
 
 ;;; Packages:
 
-;; ** chronos
-
-;; ~chronos~ allows to conveniently set timers and say a text when the
-;; timer is done.
-
-;; #+BEGIN_SRC emacs-lisp
-(use-package chronos
-  :config (setf chronos-text-to-speech-program "espeak"
-                chronos-text-to-speech-program-parameters "-s 111"
-                chronos-expiry-functions '(chronos-buffer-notify
-                                           chronos-text-to-speech-notify)))
-;; #+END_SRC
-
 ;; ** evil-numbers
 
 ;; Quickly add integers in buffer.  Use negative prefix for
@@ -159,6 +146,19 @@
 ;; *** TODO Check Similar Packages
 
 ;; There are more packages in this field.
+
+;; ** chronos
+
+;; ~chronos~ allows to conveniently set timers and say a text when the
+;; timer is done.
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package chronos
+  :config (setf chronos-text-to-speech-program "espeak"
+                chronos-text-to-speech-program-parameters "-s 111"
+                chronos-expiry-functions '(chronos-buffer-notify
+                                           chronos-text-to-speech-notify)))
+;; #+END_SRC
 
 ;; ** swiper
 
