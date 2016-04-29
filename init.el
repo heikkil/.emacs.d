@@ -143,7 +143,7 @@
   :bind ("C-+" . evil-numbers/inc-at-pt))
 ;; #+END_SRC
 
-;; *** TODO Check Similar Packages
+;; *** TODO Check Similar Packages                                    :noexport:
 
 ;; There are more packages in this field.
 
@@ -181,7 +181,7 @@
               ("/" . dired-narrow-regexp)))
 ;; #+END_SRC
 
-;; *** TODO Make / work also at very first invocation
+;; *** TODO Make / work also at very first invocation                 :noexport:
 
 ;; **** Issue
 
@@ -549,6 +549,9 @@
 
 ;; ** AUR access
 
+;; ~aurel~ helps with the management of the AUR-packages of the
+;; Arch-Linux system.
+
 ;; #+BEGIN_SRC emacs-lisp
 (use-package aurel
   :config
@@ -575,12 +578,14 @@
 
 ;; ** zeitgeist
 
-;; zeitgeist keeps track of file-operations.
+;; The zeitgeist software keeps track of file-operations.  Not sure if I
+;; have this still up.
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package zeitgeist :disabled)
 ;; #+END_SRC
 
+;; *** TODO Check the zeitgeist stuff                                 :noexport:
 ;; ** helm
 
 ;; Actually i don't use helm consciously.  [2015-06-27 Sat 10:57]
@@ -640,7 +645,7 @@
    )
 ;; #+END_SRC
 
-;; *** TODO Show the emr menu with M-RET
+;; *** TODO Show the emr menu with M-RET                              :noexport:
 
 ;; ** beacon
 
