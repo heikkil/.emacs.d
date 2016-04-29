@@ -2461,7 +2461,10 @@ easily create a new frame."
 ; (replace-string "init:.el" "init.el")
 ;; #+END_SRC
 
+
 ;; ** Local Variables
+
+;; 
 ;; # Local Variables:
 ;; # lentic-init: lentic-orgel-org-init
 ;; # eval: (git-auto-commit-mode)
