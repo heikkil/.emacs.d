@@ -1889,6 +1889,8 @@ This binding shall make the close more convenient."
             ))
 ;; #+END_SRC
 
+;; *** TODO Define the key for dired-narrow here                      :noexport:
+
 ;; ** Delete blank lines also above
 
 ;; #+BEGIN_SRC emacs-lisp
