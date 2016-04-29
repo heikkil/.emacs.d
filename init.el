@@ -124,7 +124,7 @@
 
 ;; ** chronos
 
-;; ~chronos~ allows to conveniently set timers and say a text when the timer is up.
+;; ~chronos~ allows to conveniently set timers and say a text when the timer is done.
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package chronos
