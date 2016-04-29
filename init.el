@@ -58,17 +58,12 @@
 
 ;; #+BEGIN_SRC emacs-lisp
 ;; (setq debug-on-error t)
-
-;; (defun ert--activate-font-lock-keywords ()
-;;   ;; [2016-04-16 Sat 14:40] wtf?  startup breaks.
-;;   ;; some change with emacs?  function missing?
-;;   )
-(require 'ert)
 ;; #+END_SRC
 
 ;; ** Workarounds
 
-;; The following might help to keep this file going.  Ideally this section does not exist.
+;; The following might help to keep this file going.  Ideally this
+;; section does not exist.
 
 ;; #+BEGIN_SRC emacs-lisp
 ;; (defun ert--activate-font-lock-keywords ()
