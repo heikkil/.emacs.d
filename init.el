@@ -1110,7 +1110,7 @@
 ;; #+END_SRC
 
 ;; #+BEGIN_SRC emacs-lisp
-(defhydra hydra-zoom (global-map "C-c n")
+(defhydra hydra-org-drawers (global-map "C-c n")
   "Move to next drawer."
   ("n" org-next-drawer)
   ("p" (lambda () (interactive) (org-next-drawer -1))))
