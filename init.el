@@ -2016,7 +2016,7 @@ This binding shall make the close more convenient."
             (prettify-symbols-mode 1)))
 ;; #+END_SRC
 
-;; ** Language environment change
+;; ** Natural Language Environment
 
 ;; Convenient switching of the input-method and the spell-checking.
 
@@ -2060,7 +2060,7 @@ This binding shall make the close more convenient."
     (message (concat dict " set for ispell completion."))))
 ;; #+END_SRC
 
-;; ** Scroll-lock-mode
+;; ** Scroll-Lock-Mode
 
 ;; Scroll lock mode gives another buffer movement feeling.
 
@@ -2123,7 +2123,7 @@ Originates from gnu.emacs.help group 2006."
   (auto-revert-mode))
 ;; #+END_SRC
 
-;; ** Timeclock
+;; ** ;;;imeclock:
 
 ;; Use the timeclock keymap as noted in the timeclock source.
 
