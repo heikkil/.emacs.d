@@ -216,7 +216,7 @@
 
 ;; ** wrap-region
 
-;; Decorate region for certain key presses.
+;; Press a key to decorate region .
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package wrap-region
