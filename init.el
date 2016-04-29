@@ -169,6 +169,8 @@
 
 ;; ** dired-narrow
 
+;; At very first invocation do ~M-x dired-narrow~.
+
 ;; #+BEGIN_SRC emacs-lisp
 (use-package dired-narrow
   :ensure t
