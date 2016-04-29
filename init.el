@@ -2361,7 +2361,7 @@ easily create a new frame."
 
 ;; ** Dired Key for Alternate up
 
-;; Expand =dired-mode-map .
+;; Expand ~dired-mode-map~ with a key for up as alternate dired.
 
 ;; #+BEGIN_SRC emacs-lisp
 (add-hook
