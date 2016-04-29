@@ -1190,11 +1190,11 @@ Note: This function has been derived from
     (switch-to-buffer other-frame-buffer)))
 ;; #+END_SRC
 
-;; ** vcs
+;; ** VCS
 
-;; ***** Automate typical procedere with commit message
+;; ***** This is a Typical Procedere with Commit Message for the Author
 
-;; Do the right thing.  ^_^
+;; Automate the typical thing.  ^_^
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-dtrt-commit-msg-prepare()
