@@ -169,7 +169,10 @@
 
 ;; ** dired-narrow
 
-;; At very first invocation do ~M-x dired-narrow~.
+;; At very first invocation do ~M-x dired-narrow~ in a dired buffer.
+;; After that the key binding is active.
+
+;; Recall g for getting rid of all filtering.
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package dired-narrow
