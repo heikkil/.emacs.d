@@ -1053,6 +1053,10 @@
 (load-library "zen-reward-mode")
 ;; #+END_SRC
 
+;; *** History
+
+;; Found this in a newsgroup.  See the source for more info.
+
 ;; ** Little helpers
 
 ;; #+BEGIN_SRC emacs-lisp
