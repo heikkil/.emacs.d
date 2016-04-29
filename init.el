@@ -135,7 +135,7 @@
 
 ;; ** evil-numbers
 
-;; Quickly add integers in buffer.  Use negative prefix for
+;; Quickly add to integers in buffer.  Use negative prefix for
 ;; subtraction.
 
 ;; #+BEGIN_SRC emacs-lisp
