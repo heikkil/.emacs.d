@@ -1082,7 +1082,7 @@
 ;; *** TODO Check the Source                                          :noexport:
 
 ;; - Does auxies look good?
-;; - Name is not so promising.
+;;   - The name is not so promising AFAICS.
 ;; - Can auxies be restructured.
 
 ;; ** Hacks
