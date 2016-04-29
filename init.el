@@ -135,7 +135,13 @@
                                            chronos-text-to-speech-notify)))
 ;; #+END_SRC
 
-;; **
+;; ** evil-numbers
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package evil-numbers
+  :bind ("C-+" . evil-numbers/inc-at-pt))
+;; #+END_SRC
+
 ;; ** swiper
 
 ;; #+BEGIN_SRC emacs-lisp
