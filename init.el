@@ -181,15 +181,6 @@
               ("/" . dired-narrow-regexp)))
 ;; #+END_SRC
 
-;; *** TODO Make / work also at very first invocation                 :noexport:
-
-;; **** Issue
-
-;; [2016-04-28 Thu 11:24] Actually I need to literally do M-x
-;; dired-narrow-regexp at the very first time I use the command.
-
-;; This is annoying and easily forgotten.
-
 ;; ** stumpwm-mode
 
 ;; Stumpish integration.
@@ -1889,10 +1880,6 @@ This binding shall make the close more convenient."
             ))
 ;; #+END_SRC
 
-;; *** TODO Define the key for dired-narrow here                      :noexport:
-
-;; See at [[id:0481cbe3-19d9-43ce-91a1-70fd845ff864][Dired Key for Alternate up and Narrow]] how that is going.
-
 ;; ** Delete blank lines also above
 
 ;; #+BEGIN_SRC emacs-lisp
@@ -2361,20 +2348,29 @@ easily create a new frame."
   ("}" enlarge-window-horizontally))
 ;; #+END_SRC
 
-;; ** Dired Key for Alternate up and Narrow
+;; ** Dired Key for Alternate up
 ;; :PROPERTIES:
 ;; :ID:       0481cbe3-19d9-43ce-91a1-70fd845ff864
 ;; :END:
 
-;; Expand ~dired-mode-map~ with a key for up as alternate dired.  And
-;; also set the key for dired-narrow-regexp.
+;; Expand ~dired-mode-map~ with a key for opening parent directory as
+;; alternate dired.
 
 ;; #+BEGIN_SRC emacs-lisp
 (add-hook
  'dired-mode-hook
  (lambda ()
-   (define-key dired-mode-map "`" #'mw-dired-up-directory-as-alternate)
-   (define-key dired-mode-map "/" #'dired-narrow-regexp)))
+   (define-key dired-mode-map "`" #'mw-dired-up-directory-as-alternate)))
+;; #+END_SRC
+
+;; ** Dired Key for Narrow
+
+;; Expand ~dired-mode-map~ with a key for filtering the list of files.
+
+;; #+BEGIN_SRC emacs-lisp
+(add-hook
+ 'dired-mode-hook
+ (lambda () (define-key dired-mode-map "/" #'dired-narrow-regexp)))
 ;; #+END_SRC
 
 ;; ** Go to last line in Buffer List
