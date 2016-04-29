@@ -5,9 +5,9 @@ The result is suitable e.g. for github.
 
 *** Pull the Trigger
 
-#+CALL: extract-init-documentation() :results silent
+Create the readme with C-c C-c on the following line.
 
-Call with C-c C-c in Org mode.
+#+CALL: extract-init-documentation() :results silent
 
 *** Technical Realization
 
