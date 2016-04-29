@@ -1059,6 +1059,8 @@
 
 ;; ** Little helpers
 
+;; My little collection of Emacs stuff.
+
 ;; #+BEGIN_SRC emacs-lisp
 (push  "~/p/elisp/mw/little-helpers" load-path)
 (require 'little-helpers)
