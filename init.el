@@ -1194,7 +1194,7 @@ Note: This function has been derived from
 
 ;; ***** This is a Typical Procedere with Commit Message for the Author
 
-;; Automate the typical thing.  ^_^
+;; Automate the typical thing and get happy.  ^_^
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-dtrt-commit-msg-prepare()
