@@ -1163,11 +1163,14 @@ Note: This function has been derived from
 (add-hook 'minibuffer-exit-hook #'my-minibuffer-exit-hook)
 ;; #+END_SRC
 
-;; ** lob
+;; ** LOB
+
+;; Library of Babel is a collection of Org source blocks.  This code is for adding my additions to the lob.
 
 ;; #+BEGIN_SRC emacs-lisp
 (org-babel-lob-ingest "~/org/mw-lob.org")
 ;; #+END_SRC
+
 ;; ** Switch buffers between frames
 
 ;; Found at [[http://www.emacswiki.org/emacs/SwitchingBuffers#toc5][EmacsWiki: Switching Buffers]] provided by YoniRabkinKatzenell
