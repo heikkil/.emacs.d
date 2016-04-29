@@ -1072,10 +1072,18 @@
 
 ;; ** Auxies
 
+;; Another collection of Emacs stuff.
+
 ;; #+BEGIN_SRC emacs-lisp
 (push "~/p/elisp/mw/auxies" load-path)
 (require 'auxies-rest)
 ;; #+END_SRC
+
+;; *** TODO Check the Source                                          :noexport:
+
+;; - Does auxies look good?
+;; - Name is not so promising.
+;; - Can auxies be restructured.
 
 ;; ** Hacks
 
