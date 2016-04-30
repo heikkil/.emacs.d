@@ -1136,11 +1136,12 @@ Note: This function has been derived from
 `org-agenda-drag-line-forward'.
 "
   (interactive)
+  (let ((inhibit-read-only t)))
   (if mark-active
       (let ((beg (save-excursion (region-beginning) (beginning-of-line) (point)))
             (end (save-excursion (region-end) (beginning-of-line) (point))))
         )
-    (let ((inhibit-read-only t)
+    (let (
           (end (save-excursion (move-beginning-of-line 2) (point))))
       (move-beginning-of-line 1)
       (delete-region (point) end)
