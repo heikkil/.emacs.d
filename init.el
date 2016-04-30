@@ -1136,17 +1136,15 @@ Note: This function has been derived from
 `org-agenda-drag-line-forward'.
 "
   (interactive)
-  (let ((inhibit-read-only t)
-        end)
+  (let ((inhibit-read-only t))
     (if (region-active-p)
-        (let ((beg (save-excursion (goto-char (region-beginning)) (beginning-of-line) (point))))
-          (setf end (save-excursion
-                      (goto-char (region-end))
-                      (if (= (region-end) (save-excursion (beginning-of-line) (point))) (ignore)
-                        (forward-line))
-                      (point)))
-          (goto-char beg)
-          (delete-region (point) end))
+        (let ((beg (save-excursion (goto-char (region-beginning)) (beginning-of-line) (point)))
+              (end (save-excursion
+                          (goto-char (region-end))
+                          (if (= (region-end) (save-excursion (beginning-of-line) (point))) (ignore)
+                            (forward-line))
+                          (point))))
+          (delete-region beg end))
       (move-beginning-of-line 1)
       (delete-region (point) (save-excursion (move-beginning-of-line 2) (point))))
     (org-agenda-reapply-filters)
