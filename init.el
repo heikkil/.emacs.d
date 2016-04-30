@@ -1137,10 +1137,11 @@ Note: This function has been derived from
 "
   (interactive)
   (let ((inhibit-read-only t))
-    (if mark-active
+    (if (region-active-p)
         (let ((beg (save-excursion (region-beginning) (beginning-of-line) (point)))
               (end (save-excursion (region-end) (beginning-of-line) (point))))
-          (delete-region beg end)
+          (goto-char beg)
+          (delete-region (point) end)
           (org-agenda-reapply-filters)
           (org-agenda-mark-clocking-task))
       (let ((end (save-excursion (move-beginning-of-line 2) (point))))
