@@ -1140,9 +1140,10 @@ Note: This function has been derived from
   (if mark-active
       (let ((beg (save-excursion (region-beginning) (beginning-of-line) (point)))
             (end (save-excursion (region-end) (beginning-of-line) (point))))
-        )
-    (let (
-          (end (save-excursion (move-beginning-of-line 2) (point))))
+        (delete-region beg end)
+        (org-agenda-reapply-filters)
+        (org-agenda-mark-clocking-task))
+    (let ((end (save-excursion (move-beginning-of-line 2) (point))))
       (move-beginning-of-line 1)
       (delete-region (point) end)
       (org-agenda-reapply-filters)
