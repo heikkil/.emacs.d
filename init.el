@@ -1116,12 +1116,12 @@
   ("p" (lambda () (interactive) (org-next-drawer -1))))
 ;; #+END_SRC
 
-;; ** Hide a Line in the Agenda
+;; ** Hide Lines in the Agenda
 
 ;; Be able to hide a line of the org agenda.
 
-;; This is a functionality that affects only the display in an agenda
-;; buffer only.
+;; This is functionality that affects only the representation in an
+;; agenda buffer.
 
 ;; Thought to help when scanning an agenda with the "scan to nothing"
 ;; technique.
