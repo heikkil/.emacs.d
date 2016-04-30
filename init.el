@@ -1147,9 +1147,8 @@ Note: This function has been derived from
           (delete-region (save-excursion (goto-char (region-beginning)) (beginning-of-line) (point))
                          (save-excursion
                           (goto-char (region-end))
-                          (if (and (= (region-end) (save-excursion (beginning-of-line) (point)))
-                                   (not (= (point) (mark))))
-                              (ignore)
+                          (when (not (and (= (region-end) (save-excursion (beginning-of-line) (point)))
+                                          (not (= (point) (mark)))))
                             (forward-line))
                           (point))))
       (move-beginning-of-line 1)
