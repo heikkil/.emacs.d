@@ -1138,13 +1138,13 @@ Note: This function has been derived from
   (interactive)
   (let ((inhibit-read-only t))
     (if (region-active-p)
-        (delete-region (save-excursion (goto-char (region-beginning)) (beginning-of-line) (point))
+        (delete-region (save-excursion
+                         (goto-char (region-beginning)) (beginning-of-line) (point))
                        (save-excursion
-
+                         (goto-char (region-end))
                          (when (or (not (= (region-end)
-                                           (save-excursion (goto-char (region-end)) (beginning-of-line) (point)))
-                                        ;; hint for human reader: region-end is at beginning of a line
-                                        )
+                                           (save-excursion (goto-char (region-end)) (beginning-of-line) (point))))
+                                   ;; hint for human reader: region-end is at beginning of a line
                                    (= (point) (mark)))
                            (forward-line))
                          (point)))
