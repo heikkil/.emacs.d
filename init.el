@@ -1147,10 +1147,8 @@ Note: This function has been derived from
                       (point)))
           (goto-char beg)
           (delete-region (point) end))
-      (progn
-        (setf end (save-excursion (move-beginning-of-line 2) (point)))
-        (move-beginning-of-line 1)
-        (delete-region (point) end)))
+      (move-beginning-of-line 1)
+      (delete-region (point) (save-excursion (move-beginning-of-line 2) (point))))
     (org-agenda-reapply-filters)
     (org-agenda-mark-clocking-task)))
 ;; #+END_SRC
