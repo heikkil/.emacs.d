@@ -1139,7 +1139,7 @@ Note: This function has been derived from
   (let ((inhibit-read-only t))
     (if (region-active-p)
         (let ((beg (save-excursion (goto-char (region-beginning)) (beginning-of-line) (point)))
-              (end (save-excursion (goto-char (region-end)) (beginning-of-line) (point))))
+              (end (save-excursion (goto-char (region-end)) (forward-line) (point))))
           (goto-char beg)
           (delete-region (point) end)
           (org-agenda-reapply-filters)
