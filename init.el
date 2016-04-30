@@ -1137,8 +1137,8 @@ Note: This function has been derived from
 "
   (interactive)
   (if mark-active
-      (let (beg (save-excursion (region-beginning) (beginning-of-line) (point))
-                (save-excursion (region-end) (beginning-of-line) (point)))
+      (let ((beg (save-excursion (region-beginning) (beginning-of-line) (point)))
+            (end (save-excursion (region-end) (beginning-of-line) (point))))
         )
     (let ((inhibit-read-only t)
           (end (save-excursion (move-beginning-of-line 2) (point))))
