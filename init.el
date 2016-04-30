@@ -1144,7 +1144,12 @@ Note: This function has been derived from
                           (if (= (region-end) (save-excursion (beginning-of-line) (point))) (ignore)
                             (forward-line))
                           (point))))
-          (delete-region beg end))
+          (delete-region (save-excursion (goto-char (region-beginning)) (beginning-of-line) (point))
+                         (save-excursion
+                          (goto-char (region-end))
+                          (if (= (region-end) (save-excursion (beginning-of-line) (point))) (ignore)
+                            (forward-line))
+                          (point))))
       (move-beginning-of-line 1)
       (delete-region (point) (save-excursion (move-beginning-of-line 2) (point))))
     (org-agenda-reapply-filters)
