@@ -1590,6 +1590,7 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
 (defun mw-ask-leo (arg)
   "Call leo word engine using w3m."
   (interactive "sWord: ")
+  (kill-new arg)
   (w3m-search "leo" arg))
 ;; #+END_SRC
 
