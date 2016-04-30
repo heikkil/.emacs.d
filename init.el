@@ -1145,11 +1145,14 @@ Note: This function has been derived from
                             (forward-line))
                           (point))))
           (delete-region (save-excursion (goto-char (region-beginning)) (beginning-of-line) (point))
-                         (save-excursion (goto-char (region-end))
+                         (save-excursion
+                           (goto-char (region-end))
                            (when (not (and (= (region-end) (save-excursion (beginning-of-line) (point)))
                                            (not (= (point) (mark)))))
                              (or (= (point) (mark))
-                                 (not (= (region-end) (save-excursion (beginning-of-line) (point)))))
+                                 (not (= (region-end) (save-excursion (beginning-of-line) (point)))
+                                  ;; region-end is at beginning of a line
+                                      ))
                              (forward-line))
                           (point))))
       (move-beginning-of-line 1)
