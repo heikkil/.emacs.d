@@ -1582,11 +1582,15 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
 ;; L for look up the word at point in leo.
 
 ;; #+BEGIN_SRC emacs-lisp
-(defun mw-ask-leo ()
+(defun mw-ask-leo-about-word-at-point ()
   "Call leo word engine using w3m."
   (interactive)
   (w3m-search "leo" (thing-at-point 'word)))
-(global-set-key (kbd "<Scroll_Lock> l") 'mw-ask-leo)
+
+(defun mw-ask-leo (arg)
+  "Call leo word engine using w3m."
+  (interactive "sWord: ")
+  (w3m-search "leo" arg))
 ;; #+END_SRC
 
 ;; ** Rope Read to save eye-movements
