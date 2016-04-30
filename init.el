@@ -1123,8 +1123,9 @@
 ;; This is functionality that affects only the representation in an
 ;; agenda buffer.
 
-;; Thought to help when scanning an agenda with the "scan to nothing"
-;; technique.
+;; This function can be used to scan an agenda with the "scan to
+;; nothing" technique.  Which is start at the top and hide each line
+;; you have thought of.
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-org-agenda-hide-line ()
