@@ -1139,18 +1139,26 @@ Note: This function has been derived from
   (interactive)
   (let ((inhibit-read-only t))
     (if (region-active-p)
-        (delete-region (save-excursion
-                         (goto-char (region-beginning)) (beginning-of-line) (point))
-                       (save-excursion
-                         (goto-char (region-end))
-                         (when (or (not (= (region-end)
-                                           (save-excursion (goto-char (region-end)) (beginning-of-line) (point))))
-                                   ;; hint for human reader: region-end is at beginning of a line
-                                   (= (point) (mark)))
-                           (forward-line))
-                         (point)))
+        (delete-region
+         (save-excursion
+           (goto-char (region-beginning))
+           (beginning-of-line)
+           (point))
+         (save-excursion
+           (goto-char (region-end))
+           (when (or (not (= (region-end)
+                             (save-excursion
+                               (goto-char (region-end))
+                               (beginning-of-line)
+                               (point))))
+                     ;; hint for human reader: region-end is at beginning of a line
+                     (= (point) (mark)))
+             (forward-line))
+           (point)))
       (move-beginning-of-line 1)
-      (delete-region (point) (save-excursion (move-beginning-of-line 2) (point))))
+      (delete-region
+       (point)
+       (save-excursion (move-beginning-of-line 2) (point))))
     (org-agenda-reapply-filters)
     (org-agenda-mark-clocking-task)))
 ;; #+END_SRC
