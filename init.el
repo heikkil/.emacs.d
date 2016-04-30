@@ -1136,18 +1136,18 @@ Note: This function has been derived from
 `org-agenda-drag-line-forward'.
 "
   (interactive)
-  (let ((inhibit-read-only t)))
-  (if mark-active
-      (let ((beg (save-excursion (region-beginning) (beginning-of-line) (point)))
-            (end (save-excursion (region-end) (beginning-of-line) (point))))
-        (delete-region beg end)
+  (let ((inhibit-read-only t))
+    (if mark-active
+        (let ((beg (save-excursion (region-beginning) (beginning-of-line) (point)))
+              (end (save-excursion (region-end) (beginning-of-line) (point))))
+          (delete-region beg end)
+          (org-agenda-reapply-filters)
+          (org-agenda-mark-clocking-task))
+      (let ((end (save-excursion (move-beginning-of-line 2) (point))))
+        (move-beginning-of-line 1)
+        (delete-region (point) end)
         (org-agenda-reapply-filters)
-        (org-agenda-mark-clocking-task))
-    (let ((end (save-excursion (move-beginning-of-line 2) (point))))
-      (move-beginning-of-line 1)
-      (delete-region (point) end)
-      (org-agenda-reapply-filters)
-      (org-agenda-mark-clocking-task))))
+        (org-agenda-mark-clocking-task)))))
 ;; #+END_SRC
 
 ;; *** Keybinding
