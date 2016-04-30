@@ -1148,6 +1148,8 @@ Note: This function has been derived from
                          (save-excursion (goto-char (region-end))
                            (when (not (and (= (region-end) (save-excursion (beginning-of-line) (point)))
                                            (not (= (point) (mark)))))
+                             (or (= (point) (mark))
+                                 (not (= (region-end) (save-excursion (beginning-of-line) (point)))))
                              (forward-line))
                           (point))))
       (move-beginning-of-line 1)
