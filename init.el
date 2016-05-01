@@ -372,7 +372,7 @@
   (key-chord-define-global "``" #'mw-dired-up-directory-as-alternate)
   (key-chord-define-global "~~" #'dired-jump)
   (key-chord-define-global ",," #'lentic-mode-move-lentic-window)
-  (key-chord-define-global "p4" #'delete-other-windows)
+  (key-chord-define-global "3." #'delete-other-windows)
   (key-chord-define-global "c8" #'delete-window) ; for kinesis keyboard
   (key-chord-define-global "g8" #'delete-window) ; for cherry keyboard
   (key-chord-define-global "m1" #'magit-status)
