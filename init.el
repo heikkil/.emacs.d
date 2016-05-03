@@ -133,6 +133,14 @@
 
 ;;; Packages:
 
+;; ** async
+
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package async
+:config (dired-async-mode 1))
+;; #+END_SRC
+
 ;; ** ace-link
 
 ;; Quickly follow links in certain modes e.g. info-mode.
@@ -145,7 +153,6 @@
 ;; *** TODO Check for integration with ert and more                   :noexport:
 
 ;; [2016-05-03 Tue 09:01] Read about this on the project page.
-
 ;; ** evil-numbers
 
 ;; Quickly add to integers in buffer.  Use negative prefix for
