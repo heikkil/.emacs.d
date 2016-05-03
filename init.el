@@ -409,7 +409,7 @@
                                       (org-edit-special)
                                     (org-edit-src-exit))))
   (key-chord-define-global "vv" #'org-edit-src-exit)
-  (key-chord-define-global "`1" #'org-previous-visible-heading)
+  (key-chord-define-global "1'" #'org-previous-visible-heading)
   (key-chord-define-global "mw" #'list-buffers)
   (key-chord-define-global "n1" #'sp-narrow-to-sexp)
   (key-chord-define-global "a6" #'mw-set-ariadne-point)
