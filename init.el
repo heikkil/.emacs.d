@@ -144,7 +144,7 @@
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package camcorder
-:config (setf camcorder-output-directory "~/media/screencasts/camcorder"))
+  :config (setf camcorder-output-directory "~/media/screencasts/camcorder"))
 ;; #+END_SRC
 
 ;; ** ace-link
