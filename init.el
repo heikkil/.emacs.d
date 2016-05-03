@@ -137,8 +137,7 @@
 
 
 ;; #+BEGIN_SRC emacs-lisp
-(use-package async
-:config (dired-async-mode 1))
+(use-package async :config (dired-async-mode 1))
 ;; #+END_SRC
 
 ;; ** ace-link
