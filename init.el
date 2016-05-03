@@ -142,6 +142,10 @@
   :config (ace-link-setup-default))
 ;; #+END_SRC
 
+;; *** TODO Check for integration with ert and more                   :noexport:
+
+;; [2016-05-03 Tue 09:01] Read about this on the project page.
+
 ;; ** evil-numbers
 
 ;; Quickly add to integers in buffer.  Use negative prefix for
