@@ -133,6 +133,15 @@
 
 ;;; Packages:
 
+;; ** ace-link
+
+;; Quickly follow links in certain modes e.g. info-mode.
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package ace-link
+  :config (ace-link-setup-default))
+;; #+END_SRC
+
 ;; ** evil-numbers
 
 ;; Quickly add to integers in buffer.  Use negative prefix for
