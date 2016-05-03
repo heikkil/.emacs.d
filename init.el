@@ -265,6 +265,9 @@
                      ?m ?j ?b ?k ?w ?q ?v ?x ?z))
   (setf avy-all-windows nil)
   (setf avy-all-windows-alt t) ; hint: behavior prefix arg
+  (avy-setup-default)
+  ;; [2016-05-03 Tue 15:56]: was
+  ;;(eval-after-load "isearch" '(define-key isearch-mode-map (kbd "C-'") 'avy-isearch))
   )
 ;; #+END_SRC
 
