@@ -140,6 +140,13 @@
 (use-package async :config (dired-async-mode 1))
 ;; #+END_SRC
 
+;; ** camcorder
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package camcorder
+:config (setf camcorder-output-directory "~/media/screencasts/camcorder"))
+;; #+END_SRC
+
 ;; ** ace-link
 
 ;; Quickly follow links in certain modes e.g. info-mode.
