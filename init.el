@@ -1133,6 +1133,14 @@
 
 ;;; Lab:
 
+;; ** exwm
+
+;; #+BEGIN_SRC emacs-lisp
+(require 'exwm)
+(require 'exwm-config)
+(exwm-config-default)
+;; #+END_SRC
+
 ;; ** Jump to other Drawers
 
 ;; #+BEGIN_SRC emacs-lisp
@@ -1147,7 +1155,6 @@
   ("n" org-next-drawer)
   ("p" (lambda () (interactive) (org-next-drawer -1))))
 ;; #+END_SRC
-
 ;; ** Hide Lines in the Agenda
 
 ;; Be able to hide a line of the org agenda.
