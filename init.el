@@ -166,7 +166,8 @@
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package evil-numbers
-  :bind ("C-+" . evil-numbers/inc-at-pt))
+  :bind ("M-+" . evil-numbers/inc-at-pt)
+  ("M--" . evil-numbers/dec-at-pt))
 ;; #+END_SRC
 
 ;; *** TODO Check Similar Packages                                    :noexport:
