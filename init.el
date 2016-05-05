@@ -161,8 +161,8 @@
 ;; [2016-05-03 Tue 09:01] Read about this on the project page.
 ;; ** evil-numbers
 
-;; Quickly add to integers in buffer.  Use negative prefix for
-;; subtraction.
+;; Quickly add to integers in buffer with prefix-arguments for
+;; adding/subtracting that value.  Default is 1.
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package evil-numbers
@@ -170,7 +170,7 @@
   ("M-+" . evil-numbers/inc-at-pt)
   ("M--" . evil-numbers/dec-at-pt))
 ;; #+END_SRC
-4
+
 ;; *** TODO Check Similar Packages                                    :noexport:
 
 ;; There are more packages in this field.
