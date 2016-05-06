@@ -400,7 +400,7 @@
                                   (interactive "P")
                                   (if in-place (mw-translate-in-place-eng+deu)
                                     (mw-translate-as-message-eng+deu))))
-;  (key-chord-define-global "HH" (lambda () (interactive) (recenter 0))) ; #'recenter-top-bottom
+  (key-chord-define-global "HH" (lambda () (interactive) (recenter 0))) ; #'recenter-top-bottom
   (key-chord-define-global "``" #'mw-dired-up-directory-as-alternate)
   (key-chord-define-global "~~" #'dired-jump)
   (key-chord-define-global ",," #'lentic-mode-move-lentic-window)
