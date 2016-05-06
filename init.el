@@ -76,7 +76,7 @@
 ;; #+END_SRC
 
 ;; ** Don't load outdated byte code
-
+1
 ;; #+BEGIN_SRC emacs-lisp
 (setq load-prefer-newer t)
 ;; #+END_SRC
@@ -400,7 +400,7 @@
                                   (interactive "P")
                                   (if in-place (mw-translate-in-place-eng+deu)
                                     (mw-translate-as-message-eng+deu))))
-  (key-chord-define-global "hh" (lambda () (interactive) (recenter 0))) ; #'recenter-top-bottom
+  (key-chord-define-global "HH" (lambda () (interactive) (recenter 0))) ; #'recenter-top-bottom
   (key-chord-define-global "``" #'mw-dired-up-directory-as-alternate)
   (key-chord-define-global "~~" #'dired-jump)
   (key-chord-define-global ",," #'lentic-mode-move-lentic-window)
@@ -1139,6 +1139,15 @@
 (require 'exwm)
 (require 'exwm-config)
 (exwm-config-default)
+(require 'exwm-randr)
+
+(setq exwm-randr-workspace-output-plist '(0 "VGA1"))
+(add-hook 'exwm-randr-screen-change-hook
+          (lambda ()
+            (start-process-shell-command
+             "xrandr" nil "xrandr --output VGA1 --left-of LVDS1 --auto")))
+(exwm-randr-enable)
+
 ;; #+END_SRC
 
 ;; ** Jump to other Drawers
