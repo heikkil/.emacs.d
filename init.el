@@ -105,7 +105,7 @@
   (eval-after-load "org-agenda"
     '(progn
        (org-defkey org-agenda-mode-map (kbd "Y") #'org-agenda)
-       ;; (org-defkey org-agenda-mode-map (kbd "C-,") #'ignore) ; wtf is this?
+       ;; (org-defkey org-agenda-mode-map (kbd "C-,") #'ignore) ; wtf is this line?
        ))
   (eval-after-load 'info
     '(progn (info-initialize)
