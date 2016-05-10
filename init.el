@@ -1139,6 +1139,13 @@
 ;; #+BEGIN_SRC emacs-lisp
 (push "~/p/elisp/external/jl-encrypt" load-path)
 (require 'jl-encrypt)
+(add-hook 'emacs-lisp-mode-hook
+          (lambda ()
+            (setq-local prettify-symbols-alist
+                        '(("lambda" . ?λ)))
+            (prettify-symbols-mode 1)))
+(add-hook 'gnus-message-setup-hook #'mml-secure-encrypt-if-possible)
+(add-hook 'message-send-hook #'mml-secure-check-encryption-p)
 ;; #+END_SRC
 
 ;; ** exwm
