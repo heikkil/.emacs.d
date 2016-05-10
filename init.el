@@ -76,7 +76,7 @@
 ;; #+END_SRC
 
 ;; ** Don't load outdated byte code
-1
+;; 1
 ;; #+BEGIN_SRC emacs-lisp
 (setq load-prefer-newer t)
 ;; #+END_SRC
@@ -1133,6 +1133,13 @@
 ;; #+END_SRC
 
 ;;; Lab:
+
+;; ** jl-encrypt
+
+;; #+BEGIN_SRC emacs-lisp
+(push "~/p/elisp/external/jl-encrypt" load-path)
+(require 'jl-encrypt)
+;; #+END_SRC
 
 ;; ** exwm
 
