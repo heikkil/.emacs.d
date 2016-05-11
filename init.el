@@ -1288,7 +1288,7 @@ Note: This function has been derived from
 (defun mw-org-set-day-delta-for-org-current-time (days)
   "Let `org-current-time' return dates DAYS days in the future.
 Reset with DAYS 0."
-  (interactive "pDays:")
+  (interactive "p")
   (setq org-extend-today-until (* (- days) 24)))
 ;; #+END_SRC
 
