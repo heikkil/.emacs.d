@@ -1134,6 +1134,12 @@
 
 ;;; Lab:
 
+;; ** org-crypt
+
+;; #+BEGIN_SRC emacs-lisp
+
+;; #+END_SRC
+
 ;; ** jl-encrypt                                                         :crypt:
 
 ;; #+BEGIN_SRC emacs-lisp
