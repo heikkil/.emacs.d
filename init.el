@@ -450,10 +450,7 @@
 (use-package lispy
   :ensure t
   :config (progn
-            (add-hook 'emacs-lisp-mode-hook (lambda () (lispy-mode 1)))
-            (define-key paredit-mode-map  (kbd "M-s") nil) ; Unshadow all the M-s standard stuff.
-            )
-)
+            (add-hook 'emacs-lisp-mode-hook (lambda () (lispy-mode 1)))))
 ;; #+END_SRC
 
 ;; ** smartparens
