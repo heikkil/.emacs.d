@@ -1289,7 +1289,8 @@ Note: This function has been derived from
   "Let `org-current-time' return dates DAYS days in the future.
 Reset with DAYS 0."
   (interactive "p")
-  (setq org-extend-today-until (* (- days) 24)))
+  (setq org-extend-today-until
+        (* (/ (org-time-stamp-to-now (org-read-date) t) 60 60))))
 ;; #+END_SRC
 
 ;; ** Unset a Register
