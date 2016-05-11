@@ -1290,7 +1290,7 @@ Note: This function has been derived from
 Reset with DAYS 0."
   (interactive)
   (setq org-extend-today-until
-        (truncate (/ (org-time-stamp-to-now (org-read-date) t)  60 60 ))))
+        (truncate (- (/ (org-time-stamp-to-now (org-read-date) t) 60 60)))))
 ;; #+END_SRC
 
 ;; ** Unset a Register
