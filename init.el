@@ -1285,12 +1285,12 @@ Note: This function has been derived from
 ;; arbitrary date as current.
 
 ;; #+BEGIN_SRC emacs-lisp
-(defun mw-org-set-day-delta-for-org-current-time (days)
+(defun mw-org-set-day-delta-for-org-current-time ()
   "Let `org-current-time' return dates DAYS days in the future.
 Reset with DAYS 0."
-  (interactive "p")
+  (interactive)
   (setq org-extend-today-until
-        (* (/ (org-time-stamp-to-now (org-read-date) t) 60 60))))
+        (truncate (/ (org-time-stamp-to-now (org-read-date) t)  60 60 ))))
 ;; #+END_SRC
 
 ;; ** Unset a Register
