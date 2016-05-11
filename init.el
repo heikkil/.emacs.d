@@ -2567,6 +2567,7 @@ easily create a new frame."
 ;; #+BEGIN_SRC emacs-lisp
 (org-agenda-list)
 (org-agenda-to-appt) ; I want this!
+(appt-activate 1)    ; enable
 (switch-to-buffer "*Org Agenda*")
 
 ;; Vision: Extend the following code to be like the computer in the
