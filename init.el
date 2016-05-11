@@ -47,8 +47,6 @@
 
 ;;; Code:                                                  :artificial:noexport:
 
-;; This section exists to please checkdoc, the elisp documentation checker.
-
 ;;; Firstfirst:
 ;; :PROPERTIES:
 ;; :ID:       bd4a3fcf-1669-40b8-a1c1-d9adf07fd947
@@ -438,14 +436,26 @@
 ;; #+BEGIN_SRC emacs-lisp
 (use-package paredit
   :ensure t
-  :config (progn
-            (add-hook 'emacs-lisp-mode-hook (lambda () (paredit-mode t)))
-            (define-key paredit-mode-map  (kbd "M-s") nil) ; Unshadow all the M-s standard stuff.
-            )
+  ;; :config (progn
+  ;;           (add-hook 'emacs-lisp-mode-hook (lambda () (paredit-mode t)))
+  ;;           (define-key paredit-mode-map  (kbd "M-s") nil) ; Unshadow all the M-s standard stuff.
+  ;;           )
   :bind ("C-M-<up>" . paredit-splice-sexp))
 ;; #+END_SRC
 
 ;; 
+;; ** Lispy
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package lispy
+  :ensure t
+  :config (progn
+            (add-hook 'emacs-lisp-mode-hook (lambda () (lispy-mode 1)))
+            (define-key paredit-mode-map  (kbd "M-s") nil) ; Unshadow all the M-s standard stuff.
+            )
+)
+;; #+END_SRC
+
 ;; ** smartparens
 
 ;; [2016-01-08 Fri 14:49] At first I thought smartparens-mode will replace paredit for me.  But
@@ -1140,7 +1150,7 @@
 (eval-after-load 'org-crypt '(org-crypt-use-before-save-magic))
 ;; #+END_SRC
 
-;; ** jl-encrypt                                                         :crypt:
+;; ** jl-encrypt                                                         :crypto:
 
 ;; #+BEGIN_SRC emacs-lisp
 (push "~/p/elisp/external/jl-encrypt" load-path)
