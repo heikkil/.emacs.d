@@ -1134,7 +1134,7 @@
 
 ;;; Lab:
 
-;; ** jl-encrypt
+;; ** jl-encrypt                                                         :crypt:
 
 ;; #+BEGIN_SRC emacs-lisp
 (push "~/p/elisp/external/jl-encrypt" load-path)
@@ -1160,7 +1160,7 @@
 
 ;; #+END_SRC
 
-;; ** Jump to other Drawers
+;; ** Jump to other Drawers                                                :org:
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun org-next-drawer (count)
@@ -1174,7 +1174,7 @@
   ("n" org-next-drawer)
   ("p" (lambda () (interactive) (org-next-drawer -1))))
 ;; #+END_SRC
-;; ** Hide Lines in the Agenda
+;; ** Hide Lines in the Agenda                                             :org:
 
 ;; Be able to hide a line of the org agenda.
 
@@ -1278,6 +1278,16 @@ Note: This function has been derived from
 ;; Source:
 ;; http://emacs.stackexchange.com/questions/12930/display-org-todo-list-of-entries-with-deadlines
 ;; ;;
+
+;; ***** Timetravel Org
+
+;; #+BEGIN_SRC emacs-lisp
+(defun mw-org-set-day-delta-for-org-current-time (days)
+  "Let `org-current-time' return dates DAYS days in the future.
+Reset with DAYS 0."
+  (interactive "pDays:")
+  (setq org-extend-today-until (* (- days) 24)))
+;; #+END_SRC
 
 ;; ** Unset a Register
 
