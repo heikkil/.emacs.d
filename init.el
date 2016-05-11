@@ -1137,7 +1137,7 @@
 ;; ** org-crypt
 
 ;; #+BEGIN_SRC emacs-lisp
-(eval-after-load 'org-crypt (org-crypt-use-before-save-magic))
+(eval-after-load 'org-crypt '(org-crypt-use-before-save-magic))
 ;; #+END_SRC
 
 ;; ** jl-encrypt                                                         :crypt:
