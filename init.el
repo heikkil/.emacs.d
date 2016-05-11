@@ -1281,6 +1281,9 @@ Note: This function has been derived from
 
 ;; ***** Timetravel Org
 
+;; This fun allows (afaict) the view on an Org agenda when setting an
+;; arbitrary date as current.
+
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-org-set-day-delta-for-org-current-time (days)
   "Let `org-current-time' return dates DAYS days in the future.
