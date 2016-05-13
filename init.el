@@ -1141,6 +1141,21 @@
 
 ;;; Lab:
 
+;; ** Prefix Lines with Timesstamp
+
+;; Prefix lines with a timesstamp.
+
+;; Unclear yet: Is this the shit?
+
+;; #+BEGIN_SRC emacs-lisp
+(global-set-key
+ (kbd "<f8>")
+ (lambda ()
+   (interactive)
+   (newline)
+   (org-insert-time-stamp nil t t)
+   (insert " ")))
+;; #+END_SRC
 ;; ** org-crypt
 
 ;; #+BEGIN_SRC emacs-lisp
