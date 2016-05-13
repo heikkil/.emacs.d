@@ -1558,7 +1558,7 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
 (defcustom *mw-pomodoro-longer-pause-duration* 15
   "Duration in minutes of standard pauses between pomodoros.")
 
-(setq org-timer-default-timer "29")
+(setq org-timer-default-timer "25")
 (add-hook 'org-clock-in-hook
           '(lambda ()
              (if (not ;org-timer-timer-is-countdown ; 201501151654 maint
