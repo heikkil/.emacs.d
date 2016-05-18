@@ -447,10 +447,7 @@
 ;; ** Lispy
 
 ;; #+BEGIN_SRC emacs-lisp
-(use-package lispy
-  :ensure t
-  :config (progn
-            (add-hook 'emacs-lisp-mode-hook (lambda () (lispy-mode 1)))))
+(use-package lispy)
 ;; #+END_SRC
 
 ;; ** smartparens
@@ -1140,6 +1137,10 @@
 ;; #+END_SRC
 
 ;;; Lab:
+
+;; ** Personalize emacs-lisp-mode
+
+;; Set some via customize.
 
 ;; ** Prefix Lines with Timesstamp
 
