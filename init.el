@@ -1140,7 +1140,7 @@
 
 ;; ** Personalize emacs-lisp-mode
 
-;; Set some via customize.
+;; Set some personal stuff via customize.
 
 ;; ** Prefix Lines with Timesstamp
 
