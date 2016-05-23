@@ -1215,7 +1215,7 @@
 ;; you have thought of.
 
 ;; #+BEGIN_SRC emacs-lisp
-(defun mw-org-agenda-hide-line ()
+(defun mw-org-agenda-hide-line-or-region ()
   "Hide the line containing point or lines in the region from the agenda.
 This action just affects the agenda buffer and not the source of the data.
 I.e. the lines appear again at the next refresh for an agenda.
@@ -1257,7 +1257,7 @@ Note: This function has been derived from
 
 ;; #+BEGIN_SRC emacs-lisp
 (eval-after-load "org-agenda"
-  '(org-defkey org-agenda-mode-map (kbd "h") #'mw-org-agenda-hide-line))
+  '(org-defkey org-agenda-mode-map (kbd "h") #'mw-org-agenda-hide-line-or-region))
 ;; #+END_SRC
 
 ;; ** A key for Info-search-next                                          :info:
