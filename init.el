@@ -593,15 +593,6 @@
 ;; - [2014-04-07 Mon 22:26] Just installed a package that might help with
 ;; AUR-packages.
 
-;; ** slime
-
-;; #+BEGIN_SRC emacs-lisp
-(add-to-list 'load-path "~/p/elisp/external/slime")
-(require 'slime-autoloads)
-(setq inferior-lisp-program "/usr/bin/sbcl")
-(setq slime-contribs '(slime-fancy))
-;; #+END_SRC
-
 ;; ** zeitgeist
 
 ;; The zeitgeist software keeps track of file-operations.  Not sure if I
@@ -728,6 +719,15 @@
 ;; Start git-timemachine on a file to travel time on it.
 
 ;;; Fromsource:
+
+;; ** slime
+
+;; #+BEGIN_SRC emacs-lisp
+(add-to-list 'load-path "~/p/elisp/external/slime")
+(require 'slime-autoloads)
+(setq inferior-lisp-program "/usr/bin/sbcl")
+(setq slime-contribs '(slime-fancy))
+;; #+END_SRC
 
 ;; ** Org                                                                 :org:
 
