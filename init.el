@@ -447,7 +447,8 @@
 ;; ** Lispy
 
 ;; #+BEGIN_SRC emacs-lisp
-(use-package lispy)
+(use-package lispy
+  :config (lispy-set-key-theme '(lispy paredit)))
 ;; #+END_SRC
 
 ;; ** smartparens
