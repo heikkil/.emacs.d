@@ -702,13 +702,6 @@
 
 ;; *** TODO What is this?                                             :noexport:
 
-;; ** elisp-slime-nav
-
-;; #+BEGIN_SRC emacs-lisp
-(use-package elisp-slime-nav
-:ensure t)
-;; #+END_SRC
-
 ;; ** git-timemachine
 
 ;; #+BEGIN_SRC emacs-lisp
