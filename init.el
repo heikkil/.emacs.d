@@ -596,10 +596,10 @@
 ;; ** slime
 
 ;; #+BEGIN_SRC emacs-lisp
-(use-package slime
-  :config
-  (setq inferior-lisp-program "/usr/bin/sbcl")
-  (setq slime-contribs '(slime-fancy)))
+(add-to-list 'load-path "~/p/elisp/external/slime")
+(require 'slime-autoloads)
+(setq inferior-lisp-program "/usr/bin/sbcl")
+(setq slime-contribs '(slime-fancy))
 ;; #+END_SRC
 
 ;; ** zeitgeist
