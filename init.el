@@ -1134,7 +1134,8 @@
 
 ;; ** Pick current agenda filter
 
-;; [2016-05-25 Wed 19:26] I wanted this.  Let's see if this is something.
+;; [2016-05-25 Wed 19:26] I wanted this.  Practise shall show if this is
+;; something.
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-org-pick-current-agenda-filters ()
