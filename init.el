@@ -1144,14 +1144,14 @@
   (org-add-agenda-custom-command
    `("v" "Volatile agenda setting" agenda ""
      ((org-agenda-overriding-header
-     (concat
-     "Volatile agenda.  Set with mw-org-push-current-setting-as-volatile-agenda-cmd on a freshly restricted agenda.")
-      (org-agenda-category-filter-preset
-       ',org-agenda-category-filter)
-      (org-agenda-tag-filter-preset
-       ',org-agenda-tag-filter)
-      (org-agenda-regexp-filter-preset
-       ',org-agenda-regexp-filter)))))
+       (concat
+        "Volatile agenda.  Set with mw-org-push-current-setting-as-volatile-agenda-cmd on a freshly restricted agenda.")
+       (org-agenda-category-filter-preset
+        ',org-agenda-category-filter)
+       (org-agenda-tag-filter-preset
+        ',org-agenda-tag-filter)
+       (org-agenda-regexp-filter-preset
+        ',org-agenda-regexp-filter))))))
 ;; #+END_SRC
 
 ;; ** Personalize emacs-lisp-mode
