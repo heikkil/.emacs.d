@@ -1225,7 +1225,7 @@ Note: This function has been derived from
            (goto-char (region-beginning))
            (beginning-of-line)
            (point))
-         (save-excursion
+         (progn
            (goto-char (region-end))
            (when (or (not (= (region-end)
                              (save-excursion
