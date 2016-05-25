@@ -1232,7 +1232,6 @@ Note: This function has been derived from
                                (goto-char (region-end))
                                (beginning-of-line)
                                (point))))
-                     ;; hint for human reader: region-end is at beginning of a line
                      (= (point) (mark)))
              (forward-line))
            (point)))
