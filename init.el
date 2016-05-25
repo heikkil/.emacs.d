@@ -1215,8 +1215,7 @@ This action just affects the agenda buffer and not the source of the data.
 I.e. the lines appear again at the next refresh for an agenda.
 
 Note: This function has been derived from
-`org-agenda-drag-line-forward'.
-"
+`org-agenda-drag-line-forward'."
   (interactive)
   (let ((inhibit-read-only t))
     (if (region-active-p)
