@@ -1132,6 +1132,27 @@
 
 ;;; Lab:
 
+;; ** Pick current agenda filter
+
+;; [2016-05-25 Wed 19:26] I wanted this.  Let's see if this is something.
+
+;; #+BEGIN_SRC emacs-lisp
+(defun mw-org-pick-current-agenda-filters ()
+  "Set agenda command \"v\" to current settings of agenda."
+  (interactive)
+  (org-add-agenda-custom-command
+   `("v" "Volatile agenda setting" agenda ""
+     ((org-agenda-overriding-header
+     (concat
+     "Volatile agenda.  Set with mw-org-push-current-setting-as-volatile-agenda-cmd on a freshly restricted agenda.")
+      (org-agenda-category-filter-preset
+       ',org-agenda-category-filter)
+      (org-agenda-tag-filter-preset
+       ',org-agenda-tag-filter)
+      (org-agenda-regexp-filter-preset
+       ',org-agenda-regexp-filter)))))
+;; #+END_SRC
+
 ;; ** Personalize emacs-lisp-mode
 
 ;; Set some personal stuff via customize.
@@ -1151,6 +1172,7 @@
    (org-insert-time-stamp nil t t)
    (insert " ")))
 ;; #+END_SRC
+
 ;; ** org-crypt
 
 ;; #+BEGIN_SRC emacs-lisp
@@ -1158,6 +1180,8 @@
 ;; #+END_SRC
 
 ;; ** jl-encrypt                                                         :crypto:
+
+;; Don't forget the crypto.
 
 ;; #+BEGIN_SRC emacs-lisp
 (push "~/p/elisp/external/jl-encrypt" load-path)
