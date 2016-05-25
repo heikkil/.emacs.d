@@ -1133,6 +1133,9 @@
 ;;; Lab:
 
 ;; ** Pick current agenda filter
+;; :PROPERTIES:
+;; :ID:       252fe790-d35f-4559-b9dd-7da3f4edb374
+;; :END:
 
 ;; [2016-05-25 Wed 19:26] I wanted this.  Practise shall show if this
 ;; helps some.
