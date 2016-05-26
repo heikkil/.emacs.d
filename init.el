@@ -2338,6 +2338,14 @@ Originates from gnu.emacs.help group 2006."
 ;; #+BEGIN_SRC emacs-lisp
 (defalias 'yes-or-no-p 'y-or-n-p)
 (ffap-bindings)
+(global-set-key
+ ""
+ (lambda(&optional prefix)
+   (interactive "P")
+   (call-interactively
+    (if prefix
+        #'find-file
+      #'find-file-at-point)))
 (require 'page-ext)
 (display-time)
 ;; #+END_SRC
@@ -2588,18 +2596,18 @@ easily create a new frame."
 (global-set-key (kbd "M-SPC") 'cycle-spacing)
 
 (define-key global-map (kbd "<f9>")
-  '(lambda (&optional prefix)
-     "Try insert org-inactive-timestamp.  With prefix argument
+  (lambda (&optional prefix)
+    "Try insert org-inactive-timestamp.  With prefix argument
   try insert yyyymmddhhmm.  Special in org-agenda: toggle
   inactive-timestamps-display."
-     (interactive "P")
-     (cond
-      ((eq major-mode 'org-agenda-mode)
-       (setq org-agenda-include-inactive-timestamps (eq nil org-agenda-include-inactive-timestamps))
-       (org-agenda-redo))
-      (t (if prefix
-             (insert (format-time-string "%Y%m%d%H%M"))
-           (org-insert-time-stamp nil t t))))))
+    (interactive "P")
+    (cond
+     ((eq major-mode 'org-agenda-mode)
+      (setq org-agenda-include-inactive-timestamps (eq nil org-agenda-include-inactive-timestamps))
+      (org-agenda-redo))
+     (t (if prefix
+            (insert (format-time-string "%Y%m%d%H%M"))
+          (org-insert-time-stamp nil t t))))))
 ;; #+END_SRC
 
 ;;; Triggers:
