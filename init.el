@@ -2344,8 +2344,8 @@ Originates from gnu.emacs.help group 2006."
    (interactive "P")
    (call-interactively
     (if prefix
-        #'find-file
-      #'find-file-at-point)))
+        #'ido-find-file
+      #'find-file-at-point))))
 (require 'page-ext)
 (display-time)
 ;; #+END_SRC
