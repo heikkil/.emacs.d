@@ -1334,7 +1334,8 @@ Note: This function has been derived from
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-org-set-day-delta-for-org-current-time ()
-  "Let `org-current-time' return dates DAYS days in the future.
+  "Choose another date as today for Org.
+Let `org-current-time' return dates DAYS days in the future.
 Reset with DAYS 0."
   (interactive)
   (setq org-extend-today-until
