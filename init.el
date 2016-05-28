@@ -1147,7 +1147,7 @@
   (org-add-agenda-custom-command
    `("v" "Volatile agenda setting" agenda ""
      ((org-agenda-overriding-header
-        "Volatile agenda.  Set with mw-org-push-current-setting-as-volatile-agenda-cmd on a freshly restricted agenda.")
+        "Volatile agenda.  Set with mw-org-pick-current-agenda-filters on a freshly restricted agenda.")
       (org-agenda-category-filter-preset
        ',org-agenda-category-filter)
       (org-agenda-tag-filter-preset
