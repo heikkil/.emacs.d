@@ -400,7 +400,7 @@
                                   (if in-place (mw-translate-in-place-eng+deu)
                                     (mw-translate-as-message-eng+deu))))
   (key-chord-define-global "HH" (lambda () (interactive) (recenter 0))) ; #'recenter-top-bottom; afair H is a respecive vim binding?
-  (key-chord-define-global "``" #'mw-dired-up-directory-as-alternate)
+  (key-chord-define-global "``" #'mw-alternate-up)
   (key-chord-define-global "~~" #'dired-jump)
   (key-chord-define-global ",," #'lentic-mode-move-lentic-window)
   (key-chord-define-global "3." #'delete-other-windows)
@@ -2539,7 +2539,7 @@ easily create a new frame."
 (add-hook
  'dired-mode-hook
  (lambda ()
-   (define-key dired-mode-map "`" #'mw-dired-up-directory-as-alternate)))
+   (define-key dired-mode-map "`" #'mw-alternate-up)))
 ;; #+END_SRC
 
 ;; ** Dired Key for Narrow
