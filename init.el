@@ -1141,13 +1141,13 @@
 ;; helps some.
 
 ;; #+BEGIN_SRC emacs-lisp
-(defun mw-org-pick-current-agenda-filters ()
+(defun mw-org-agenda-pick-current-agenda-filters ()
   "Set agenda command \"v\" to current settings of agenda."
   (interactive)
   (org-add-agenda-custom-command
    `("v" "Volatile agenda setting" agenda ""
      ((org-agenda-overriding-header
-       "Volatile agenda.  Set with `mw-org-pick-current-agenda-filters' on a freshly restricted agenda.")
+       "Volatile agenda.  Set with `mw-org-agenda-pick-current-agenda-filters' on a freshly restricted agenda.")
       (org-agenda-category-filter-preset
        ',org-agenda-category-filter)
       (org-agenda-tag-filter-preset
