@@ -448,7 +448,7 @@
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package lispy
-  :config ;; (lispy-set-key-theme '(paredit))
+  :config  (lispy-set-key-theme '(lispy))
   (define-key lispy-mode-map-lispy (kbd "]") nil)
   (define-key lispy-mode-map-lispy (kbd "[") nil))
 ;; #+END_SRC
