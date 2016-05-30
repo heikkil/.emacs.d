@@ -1139,7 +1139,7 @@
 ;; Function to convert single space sentence endings to double space.
 
 ;; #+BEGIN_SRC emacs-lisp
-(defun change-next-sentence-space-end-to-double-space
+(defun if-sentence-end-space-make-it-space
     () (interactive)
     (let ((sentence-end-double-space nil))
        (forward-sentence)
