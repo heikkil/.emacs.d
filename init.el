@@ -1136,6 +1136,8 @@
 
 ;; ** Double space at end of sentences
 
+;; Function for helping to convert single space sentence endings to double space.
+
 ;; #+BEGIN_SRC emacs-lisp
 (defun change-next-sentence-space-end-to-double-space
     () (interactive)
