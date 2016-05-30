@@ -1134,6 +1134,15 @@
 
 ;;; Lab:
 
+;; ** Double space at end of sentences
+
+;; (defun change-next-sentence-space-end-to-double-space
+;;  (lambda () (interactive)
+;;    (let ((sentence-end-double-space nil))
+;;      (forward-sentence)
+;;      (if  (looking-at " +")
+;;          (replace-match "  ")))))
+
 ;; ** Pick current agenda filter
 ;; :PROPERTIES:
 ;; :ID:       252fe790-d35f-4559-b9dd-7da3f4edb374
@@ -1157,7 +1166,6 @@
       (org-agenda-regexp-filter-preset
         ',org-agenda-regexp-filter)))))
 ;; #+END_SRC
-
 ;; ** Personalize emacs-lisp-mode
 
 ;; Set some personal stuff via customize.
