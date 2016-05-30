@@ -1136,12 +1136,13 @@
 
 ;; ** Double space at end of sentences
 
-;; (defun change-next-sentence-space-end-to-double-space
-;;  (lambda () (interactive)
-;;    (let ((sentence-end-double-space nil))
-;;      (forward-sentence)
-;;      (if  (looking-at " +")
-;;          (replace-match "  ")))))
+;; #+BEGIN_SRC emacs-lisp
+(defun change-next-sentence-space-end-to-double-space
+    () (interactive)
+    (let ((sentence-end-double-space nil))
+       (forward-sentence)
+       (when (looking-at " +") (replace-match "  "))))
+;; #+END_SRC
 
 ;; ** Pick current agenda filter
 ;; :PROPERTIES:
