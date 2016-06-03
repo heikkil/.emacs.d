@@ -1259,7 +1259,7 @@ Note: This function has been derived from
   (interactive)
   (let ((inhibit-read-only t))
     (if (region-active-p)
-        (delete-region
+        (kill-region
          (save-excursion
            (goto-char (region-beginning))
            (beginning-of-line)
@@ -1275,7 +1275,7 @@ Note: This function has been derived from
              (forward-line))
            (point)))
       (move-beginning-of-line 1)
-      (delete-region
+      (kill-region
        (point)
        (save-excursion (move-beginning-of-line 2) (point))))
     (org-agenda-reapply-filters)
