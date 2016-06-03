@@ -1263,7 +1263,6 @@ action of making the agenda buffer writable.  And also take care
 about some commands which might have a special meaning in the
 agenda buffer e.g. C-k.
 "
-
   (interactive)
   (let ((inhibit-read-only t))
     (if (region-active-p)
