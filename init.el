@@ -2677,4 +2677,4 @@ easily create a new frame."
 
 ;; ** Last line
 
-;;; init:.el ends here
+;;; init.el ends here
