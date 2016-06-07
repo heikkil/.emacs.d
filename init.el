@@ -1354,9 +1354,7 @@ agenda buffer e.g. C-k.
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-org-timemachine ()
-  "Choose another date as today for Org.
-Let `org-current-time' return dates DAYS days in the future.
-Reset with DAYS 0."
+  "Choose a day from the calendar as today for Org."
   (interactive)
   (setq org-extend-today-until
         (truncate (- (/ (org-time-stamp-to-now (org-read-date) t) 60 60)))))
