@@ -1350,7 +1350,7 @@ agenda buffer e.g. C-k.
 ;; ***** Timetravel Org
 
 ;; This fun allows (afaict) the view on an Org agenda when setting an
-;; arbitrary date as current.
+;; other date as current.
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-org-timemachine ()
