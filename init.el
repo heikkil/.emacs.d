@@ -1099,6 +1099,12 @@
 (global-set-key (kbd "C-<") #'mw-recenter-jump-to-top)
 ;; #+END_SRC
 
+;; ** Hide Buffer Part
+
+;; #+BEGIN_SRC emacs-lisp
+(push  "~/p/elisp/mw/hide-buffer-part" load-path)
+;; #+END_SRC
+
 ;; ** Auxies
 
 ;; Another collection of Emacs stuff.
@@ -2675,4 +2681,4 @@ easily create a new frame."
 
 ;; ** Last line
 
-;;; init.el ends here
+;;; init:.el ends here
