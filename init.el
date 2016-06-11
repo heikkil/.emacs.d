@@ -389,7 +389,6 @@
   (key-chord-define-global "ao" #'other-window)
   (key-chord-define-global "qq" #'other-frame)
   (key-chord-define-global "qj" #'mw-exchange-to-buddy)
-  (key-chord-define-global "wv" #'mw-pop-buddy)
   (key-chord-define-global "><" #'previous-buffer)
   (key-chord-define-global ".," #'next-buffer)
   (key-chord-define-global "r9" #'rope-read-mode)
