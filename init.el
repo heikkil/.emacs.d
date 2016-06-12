@@ -384,6 +384,8 @@
 (use-package key-chord
   :config
   (key-chord-mode 1)
+  (key-chord-define-global "]h" (lambda () (interactive) (insert "]")))
+  (key-chord-define-global "[u" (lambda () (interactive) (insert "[")))
   (key-chord-define-global "o6" #'org-open-at-point-global)
   (key-chord-define-global "o8" #'ace-link)
   (key-chord-define-global "s-" #'beacon-blink) ; locate the cursor easily
@@ -424,8 +426,7 @@
   (key-chord-define-global "a7" #'mw-goto-ariadne-point)
   (key-chord-define-global "c1" #'chronos-add-timer)
   (key-chord-define-global "d1" #'mw-org-link-remove-file-decoration)
-  (key-chord-define-global "s1" #'scroll-lock-mode)
-  ) ;; recall (key-chord-unset-global "bb") for undef a key-chord.
+  (key-chord-define-global "s1" #'scroll-lock-mode)) ;; recall (key-chord-unset-global "bb") for undef a key-chord.
 ;; #+END_SRC
 
 ;; 
