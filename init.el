@@ -1153,6 +1153,13 @@
        (when (looking-at " +") (replace-match "  "))))
 ;; #+END_SRC
 
+;; ** Maxima
+
+;; #+BEGIN_SRC emacs-lisp
+(push "~/p/elisp/external/maxima" load-path)
+(require 'maxima)
+;; #+END_SRC
+
 ;; ** Pick current agenda filter
 ;; :PROPERTIES:
 ;; :ID:       252fe790-d35f-4559-b9dd-7da3f4edb374
