@@ -673,21 +673,21 @@
 ;; ** hyperbole
 
 ;; #+BEGIN_SRC emacs-lisp
-(require 'package)
-(setq package-check-signature nil
-      package-enable-at-startup nil) ;; Prevent double loading of libraries
-(add-to-list 'package-archives '("RSW-Packages" . "http://www.plasmas.biz/rswe/") t)
-(package-initialize)
-(unless (package-installed-p 'hyperbole)
-  (if (not (display-graphic-p))
-      ;; Installation of Hyperbole requires a non-dumb terminal
-      ;; instance of Emacs, i.e. under a window system.
-      (progn (message "(Hyperbole): Run Emacs under a window system to
-install Hyperbole")
-             (beep)
-             (sit-for 4))
-    (package-refresh-contents)
-    (package-install 'hyperbole)))
+;; (require 'package)
+;; (setq package-check-signature nil
+;;       package-enable-at-startup nil) ;; Prevent double loading of libraries
+;; (add-to-list 'package-archives '("RSW-Packages" . "http://www.plasmas.biz/rswe/") t)
+;; (package-initialize)
+;; (unless (package-installed-p 'hyperbole)
+;;   (if (not (display-graphic-p))
+;;       ;; Installation of Hyperbole requires a non-dumb terminal
+;;       ;; instance of Emacs, i.e. under a window system.
+;;       (progn (message "(Hyperbole): Run Emacs under a window system to
+;; install Hyperbole")
+;;              (beep)
+;;              (sit-for 4))
+;;     (package-refresh-contents)
+;;     (package-install 'hyperbole)))
 ;; #+END_SRC
 
 ;; ** emr
