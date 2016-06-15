@@ -672,6 +672,8 @@
 
 ;; ** hyperbole
 
+Give hyperbole a try.
+
 ;; #+BEGIN_SRC emacs-lisp
 ;; (require 'package)
 ;; (setq package-check-signature nil
