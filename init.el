@@ -672,7 +672,7 @@
 
 ;; ** hyperbole
 
-Give hyperbole a try.
+;; Give hyperbole a try.
 
 ;; #+BEGIN_SRC emacs-lisp
 ;; (require 'package)
