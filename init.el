@@ -1772,8 +1772,7 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
 ;; ** Translate via web
 
 ;; http://pda.leo.org/?lp=ende〈=de&searchLoc=0&cmpType=relaxed&relink=on&sectHdr=off&spellToler=std&search=soutenir
-;; (eww "http://pda.leo.org/")
-;; (eww "http://pda.leo.org/?lp=frde&lang=de&searchLoc=0&cmpType=relaxed&relink=on&sectHdr=off&spellToler=std&search=soutenir")
+;; http://pda.leo.org/?lp=ende〈=de&searchLoc=0&cmpType=relaxed&relink=on&sectHdr=off&spellToler=std&search=soutenir
 
 ;; ** Rope Read to save eye-movements
 
