@@ -1769,12 +1769,15 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
   (w3m-search "leo" arg))
 ;; #+END_SRC
 
-;; ** Translate via web
+;; ** Translate via web-leo
 
-;; http://pda.leo.org/?lp=ende〈=de&searchLoc=0&cmpType=relaxed&relink=on&sectHdr=off&spellToler=std&search=soutenir
-;; (eww "http://pda.leo.org/?lp=frde〈=de&searchLoc=0&cmpType=relaxed&relink=on&sectHdr=off&spellToler=std&search=soutenir")
+(defun mw-eww-ask-leo-fr (arg)
+  (interactive "sWord: ")
+  (eww (format "http://pda.leo.org/?lp=frde&search=%s&searchLoc=0&resultOrder=basic&multiwordShowSingle=on" arg)))
 
-(defun   (eww (format "http://pda.leo.org/?lp=frde&search=%s&searchLoc=0&resultOrder=basic&multiwordShowSingle=on" word)))
+(defun mw-eww-ask-leo-en (arg)
+  (interactive "sWord: ")
+  (eww (format "http://pda.leo.org/?lp=ende&search=%s&searchLoc=0&resultOrder=basic&multiwordShowSingle=on" arg)))
 
 ;; ** Rope Read to save eye-movements
 
