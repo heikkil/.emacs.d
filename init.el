@@ -1286,13 +1286,25 @@
 ;; #+END_SRC
 
 ;; ** Convenient MozRepl Control
+;; :PROPERTIES:
+;; :ID:       b5a60402-65b7-45af-a8e4-43a8766b20b0
+;; :END:
 
 ;; #+BEGIN_SRC emacs-lisp
-(defhydra hydra-moz-controller (global-map "C-c m")
+(defhydra hydra-moz-controller (global-map "C-c z")
   "Use MozRepl."
-  ("+" moz-control-zoom-in))
+  ("+" moz-controller-zoom-in)
+  ("-" moz-controller-zoom-out)
+  ("0" moz-controller-zoom-reset)
+  ("R" moz-controller-page-refresh)
+  ("b" moz-controller-tab-previous)
+  ("f" moz-controller-tab-next)
+  ("k" moz-controller-tab-close)
+  ("l" moz-controller-get-current-url)
+  ("n" moz-controller-page-down)
+  ("p" moz-controller-page-up)
+  ("und" moz-controller-view-page-source))
 ;; #+END_SRC
-
 
 ;; ** Hide Lines in the Agenda                                             :org:
 
