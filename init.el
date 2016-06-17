@@ -1284,6 +1284,16 @@
   ("n" org-next-drawer)
   ("p" (lambda () (interactive) (org-next-drawer -1))))
 ;; #+END_SRC
+
+;; ** Convenient MozRepl Control
+
+;; #+BEGIN_SRC emacs-lisp
+(defhydra hydra-moz-controller (global-map "C-c m")
+  "Use MozRepl."
+  ("+" moz-control-zoom-in))
+;; #+END_SRC
+
+
 ;; ** Hide Lines in the Agenda                                             :org:
 
 ;; Be able to hide a line of the org agenda.
@@ -1782,20 +1792,20 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
 
 ;; ** Translate via web-leo
 
-(defun mw-eww-ask-leo-fr (arg)
-  (interactive "sWord: ")
-  (eww (format "http://pda.leo.org/?lp=frde&search=%s&searchLoc=0&resultOrder=basic&multiwordShowSingle=on" arg)))
+;; (defun mw-eww-ask-leo-fr (arg)
+;;   (interactive "sWord: ")
+;;   (eww (format "http://pda.leo.org/?lp=frde&search=%s&searchLoc=0&resultOrder=basic&multiwordShowSingle=on" arg)))
 
-(defun mw-eww-ask-leo-fr-region (start end)
-  (interactive "r")
-  (eww
-   (format
-    "http://pda.leo.org/?lp=frde&search=%s&searchLoc=0&resultOrder=basic&multiwordShowSingle=on"
-    (buffer-substring start end ))))
+;; (defun mw-eww-ask-leo-fr-region (start end)
+;;   (interactive "r")
+;;   (eww
+;;    (format
+;;     "http://pda.leo.org/?lp=frde&search=%s&searchLoc=0&resultOrder=basic&multiwordShowSingle=on"
+;;     (buffer-substring start end ))))
 
-(defun mw-eww-ask-leo-en (arg)
-  (interactive "sWord: ")
-  (eww (format "http://pda.leo.org/?lp=ende&search=%s&searchLoc=0&resultOrder=basic&multiwordShowSingle=on" arg)))
+;; (defun mw-eww-ask-leo-en (arg)
+;;   (interactive "sWord: ")
+;;   (eww (format "http://pda.leo.org/?lp=ende&search=%s&searchLoc=0&resultOrder=basic&multiwordShowSingle=on" arg)))
 
 ;; ** Rope Read to save eye-movements
 
