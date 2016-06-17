@@ -1775,6 +1775,13 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
   (interactive "sWord: ")
   (eww (format "http://pda.leo.org/?lp=frde&search=%s&searchLoc=0&resultOrder=basic&multiwordShowSingle=on" arg)))
 
+(defun mw-eww-ask-leo-fr-region (start end)
+  (interactive "r")
+  (eww
+   (format
+    "http://pda.leo.org/?lp=frde&search=%s&searchLoc=0&resultOrder=basic&multiwordShowSingle=on"
+    (buffer-substring start end ))))
+
 (defun mw-eww-ask-leo-en (arg)
   (interactive "sWord: ")
   (eww (format "http://pda.leo.org/?lp=ende&search=%s&searchLoc=0&resultOrder=basic&multiwordShowSingle=on" arg)))
