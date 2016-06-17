@@ -1303,7 +1303,7 @@
   ("l" moz-controller-get-current-url)
   ("n" moz-controller-page-down)
   ("p" moz-controller-page-up)
-  ("und" moz-controller-view-page-source))
+  ("u" moz-controller-view-page-source))
 ;; #+END_SRC
 
 ;; ** Hide Lines in the Agenda                                             :org:
