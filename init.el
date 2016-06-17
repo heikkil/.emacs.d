@@ -1163,6 +1163,17 @@
 
 ;;; Lab:
 
+;; ** Handle bottommost-tagged after sorting
+
+;; #+BEGIN_SRC emacs-lisp
+(setf org-after-sorting-entries-or-items-hook
+      (lambda ()
+        (search-forward  ":bottommost:")
+        (org-cut-subtree)
+        (goto-char (point-max))
+        (org-paste-subtree 1)))
+;; #+END_SRC
+
 ;; ** Double space at end of sentences
 
 ;; Function to convert single space sentence endings to double space.
