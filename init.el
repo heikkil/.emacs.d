@@ -637,7 +637,7 @@
 
 ;; ** hydra
 
-;; Some clever key maps organization I guess.
+;; Hydra allows some convenient key maps organization.
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package hydra)
