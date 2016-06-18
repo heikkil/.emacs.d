@@ -457,8 +457,8 @@
 (setf
  lispy-mode-hook
  (lambda ()
-   (key-chord-define-local "[[" (insert "["))
-   (key-chord-define-local "]]" (insert "]"))))
+   (key-chord-define-local "[[" (lambda () (interactive) (insert "[")))
+   (key-chord-define-local "]]" (lambda () (interactive) (insert "]")))))
 ;; #+END_SRC
 
 ;; ** smartparens
