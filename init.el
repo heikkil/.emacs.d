@@ -454,10 +454,11 @@
   ;; (define-key lispy-mode-map-lispy (kbd "[") nil)
   )
 
-(setf lispy-mode-hook
-      (lambda ()
-        (key-chord-define-local "[[" (insert "["))
-        (key-chord-define-local "]]" (insert "]"))))
+(setf
+ lispy-mode-hook
+ (lambda ()
+   (key-chord-define-local "[[" (insert "["))
+   (key-chord-define-local "]]" (insert "]"))))
 ;; #+END_SRC
 
 ;; ** smartparens
