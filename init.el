@@ -384,8 +384,6 @@
 (use-package key-chord
   :config
   (key-chord-mode 1)
-  (key-chord-define-global "]h" (lambda () (interactive) (insert "]")))
-  (key-chord-define-global "[u" (lambda () (interactive) (insert "[")))
   (key-chord-define-global "o6" #'org-open-at-point-global)
   (key-chord-define-global "o8" #'ace-link)
   (key-chord-define-global "s-" #'beacon-blink) ; locate the cursor easily
@@ -457,8 +455,8 @@
 (setf
  lispy-mode-hook
  (lambda ()
-   (key-chord-define-local "[[" (lambda () (interactive) (insert "[")))
-   (key-chord-define-local "]]" (lambda () (interactive) (insert "]")))))
+   (key-chord-define-local "[0" (lambda () (interactive) (insert "[")))
+   (key-chord-define-local "]1" (lambda () (interactive) (insert "]")))))
 ;; #+END_SRC
 
 ;; ** smartparens
