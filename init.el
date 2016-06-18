@@ -449,6 +449,7 @@
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package lispy
+  ;; :config
   ;; (define-key lispy-mode-map-lispy (kbd "]") nil)
   ;; (define-key lispy-mode-map-lispy (kbd "[") nil)
   )
