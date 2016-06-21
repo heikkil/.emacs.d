@@ -984,7 +984,7 @@
 ;; Taken the looking around code from the documentation of
 ;; ~org-use-speed-commands~.
 
-;; *** Refile Targets default
+;; *** Refile Targets Config
 
 ;; #+BEGIN_SRC emacs-lisp
 (setq org-refile-targets
