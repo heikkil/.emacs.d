@@ -984,6 +984,16 @@
 ;; Taken the looking around code from the documentation of
 ;; ~org-use-speed-commands~.
 
+;; *** Refile Targets default
+
+;; #+BEGIN_SRC emacs-lisp
+(setq org-refile-targets
+ (quote
+  ((nil :maxlevel . 7)
+   (org-agenda-files :maxlevel . 2))))
+(setq org-refile-use-outline-path (quote file))
+;; #+END_SRC
+
 ;; ** gnus
 
 ;; #+BEGIN_SRC emacs-lisp
