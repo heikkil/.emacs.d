@@ -2638,12 +2638,12 @@ easily create a new frame."
 ;; #+END_SRC
 
 ;; #+BEGIN_SRC emacs-lisp
-(defhydra hydra-winsize (global-map "C-x {")
+(defhydra hydra-winsize (global-map "C-c ^")
   "Shrink window."
-  ("^" shrink-window)
-  ("v" enlarge-window)
-  ("{" shrink-window-horizontally)
-  ("}" enlarge-window-horizontally))
+  ("6" shrink-window)
+  ("^" enlarge-window)
+  ("<" shrink-window-horizontally)
+  (">" enlarge-window-horizontally))
 ;; #+END_SRC
 
 ;; ** Dired Key for Alternate up
