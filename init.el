@@ -1189,14 +1189,14 @@
 Argument ARG see `capitalize-word'."
   (interactive "P")
   (unless arg
-    (when (looking-at-p  "\\b")
-      (backward-word)
-      (setf arg 1)))
+    (when (looking-at-p  "\\>")
+      (backward-word))
+    (setf arg 1))
   (capitalize-word arg))
 ;; #+END_SRC
 
 ;; #+BEGIN_SRC emacs-lisp
-(global-set-key "\M-c" #'toggle-letter-case)
+(global-set-key "\M-c" #'mw-capitalize-word)
 ;; #+END_SRC
 
 ;; See also `toggle-letter-case'.  I accidentially reinvented the wheel
