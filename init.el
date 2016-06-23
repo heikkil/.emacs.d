@@ -1200,8 +1200,8 @@ Argument ARG see `capitalize-word'."
 (global-set-key "\M-c" #'mw-capitalize-word)
 ;; #+END_SRC
 
-;; See also `toggle-letter-case'.  I possibly reinvented the wheel
-;; some AFAICS.  [2016-06-23 Thu 11:07]
+;; See also `toggle-letter-case'.  I possibly reinvented the wheel some
+;; AFAICS.  [2016-06-23 Thu 11:07]
 
 ;; Interesting how many little details one finds when realizing such easy
 ;; looking feature.
