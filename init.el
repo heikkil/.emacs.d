@@ -1203,6 +1203,9 @@ Argument ARG see `capitalize-word'."
 ;; See also `toggle-letter-case'.  I accidentially reinvented the wheel
 ;; some AFAICS.  [2016-06-23 Thu 11:07]
 
+;; Interesting how many little details one finds when realizing such easy
+;; looking feature.
+
 ;; ** Handle bottommost-tagged after sorting
 
 ;; #+BEGIN_SRC emacs-lisp
