@@ -1196,8 +1196,11 @@ Argument ARG see `capitalize-word'."
 ;; #+END_SRC
 
 ;; #+BEGIN_SRC emacs-lisp
-(global-set-key )
+(global-set-key "\M-c" #'toggle-letter-case)
 ;; #+END_SRC
+
+;; See also `toggle-letter-case'.  I accidentially reinvented the wheel
+;; some AFAICS.  [2016-06-23 Thu 11:07]
 
 ;; ** Handle bottommost-tagged after sorting
 
