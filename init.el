@@ -1178,6 +1178,23 @@
 
 ;;; Lab:
 
+;; ** Capitalize Word
+
+;; Slight change to capitalize.  Capitalize the word backwards when on
+;; end of it.
+
+;; #+BEGIN_SRC emacs-lisp
+(defun mw-capitalize-word (arg)
+  "At end of word capitalize it.  Else do `capitalize-word'.
+Argument ARG see `capitalize-word'."
+  (interactive "P")
+  (unless arg
+    (when (looking-at-p  "\\b")
+      (backward-word)
+      (setf arg 1)))
+  (capitalize-word arg))
+;; #+END_SRC
+
 ;; ** Handle bottommost-tagged after sorting
 
 ;; #+BEGIN_SRC emacs-lisp
@@ -2776,4 +2793,4 @@ easily create a new frame."
 
 ;; ** Last line
 
-;;; init.el ends here
+;;; init:.el ends here
