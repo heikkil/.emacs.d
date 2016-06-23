@@ -1192,7 +1192,8 @@ Argument ARG see `capitalize-word'."
     (when (looking-at-p  "\\>")
       (backward-word))
     (setf arg 1))
-  (capitalize-word arg))
+  (capitalize-word arg)
+  (forward-char))
 ;; #+END_SRC
 
 ;; #+BEGIN_SRC emacs-lisp
