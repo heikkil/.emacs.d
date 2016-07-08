@@ -116,16 +116,6 @@
 ;; ** Package Initialization
 
 ;; #+BEGIN_SRC emacs-lisp
-(setf package-archives nil)
-(add-to-list 'package-archives '("mw" . "/home/b/p/elisp/mw/packs/") t)
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
-(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/") t)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
-(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
-(add-to-list 'package-archives '("RSW-Packages" . "http://www.plasmas.biz/rswe/") t)
-;; #+END_SRC
-
-;; #+BEGIN_SRC emacs-lisp
 (package-initialize)
 ;; #+END_SRC
 
@@ -712,12 +702,12 @@
 ;; emr is a refactoring tool.
 
 ;; #+BEGIN_SRC emacs-lisp
-;; (use-package emr
-;;    :config (progn
-;;             ;; (autoload 'emr-show-refactor-menu "emr")
-;;              (eval-after-load "emr" '(emr-initialize)))
-;;    ;; :bind ("M-RET" . emr-show-refactor-menu)
-;;    )
+(use-package emr
+   :config (progn
+            ;; (autoload 'emr-show-refactor-menu "emr")
+             (eval-after-load "emr" '(emr-initialize)))
+   ;; :bind ("M-RET" . emr-show-refactor-menu)
+   )
 ;; #+END_SRC
 
 ;; *** TODO Show the emr menu with M-RET                              :noexport:
@@ -2536,9 +2526,21 @@ Originates from gnu.emacs.help group 2006."
 
 ;; Take care about overrides due to customizations.
 
+;; ** Package Resources
+
 ;; #+BEGIN_SRC emacs-lisp
 (setq custom-file "~/.emacs.d/init/.emacs-custom.el")
 (load custom-file)
+;; #+END_SRC
+
+;; #+BEGIN_SRC emacs-lisp
+(setf package-archives nil)
+(add-to-list 'package-archives '("mw" . "/home/b/p/elisp/mw/packs/") t)
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
+(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/") t)
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+(add-to-list 'package-archives '("RSW-Packages" . "http://www.plasmas.biz/rswe/") t)
 ;; #+END_SRC
 
 ;; [2016-02-08 Mon 12:57] Possibly drop usage of the custom file
