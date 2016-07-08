@@ -116,6 +116,15 @@
 ;; ** Package Initialization
 
 ;; #+BEGIN_SRC emacs-lisp
+(add-to-list 'package-archives '("mw" . "/home/b/p/elisp/mw/packs/") t)
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
+(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/") t)
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+(add-to-list 'package-archives '("RSW-Packages" . "http://www.plasmas.biz/rswe/") t)
+;; #+END_SRC
+
+;; #+BEGIN_SRC emacs-lisp
 (package-initialize)
 ;; #+END_SRC
 
@@ -683,7 +692,7 @@
 ;; (require 'package)
 ;; (setq package-check-signature nil
 ;;       package-enable-at-startup nil) ;; Prevent double loading of libraries
-(add-to-list 'package-archives '("RSW-Packages" . "http://www.plasmas.biz/rswe/") t)
+;; (add-to-list 'package-archives '("RSW-Packages" . "http://www.plasmas.biz/rswe/") t)
 ;; (package-initialize)
 ;; (unless (package-installed-p 'hyperbole)
 ;;   (if (not (display-graphic-p))
@@ -702,12 +711,12 @@
 ;; emr is a refactoring tool.
 
 ;; #+BEGIN_SRC emacs-lisp
-(use-package emr
-   :config (progn
-            ;; (autoload 'emr-show-refactor-menu "emr")
-             (eval-after-load "emr" '(emr-initialize)))
-   ;; :bind ("M-RET" . emr-show-refactor-menu)
-   )
+;; (use-package emr
+;;    :config (progn
+;;             ;; (autoload 'emr-show-refactor-menu "emr")
+;;              (eval-after-load "emr" '(emr-initialize)))
+;;    ;; :bind ("M-RET" . emr-show-refactor-menu)
+;;    )
 ;; #+END_SRC
 
 ;; *** TODO Show the emr menu with M-RET                              :noexport:
