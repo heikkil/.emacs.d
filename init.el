@@ -116,6 +116,7 @@
 ;; ** Package Initialization
 
 ;; #+BEGIN_SRC emacs-lisp
+(setf package-archives nil)
 (add-to-list 'package-archives '("mw" . "/home/b/p/elisp/mw/packs/") t)
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
 (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/") t)
