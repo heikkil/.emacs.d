@@ -744,6 +744,13 @@
 
 ;;; Fromsource:
 
+;; ** refine
+
+;; #+BEGIN_SRC emacs-lisp
+(add-to-list 'load-path "~/p/elisp/external/refine")
+(require 'refine)
+;; #+END_SRC
+
 ;; ** slime
 
 ;; #+BEGIN_SRC emacs-lisp
