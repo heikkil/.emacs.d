@@ -746,6 +746,8 @@
 
 ;; ** refine
 
+Package for editing lists.
+
 ;; #+BEGIN_SRC emacs-lisp
 (add-to-list 'load-path "~/p/elisp/external/refine")
 (require 'refine)
