@@ -1187,6 +1187,15 @@
 
 ;;; Lab:
 
+;; ** Move Word
+
+;; #+BEGIN_SRC emacs-lisp
+(defhydra hydra-org-drawers (global-map "C-c t")
+  "Focus on one word to transpose left or right."
+  ("n" (transpose-words 1))
+  ("p" (transpose-words -1)))
+;; #+END_SRC
+
 ;; ** Capitalize Word
 
 ;; Slight change to capitalize.  Capitalize the word backwards when on
