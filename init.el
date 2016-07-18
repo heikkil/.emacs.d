@@ -1190,6 +1190,8 @@
 ;; ** Fira Code
 
 ;; #+BEGIN_SRC emacs-lisp
+(when (window-system)
+  (set-default-font "Fira Code"))
 (let ((alist '((33 . ".\\(?:\\(?:==\\|!!\\)\\|[!=]\\)")
                (35 . ".\\(?:###\\|##\\|_(\\|[#(?[_{]\\)")
                (36 . ".\\(?:>\\)")
