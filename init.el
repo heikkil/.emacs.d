@@ -680,21 +680,16 @@
 ;; Give hyperbole a try.
 
 ;; #+BEGIN_SRC emacs-lisp
-;; (require 'package)
-;; (setq package-check-signature nil
-;;       package-enable-at-startup nil) ;; Prevent double loading of libraries
-;; (add-to-list 'package-archives '("RSW-Packages" . "http://www.plasmas.biz/rswe/") t)
-;; (package-initialize)
-;; (unless (package-installed-p 'hyperbole)
-;;   (if (not (display-graphic-p))
-;;       ;; Installation of Hyperbole requires a non-dumb terminal
-;;       ;; instance of Emacs, i.e. under a window system.
-;;       (progn (message "(Hyperbole): Run Emacs under a window system to
-;; install Hyperbole")
-;;              (beep)
-;;              (sit-for 4))
-;;     (package-refresh-contents)
-;;     (package-install 'hyperbole)))
+(require 'package)
+(setq package-check-signature nil
+      package-enable-at-startup nil) ;; Prevent double loading of libraries
+(add-to-list 'package-archives '("RSW-Packages" .
+"http://www.plasmas.biz/rswe/";) t)
+(package-initialize)
+(unless (package-installed-p 'hyperbole)
+  (package-refresh-contents)
+  (package-install 'hyperbole))
+(require 'hyperbole)
 ;; #+END_SRC
 
 ;; ** emr
@@ -2594,7 +2589,6 @@ Originates from gnu.emacs.help group 2006."
 (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/") t)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
-(add-to-list 'package-archives '("RSW-Packages" . "http://www.plasmas.biz/rswe/") t)
 ;; #+END_SRC
 
 ;; [2016-02-08 Mon 12:57] Possibly drop usage of the custom file
