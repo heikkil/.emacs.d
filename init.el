@@ -1189,10 +1189,11 @@
 ;; ** Fira Code
 
 ;; The following was disappointing. [2016-07-18]
+;; source: https://github.com/tonsky/FiraCode/wiki/Setting-up-Emacs
 
 ;; #+BEGIN_SRC emacs-lisp
 (when (window-system)
- (set-default-font "Fira Code"))
+ (set-frame-font "Fira Code"))
 (let ((alist '((33 . ".\\(?:\\(?:==\\|!!\\)\\|[!=]\\)")
               (35 . ".\\(?:###\\|##\\|_(\\|[#(?[_{]\\)")
               (36 . ".\\(?:>\\)")
