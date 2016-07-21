@@ -359,9 +359,9 @@
 ;; Activating lentic as proposed in lentics documentation lentic.el.
 
 ;; #+BEGIN_SRC emacs-lisp
-(use-package lentic
-					;  :config (global-lentic-mode)
-  )
+;; (use-package lentic
+;; 					;  :config (global-lentic-mode)
+;;   )
 ;; #+END_SRC
 
 ;; ** magit
@@ -742,8 +742,11 @@
 
 ;; Start git-timemachine on a file to travel time on it.
 
-;;; Fromsource:
+;;; From Source:
 
+;;;###autoload
+(add-to-list 'load-path "~/p/elisp/external/lentic")
+(require 'lentic)
 ;; ** refine
 
 ;; Package for editing lists.
