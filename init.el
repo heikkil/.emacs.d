@@ -2230,7 +2230,8 @@ This binding shall make the close more convenient."
           (lambda ()
             ;; Set dired-x buffer-local variables here.  For example:
             ;; (dired-omit-mode 1)
-            ))
+            (define-key dired-mode-map "e"
+              (lambda () (interctive)) #'eww-open-file )))
 ;; #+END_SRC
 
 ;; ** Delete blank lines also above
