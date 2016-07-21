@@ -2230,8 +2230,14 @@ This binding shall make the close more convenient."
           (lambda ()
             ;; Set dired-x buffer-local variables here.  For example:
             ;; (dired-omit-mode 1)
+            ;;
+            ;; lab: "e" for open the file in eww.
+            ;; I never used "e" to start edit a file of a dired.
             (define-key dired-mode-map "e"
-              (lambda () (interctive)) #'eww-open-file )))
+              (lambda () (interactive)
+                (eww-open-file (dired-get-file-for-visit))))))
+
+;; (setf dired-mode-hook nil)
 ;; #+END_SRC
 
 ;; ** Delete blank lines also above
