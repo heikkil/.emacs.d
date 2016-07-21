@@ -2036,15 +2036,6 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
 (setq ring-bell-function 'mw-play-little-bird-sound)
 ;; #+END_SRC
 
-;; ** BBDB csv Feature
-
-;; This is activation of the 'bbdb-csv-import'-package.  I found it BTW
-;; today [2014-04-24 Thu].
-
-;; #+BEGIN_SRC emacs-lisp
-(require 'bbdb-csv-import)
-;; #+END_SRC
-
 ;; ** Kill an url at point
 
 ;; #+BEGIN_SRC emacs-lisp
