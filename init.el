@@ -2232,7 +2232,8 @@ This binding shall make the close more convenient."
             ;; (dired-omit-mode 1)
             ;;
             ;; lab: "e" for open the file in eww.  Note: I never used
-            ;; "e" to start edit a file of a dired.
+            ;; "e" to start edit a file of a dired (which is the
+            ;; default behavior. [2016-07-21 Thu 17:11])
             (define-key dired-mode-map "e"
               (lambda () (interactive)
                 (eww-open-file (dired-get-file-for-visit))))))
