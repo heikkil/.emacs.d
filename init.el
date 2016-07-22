@@ -853,8 +853,9 @@
 
 ;; #+BEGIN_SRC emacs-lisp
 ;; Use tab-key for trigger the action.  This is done via hooking.
-(eval-after-load "org"
-  (add-to-list 'org-tab-first-hook 'mw-org-jump-to-beginning-of-block-maybe))
+(eval-after-load 'org
+  (lambda ()
+    (add-to-list 'org-tab-first-hook 'mw-org-jump-to-beginning-of-block-maybe)))
 ;; #+END_SRC
 
 ;; **** Convenient go up to the beginning of a block
