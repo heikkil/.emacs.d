@@ -111,6 +111,7 @@
 	     'Info-directory-list
 	     (concat (expand-file-name "~/p/org/org-mode") ; orgmodelocation
 		     "/doc")))))
+(require 'org)
 ;; #+END_SRC
 
 ;; ** Package Initialization
