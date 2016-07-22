@@ -2869,7 +2869,7 @@ easily create a new frame."
 
 ;; 
 ;; # Local Variables:
-;; # lentic-init: lentcic-orgel-org-init
+;; # lentic-init: lentic-orgel-org-init
 ;; # eval: (git-auto-commit-mode)
 ;; # End:
 
