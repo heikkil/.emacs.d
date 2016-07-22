@@ -491,7 +491,8 @@
      (define-key bbdb-mode-map (kbd "l") 'gnorb-bbdb-open-link)
      (global-set-key (kbd "C-c C") 'gnorb-bbdb-cite-contact)))
 
-(eval-after-load "gnorb-org"
+(eval-after-load ;; "gnorb-org"
+  "org"
   '(progn
      (org-defkey org-mode-map (kbd "C-c C") 'gnorb-org-contact-link)
      (org-defkey org-mode-map (kbd "C-c m") 'gnorb-org-handle-mail)
