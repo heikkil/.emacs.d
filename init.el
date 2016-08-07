@@ -361,8 +361,7 @@
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package lentic
-					;  :config (global-lentic-mode)
-  )
+  :config (global-lentic-mode))
 ;; #+END_SRC
 
 ;; ** magit
