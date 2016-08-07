@@ -360,9 +360,9 @@
 ;; Activating lentic as proposed in lentics documentation lentic.el.
 
 ;; #+BEGIN_SRC emacs-lisp
-;; (use-package lentic
-;; 					;  :config (global-lentic-mode)
-;;   )
+(use-package lentic
+					;  :config (global-lentic-mode)
+  )
 ;; #+END_SRC
 
 ;; ** magit
