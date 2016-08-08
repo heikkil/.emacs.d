@@ -749,6 +749,7 @@
 (add-to-list 'load-path "~/p/elisp/external/lentic")
 (add-to-list 'load-path "~/p/elisp/external/m-buffer-el")
 (require 'lentic-mode)
+(global-lentic-mode)
 ;; ** refine
 
 ;; Package for editing lists.
