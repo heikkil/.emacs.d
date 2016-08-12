@@ -2599,7 +2599,7 @@ Originates from gnu.emacs.help group 2006."
 ;; #+BEGIN_SRC emacs-lisp
 (setf package-archives nil)
 (add-to-list 'package-archives '("mw" . "/home/b/p/elisp/mw/packs/") t)
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
+;; (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
 (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/") t)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
