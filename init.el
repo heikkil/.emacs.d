@@ -2597,7 +2597,8 @@ Originates from gnu.emacs.help group 2006."
 
 ;; ** Package Resources
 
-Recal
+;; Recall that the gnu package repo is included from the start.
+
 ;; #+BEGIN_SRC emacs-lisp
 (setf package-archives nil)
 (add-to-list 'package-archives '("mw" . "/home/b/p/elisp/mw/packs/") t)
