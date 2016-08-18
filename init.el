@@ -2590,18 +2590,17 @@ Originates from gnu.emacs.help group 2006."
 
 ;; Take care about overrides due to customizations.
 
-;; ** Package Resources
-
 ;; #+BEGIN_SRC emacs-lisp
 (setq custom-file "~/.emacs.d/init/.emacs-custom.el")
 (load custom-file)
 ;; #+END_SRC
 
+;; ** Package Resources
+
 ;; #+BEGIN_SRC emacs-lisp
 (setf package-archives nil)
 (add-to-list 'package-archives '("mw" . "/home/b/p/elisp/mw/packs/") t)
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
-;; (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/") t)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 ;; #+END_SRC
