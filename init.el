@@ -2597,7 +2597,7 @@ Originates from gnu.emacs.help group 2006."
 
 ;; ** Package Resources
 
-;; Recall that the gnu package repo is included from the start.
+;; The gnu package repo is not included from the start.
 
 ;; #+BEGIN_SRC emacs-lisp
 (setf package-archives nil)
