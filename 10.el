@@ -1498,6 +1498,831 @@ agenda buffer e.g. C-k.
   '(progn (define-key Info-mode-map (kbd "a") #'Info-search-next)))
 ;; #+END_SRC
 
+;; ** Org Lab
+
+;; ***** org-show-context-detail
+
+;; #+BEGIN_SRC emacs-lisp
+(setq org-show-context-detail
+      '((isearch . lineage)
+        (bookmark-jump . lineage)
+        (occur-tree . minimal)
+        (default . ancestors)))
+;; #+END_SRC
+
+;; ***** Agenda for deadlines only
+
+;; #+BEGIN_SRC emacs-lisp
+     (eval-after-load "org-agenda"
+'(add-to-list 'org-agenda-custom-commands
+             '("A" "Agenda; only deadlines"
+               agenda ""
+               ((org-agenda-entry-types '(:deadline))))))
+;; #+END_SRC
+
+;; Source:
+;; http://emacs.stackexchange.com/questions/12930/display-org-todo-list-of-entries-with-deadlines
+;; ;;
+
+;; ***** Timetravel Org
+
+;; This fun allows (afaict) the view on an Org agenda when setting an
+;; other date as current.
+
+;; #+BEGIN_SRC emacs-lisp
+(defun mw-org-timemachine ()
+  "Choose a day from the calendar as today for Org."
+  (interactive)
+  (setq org-extend-today-until
+        (truncate (- (/ (org-time-stamp-to-now (org-read-date) t) 60 60)))))
+;; #+END_SRC
+
+;; ** Unset a Register
+
+;; I think this functionality is not in Emacs core yet.
+
+;; #+BEGIN_SRC emacs-lisp
+(defun clear-register (register)
+  "Unset contents of Emacs register named REGISTER."
+  (interactive (list (register-read-with-preview "Clear register: ")))
+  (setf register-alist (assq-delete-all register register-alist)))
+;; #+END_SRC
+
+;; ** Controlled Garbage Collection
+
+;; This is from
+;; http://bling.github.io/blog/2016/01/18/why-are-you-changing-gc-cons-threshold/.
+
+;; #+BEGIN_SRC emacs-lisp
+(defun my-minibuffer-setup-hook ()
+  (setq gc-cons-threshold most-positive-fixnum))
+
+(defun my-minibuffer-exit-hook ()
+  (setq gc-cons-threshold 800000))
+
+(add-hook 'minibuffer-setup-hook #'my-minibuffer-setup-hook)
+(add-hook 'minibuffer-exit-hook #'my-minibuffer-exit-hook)
+;; #+END_SRC
+
+;; ** LOB
+
+;; Library of Babel is a collection of Org source blocks.  This code is for adding my additions to the lob.
+
+;; #+BEGIN_SRC emacs-lisp
+(org-babel-lob-ingest "~/org/mw-lob.org")
+;; #+END_SRC
+
+;; ** Switch buffers between frames
+
+;; Found at [[http://www.emacswiki.org/emacs/SwitchingBuffers#toc5][EmacsWiki: Switching Buffers]] provided by YoniRabkinKatzenell
+;; AFAICS.  I think this can be useful for me.
+
+;; #+BEGIN_SRC emacs-lisp
+(defun yrk-switch-buffers-between-frames ()
+  "Switch the buffers between the two last frames."
+  (interactive)
+  (let ((this-frame-buffer nil)
+        (other-frame-buffer nil))
+    (setq this-frame-buffer (car (frame-parameter nil 'buffer-list)))
+    (other-frame 1)
+    (setq other-frame-buffer (car (frame-parameter nil 'buffer-list)))
+    (switch-to-buffer this-frame-buffer)
+    (other-frame 1)
+    (switch-to-buffer other-frame-buffer)))
+;; #+END_SRC
+
+;; ** VCS
+
+;; ***** This is a Typical Procedere with Commit Message for the Author
+
+;; Automate the typical thing and get happy.  ^_^
+
+;; #+BEGIN_SRC emacs-lisp
+(defun mw-dtrt-commit-msg-prepare()
+  "This function applied to a commit-msg buffer shall dtrt."
+  (interactive)
+  (let ((beg (point)))
+    (search-forward-regexp "modified: *")
+    (delete-region beg (point)))
+  (end-of-line)
+  (let ((end (point)))
+    (search-backward-regexp "\\.")
+    (delete-region (point) end))
+  (insert ":\n")
+  (backward-char))
+;; #+END_SRC
+
+;; #+BEGIN_SRC emacs-lisp
+(add-hook 'git-commit-mode-hook
+          (lambda () (key-chord-define-local "p8" #'mw-dtrt-commit-msg-prepare)))
+;; #+END_SRC
+
+;; ** linum experiments                                                 :linum:
+
+;; #+BEGIN_SRC emacs-lisp
+(defun delta (line pointline)
+  "LINE is the processed line.
+POINTLINE is the line containing point."
+  (format "%d" (- line pointline)))
+
+(defun delta5 (line pointline)
+  "LINE is the processed line.
+POINTLINE is the line containing point."
+  (format "%5d" (- line pointline)))
+
+(defun the-line (line)
+  "LINE is the processed line.
+pointline is the line containing point."
+  (format "%4d" line))
+
+(setq linum-format 'the-line)
+(setq linum-format 'delta5)
+;; #+END_SRC
+
+;; ** Toggle-letter-case
+
+;; #+BEGIN_SRC emacs-lisp
+;; http://www.star.bris.ac.uk/bjm/emacs-tips.html#sec-1-14
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; change case of letters                                                 ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; http://ergoemacs.org/emacs/modernization_upcase-word.html
+(defun toggle-letter-case ()
+  "Toggle the letter case of current word or text selection.
+Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
+  (interactive)
+  (let (p1 p2 (deactivate-mark nil) (case-fold-search nil))
+    (if (region-active-p)
+        (setq p1 (region-beginning) p2 (region-end))
+      (let ((bds (or (bounds-of-thing-at-point 'word)
+                     (progn (forward-whitespace 1)
+                            (bounds-of-thing-at-point 'word)))))
+        (setq p1 (car bds) p2 (cdr bds))))
+    (when (not (eq last-command this-command))
+      (save-excursion
+        (goto-char p1)
+        (cond
+         ((looking-at "[[:lower:]][[:lower:]]") (put this-command 'state "all lower"))
+         ((looking-at "[[:upper:]][[:upper:]]") (put this-command 'state "all caps"))
+         ((looking-at "[[:upper:]][[:lower:]]") (put this-command 'state "init caps"))
+         ((looking-at "[[:lower:]]") (put this-command 'state "all lower"))
+         ((looking-at "[[:upper:]]") (put this-command 'state "all caps"))
+         (t (put this-command 'state "all lower")))))
+    (cond
+     ((string= "all lower" (get this-command 'state))
+      (upcase-initials-region p1 p2) (put this-command 'state "init caps"))
+     ((string= "init caps" (get this-command 'state))
+      (upcase-region p1 p2) (put this-command 'state "all caps"))
+     ((string= "all caps" (get this-command 'state))
+      (downcase-region p1 p2) (put this-command 'state "all lower")))))
+
+;;set this to M-c
+(global-set-key "\M-C" #'toggle-letter-case)
+;; #+END_SRC
+
+;; ** ispell and org
+
+;; [[gnus:nntp+news.gwene.org:gwene.org.emacsen.planet#x1-OJQzcaDHUGvOvCmRSA6fSHKcoWE@gwene.org][Email from Artur Malabarba: Endless Parentheses: Making Is]]
+
+;; Subject: Endless Parentheses: Making Ispell work with org-mode
+;; Newsgroups: gwene.org.emacsen.planet
+;; Date: Mon, 24 Aug 2015 02:00:00 +0200 (15 hours, 49 minutes, 21 seconds ago)
+;; Archived-at: <http://endlessparentheses.com/ispell-and-org-mode.html?source=rss>
+
+;; [1. text/html]
+
+;; If you’ve every tried to do some spell-checking in org-mode you know
+;; how finicky that can be. Ispell is happy to
+
+;; check absolutely anything, even code blocks and property drawers! When
+;; you’re blogging about code-snippets from an org file this annoyance
+;; quickly turns into irritation. Here’s how you fix it.
+
+;; #+BEGIN_SRC emacs-lisp
+(defun endless/org-ispell ()
+  "Configure `ispell-skip-region-alist' for `org-mode'."
+  (make-local-variable 'ispell-skip-region-alist)
+  (add-to-list 'ispell-skip-region-alist '(org-property-drawer-re))
+  (add-to-list 'ispell-skip-region-alist '("~" "~"))
+  (add-to-list 'ispell-skip-region-alist '("=" "="))
+  (add-to-list 'ispell-skip-region-alist '("^#\\+BEGIN_SRC" . "^#\\+END_SRC")))
+(add-hook 'org-mode-hook #'endless/org-ispell)
+;; #+END_SRC
+
+;; ** ediff
+
+;; #+BEGIN_SRC emacs-lisp
+(add-hook 'ediff-keymap-setup-hook
+          (lambda ()
+            (define-key
+              ediff-mode-map "8"
+              #'mw-ediff-set-visible-mode-in-ediff-buffers)))
+;; #+END_SRC
+
+;; ** Drag windows
+
+;; Found [2015-03-03 Tue 17:18]
+;; Link: https://tsdh.wordpress.com/2015/03/03/swapping-emacs-windows-using-dragndrop/
+
+;; When using Emacs on a larger screen where Emacs’ frame is split
+;; into multiple windows, you sometimes wish there was some simple way
+;; to rearrange which buffer is shown in which window. Of course, you
+;; can do that by moving through your windows and using
+;; switch-to-buffer and friends but that’s not really convenient.
+
+;; So here’s a command which lets you use drag one buffer from one
+;; window to the other. The effect is that the buffers of the start
+;; and target window are swapped.
+
+;; #+BEGIN_SRC emacs-lisp
+(defun th/swap-window-buffers-by-dnd (drag-event)
+  "Swaps the buffers displayed in the DRAG-EVENT's start and end window."
+
+  (interactive "e")
+  (let ((start-win (cl-caadr drag-event))
+        (end-win   (cl-caaddr drag-event)))
+    (when (and (windowp start-win)
+               (windowp end-win)
+               (not (eq start-win end-win))
+               (not (memq (minibuffer-window)
+                          (list start-win end-win))))
+      (let ((bs (window-buffer start-win))
+            (be (window-buffer end-win)))
+        (unless (eq bs be)
+          (set-window-buffer start-win be)
+          (set-window-buffer end-win bs))))))
+;; #+END_SRC
+
+;; Bind it to some mouse drag event and have fun. For example, I use
+
+;; #+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "<C-S-drag-mouse-1>") #'th/swap-window-buffers-by-dnd)
+;; #+END_SRC
+
+;; So that drag’n’drop with the left mouse button and control and shift
+;; pressed is bound to the command above.
+
+;; ** Pomodoro
+
+;; Support the famous tomato-technique.  The idea is to work
+;; concentrated for a while (tomato) and then take a break.  This shall
+;; be repeated some times a day.
+
+;; The functions here support pomodoro based on org.
+
+;; Source: http://www.couchet.org/blog/index.php?post/2010/08/04/Pomodoro-et-org-mode
+;; Author there: Frédéric Couchet le mercredi, août 4 2010, 22:53
+
+;; #+BEGIN_SRC emacs-lisp
+;;; (add-to-list 'org-modules 'org-timer) ;; done via customize
+
+(require 'org-timer)
+(defvar *mw-pomodoros-completed-in-session* 0
+  "Number of pomodoros in the current emacs-session.")
+
+(defvar *mw-pomodoros-before-longer-break* 4
+  "Number of pomodoros to reach for a longer break.")
+
+(defcustom *mw-pomodoro-pause-duration* 3
+  "Duration in minutes of standard pauses between pomodoros.")
+
+(defcustom *mw-pomodoro-longer-pause-duration* 15
+  "Duration in minutes of standard pauses between pomodoros.")
+
+(setq org-timer-default-timer "25")
+(add-hook 'org-clock-in-hook
+          '(lambda ()
+             (if (not ;org-timer-timer-is-countdown ; 201501151654 maint
+                  org-timer-countdown-timer)
+                 (progn
+                   (message "Start a fresh timer.")
+                   (org-timer-set-timer '(64))))))
+(add-hook 'org-clock-out-hook
+          '(lambda ()
+             (setq org-mode-line-string nil)))
+
+(defun mw-bring-hanoi-buffer-into-view-mode ()
+  (with-current-buffer (get-buffer-create "*Hanoi*")
+    (special-mode)))
+
+;; disable org's standard notification [2016-03-17 Thu 10:32] TODO
+;; improve and go into the details...
+(setf org-show-notification-handler #'ignore)
+
+(add-hook
+ 'org-timer-done-hook
+ '(lambda ()
+    (if mw-org-pause-state
+        (progn
+          (setq mw-org-pause-state nil)
+          (message "Pause over at %s.  What about another tomato?"
+                   (format-time-string "%T"))
+          (start-process "play-a-sound" "*play-a-sound-output*"
+                         "mplayer" (expand-file-name
+                                    "~/media/sound/technical/aoogah.wav"))
+                                        ;(play-sound '(sound :file
+                                        ;".../aoogah.wav")) ;
+                                        ;[2014-06-02 Mon 15:14] this
+                                        ;line played the sound also.
+                                        ;But sychronously.
+          ;; (zone)
+          )
+      (progn
+        (setq *mw-pomodoros-completed-in-session*
+              (if (= *mw-pomodoros-before-longer-break* (1+ *mw-pomodoros-completed-in-session*))
+                  0
+                (1+ *mw-pomodoros-completed-in-session*)))
+        (org-clock-goto)
+        ;; going to an org buffer is necessary for starting
+        ;; an org timer.
+        (mw-org-trigger-timer-for-pause (if (= 0 *mw-pomodoros-completed-in-session*)
+                                            *mw-pomodoro-longer-pause-duration*
+                                          *mw-pomodoro-pause-duration*))
+        (message
+         "Tomato done at %s.  Il est vraiment temps de prendre une pause."
+         (format-time-string "%T"))
+        ;; (start-process "play-a-sound" "*play-a-sound-output*"
+        ;;                "mplayer" (expand-file-name "~/media/sound/human/shutdown.wav"))
+        (start-process "play-a-sound" "*play-a-sound-output*"
+                       "espeak"
+                       "-v"
+                       ;; "en-swedish"
+                       "en"
+                       "-s"
+                       "125" ;; word speed
+                       "The tomato rings.  Take a rest, now, please.")
+        (zone-nyan-preview)))))
+
+(setq mw-org-pause-state nil) ; global.  TODO: can this be more locally, please?
+
+(defun mw-org-trigger-timer-for-pause (&optional duration)
+  "Start a timer for a pause of `DURATION' minutes.
+
+   `DURATION' defaults to 5.  See hook `org-timer-done-hook' for
+   actions at timers end.
+
+     It looks to me that the org-timer thing is broken.  I can't set
+   a new timer with org-timer-set-timer from an org-buffer any
+   more except with the triple universal prefix AKA '(64).
+
+   [2014-06-27 Fri 11:12] Good news: I could use M-x
+   org-timer-set-timer today and it did the expected thing."
+  (interactive)
+  (if (derived-mode-p 'org-mode)
+      (let ((saved-org-timer-default-timer org-timer-default-timer)
+            (duration (if (not duration) *mw-pomodoro-pause-duration*
+                        (number-to-string duration))))
+        (setq org-timer-default-timer duration)
+        (org-timer-set-timer '(64))
+        (setq org-timer-default-timer saved-org-timer-default-timer)
+        (setq mw-org-pause-state t))
+    (error "Mw-org-trigger-timer-for-pause: Not in an Org buffer")))
+;; #+END_SRC
+
+;; ** navi-mode
+
+;; Recall function [[help:navi-search-and-switch][navi-search-and-switch]] to activate a navi-buffer.
+
+;; #+BEGIN_SRC emacs-lisp
+;(require 'navi-mode)
+;; #+END_SRC
+
+;; ** Quickly access the web through w3m                                 :weak:
+
+;; Ask the default search engine.
+
+;; #+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "<Scroll_Lock> a") 'w3m-search)
+;; #+END_SRC
+
+;; L for look up the word at point in leo.
+
+;; #+BEGIN_SRC emacs-lisp
+(defun mw-ask-leo-about-word-at-point ()
+  "Call leo word engine using w3m."
+  (interactive)
+  (w3m-search "leo" (thing-at-point 'word)))
+
+(defun mw-ask-leo (arg)
+  "Call leo word engine using w3m."
+  (interactive "sWord: ")
+  (kill-new arg)
+  (w3m-search "leo" arg))
+;; #+END_SRC
+
+;; ** Translate via web-leo
+
+;; (defun mw-eww-ask-leo-fr (arg)
+;;   (interactive "sWord: ")
+;;   (eww (format "http://pda.leo.org/?lp=frde&search=%s&searchLoc=0&resultOrder=basic&multiwordShowSingle=on" arg)))
+
+;; (defun mw-eww-ask-leo-fr-region (start end)
+;;   (interactive "r")
+;;   (eww
+;;    (format
+;;     "http://pda.leo.org/?lp=frde&search=%s&searchLoc=0&resultOrder=basic&multiwordShowSingle=on"
+;;     (buffer-substring start end ))))
+
+;; (defun mw-eww-ask-leo-en (arg)
+;;   (interactive "sWord: ")
+;;   (eww (format "http://pda.leo.org/?lp=ende&search=%s&searchLoc=0&resultOrder=basic&multiwordShowSingle=on" arg)))
+
+;; ** Rope Read to save eye-movements
+
+;; Most important package!  Save eye movements!
+
+;; #+BEGIN_SRC emacs-lisp
+(push "~/p/elisp/mw/rope-read-mode" load-path)
+(require 'rope-read-mode)
+;; (define-key rope-read-mode-map "d" 'rope-read-reol) ;; start from current line with rope-read
+;; (define-key rope-read-mode-map "r" 'rope-read-delete-overlays)
+;; (global-set-key (kbd "<Scroll_Lock> <Scroll_Lock>") #'rope-read-mode)
+;; #+END_SRC
+
+;; ** Convenient snapshot of emacs from within
+
+;; #+BEGIN_SRC emacs-lisp
+(push "~/p/elisp/mw/emacsshot" load-path)
+(require 'emacsshot)
+(global-set-key
+ [print] ; (kbd "<print>")
+ (lambda (&optional current-window)
+   (interactive "P")
+   (if current-window (emacsshot-snap-window)
+     (emacsshot-snap-frame))))
+;; #+END_SRC
+
+;; ** Hippie expand
+
+;; Hippie expand is using various sources as potential for expansion.
+
+;; #+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "M-/") 'hippie-expand)
+;; #+END_SRC
+
+;; ** Special holidays
+
+;; Special Holidays can be defined in a function.  Hooking can be done
+;; via variable `holiday-other-holidays'.
+
+;; Note: The code here looks not so good.  Improvement would be good.
+
+;; #+BEGIN_SRC emacs-lisp
+(defun mw-further-holidays-of-interest ()
+  (if (= 2014 displayed-year)
+      (if (or (= 4 displayed-month) (= 5 displayed-month) (= 6 displayed-month))
+          '(((5 29 2014) "Christi Himmelfahrt"))
+        (if (or (= 7 displayed-month) (= 8 displayed-month) (= 9 displayed-month))
+            '(((8 15 2014) "Mariä Himmelfahrt"))))
+    (if (= 2016 displayed-year)
+        (if (or (= 4 displayed-month) (= 5 displayed-month) (= 6 displayed-month))
+            '(((5 5 2016) "Christi Himmelfahrt"))
+          (if (or (= 7 displayed-month) (= 8 displayed-month) (= 9 displayed-month))
+              '(((8 15 2016) "Mariä Himmelfahrt")))))))
+;; #+END_SRC
+
+;; ** Switch sound on/off
+
+;; #+BEGIN_SRC emacs-lisp
+(defun mw-sound-100% ()
+  "Pull all rulers in the amixer to 100% ."
+  (interactive)
+  (start-process "" "*mw-amixer*"
+                 "amixer" "set" "Master" "64")
+  (start-process "" "*mw-amixer*"
+                 "amixer" "set" "Speaker" "64" )
+  (start-process "" "*mw-amixer*"
+                 "amixer" "set" "Headphone" "64" )
+  (start-process "" "*mw-amixer*"
+                 "amixer" "set" "PCM" "255" )
+  (message "sound set to 100%%"))
+
+(defun mw-sound-set-enjoyable-volume ()
+  "Enjoyable volume for listening with headphones.
+
+  The effect of this function is somewhat subjective."
+  (interactive)
+  (start-process "" "*mw-amixer*"
+                 "amixer" "set" "Master" "0")
+  (start-process "" "*mw-amixer*"
+                 "amixer" "set" "Speaker" "64" )
+  (start-process "" "*mw-amixer*"
+                 "amixer" "set" "Headphone" "64" )
+  (start-process "" "*mw-amixer*"
+                 "amixer" "set" "PCM" "255" )
+  (message "personal sound level set"))
+
+(defun mw-sound-0% ()
+  "Pull all rulers in the amixer to 0 ."
+  (interactive)
+  (start-process "" "*mw-amixer*"
+                 "amixer" "set" "Master" "0")
+  (start-process "" "*mw-amixer*"
+                 "amixer" "set" "Speaker" "0" )
+  (start-process "" "*mw-amixer*"
+                 "amixer" "set" "Headphone" "0" )
+  (start-process "" "*mw-amixer*"
+                 "amixer" "set" "PCM" "0" )
+  (message "sound set to 0%%"))
+;; #+END_SRC
+
+;; ** Personalize the sound of the bell
+;; :PROPERTIES:
+;; :ID:       f5e3d91a-1137-4640-b453-96c64eba2d16
+;; :END:
+
+;; Bird sound is awesome.  In particular when the sound plays
+;; concurrently.
+
+;; #+BEGIN_SRC emacs-lisp
+(defun mw-play-little-bird-sound ()
+  "Play a little bird sound."
+  (interactive)
+  (start-process
+   "play-a-sound" "*play-a-sound-output*"
+   "mplayer" "-af" "volume=-15"
+   (expand-file-name "~/media/sound/birds/Tufted-Tit-Mouse-web-II.wav")))
+(setq ring-bell-function 'mw-play-little-bird-sound)
+;; #+END_SRC
+
+;; ** Kill an url at point
+
+;; #+BEGIN_SRC emacs-lisp
+(defun mw-kill-url-at-point ()
+  "Try to interpret the thing at point as url and if so put to kill ring."
+  (interactive)
+  (kill-new (thing-at-point 'url)))
+(global-set-key (kbd "C-c M-w") 'mw-kill-url-at-point)
+;; #+END_SRC
+
+;; ** Duplicate a w3m-session
+
+;; - [2014-07-18 Fri 17:14] It looks like the defun below is already
+;;   there in w3m: "M-n runs the command w3m-copy-buffer."
+
+;; #+BEGIN_SRC emacs-lisp
+(defun mw-w3m-duplicate-session (&optional reload)
+  "Duplicate the w3m-session.
+Optional argument RELOAD for w3m-view-this-url-1."
+  (interactive "P")
+  (if (not (eq major-mode 'w3m-mode))
+      (message "This command applies resonably to w3m mode only")
+    (if w3m-current-url
+        (w3m-view-this-url-1 w3m-current-url reload 'new-session)
+      (message "No current URL"))))
+;; #+END_SRC
+
+;; ** wcheck
+
+;; wcheck is a mode for checking things in a buffer.  Might be worth to
+;; invest some energy into its configuration for spell checking.
+
+;; There is documentation on https://github.com/tlikonen/wcheck-mode.
+
+;; I found out about wcheck's existance when reading an emacs group.
+
+;; The following example shows that wcheck can be used for indication of
+;; trailing whitespace.
+
+;; #+BEGIN_SRC emacs-lisp
+;; source: https://github.com/tlikonen/wcheck-mode
+(setq wcheck-language-data
+      '(("Trailing whitespace"
+	 (program . identity)
+	 (action-program . (lambda (marked-text)
+			     (list (cons "Remove whitespace" ""))))
+	 (face . highlight)
+	 (regexp-start . "")
+	 (regexp-body . "[ \t]+")
+	 (regexp-end . "$")
+	 (regexp-discard . "")
+	 (read-or-skip-faces
+	  (nil)))))
+;; #+END_SRC
+
+;; ** Additions around eww
+
+;; *** Switch from w3m to eww and vice versa
+
+;; #+BEGIN_SRC emacs-lisp
+(defun mw-w3m-switch-to-eww ()
+  "Switch to eww from w3m."
+  (interactive)
+  (eww w3m-current-url))
+;; #+END_SRC
+
+;; #+BEGIN_SRC emacs-lisp
+(defun mw-eww-switch-to-w3m ()
+  "Switch to w3m from eww."
+  (interactive)
+  (w3m (eww-current-url)))
+;; #+END_SRC
+
+;; *** Duplicate eww buffer
+
+;; #+BEGIN_SRC emacs-lisp
+(defun mw-eww-duplicate-buffer ()
+  "In eww-mode create a new buffer *eww* with current url.
+Rename a possibly existing buffer *eww*."
+  (interactive)
+  (when (eq major-mode 'eww-mode)
+    (let ((url (plist-get eww-data :url)))
+      (when (get-buffer "*eww*")
+        (switch-to-buffer "*eww*")
+        (rename-uniquely))
+      (eww url))))
+;; #+END_SRC
+
+;; *** Rename Current Page
+
+;; This is for somehow saving the page to not loosing it at the next eww
+;; call.
+
+;; #+BEGIN_SRC emacs-lisp
+(require 'eww)
+(if (boundp 'eww-mode-map)
+    (progn
+      (define-key eww-mode-map "x" #'mw-eww-duplicate-buffer);'rename-uniquely
+      (message "Added 'x' in eww-mode-map."))
+  (message
+   (concat
+    "FAILED adding 'x' to eww-mode-map."
+    "  REASON: eww-mode-map is not bound yet.")))
+;; #+END_SRC
+
+;; ** Hidden mode line
+
+;; Found the following mode line hiding function at
+;; http://bzg.fr/emacs-hide-mode-line.html.  (Bastien)
+
+;; #+BEGIN_SRC emacs-lisp
+(defvar-local hidden-mode-line-mode nil)
+
+(define-minor-mode hidden-mode-line-mode
+  "Minor mode to hide the mode-line in the current buffer."
+  :init-value nil
+  :global t
+  :variable hidden-mode-line-mode
+  :group 'editing-basics
+  (if hidden-mode-line-mode
+      (setq hide-mode-line mode-line-format
+            mode-line-format nil)
+    (setq mode-line-format hide-mode-line
+          hide-mode-line nil))
+  (force-mode-line-update)
+  ;; Apparently force-mode-line-update is not always enough to
+  ;; redisplay the mode-line
+  (redraw-display)
+  (when (and (called-interactively-p 'interactive)
+             hidden-mode-line-mode)
+    (run-with-idle-timer
+     0 nil 'message
+     (concat "Hidden Mode Line Mode enabled.  "
+             "Use M-x hidden-mode-line-mode to make the mode-line appear."))))
+
+;; If you want to hide the mode-line in every buffer by default
+;; (add-hook 'after-change-major-mode-hook 'hidden-mode-line-mode)
+;; #+END_SRC
+
+;; ** Strip
+
+;; #+BEGIN_SRC emacs-lisp
+(defun mw-strip ()
+  "Strip window and frame."
+  (interactive)
+  (hidden-mode-line-mode)
+  (when hidden-mode-line-mode
+    (fringe-mode 0)
+    (scroll-bar-mode -1)))
+;; #+END_SRC
+
+;; ** Key sequences to open browser
+
+;; #+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "\C-cg") 'eww)
+(global-set-key (kbd "\C-cG") 'browse-url)
+(global-set-key (kbd "\C-cF") 'browse-url-firefox)
+;; #+END_SRC
+
+;; ** mpages
+
+;; Using a local branch and not the package to test a version with
+;; encryption.
+
+;; #+BEGIN_SRC emacs-lisp
+(push  "~/p/elisp/mw/mpages" load-path)
+(autoload 'mpages "mpages" "For writing morning pages." t nil)
+
+(defadvice mpages (after ctrlc-ctrlc-to-finish activate)
+  "Set C-c C-c to close the mpage writing.
+Set the key for encrytion, then save and kill the buffer.
+This binding shall make the close more convenient."
+  (local-set-key [?\C-c ?\C-c] (lambda ()
+                                 (interactive)
+                                 (setq epa-file-encrypt-to '("49010A040A3AE6F2"))
+                                 (save-buffer)
+                                 (kill-buffer))))
+;; #+END_SRC
+
+;; ** dired-x
+
+;; #+BEGIN_SRC emacs-lisp
+(add-hook 'dired-load-hook
+          (lambda ()
+            (load "dired-x")
+            ;; Set dired-x global variables here.  For example:
+            ;; (setq dired-guess-shell-gnutar "gtar")
+            ;; (setq dired-x-hands-off-my-keys nil)
+            ))
+(add-hook 'dired-mode-hook
+          (lambda ()
+            ;; Set dired-x buffer-local variables here.  For example:
+            ;; (dired-omit-mode 1)
+            ;;
+            ;; lab: "e" for open the file in eww.  Note: I never used
+            ;; "e" to start edit a file of a dired (which is the
+            ;; default behavior. [2016-07-21 Thu 17:11])
+            (define-key dired-mode-map "e"
+              (lambda () (interactive)
+                (eww-open-file (dired-get-file-for-visit))))))
+
+;; (setf dired-mode-hook nil)
+;; #+END_SRC
+
+;; ** Delete blank lines also above
+
+;; #+BEGIN_SRC emacs-lisp
+(global-set-key  (kbd "C-x C-o") #'mw-delete-blank-lines)
+;; #+END_SRC
+
+;; [2015-07-13 Mon 11:54] Activation.  Let's see if the removal of the
+;; blank lines above proves useful.
+
+;; ** Disable query about active processes at quit
+
+;; #+BEGIN_SRC emacs-lisp
+(require 'cl)
+(defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
+           (flet ((process-list ())) ad-do-it))
+;; #+END_SRC
+
+;; Source: [[http://timothypratley.blogspot.de/2015/07/seven-specialty-emacs-settings-with-big.html][Programming: Seven specialty Emacs settings with big payoffs]].
+
+;; ** Open line below
+
+;; #+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "C-S-o") #'mw-open-line-below)
+(global-set-key (kbd "C-S-a") #'mw-open-line-above)
+;; #+END_SRC
+
+;; ** Real delete
+
+;; Real delete of region, not this 'play it save and put the delete into
+;; kill-ring' stuff.
+
+;; #+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "\C-cw") #'delete-region)
+;; #+END_SRC
+
+;; *** TODO Test this                                                 :noexport:
+
+;;; Rest:
+
+;; ** Mouse Avoidance
+
+;; Documentation says
+;; #+BEGIN_QUOTE
+;; Should be one of the symbols ‘banish’, ‘exile’, ‘jump’, ‘animate’,
+;; ‘cat-and-mouse’, ‘proteus’, or ‘none’.
+;; #+END_QUOTE
+
+;; #+BEGIN_SRC emacs-lisp
+(mouse-avoidance-mode 'proteus)
+;; #+END_SRC
+
+;; ** Delete trailing ws on save
+
+;; This is thought to keep the files cleaner.  This is thought to need
+;; no more thought about trailing whitespace.
+
+;; #+BEGIN_SRC emacs-lisp
+(push
+ (lambda ()
+   (delete-trailing-whitespace))
+ before-save-hook)
+
+;; More care taken at first.  Ws cleanup only for a few modes:
+;; (push
+;;  (lambda ()
+;;    (if (or (eq major-mode 'org-mode)
+;;            (eq major-mode 'ledger-mode))
+;;        (delete-trailing-whitespace)))
+;;  before-save-hook)
+;; #+END_SRC
+
+;; ** Local Variables
+
 ;; 
 ;; # Local Variables:
 ;; # lentic-init: lentic-orgel-org-init
