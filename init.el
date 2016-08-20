@@ -2618,7 +2618,7 @@ Originates from gnu.emacs.help group 2006."
 ;; ** helm-bibtex
 
 ;; #+BEGIN_SRC emacs-lisp
-(setq bibtex-completion-bibliography `(,(expand-file-name "~/media/references/references.bib")))
+(setq bibtex-completion-bibliography '("/home/b/media/references/references.bib"))
 ;; #+END_SRC
 
 ;;; Keysettings:
