@@ -2674,66 +2674,7 @@ Originates from gnu.emacs.help group 2006."
 
 ;; ** Individual keymap
 
-;; #+BEGIN_SRC emacs-lisp
-(defvar mw-individual-keymap
-  (let ((map (make-sparse-keymap)))
-    (define-key map "f" #'mw-kill-buffer-filename)
-    (define-key map "g" #'git-auto-commit-mode)
-    (define-key map "l" #'clone-indirect-buffer)
-    (define-key map "a" #'mw-append-to-scratch)
-    (define-key map "r" #'mw-auxies-toggle-default-frame-reverse-state)
-    (define-key map "d" #'mw-display-mode-line-as-message)
-    (define-key map "m" #'menu-bar-mode)
-    (define-key map "h" #'mw-strip)
-    (define-key map "F" #'fringe-mode)
-    (define-key map "b"
-      (lambda ()
-        (interactive)
-        (if emms-player-playing-p
-            (emms-player-pause)
-          (progn
-            (mw-sound-set-enjoyable-volume)
-            (emms-play-url "http://bassdrive.com/bassdrive.m3u"
-                           ;; "http://www.bassdrive.com/BassDrive.m3u"
-                           )))))
-    (define-key map "p" #'password-store-copy)
-    (define-key map "P" #'org-toggle-pretty-entities)
-    (define-key map "j" #'org-clock-goto)
-    (define-key map  (kbd "C-j")
-      (lambda nil "Add a note to the Org currently clocked."
-        (interactive) (org-clock-goto) (org-add-note)))
-    (define-key map "z" #'mw-auxies-delete-to-direction)
-    (define-key map "k" #'key-chord-mode) ; sometimes i need turning it off and on again.
-    (define-key map "c" #'calendar)
-    (define-key map "q" #'bury-buffer)
-    (define-key map "u" #'unexpand-abbrev)
-    (define-key map "i" #'ido-hacks-mode)
-    (define-key map "w" #'org-refile-goto-last-stored)
-                                        ; recall: from org-files there is already C-u C-u C-c C-w.
-    (define-key map "<" #'mw-screen-exchange-slurp-insert)
-    (define-key map ">" #'mw-screen-exchange-write-region)
-    (define-key map "e" #'evil-mode)
-    (define-key map "E" (lambda () "Erase org-stored-links" (interactive) (setq org-stored-links nil)))
-    (define-key map "(" #'paredit-mode)
-    (define-key map ")" #'disable-paredit-mode)
-    (define-key map "W" #'calc-embedded-word) ; recall 'q' to leave the mode.
-    (define-key map "s" (lambda () (interactive) (switch-to-buffer "*scratch*")))
-    (define-key map "o" #'mw-org-kill-new-outline-path) ; Has been useful for refile.
-    (define-key map "t" (lambda ()
-                          "Switch the minibuffer externalization for new frames.
-And delete all frames.
-This works good when an Emacs daemon runs and thus allows
-easily create a new frame."
-                          (interactive)
-                          (if (cdr (assoc 'minibuffer default-frame-alist))
-                              (mw-unset-minibuffer-in-default-frame)
-                            (mw-set-minibuffer-in-default-frame))
-                          (mapc #'delete-frame (frame-list))
-                          ))
-      map)
-  "Personal convenience keymap.")
-(global-set-key (kbd "\C-z") mw-individual-keymap)
-;; #+END_SRC
+
 
 ;; ** Local Variables
 
