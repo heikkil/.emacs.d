@@ -2668,9 +2668,8 @@ Originates from gnu.emacs.help group 2006."
   ("x" . org-export-dispatch)
   ("k" . org-capture)
   ("9" . org-decrypt-entry)
-  ;; ("N" org-speed-move-safe 'outline-next-visible-heading)
-  ;; ("P" org-speed-move-safe 'outline-previous-visible-heading)
-  ))
+  ("N" org-speed-move-safe 'outline-next-visible-heading)
+  ("P" org-speed-move-safe 'outline-previous-visible-heading)))
 ;; #+END_SRC
 
 ;; ** Individual keymap
