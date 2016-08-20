@@ -2613,7 +2613,13 @@ Originates from gnu.emacs.help group 2006."
 
 ;;; Config:
 
-(load-file "init-config.el")
+;; (load-file "init-config.el")
+
+;; ** helm-bibtex
+
+;; #+BEGIN_SRC emacs-lisp
+(setq bibtex-completion-bibliography (expand-file-name "~/media/references/references.bib"))
+;; #+END_SRC
 
 ;;; Keysettings:
 ;; :PROPERTIES:
