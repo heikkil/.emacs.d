@@ -1,0 +1,1509 @@
+;;; init.el --- personal emacs config file
+;; #+STARTUP: oddeven
+;; #+options: toc:2
+
+;;; Copyright:                                                        :noexport:
+
+;; Copyright (c) 2015-2016 Marco Wahl <marcowahlsoft@gmail.com>
+
+;; This program is free software: you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or (at
+;; your option) any later version.
+
+;; This program is distributed in the hope that it will be useful, but
+;; WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+;;; Meta:                                                             :noexport:
+
+;; This section is about this file itself.
+
+;; *** Lentic Style
+
+;; This emacs configuration file is written in lentic style of type
+;; org/el.
+
+;; This file is an emacs-lisp program.  But this is not an ordinary
+;; emacs-lisp program.  This emacs-lisp is enriched with comments which
+;; allow the interpretation of this file as org mode file.  Lentic-mode
+;; allows to edit this file as org-file.
+
+;; [2015-06-10 Wed 11:14]: Activate lentic via
+;; lentic-mode-create-from-init (C-c , c).  This creates an org-mode view
+;; of the source file.  Switch between the views with
+;; lentic-mode-move-lentic-window (C-c , h).
+
+;; [2015-07-23 Thu 12:19] Currently for lentic to work reasonably the top
+;; level headings must consist of exactly one word.
+
+;;; Commentary:                                            :artificial:noexport:
+
+;; This section exists to please checkdoc, the elisp documentation checker.
+
+;;; Code:                                                  :artificial:noexport:
+
+;;; Firstfirst:
+;; :PROPERTIES:
+;; :ID:       bd4a3fcf-1669-40b8-a1c1-d9adf07fd947
+;; :END:
+
+;; ** Debugging
+
+;; Switch on debugging in case.
+
+;; #+BEGIN_SRC emacs-lisp
+;; (setq debug-on-error t)
+;; #+END_SRC
+
+;; ** Workarounds
+
+;; The following might help to keep this file going.  Ideally this
+;; section does not exist.
+
+;; #+BEGIN_SRC emacs-lisp
+;; (defun ert--activate-font-lock-keywords ()
+;;   ;; [2016-04-16 Sat 14:40] wtf?  startup breaks.
+;;   ;; some change with emacs?  function missing?
+;;   )
+(require 'ert)
+;; #+END_SRC
+
+;; ** Don't load outdated byte code
+;; 1
+;; #+BEGIN_SRC emacs-lisp
+(setq load-prefer-newer t)
+;; #+END_SRC
+
+;; Found the above in lunaryorn's config at
+;; https://github.com/lunaryorn/.emacs.d/blob/master/init.el
+;; [2015-05-18 Mon 21:56].
+
+;; ** Frame Config
+
+;; [2016-02-05 Fri 22:53] Try out minibuffer in extra frame.
+
+;; This has something!
+
+;; #+BEGIN_SRC emacs-lisp
+;; (setq initial-frame-alist '((minibuffer . nil)))
+;; (setq default-frame-alist '((minibuffer . nil)))
+;; #+END_SRC
+
+;; ** Org from Source
+
+;; #+BEGIN_SRC emacs-lisp
+(let ((orgmodelocation (expand-file-name "~/p/org/org-mode")))
+  (push (concat orgmodelocation "/lisp") load-path)
+  (push (concat orgmodelocation "/contrib/lisp") load-path)
+  (eval-after-load "org-agenda"
+    '(progn
+       (org-defkey org-agenda-mode-map (kbd "Y") #'org-agenda)
+       ;; (org-defkey org-agenda-mode-map (kbd "C-,") #'ignore) ; wtf is this line?
+       ))
+  (eval-after-load 'info
+    '(progn (info-initialize)
+  	    (add-to-list
+	     'Info-directory-list
+	     (concat (expand-file-name "~/p/org/org-mode") ; orgmodelocation
+		     "/doc")))))
+(require 'org)
+;; #+END_SRC
+
+;; ** Package Initialization
+
+;; #+BEGIN_SRC emacs-lisp
+(package-initialize)
+;; #+END_SRC
+
+;; '(package-initialize)' gets added automatically according to
+;; [[help:package-initialize]].  But maybe too late.
+
+;; ** use-package
+
+;; =use-package= allows convenient emacs package configuration.
+
+;; #+BEGIN_SRC emacs-lisp
+(require 'use-package)
+;; #+END_SRC
+
+;;; Packages:
+
+;; ** async
+
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package async :config (dired-async-mode 1))
+;; #+END_SRC
+
+;; ** camcorder
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package camcorder
+  :config (setf camcorder-output-directory "~/media/screencasts/camcorder"))
+;; #+END_SRC
+
+;; ** ace-link
+
+;; Quickly follow links in certain modes e.g. info-mode.
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package ace-link
+  :config (ace-link-setup-default))
+;; #+END_SRC
+
+;; *** TODO Check for integration with ert and more                   :noexport:
+
+;; [2016-05-03 Tue 09:01] Read about this on the project page.
+;; ** evil-numbers
+
+;; Quickly add to integers in buffer with prefix-arguments for
+;; adding/subtracting that value.  Default is 1.
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package evil-numbers
+  :bind
+  ("M-+" . evil-numbers/inc-at-pt)
+  ("M--" . evil-numbers/dec-at-pt))
+;; #+END_SRC
+
+;; *** TODO Check Similar Packages                                    :noexport:
+
+;; There are more packages in this field.
+
+;; ** chronos
+
+;; ~chronos~ allows to conveniently set timers and say a text when the
+;; timer is done.
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package chronos
+  :config (setf chronos-text-to-speech-program "espeak"
+                chronos-text-to-speech-program-parameters "-s 111"
+                chronos-expiry-functions '(chronos-buffer-notify
+                                           chronos-text-to-speech-notify)))
+;; #+END_SRC
+
+;; ** swiper
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package swiper
+  :bind ("C->" . swiper))
+;; #+END_SRC
+
+;; ** dired-narrow
+
+;; At very first invocation do ~M-x dired-narrow~ in a dired buffer.
+;; After that the key binding is active.
+
+;; Recall g for getting rid of all filtering.
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package dired-narrow
+  :ensure t)
+;; #+END_SRC
+
+;; ** stumpwm-mode
+
+;; Stumpish integration.
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package stumpwm-mode
+  :config (setq stumpwm-shell-program
+                (expand-file-name "~/.stumpwm.d/modules/util/stumpish/stumpish")))
+;; #+END_SRC
+
+;; ** keyfreq
+
+;; From the documentation at https://github.com/dacap/keyfreq:
+
+;; #+BEGIN_QUOTE
+;; ...use keyfreq-show to see how many times you used a command.
+;; #+END_QUOTE
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package keyfreq
+  :config (progn (keyfreq-mode 1)
+                 (keyfreq-autosave-mode 1)))
+;; #+END_SRC
+
+;; ** wrap-region
+
+;; Press a key to decorate region .
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package wrap-region
+  :ensure t
+  :config (progn
+            (wrap-region-global-mode t)
+            (wrap-region-add-wrapper "`" "'")
+            (wrap-region-add-wrapper "~" "~" nil 'org-mode)
+            (wrap-region-add-wrapper "=" "=" nil 'org-mode)
+            (wrap-region-add-wrapper "#+BEGIN_QUOTE\n" "\n#+END_QUOTE" "q" 'org-mode)))
+;; #+END_SRC
+;; ** auth-password-store
+
+;; auth-stuff -> pass(word-store)
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package auth-password-store
+  :ensure t
+  :config (auth-pass-enable))
+;; #+END_SRC
+
+;; ** avy
+
+;; Move cursor onto a visible character.
+
+;; =avy= is similar to ace-jump-mode.  I read that avy is the variant
+;; that gets maintained.
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package avy
+  :ensure t
+  :bind (("C-." . avy-goto-char)
+         ("C-," . avy-goto-line))
+  :config
+  (setq avy-keys
+                '(?e ?t ?h ?u ?n ?o ?s ?a ?d ?i ?-
+                     ?. ?c ?, ?r ?l ?' ?p ?y ?f ?g
+                     ?m ?j ?b ?k ?w ?q ?v ?x ?z))
+  (setf avy-all-windows nil)
+  (setf avy-all-windows-alt t) ; hint: behavior prefix arg
+  (avy-setup-default)
+  ;; [2016-05-03 Tue 15:56]: was
+  ;;(eval-after-load "isearch" '(define-key isearch-mode-map (kbd "C-'") 'avy-isearch))
+  )
+;; #+END_SRC
+
+;; ** avy-zap
+
+;; A replacement of zap-to-char.
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package avy-zap
+  :bind (("M-z" . avy-zap-to-char-dwim)
+         ("M-Z" . avy-zap-up-to-char-dwim)))
+;; #+END_SRC
+
+;; ** on-screen
+
+;; Adds a visual symbol about the previous page after scrolling a page.
+;; This might help sometimes.  Try together with rope-read.
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package on-screen
+  :ensure t
+  :config (global-on-screen-mode))
+;; #+END_SRC
+
+;; ** page-break-lines
+;; :PROPERTIES:
+;; :ID:       1b9e0af1-1669-4b6e-bfcf-846f550f7c59
+;; :END:
+
+;; Display page breaks nicely.  Similar to [[id:5e169d24-bc68-42da-ae9d-2f3d190a9547][form-feed-mode]].
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package page-break-lines)
+;; #+END_SRC
+
+;; ** form-feed-mode
+;; :PROPERTIES:
+;; :ID:       5e169d24-bc68-42da-ae9d-2f3d190a9547
+;; :END:
+
+;; Display page breaks nicely.  Similar to [[id:1b9e0af1-1669-4b6e-bfcf-846f550f7c59][page-break-lines]].
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package form-feed)
+;; #+END_SRC
+
+;; ** browse-kill-ring
+
+;; Activate any time with M-x browse-kill-ring or with M-y but the
+;; latter only if _not_ immediately after yank.
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package browse-kill-ring
+  :config
+  (browse-kill-ring-default-keybindings)) ; M-y
+;; #+END_SRC
+
+;; ** expand-region
+
+;; =expand-region= often expands the region to what i mean.
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package expand-region
+  :config
+  (global-set-key (kbd "C-=") #'er/expand-region))
+;; #+END_SRC
+
+;; ** ido-hacks
+
+;; ido-hacks sits on top of ido and makes ido even cooler.  When
+;; ido-hacks-mode comes into the way then just switch it off.
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package ido-hacks
+  :init (ido-mode)
+  :config (ido-hacks-mode))
+;; #+END_SRC
+
+;; ** lentic
+
+;; Note: Currently I use lentic from source.
+;; Activattion of lentic as proposed in lentics documentation lentic.el.
+
+;; #+BEGIN_SRC emacs-lisp
+;; (use-package lentic
+;;   :config (global-lentic-mode))
+;; #+END_SRC
+
+;; ** magit
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package magit
+  :ensure t
+  :config (define-key magit-file-section-map "C" 'magit-commit-add-log)) ;; "C" also on filename-lines
+;; #+END_SRC
+
+;; ** company mode
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package company
+  :config (global-company-mode))
+;; #+END_SRC
+
+;; ** key chord
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package key-chord
+  :config
+  (key-chord-mode 1)
+  (key-chord-define-global "o6" #'org-open-at-point-global)
+  (key-chord-define-global "o8" #'ace-link)
+  (key-chord-define-global "s-" #'beacon-blink) ; locate the cursor easily
+  (key-chord-define-global "ao" #'other-window)
+  (key-chord-define-global "qq" #'other-frame)
+  (key-chord-define-global "qj" #'mw-exchange-to-buddy)
+  (key-chord-define-global "><" #'previous-buffer)
+  (key-chord-define-global ".," #'next-buffer)
+  (key-chord-define-global "r9" #'rope-read-mode)
+  (key-chord-define-global "yy" #'mw-duplicate-line)
+  (key-chord-define-global "''" #'mw-umlautify-before-point)
+  (key-chord-define-global "uu" (lambda (&optional in-place)
+                                  (interactive "P")
+                                  (if in-place (mw-translate-in-place-eng+deu)
+                                    (mw-translate-as-message-eng+deu))))
+  (key-chord-define-global "HH" (lambda () (interactive) (recenter 0))) ; #'recenter-top-bottom; afair H is a respecive vim binding?
+  (key-chord-define-global "``" #'mw-alternate-up)
+  (key-chord-define-global "~~" #'dired-jump)
+  (key-chord-define-global ",," #'lentic-mode-move-lentic-window)
+  (key-chord-define-global "3." #'delete-other-windows)
+  (key-chord-define-global "c8" #'delete-window) ; for kinesis keyboard
+  (key-chord-define-global "g8" #'delete-window) ; for cherry keyboard
+  (key-chord-define-global "m1" #'magit-status)
+  (key-chord-define-global "y5" (lambda () (interactive)
+                                  (if (get-buffer "*Org Agenda*")
+                                      (switch-to-buffer (get-buffer "*Org Agenda*"))
+                                    (org-agenda-list))))
+  (key-chord-define-global "xx" #'org-edit-special)
+  (key-chord-define-global "kx" (lambda () (interactive)
+                                  (if (eq major-mode 'org-mode)
+                                      (org-edit-special)
+                                    (org-edit-src-exit))))
+  (key-chord-define-global "vv" #'org-edit-src-exit)
+  (key-chord-define-global "1'" #'org-previous-visible-heading)
+  (key-chord-define-global "mw" #'list-buffers)
+  (key-chord-define-global "n1" #'sp-narrow-to-sexp)
+  (key-chord-define-global "a6" #'mw-set-ariadne-point)
+  (key-chord-define-global "a7" #'mw-goto-ariadne-point)
+  (key-chord-define-global "c1" #'chronos-add-timer)
+  (key-chord-define-global "d1" #'mw-org-link-remove-file-decoration)
+  (key-chord-define-global "s1" #'scroll-lock-mode)) ;; recall (key-chord-unset-global "bb") for undef a key-chord.
+;; #+END_SRC
+
+;; 
+;; ** paredit
+
+;; Very helpful mode for editing elisp.
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package paredit
+  :ensure t
+  ;; :config (progn
+  ;;           (add-hook 'emacs-lisp-mode-hook (lambda () (paredit-mode t)))
+  ;;           (define-key paredit-mode-map  (kbd "M-s") nil) ; Unshadow all the M-s standard stuff.
+  ;;           )
+  :bind ("C-M-<up>" . paredit-splice-sexp))
+;; #+END_SRC
+
+;; 
+;; ** Lispy
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package lispy
+  ;; :config
+  ;; (define-key lispy-mode-map-lispy (kbd "]") nil)
+  ;; (define-key lispy-mode-map-lispy (kbd "[") nil)
+  )
+
+(setf
+ lispy-mode-hook
+ (lambda ()
+   (key-chord-define-local "[0" (lambda () (interactive) (insert "[")))
+   (key-chord-define-local "]1" (lambda () (interactive) (insert "]")))))
+;; #+END_SRC
+
+;; ** smartparens
+
+;; [2016-01-08 Fri 14:49] At first I thought smartparens-mode will replace paredit for me.  But
+;; somehow I always come back to paredit.
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package smartparens
+  :ensure t
+  :config (turn-on-smartparens-mode))
+;; #+END_SRC
+
+;; ** gnorb
+
+;; gnorb is integration of gnus and org and bbdb .
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package gnorb)
+
+(require 'gnorb)
+(require 'gnorb-org)
+(require 'gnorb-gnus)
+(gnorb-tracking-initialize)
+
+(eval-after-load "gnorb-bbdb"
+  '(progn
+     (define-key bbdb-mode-map (kbd "O") 'gnorb-bbdb-tag-agenda)
+     (define-key bbdb-mode-map (kbd "S") 'gnorb-bbdb-mail-search)
+     (define-key bbdb-mode-map [remap bbdb-mail] 'gnorb-bbdb-mail)
+     (define-key bbdb-mode-map (kbd "l") 'gnorb-bbdb-open-link)
+     (global-set-key (kbd "C-c C") 'gnorb-bbdb-cite-contact)))
+
+(eval-after-load ;; "gnorb-org"
+  "org"
+  '(progn
+     (org-defkey org-mode-map (kbd "C-c C") 'gnorb-org-contact-link)
+     (org-defkey org-mode-map (kbd "C-c m") 'gnorb-org-handle-mail)
+     (org-defkey org-mode-map (kbd "C-c e") 'gnorb-org-view)
+     (org-defkey org-mode-map (kbd "C-c E") 'gnorb-org-email-subtree)
+     (org-defkey org-mode-map (kbd "C-c V") 'gnorb-org-popup-bbdb)
+     (setq gnorb-org-agenda-popup-bbdb t)
+     (eval-after-load "org-agenda"
+       '(progn ;; (org-defkey org-agenda-mode-map (kbd "C-c t") 'gnorb-org-handle-mail)
+               (org-defkey org-agenda-mode-map (kbd "C-c v") 'gnorb-org-popup-bbdb)
+               (org-defkey org-agenda-mode-map (kbd "V") 'gnorb-org-view)))))
+
+(eval-after-load "gnorb-gnus"
+  '(progn
+     (define-key gnus-summary-mime-map "a" 'gnorb-gnus-article-org-attach)
+     (define-key gnus-summary-mode-map (kbd "C-c t") 'gnorb-gnus-incoming-do-todo)
+     (define-key gnus-summary-mode-map (kbd "C-c e") 'gnorb-gnus-view)
+                                        ; this is 'e' because of the
+                                        ; respective binding for
+                                        ; org-view suggested in the
+                                        ; docu [2015-05-28 Thu 08:54].
+     (push '("attach to org heading" . gnorb-gnus-mime-org-attach)
+           gnus-mime-action-alist)
+     ;; The only way to add mime button command keys is by redefining
+     ;; gnus-mime-button-map, possibly not ideal. Ideal would be a
+     ;; setter function in gnus itself.
+     (push '(gnorb-gnus-mime-org-attach "a" "Attach to Org heading")
+           gnus-mime-button-commands)
+     (setq gnus-mime-button-map
+           (let ((map (make-sparse-keymap)))
+             ;; (define-key map gnus-mouse-2 'gnus-article-push-button)
+             ;; (define-key map gnus-down-mouse-3 'gnus-mime-button-menu)
+             (dolist (c gnus-mime-button-commands)
+               (define-key map (cadr c) (car c)))
+             map))))
+
+(eval-after-load "message"
+  '(progn
+     (define-key message-mode-map (kbd "C-c t") 'gnorb-gnus-outgoing-do-todo)))
+;; #+END_SRC
+
+;; ** rase
+
+;; =rase= is for triggering actions at sunrise and sunset.
+
+;; Reversing the colors of Emacs at sunrise and at sunset.
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package rase
+  :config
+  (add-hook
+   'rase-functions
+   (lambda (sun-event &optional first-run)
+     (cond
+      (first-run (let ((solar-rise-set  (solar-sunrise-sunset (calendar-current-date)))
+                       (time-of-day (mw-current-time-of-day-decimal)))
+                   ;; ((7.749999999068677 "CET") (17.5166666675359 "CET") "9:46")
+                   (if (or (< time-of-day (caar solar-rise-set))
+                           (<= (caadr solar-rise-set) time-of-day))
+                    (load-theme 'reverse))))
+      ((eq sun-event 'sunrise)
+       (disable-theme 'reverse)
+       ;; (setf (cdr (assoc 'reverse default-frame-alist)) nil) ;; Change params for next frame creation.
+       )
+      ((eq sun-event 'sunset)
+       (load-theme 'reverse t)
+       ;; (setf (cdr (assoc 'reverse default-frame-alist)) t) ;; Change params for next frame creation.
+       ))))
+
+  ;; Realization with make-frame which is a bit hackish.
+  ;; (add-hook
+  ;;  'rase-functions
+  ;;  (lambda (sun-event &optional first-run)
+  ;;    (unless first-run
+  ;;      (if (or (eq sun-event 'sunrise) (eq sun-event 'sunset))
+  ;;          (run-at-time "1 sec" ; one sec after the event the parameters shall be ready.
+  ;;                       nil #'make-frame)))))
+
+  ;; The following lines are here for remember how to use 'advice'.
+  ;; Possibly an alternative is `before-make-frame-hook'.
+  ;;
+  ;; (advice-add 'make-frame :before
+  ;;             (lambda (&optional parameters) (when mw-make-frame-first-call
+  ;;                          (setq mw-make-frame-first-call nil)
+  ;;                          (rase-start t))))
+
+  (run-at-time "10 sec" nil (lambda () (rase-start t))) ;; Pragmatic, not nice.
+  ;; (rase-start t) ;; This line is not enough to change the theme.
+  )
+;; #+END_SRC
+
+;; ** AUR access
+
+;; ~aurel~ helps with the management of the AUR-packages of the
+;; Arch-Linux system.
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package aurel
+  :config
+  (autoload 'aurel-package-info "aurel" nil t)
+  (autoload 'aurel-package-search "aurel" nil t)
+  (autoload 'aurel-maintainer-search "aurel" nil t)
+  (autoload 'aurel-installed-packages "aurel" nil t)
+  (setq aurel-download-directory "~/AUR"))
+;; #+END_SRC
+
+;; *** history
+
+;; - [2014-04-07 Mon 22:26] Just installed a package that might help with
+;; AUR-packages.
+
+;; ** zeitgeist
+
+;; The zeitgeist software keeps track of file-operations.  Not sure if I
+;; have this still up.
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package zeitgeist :disabled)
+;; #+END_SRC
+
+;; *** TODO Check the zeitgeist stuff                                 :noexport:
+;; ** helm
+
+;; Actually i don't use helm consciously.  [2015-06-27 Sat 10:57]
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package helm)
+;; #+END_SRC
+
+;; [2016-04-29 Fri 14:31] I do use helm-emms to switch on bassdrive.
+
+;; ** gnuplot
+
+;; The following lines go back to a recommendation of an arch linux
+;; install.
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package gnuplot
+  :config (progn
+            (autoload 'gnuplot-mode "gnuplot" "gnuplot major mode" t)
+            (autoload 'gnuplot-make-buffer "gnuplot" "open a buffer in gnuplot mode" t)
+            (setq auto-mode-alist (append '(("\\.gp$" . gnuplot-mode)) auto-mode-alist))))
+;; #+END_SRC
+
+;; ** hydra
+
+;; Hydra allows some convenient key maps organization.
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package hydra)
+;; #+END_SRC
+
+;; ** sotlisp
+
+;; Helpful for jumping around!
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package sotlisp)
+;; #+END_SRC
+
+;; ** nyan-mode
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package nyan-mode
+  :config (nyan-mode))
+;; #+END_SRC
+
+;; ** git-auto-commit-mode
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package git-auto-commit-mode
+:ensure t
+:config (git-auto-commit-mode t))
+;; #+END_SRC
+
+;; ** epa
+
+;; #+BEGIN_SRC emacs-lisp
+(require 'epa)
+(define-key epa-key-list-mode-map "N" #'mw-epa-mark-next-key)
+;; #+END_SRC
+
+;;; LabPkgs:
+
+;; ** hyperbole
+
+;; Give hyperbole a try.
+
+;; #+BEGIN_SRC emacs-lisp
+(require 'package)
+(setq package-check-signature nil
+      package-enable-at-startup nil) ;; Prevent double loading of libraries
+(add-to-list 'package-archives '("RSW-Packages" . "http://www.plasmas.biz/rswe/") t)
+(package-initialize)
+(unless (package-installed-p 'hyperbole)
+  (package-refresh-contents)
+  (package-install 'hyperbole))
+(require 'hyperbole)
+;; #+END_SRC
+
+;; #+BEGIN_SRC emacs-lisp
+;; (org-defkey org-mode-map (kbd "<C-M-return>") #'hkey-either)
+(global-set-key (kbd "<C-M-return>") #'hkey-either)
+;; #+END_SRC
+
+;; ** emr
+
+;; emr is a refactoring tool.
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package emr
+   :config (progn
+            ;; (autoload 'emr-show-refactor-menu "emr")
+             (eval-after-load "emr" '(emr-initialize)))
+   ;; :bind ("M-RET" . emr-show-refactor-menu)
+   )
+;; #+END_SRC
+
+;; *** TODO Show the emr menu with M-RET                              :noexport:
+
+;; ** beacon
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package beacon
+  :ensure t
+  :defer 1 ; else can't start as daemon like /home/b/p/emacs-build/lib-src/emacsclient -c -n -a \"\"
+  :config (beacon-mode 1))
+;; #+END_SRC
+
+;; ** elmacro
+
+;; I can only remember that I liked the name and the idea of this
+;; package.
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package elmacro
+:ensure t)
+;; #+END_SRC
+
+;; *** TODO What is this?                                             :noexport:
+
+;; ** git-timemachine
+
+;; #+BEGIN_SRC emacs-lisp
+(use-package git-timemachine
+:ensure t)
+;; #+END_SRC
+
+;; Start git-timemachine on a file to travel time on it.
+
+;;; From Source:
+
+(add-to-list 'load-path "~/p/elisp/external/lentic")
+(add-to-list 'load-path "~/p/elisp/external/m-buffer-el")
+(require 'lentic-mode)
+(global-lentic-mode)
+;; ** refine
+
+;; Package for editing lists.
+
+;; #+BEGIN_SRC emacs-lisp
+(add-to-list 'load-path "~/p/elisp/external/refine")
+(require 'refine)
+;; #+END_SRC
+
+;; ** slime
+
+;; #+BEGIN_SRC emacs-lisp
+(add-to-list 'load-path "~/p/elisp/external/slime")
+(require 'slime-autoloads)
+(setq inferior-lisp-program "/usr/bin/sbcl")
+(setq slime-contribs '(slime-fancy))
+;; #+END_SRC
+
+;; ** Org                                                                 :org:
+
+;; *** Personal Org Indentation
+
+;; #+BEGIN_SRC emacs-lisp
+(setq org-adapt-indentation nil
+      org-hide-leading-stars t
+      org-odd-levels-only t)
+;; #+END_SRC
+
+;; *** To Org Attachments
+
+;; #+BEGIN_SRC emacs-lisp
+(setq org-attach-commit nil)
+;; #+END_SRC
+
+;; *** Org Agenda include inactive timestamps
+
+;; #+BEGIN_SRC emacs-lisp
+(setq org-agenda-include-inactive-timestamps t) ;;
+;; (setq org-agenda-include-inactive-timestamps nil) ;; for not seeing them.
+;; #+END_SRC
+
+;; *** Org column settings
+
+;; #+BEGIN_SRC emacs-lisp
+(setq
+ org-columns-ellipses "…"
+ org-columns-default-format "%ITEM %TODO %PRIORITY %TAGS")
+;; #+END_SRC
+
+;; *** Org Babel
+
+;; **** Jump to org block bound
+
+;; The following bindings allow to find the next occurance of string '#+'
+;; which typically indicate an org-block meta thing.
+
+;; #+BEGIN_SRC emacs-lisp
+(add-hook
+ 'org-mode-hook
+ (lambda ()
+   (local-set-key
+    (kbd "C-c M-n")
+    (lambda ()
+      (interactive)
+      (end-of-line)
+      (re-search-forward "#\\+")
+      (beginning-of-line)))))
+
+(add-hook
+ 'org-mode-hook
+ (lambda ()
+   (local-set-key
+    (kbd "C-c M-p")
+    (lambda ()
+      (interactive)
+      (beginning-of-line)
+      (re-search-backward "#\\+")))))
+;; #+END_SRC
+
+;; There are useful bindings in connection with org-blocks already built
+;; in, e.g. org-next-block which sets point to the /beginning/ of the
+;; next block.
+
+;; **** Tab jump from code-block 'end' to 'begin'
+
+;; #+BEGIN_SRC emacs-lisp
+;; Experimentation for more convenient block handling.
+(defun mw-org-jump-to-beginning-of-block-maybe ()
+  "When on a closing line of a block jump to the opening line of the block."
+  (interactive)
+  (let ((case-fold-search t)
+        (org-block-end-line-regexp "^[ \t]*#\\+end_")
+        (org-block-begin-line-regexp  "^[ \t]*#\\+begin_"))
+    (when (save-excursion
+            (beginning-of-line 1)
+            (looking-at org-block-end-line-regexp))
+      (progn
+        (search-backward-regexp org-block-begin-line-regexp)
+        t ;; signal that action has been taken
+        ))))
+;; #+END_SRC
+
+;; #+BEGIN_SRC emacs-lisp
+;; Use tab-key for trigger the action.  This is done via hooking.
+(eval-after-load 'org
+  (lambda ()
+    (add-to-list 'org-tab-first-hook 'mw-org-jump-to-beginning-of-block-maybe)))
+;; #+END_SRC
+
+;; **** Convenient go up to the beginning of a block
+
+;; #+BEGIN_SRC emacs-lisp
+;; Experimentation for more convenient block handling.
+(defun mw-org-search-backward-beginning-of-block ()
+  "When on a closing line of a block jump to the opening line of the block."
+  (interactive)
+  (let ((case-fold-search t)
+        (org-block-begin-line-regexp  "^[ \t]*#\\+begin_"))
+        (search-backward-regexp org-block-begin-line-regexp)))
+;; #+END_SRC
+
+;; **** More key bindings for babeling
+
+;; #+BEGIN_SRC emacs-lisp
+(require 'ob-keys)
+
+(setq
+ org-babel-key-bindings
+ (append
+  org-babel-key-bindings
+  (list
+   (cons "m" #'org-babel-mark-block)
+   (cons "N" #'org-narrow-to-block)
+   (cons "'" #'org-edit-special)
+   (cons ">" ; jump to the end.
+         (lambda () (let ((case-fold-search t)) ; don't care about case.
+                 (search-forward-regexp "#\\+end_src")
+                 (beginning-of-line)))))))
+;; #+END_SRC
+
+;; *** Org Velocity
+
+;; org velocity is a org-mode contrib extension.
+
+;; #+BEGIN_SRC emacs-lisp
+(setq org-velocity-bucket (expand-file-name "bucket.org" org-directory))
+;; #+END_SRC
+
+;; **** History
+
+;; First i hung the C-c v in on org-mode-hook [2014-10-22 Wed 10:25] like
+
+;; #+BEGIN_SRC text
+;; (add-hook 'org-mode-hook (lambda () (local-set-key (kbd "C-c v") 'org-velocity)))
+;; #+END_SRC
+
+;; which is nice but actually org-velocity is also capable of a global
+;; capturing into the org-velocity-bucket.  This is a further possibility
+;; to capture something.
+
+;; I use the global key setting C-c v for org-velocity.
+
+;; *** Trigger property edit from the headline
+
+;; #+BEGIN_SRC emacs-lisp
+(defun mw-org-property-action ()
+  "Activate ‘org-property-action’ from headline."
+  (interactive)
+  (save-excursion
+    (org-insert-drawer t)
+    (search-forward ":PROPERTIES:\n")
+    (org-property-action)))
+;; #+END_SRC
+
+;; This function can be bound to a speed key.  See variable
+;; org-speed-commands-user.
+
+;; *** org-protocol for receiving from the outside
+
+;; #+BEGIN_SRC emacs-lisp
+(require 'org-protocol)
+;; #+END_SRC
+
+;; The org-protocol is useful for actions which come from the outside.
+;; E.g. capturing from conkeror into org.
+
+;; *** Highlight current line in agenda
+
+;; From [[gnus:nntp+news.gmane.org:gmane.emacs.orgmode#87egnh7oos.fsf@mbork.pl][Email from Marcin Borkowski: Hl-line mode in agenda]]:
+
+;; #+BEGIN_SRC emacs-lisp
+(add-hook 'org-agenda-finalize-hook (lambda () (hl-line-mode 1)))
+;; #+END_SRC
+
+;; *** Save the o-press when opening the agenda
+
+;; #+BEGIN_SRC emacs-lisp
+;(add-hook 'org-agenda-finalize-hook (lambda () (delete-other-windows)))
+(setq org-agenda-window-setup 'only-window)
+;; #+END_SRC
+
+;; **** Source
+
+;; http://mbork.pl/2015-09-26_A_few_org-agenda_hacks
+
+;; *** Delete other windows after jump from agenda
+
+;; #+BEGIN_SRC emacs-lisp
+;; (eval-after-load "org-agenda"
+;;   '(push #'delete-other-windows org-agenda-after-show-hook))
+;; #+END_SRC
+
+;; *** org-screenshot
+
+;; #+BEGIN_SRC emacs-lisp
+(push "~/p/elisp/external/org-screenshot" load-path)
+(require 'org-screenshot)
+;; #+END_SRC
+
+;; *** Disable key C-,
+
+;; Want C-, not bound to org-cycle-agenda-files, which is also on C-'
+;; anyways.
+
+;; #+BEGIN_SRC emacs-lisp
+(add-hook 'org-mode-hook (lambda () (local-unset-key (kbd "C-,"))))
+;; #+END_SRC
+
+;; *** Jump from the agenda to the stars
+
+;; In the agenda 'tab' per default jumps to the beginning of the headline
+;; text.  For me it's a bit more convenient to jump to the beginning of
+;; the stars.  Fortunately there is org-agenda-after-show-hook.
+
+;; #+BEGIN_SRC emacs-lisp
+(eval-after-load "org-agenda"
+  '(push #'beginning-of-line org-agenda-after-show-hook))
+;; #+END_SRC
+
+;; *** Speed commands also on first char
+
+;; #+BEGIN_SRC emacs-lisp
+(setq org-use-speed-commands
+      (lambda () (or (= 1 (point))
+                (and (looking-at org-outline-regexp)
+                     (looking-back "^\**")))))
+;; #+END_SRC
+
+;; Taken the looking around code from the documentation of
+;; ~org-use-speed-commands~.
+
+;; *** Refile Targets Config
+
+;; #+BEGIN_SRC emacs-lisp
+(setq org-refile-targets
+ (quote
+  ((nil :maxlevel . 7)
+   (org-agenda-files :maxlevel . 2))))
+(setq org-refile-use-outline-path (quote file))
+;; #+END_SRC
+
+;; ** gnus
+
+;; #+BEGIN_SRC emacs-lisp
+;; (push (expand-file-name "~/p/elisp/external/gnus/lisp") load-path)
+;; (require 'gnus-load)
+;; (require 'info)
+;; (add-to-list 'Info-default-directory-list "~/p/elisp/external/gnus/texi/")
+(setq gnus-registry-max-entries 500000)
+(gnus-registry-initialize) ; gnorb wants that, see (info "(gnorb)Setup").
+;; #+END_SRC
+
+;; *** To html mail in gnus
+
+;; The following helps with html-mail in some cases.
+
+;; Source: [[gnus:gnu.emacs.help#mailman.5546.1405582006.1147.help-gnu-emacs@gnu.org][Email from Tassilo Horn: Re: a dark theme?]]
+
+;; #+BEGIN_SRC emacs-lisp
+;; I don't think that has anything to do with themes, but SHR which renders
+;; HTML mail in Gnus just picks bad colors to confirm with what's declared
+;; in the HTML text.  But you can force it to require more contrast like
+;; so:
+(setq shr-color-visible-distance-min 10
+      shr-color-visible-luminance-min 60)
+;; #+END_SRC
+
+;; ** ledger
+
+;; Refer to a local version of ledger.
+
+;; #+BEGIN_SRC emacs-lisp
+(push  (expand-file-name "~/p/ledger/lisp") load-path)
+(autoload 'ledger-mode "ledger-mode" "ledger major mode")
+
+(eval-after-load 'info
+  '(progn (info-initialize)
+          (add-to-list
+           'Info-directory-list
+           (expand-file-name "~/p/ledger/doc"))))
+
+(setq ledger-reports
+      '(("bal" "ledger -f %(ledger-file) bal")
+        ("monthly bal" "ledger -p \"monthly from jan to jul\" -f %(ledger-file) bal")
+        ("bal-2015" "ledger -p 2015 -f %(ledger-file) bal")
+        ("bal-2014" "ledger -p 2014 -f %(ledger-file) bal")
+        ("bal-2014-01" "ledger -p jan -f %(ledger-file) bal")
+        ("bal-2014-02" "ledger -p feb -f %(ledger-file) bal")
+        ("bal-2014-03" "ledger -p mar -f %(ledger-file) bal")
+        ("bal-2014-04" "ledger -p apr -f %(ledger-file) bal")
+        ("bal-2014-05" "ledger -p may -f %(ledger-file) bal")
+        ("bal-2014-06" "ledger -p jun -f %(ledger-file) bal")
+        ("bal-2014-07" "ledger -p jul -f %(ledger-file) bal")
+        ("bal-2014-08" "ledger -p aug -f %(ledger-file) bal")
+        ("bal-2014-09" "ledger -p sep -f %(ledger-file) bal")
+        ("bal-2014-10" "ledger -p oct -f %(ledger-file) bal")
+        ("bal-2014-11" "ledger -p nov -f %(ledger-file) bal")
+        ("bal-2014-12" "ledger -p dec -f %(ledger-file) bal")
+        ("bal01" "ledger -p jan -f %(ledger-file) bal")
+        ("bal02" "ledger -p feb -f %(ledger-file) bal")
+        ("bal03" "ledger -p mar -f %(ledger-file) bal")
+        ("bal04" "ledger -p apr -f %(ledger-file) bal")
+        ("bal05" "ledger -p may -f %(ledger-file) bal")
+        ("bal06" "ledger -p jun -f %(ledger-file) bal")
+        ("bal07" "ledger -p jul -f %(ledger-file) bal")
+        ("bal08" "ledger -p aug -f %(ledger-file) bal")
+        ("bal09" "ledger -p sep -f %(ledger-file) bal")
+        ("bal10" "ledger -p oct -f %(ledger-file) bal")
+        ("bal11" "ledger -p nov -f %(ledger-file) bal")
+        ("bal12" "ledger -p dec -f %(ledger-file) bal")
+        ("Vermögen Feb" "ledger -p feb -f %(ledger-file) bal Vermögen")
+        ("Barkasse" "ledger -f %(ledger-file) bal Vermögen:Barkasse")
+        ("Giro" "ledger -f %(ledger-file) bal Vermögen:GiroPB")
+        ("Giro up to date" "ledger -f %(ledger-file) --end 2014-11-18 bal Vermögen:GiroPB")
+        ("reg" "ledger -f %(ledger-file) reg")
+        ("payee" "ledger -f %(ledger-file) reg @%(payee)")
+        ("account" "ledger -f %(ledger-file) reg %(account)")
+        ("bal toplevel only" "ledger -f %(ledger-file) --depth 1 bal")))
+;; #+END_SRC
+
+;; ** emms
+
+;; Emms is for playing sound.  I use emms mostly for playing internet
+;; radio.
+
+;; BTW =emms-streams= has configured some nice stations AFAICT.
+
+;; #+BEGIN_SRC emacs-lisp
+(push "~/p/elisp/external/emms/lisp" load-path)
+(require 'emms-setup)
+(emms-devel)				; adds +/- in emms-buffer.
+(emms-default-players)
+(eval-after-load 'info
+  '(progn (info-initialize)
+          (add-to-list 'Info-directory-list "~/p/elisp/external/emms/doc")))
+;; #+END_SRC
+
+;; ** Big Brother DB
+
+;; #+BEGIN_SRC emacs-lisp
+(push (expand-file-name "~/p/elisp/external/bbdb/lisp") load-path)
+(require 'bbdb-loaddefs (expand-file-name "~/p/elisp/external/bbdb/lisp/bbdb-loaddefs.el"))
+(bbdb-initialize 'gnus 'message 'anniv)
+(bbdb-mua-auto-update-init 'gnus 'message)
+(setq bbdb-mua-pop-up nil
+      ;; bbdb-mua-pop-up-window-size 0.1
+      bbdb-mua-update-interactive-p '(query . create)
+      bbdb-mua-auto-update-p 'create ; st annoying.  disable with (setf bbdb-mua-auto-update-p nil)
+      bbdb-update-records-p 'query
+      ;; bbdb-ignore-message-alist
+      ;;    '(("From" . "bugzilla-daemon"))
+      )
+(add-hook 'message-setup-hook 'bbdb-mail-aliases)
+;; [2016-02-05 Fri 13:15] this is a try...
+(add-hook 'bbdb-after-change-hook (lambda (arg) (bbdb-save)))
+;; Source [[gnus:nntp+news.gmane.org:gmane.emacs.bbdb.user#m28u2z8m57.fsf@charm-ecran.irisa.fr][Email from Alan Schmitt: Re: can I auto save the bbdb f]]
+;; ...[2016-02-05 Fri 13:15]
+;; #+END_SRC
+
+;; ** Zen reward mode
+
+;; Get points for task-status-changes in org.  But where is the zen here?
+
+;; #+BEGIN_SRC emacs-lisp
+(push (expand-file-name "~/p/elisp/external/zen-reward-mode/") load-path)
+(load-library "zen-reward-mode")
+;; #+END_SRC
+
+;; *** History
+
+;; Found this in a newsgroup.  See the source for more info.
+
+;; ** Little helpers
+
+;; My little collection of Emacs stuff.
+
+;; #+BEGIN_SRC emacs-lisp
+(push  "~/p/elisp/mw/little-helpers" load-path)
+(require 'little-helpers)
+;; #+END_SRC
+
+;; #+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "C-<") #'mw-recenter-jump-to-top)
+;; #+END_SRC
+
+;; ** Hide Buffer Part
+
+;; #+BEGIN_SRC emacs-lisp
+(push  "~/p/elisp/mw/hide-buffer-part" load-path)
+;; #+END_SRC
+
+;; ** Auxies
+
+;; Another collection of Emacs stuff.
+
+;; #+BEGIN_SRC emacs-lisp
+(push "~/p/elisp/mw/auxies" load-path)
+(require 'auxies-rest)
+;; #+END_SRC
+
+;; *** TODO Check the Source                                          :noexport:
+
+;; - Does auxies look good?
+;;   - The name is not so promising AFAICS.
+;; - Can auxies be restructured.
+
+;; *** Hacks
+
+;; #+BEGIN_SRC emacs-lisp
+(push "~/p/elisp/mw/hacks" load-path)
+(require 'hacks)
+;; #+END_SRC
+
+;; #+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "C-\"") #'org-cycle-agenda-files-backwards)
+;; #+END_SRC
+
+;; *** Auxies-eww
+
+;; #+BEGIN_SRC emacs-lisp
+(push "~/p/elisp/mw/auxies" load-path)
+(require 'auxies-eww)
+;; #+END_SRC
+
+;;; Lab:
+
+;; ** Fira Code
+
+;; The following was disappointing. [2016-07-18]
+;; source: https://github.com/tonsky/FiraCode/wiki/Setting-up-Emacs
+
+;; #+BEGIN_SRC emacs-lisp
+;;(when (window-system)
+;; (set-frame-font "Fira Code"))
+;;(let ((alist '((33 . ".\\(?:\\(?:==\\|!!\\)\\|[!=]\\)")
+;;              (35 . ".\\(?:###\\|##\\|_(\\|[#(?[_{]\\)")
+;;              (36 . ".\\(?:>\\)")
+;;              (37 . ".\\(?:\\(?:%%\\)\\|%\\)")
+;;              (38 . ".\\(?:\\(?:&&\\)\\|&\\)")
+;;              (42 . ".\\(?:\\(?:\\*\\*/\\)\\|\\(?:\\*[*/]\\)\\|[*/>]\\)")
+;;              (43 . ".\\(?:\\(?:\\+\\+\\)\\|[+>]\\)")
+;;              (45 . ".\\(?:\\(?:-[>-]\\|<<\\|>>\\)\\|[<>}~-]\\)")
+;;              (46 . ".\\(?:\\(?:\\.[.<]\\)\\|[.=-]\\)")
+;;              (47 . ".\\(?:\\(?:\\*\\*\\|//\\|==\\)\\|[*/=>]\\)")
+;;              (48 . ".\\(?:x[a-zA-Z]\\)")
+;;              (58 . ".\\(?:::\\|[:=]\\)")
+;;              (59 . ".\\(?:;;\\|;\\)")
+;;              (60 . ".\\(?:\\(?:!--\\)\\|\\(?:~~\\|->\\|\\$>\\|\\*>\\|\\+>\\|--\\|<[<=-]\\|=[<=>]\\||>\\)\\|[*$+~/<=>|-]\\)")
+;;              (61 . ".\\(?:\\(?:/=\\|:=\\|<<\\|=[=>]\\|>>\\)\\|[<=>~]\\)")
+;;              (62 . ".\\(?:\\(?:=>\\|>[=>-]\\)\\|[=>-]\\)")
+;;              (63 . ".\\(?:\\(\\?\\?\\)\\|[:=?]\\)")
+;;              (91 . ".\\(?:]\\)")
+;;              (92 . ".\\(?:\\(?:\\\\\\\\\\)\\|\\\\\\)")
+;;              (94 . ".\\(?:=\\)")
+;;              (119 . ".\\(?:ww\\)")
+;;              (123 . ".\\(?:-\\)")
+;;              (124 . ".\\(?:\\(?:|[=|]\\)\\|[=>|]\\)")
+;;              (126 . ".\\(?:~>\\|~~\\|[>=@~-]\\)"))))
+;; (dolist (char-regexp alist)
+;;   (set-char-table-range composition-function-table (car char-regexp)
+;;                         `([,(cdr char-regexp) 0 font-shape-gstring]))))
+;; #+END_SRC
+
+;; ** Move Word
+
+;; #+BEGIN_SRC emacs-lisp
+(defhydra hydra-org-drawers (global-map "C-c t")
+  "Focus on one word to transpose left or right."
+  ("n" (transpose-words 1))
+  ("p" (transpose-words -1)))
+;; #+END_SRC
+
+;; ** Capitalize Word
+
+;; Slight change to capitalize.  Capitalize the word backwards when on
+;; end of it.
+
+;; #+BEGIN_SRC emacs-lisp
+(defun mw-capitalize-word (arg)
+  "At end of word capitalize it.  Else do `capitalize-word'.
+Argument ARG see `capitalize-word'."
+  (interactive "P")
+  (unless arg
+    (when (looking-at-p  "\\>")
+      (backward-word))
+    (setf arg 1))
+  (capitalize-word arg)
+  ;; (forward-char)
+  )
+;; #+END_SRC
+
+;; #+BEGIN_SRC emacs-lisp
+(global-set-key "\M-c" #'mw-capitalize-word)
+;; #+END_SRC
+
+;; See also `toggle-letter-case'.  I possibly reinvented the wheel some
+;; AFAICS.  [2016-06-23 Thu 11:07]
+
+;; Interesting how many little details one finds when realizing such easy
+;; looking feature.
+
+;; ** Handle bottommost-tagged after sorting
+
+;; #+BEGIN_SRC emacs-lisp
+(setf org-after-sorting-entries-or-items-hook
+      (lambda ()
+        (search-forward  ":bottommost:")
+        (org-cut-subtree)
+        (goto-char (point-max))
+        (org-paste-subtree 1)))
+;; #+END_SRC
+
+;; ** Double space at end of sentences
+
+;; Function to convert single space sentence endings to double space.
+
+;; #+BEGIN_SRC emacs-lisp
+(defun if-sentence-end-space-make-it-space
+    () (interactive)
+    (let ((sentence-end-double-space nil))
+       (forward-sentence)
+       (when (looking-at " +") (replace-match "  "))))
+;; #+END_SRC
+
+;; ** Maxima
+
+;; #+BEGIN_SRC emacs-lisp
+(push "~/p/elisp/external/maxima" load-path)
+(require 'maxima)
+;; #+END_SRC
+
+;; ** Pick current agenda filter
+;; :PROPERTIES:
+;; :ID:       252fe790-d35f-4559-b9dd-7da3f4edb374
+;; :END:
+
+;; [2016-05-25 Wed 19:26] I wanted this.  Practise shall show if this
+;; helps some.
+
+;; #+BEGIN_SRC emacs-lisp
+(defun mw-org-agenda-pick-current-agenda-filters ()
+  "Set agenda command \"v\" to current settings of agenda."
+  (interactive)
+  (org-add-agenda-custom-command
+   `("v" "Volatile agenda setting" agenda ""
+     ((org-agenda-overriding-header
+       "Volatile agenda.  Set with `mw-org-agenda-pick-current-agenda-filters' on a freshly restricted agenda.")
+      (org-agenda-category-filter-preset
+       ',org-agenda-category-filter)
+      (org-agenda-tag-filter-preset
+       ',org-agenda-tag-filter)
+      (org-agenda-regexp-filter-preset
+        ',org-agenda-regexp-filter)))))
+;; #+END_SRC
+;; ** Personalize emacs-lisp-mode
+
+;; Set some personal stuff via customize.
+
+;; ** Prefix Lines with Timesstamp
+
+;; Prefix lines with a timesstamp.
+
+;; Unclear yet: Is this the shit?
+
+;; #+BEGIN_SRC emacs-lisp
+(global-set-key
+ (kbd "<f8>")
+ (lambda ()
+   (interactive)
+   (newline)
+   (org-insert-time-stamp nil t t)
+   (insert " ")))
+;; #+END_SRC
+
+;; ** org-crypt
+
+;; #+BEGIN_SRC emacs-lisp
+(eval-after-load 'org-crypt '(org-crypt-use-before-save-magic))
+;; #+END_SRC
+
+;; ** jl-encrypt                                                         :crypto:
+
+;; Don't forget the crypto.
+
+;; #+BEGIN_SRC emacs-lisp
+(push "~/p/elisp/external/jl-encrypt" load-path)
+(require 'jl-encrypt)
+;; (add-hook 'gnus-message-setup-hook #'mml-secure-encrypt-if-possible)
+;; (add-hook 'message-send-hook #'mml-secure-check-encryption-p)
+;; #+END_SRC
+
+;; ** exwm
+
+;; #+BEGIN_SRC emacs-lisp
+(require 'exwm)
+(require 'exwm-config)
+(exwm-config-default)
+(require 'exwm-randr)
+
+(setq exwm-randr-workspace-output-plist '(0 "VGA1"))
+(add-hook 'exwm-randr-screen-change-hook
+          (lambda ()
+            (start-process-shell-command
+             "xrandr" nil "xrandr --output VGA1 --left-of LVDS1 --auto")))
+(exwm-randr-enable)
+
+;; #+END_SRC
+
+;; ** Jump to other Drawers                                                :org:
+
+;; #+BEGIN_SRC emacs-lisp
+(defun org-next-drawer (count)
+  (interactive "p")
+  (search-forward-regexp org-drawer-regexp nil nil count))
+;; #+END_SRC
+
+;; #+BEGIN_SRC emacs-lisp
+(defhydra hydra-org-drawers (global-map "C-c n")
+  "Move to next drawer."
+  ("n" org-next-drawer)
+  ("p" (lambda () (interactive) (org-next-drawer -1))))
+;; #+END_SRC
+
+;; ** Convenient MozRepl Control
+;; :PROPERTIES:
+;; :ID:       b5a60402-65b7-45af-a8e4-43a8766b20b0
+;; :END:
+
+;; #+BEGIN_SRC emacs-lisp
+(defhydra hydra-moz-controller (global-map "C-c z")
+  "Use MozRepl."
+  ("+" moz-controller-zoom-in)
+  ("-" moz-controller-zoom-out)
+  ("0" moz-controller-zoom-reset)
+  ("R" moz-controller-page-refresh)
+  ("b" moz-controller-tab-previous)
+  ("f" moz-controller-tab-next)
+  ("k" moz-controller-tab-close)
+  ("l" moz-controller-get-current-url)
+  ("n" moz-controller-page-down)
+  ("p" moz-controller-page-up)
+  ("u" moz-controller-view-page-source))
+;; #+END_SRC
+
+;; ** Hide Lines in the Agenda                                             :org:
+
+;; Be able to hide a line of the org agenda.
+
+;; This is functionality that affects only the representation in an
+;; agenda buffer.
+
+;; This function can be used to scan an agenda with the "scan to
+;; nothing" technique.  Which is start at the top and hide each line
+;; you have thought of.
+
+;; #+BEGIN_SRC emacs-lisp
+(defun mw-org-agenda-hide-line-or-region ()
+  "Hide the line containing point or lines in the region from the agenda.
+This action just affects the agenda buffer and not the source of the data.
+I.e. the lines appear again at the next refresh for an agenda.
+
+Note: This function has been derived from
+`org-agenda-drag-line-forward'.
+
+Note: Of course you can make the agenda buffer writable and use
+some standard deletion functionality.  But you need to take the
+action of making the agenda buffer writable.  And also take care
+about some commands which might have a special meaning in the
+agenda buffer e.g. C-k.
+"
+  (interactive)
+  (let ((inhibit-read-only t))
+    (if (region-active-p)
+        (delete-region
+         (save-excursion
+           (goto-char (region-beginning))
+           (beginning-of-line)
+           (point))
+         (progn
+           (goto-char (region-end))
+           (when (or (not (= (region-end)
+                             (save-excursion
+                               (goto-char (region-end))
+                               (beginning-of-line)
+                               (point))))
+                     (= (point) (mark)))
+             (forward-line))
+           (point)))
+      (move-beginning-of-line 1)
+      (delete-region
+       (point)
+       (save-excursion (move-beginning-of-line 2) (point))))
+    (org-agenda-reapply-filters)
+    (org-agenda-mark-clocking-task)))
+;; #+END_SRC
+
+;; *** Keybinding
+
+;; Using the key 'h' which reminds of hide.  'h' is the standard binding
+;; to popup holidays, but they are still accessable on key 'H'.
+
+;; #+BEGIN_SRC emacs-lisp
+(eval-after-load "org-agenda"
+  '(org-defkey org-agenda-mode-map (kbd "h") #'mw-org-agenda-hide-line-or-region))
+;; #+END_SRC
+
+;; ** A key for Info-search-next                                          :info:
+
+;; *** Example
+
+;; X wants to find "mysearchstring" muliple times.  It's possible already
+;; by typing
+
+;; s mysearchstring
+;; s RET
+;; s RET
+
+;; With the key setting below the sequence above simplifies to
+
+;; s mysearchstring
+;; a
+;; a
+
+;; #+BEGIN_SRC emacs-lisp
+(eval-after-load 'info
+  '(progn (define-key Info-mode-map (kbd "a") #'Info-search-next)))
+;; #+END_SRC
+
+;; 
+;; # Local Variables:
+;; # lentic-init: lentic-orgel-org-init
+;; # eval: (git-auto-commit-mode)
+;; # End:
+
+;; ** Last line
+
+;;; init:.el ends here
