@@ -2611,6 +2611,14 @@ Originates from gnu.emacs.help group 2006."
 ;; [2016-02-08 Mon 12:57] Possibly drop usage of the custom file
 ;; entirely for more clarity in the init process.
 
+;;; Config:
+
+;; ** helm-bibtex
+
+;; #+BEGIN_SRC emacs-lisp
+(setq bibtex-completion-bibliography (expand-file-name "~/media/references/references.bib"))
+;; #+END_SRC
+
 ;;; Keysettings:
 ;; :PROPERTIES:
 ;; :ID:       87eef969-ff13-4812-9c4e-2c79f9c3f7c6
