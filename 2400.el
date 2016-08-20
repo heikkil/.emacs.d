@@ -2398,6 +2398,59 @@ This binding shall make the close more convenient."
             (prettify-symbols-mode 1)))
 ;; #+END_SRC
 
+;; ** Natural Language Environment
+
+;; Convenient switching of the input-method and the spell-checking.
+
+;; This code is derived from http://www.emacswiki.org/emacs/FlySpell
+
+;; #+BEGIN_SRC emacs-lisp
+(defvar mw-lang-inputmethod-ring)
+
+(let ((langs-inputmethods '(("deutsch" "german-prefix") ("american" nil))))
+  (setq mw-lang-inputmethod-ring (make-ring (length langs-inputmethods)))
+  (dolist (elem langs-inputmethods)
+    (ring-insert mw-lang-inputmethod-ring elem)))
+
+(defun cycle-ispell-language-and-input-method ()
+  "Use the next language setting from mw-langs-inputmethod-ring."
+  (interactive)
+  (let ((lang-inputmethod (ring-ref mw-lang-inputmethod-ring -1)))
+    (ring-insert mw-lang-inputmethod-ring lang-inputmethod)
+    (ispell-change-dictionary (car lang-inputmethod))
+    (set-input-method (cadr lang-inputmethod))))
+;; #+END_SRC
+
+;; #+BEGIN_SRC emacs-lisp
+;; [2014-07-08 Tue 11:34] Idea: one could also switch the completer
+;; dictionary on M-tab.  (setq ispell-complete-word-dict
+;; "/usr/share/dict/ngerman")
+
+(let ((the-dicts '("/usr/share/dict/ngerman"
+                   "/usr/share/dict/french"
+                   "/usr/share/dict/words")))
+  (setq mw-dict-ring (make-ring (length the-dicts)))
+  (dolist (elem the-dicts) (ring-insert mw-dict-ring elem)))
+
+(defun mw-cycle-ispell-completion-dict ()
+  (interactive)
+  (let ((dict (ring-ref mw-dict-ring -1)))
+    (ring-insert mw-dict-ring dict)
+    (setq ispell-alternate-dictionary  ;; ISSUE: which of these variables
+          ;; ispell-complete-word-dict ;; should be taken here?
+          dict)
+    (message (concat dict " set for ispell completion."))))
+;; #+END_SRC
+
+;; ** Scroll-Lock-Mode
+
+;; Scroll lock mode gives another buffer movement feeling.
+
+;; #+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "<Scroll_Lock> m") 'scroll-lock-mode)
+;; #+END_SRC
+;; ** Local Variables
+
 ;; 
 ;; # Local Variables:
 ;; # lentic-init: lentic-orgel-org-init
