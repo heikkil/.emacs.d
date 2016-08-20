@@ -2582,7 +2582,7 @@ Originates from gnu.emacs.help group 2006."
 (add-hook 'emacs-lisp-mode-hook #'checkdoc-minor-mode)
 ;; #+END_SRC
 
-;;; Customize: Settings
+;; Customize: Settings
 
 ;; Emacs allows to specify the storage-location of customization done via
 ;; the emacs-customize interface.  The default is to keep the
