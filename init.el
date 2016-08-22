@@ -243,6 +243,7 @@
             (wrap-region-add-wrapper "`" "'")
             (wrap-region-add-wrapper "~" "~" nil 'org-mode)
             (wrap-region-add-wrapper "=" "=" nil 'org-mode)
+            (wrap-region-add-wrapper "#+BEGIN_SRC \n" "\n#+END_SRC" "s" 'org-mode)
             (wrap-region-add-wrapper "#+BEGIN_QUOTE\n" "\n#+END_QUOTE" "q" 'org-mode)))
 ;; #+END_SRC
 ;; ** auth-password-store
