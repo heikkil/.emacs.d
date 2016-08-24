@@ -2855,7 +2855,7 @@ easily create a new frame."
 (appt-activate 1)    ; enable
 
 ;; (org-agenda-list)
-(switch-to-buffer "*Org Agenda*")
+;; (switch-to-buffer "*Org Agenda*")
 
 ;; Vision: Extend the following code to be like the computer in the
 ;; Heart of Gold.  E.g. be able to start a conversation like "Hey
