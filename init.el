@@ -2851,7 +2851,7 @@ easily create a new frame."
 ;; Let Emacs say something at start.
 
 ;; #+BEGIN_SRC emacs-lisp
-(org-agenda-list)
+;; (org-agenda-list)
 (add-hook 'org-finalize-agenda-hook 'org-agenda-to-appt) ; I want this!
 (appt-activate 1)    ; enable
 (switch-to-buffer "*Org Agenda*")
