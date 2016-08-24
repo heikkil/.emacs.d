@@ -1235,6 +1235,7 @@
 
 ;; [2016-08-24 Wed 09:02] next try
 ;; https://github.com/tonsky/FiraCode/wiki/Setting-up-Emacs
+;; https://gist.github.com/mordocai/50783defab3c3d1650e068b4d1c91495
 
 ;; This works when using emacs --daemon + emacsclient
 ;; (add-hook 'after-make-frame-functions (lambda (frame) (set-fontset-font t '(#Xe100 . #Xe16f) "Fira Code Symbol")))
