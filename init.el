@@ -1369,8 +1369,8 @@
 (defun add-fira-code-symbol-keywords ()
   (font-lock-add-keywords nil fira-code-font-lock-keywords-alist))
 
-(add-hook 'prog-mode-hook
-          #'add-fira-code-symbol-keywords)
+;; (add-hook 'prog-mode-hook
+;;           #'add-fira-code-symbol-keywords)
 
 ;; ** Move Word
 
