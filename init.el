@@ -687,7 +687,7 @@
 
   ;; (add-load-hook "page-ext" '(define-key pages-directory-mode-map "q"
   ;;                              'quit-window)) ; fix for hyperbole page-ext conflict.
-  ;; 
+  ;;
   ;;  (require 'hyperbole)
 
 ;; (require 'package)
@@ -2707,7 +2707,8 @@ Originates from gnu.emacs.help group 2006."
         #'ido-find-file
       #'find-file-at-point))))
 
-; (require 'page-ext)
+;; activate some page-related extensions
+(require 'page-ext)
 
 (display-time)
 ;; #+END_SRC
