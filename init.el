@@ -687,6 +687,7 @@
 
   (add-load-hook "page-ext" '(define-key pages-directory-mode-map "q"
                                'quit-window)) ; fix for hyperbole page-ext conflict.
+(require 'hyperbole)
   )
 ;; (require 'package)
 ;; (setq package-check-signature nil
@@ -695,9 +696,8 @@
 ;; ;; (package-initialize)
 ;; (unless (package-installed-p 'hyperbole)
 ;;   (package-refresh-contents)
-(package-install 'hyperbole)
+;; (package-install 'hyperbole)
 ;; )
-(require 'hyperbole)
 ;; #+END_SRC
 
 ;; #+BEGIN_SRC emacs-lisp
