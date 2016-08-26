@@ -114,6 +114,22 @@
 (require 'org)
 ;; #+END_SRC
 
+;; ** Package Resources
+
+;; The gnu package repo is not included from the start.
+
+;; #+BEGIN_SRC emacs-lisp
+(setf package-archives nil)
+(add-to-list 'package-archives '("mw" . "/home/b/p/elisp/mw/packs/") t)
+(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/") t)
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+(add-to-list 'package-archives '("RSW-Packages" . "http://www.plasmas.biz/rswe/") t)
+;; #+END_SRC
+
+;; [2016-02-08 Mon 12:57] Possibly drop usage of the custom file
+;; entirely for more clarity in the init process.
+
 ;; ** Package Initialization
 
 ;; #+BEGIN_SRC emacs-lisp
@@ -2743,22 +2759,6 @@ Originates from gnu.emacs.help group 2006."
 (setq custom-file "~/.emacs.d/init/.emacs-custom.el")
 (load custom-file)
 ;; #+END_SRC
-
-;; ** Package Resources
-
-;; The gnu package repo is not included from the start.
-
-;; #+BEGIN_SRC emacs-lisp
-(setf package-archives nil)
-(add-to-list 'package-archives '("mw" . "/home/b/p/elisp/mw/packs/") t)
-(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/") t)
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
-(add-to-list 'package-archives '("RSW-Packages" . "http://www.plasmas.biz/rswe/") t)
-;; #+END_SRC
-
-;; [2016-02-08 Mon 12:57] Possibly drop usage of the custom file
-;; entirely for more clarity in the init process.
 
 ;;; Config:
 
