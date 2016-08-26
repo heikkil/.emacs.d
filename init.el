@@ -683,8 +683,8 @@
 ;; Give hyperbole a try.
 
 ;; #+BEGIN_SRC emacs-lisp
+(require 'page-ext)
 (use-package hyperbole
-
   (add-load-hook "page-ext" '(define-key pages-directory-mode-map "q"
                                'quit-window)) ; fix for hyperbole page-ext conflict.
 (require 'hyperbole)
@@ -2704,7 +2704,7 @@ Originates from gnu.emacs.help group 2006."
     (if prefix
         #'ido-find-file
       #'find-file-at-point))))
-(require 'page-ext)
+
 (display-time)
 ;; #+END_SRC
 
