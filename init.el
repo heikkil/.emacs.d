@@ -683,12 +683,13 @@
 ;; Give hyperbole a try.
 
 ;; #+BEGIN_SRC emacs-lisp
-(require 'page-ext)
-(use-package hyperbole
-  (add-load-hook "page-ext" '(define-key pages-directory-mode-map "q"
-                               'quit-window)) ; fix for hyperbole page-ext conflict.
-  (require 'hyperbole)
-  )
+
+
+  ;; (add-load-hook "page-ext" '(define-key pages-directory-mode-map "q"
+  ;;                              'quit-window)) ; fix for hyperbole page-ext conflict.
+  ;; 
+  ;;  (require 'hyperbole)
+
 ;; (require 'package)
 ;; (setq package-check-signature nil
 ;;       package-enable-at-startup nil) ;; Prevent double loading of libraries
@@ -2691,10 +2692,11 @@ Originates from gnu.emacs.help group 2006."
 (eval-after-load "erc" '(require 'erc-dcc))
 ;; #+END_SRC
 
-;; ** Personal General Emacs Settings
+;; ** Personal Emacs Settings
 
 ;; #+BEGIN_SRC emacs-lisp
 (defalias 'yes-or-no-p 'y-or-n-p)
+
 (ffap-bindings)
 (global-set-key
  ""
@@ -2704,6 +2706,8 @@ Originates from gnu.emacs.help group 2006."
     (if prefix
         #'ido-find-file
       #'find-file-at-point))))
+
+; (require 'page-ext)
 
 (display-time)
 ;; #+END_SRC
