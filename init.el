@@ -699,20 +699,13 @@
 ;; Give hyperbole a try.
 
 ;; #+BEGIN_SRC emacs-lisp
-(require 'package)
-(setq package-enable-at-startup nil) ;; Prevent double loading of libraries
-(package-initialize)
-(unless (package-installed-p 'hyperbole)
-  (package-refresh-contents)
-  (package-install 'hyperbole))
-(require 'hyperbole)
-
-(add-to-list 'package-archives '("RSW-Packages" . "http://www.plasmas.biz/rswe/") t)
-;; ;; (package-initialize)
+;; (require 'package)
+;; (setq package-enable-at-startup nil) ;; Prevent double loading of libraries
+;; (package-initialize)
 ;; (unless (package-installed-p 'hyperbole)
 ;;   (package-refresh-contents)
-;; (package-install 'hyperbole)
-;; )
+;;   (package-install 'hyperbole))
+(require 'hyperbole)
 ;; #+END_SRC
 
 ;; #+BEGIN_SRC emacs-lisp
