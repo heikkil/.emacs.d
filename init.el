@@ -683,15 +683,21 @@
 ;; Give hyperbole a try.
 
 ;; #+BEGIN_SRC emacs-lisp
+(use-package hyperbole
+
+  (add-load-hook "page-ext" '(define-key pages-directory-mode-map "q"
+                               'quit-window)) ; fix for hyperbole page-ext conflict.
+  )
 ;; (require 'package)
 ;; (setq package-check-signature nil
 ;;       package-enable-at-startup nil) ;; Prevent double loading of libraries
-;; (add-to-list 'package-archives '("RSW-Packages" . "http://www.plasmas.biz/rswe/") t)
+(add-to-list 'package-archives '("RSW-Packages" . "http://www.plasmas.biz/rswe/") t)
 ;; ;; (package-initialize)
 ;; (unless (package-installed-p 'hyperbole)
 ;;   (package-refresh-contents)
-;;   (package-install 'hyperbole))
-;; (require 'hyperbole)
+(package-install 'hyperbole)
+;; )
+(require 'hyperbole)
 ;; #+END_SRC
 
 ;; #+BEGIN_SRC emacs-lisp
