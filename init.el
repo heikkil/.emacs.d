@@ -687,7 +687,7 @@
 (use-package hyperbole
   (add-load-hook "page-ext" '(define-key pages-directory-mode-map "q"
                                'quit-window)) ; fix for hyperbole page-ext conflict.
-(require 'hyperbole)
+  (require 'hyperbole)
   )
 ;; (require 'package)
 ;; (setq package-check-signature nil
