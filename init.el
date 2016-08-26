@@ -90,7 +90,7 @@
 ;; This has something!
 
 ;; #+BEGIN_SRC emacs-lisp
-;; (setq initial-frame-alist '((minibuffer . nil)))
+(setq initial-frame-alist '((minibuffer . nil)))
 ;; (setq default-frame-alist '((minibuffer . nil)))
 ;; #+END_SRC
 
