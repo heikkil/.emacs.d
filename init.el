@@ -2717,6 +2717,7 @@ Originates from gnu.emacs.help group 2006."
 ;; activate some page-related extensions
 (require 'page-ext)
 (define-key pages-directory-mode-map "q" 'quit-window)
+(define-key pages-directory-mode-map "q" 'ignore)
 
 (display-time)
 ;; #+END_SRC
