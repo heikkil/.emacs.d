@@ -711,6 +711,7 @@
 ;; #+BEGIN_SRC emacs-lisp
 ;; (org-defkey org-mode-map (kbd "<C-M-return>") #'hkey-either)
 (global-set-key (kbd "<C-M-return>") #'hkey-either)
+(org-defkey org-mode-map "\C-c."    'org-time-stamp)
 ;; #+END_SRC
 
 ;; ** emr
