@@ -711,7 +711,9 @@
 ;; #+BEGIN_SRC emacs-lisp
 ;; (org-defkey org-mode-map (kbd "<C-M-return>") #'hkey-either)
 (global-set-key (kbd "<C-M-return>") #'hkey-either)
-(org-defkey org-mode-map "\C-c."    'org-time-stamp)
+
+(add-hook 'org-mode-hook (lambda () (org-defkey org-mode-map "\C-c."    'org-time-stamp))) ;; override a binding of hyperbole for org-mode
+
 ;; #+END_SRC
 
 ;; ** emr
