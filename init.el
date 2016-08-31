@@ -1688,6 +1688,13 @@ agenda buffer e.g. C-k.
   (interactive)
   (setq org-extend-today-until
         (truncate (- (/ (org-time-stamp-to-now (org-read-date) t) 60 60)))))
+
+(defun mw-org-timemachine-reset ()
+  "Reset timetravel to zero."
+  ;; For me it's okay, but maybe better reset to the original
+  ;; value which might have been something.different from zero.
+  (interactive)
+  (setq org-extend-today-until 0))
 ;; #+END_SRC
 
 ;; ** Unset a Register
