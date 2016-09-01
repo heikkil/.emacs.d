@@ -2325,6 +2325,7 @@ Rename a possibly existing buffer *eww*."
         (region-end))))
 ;; #+END_SRC
 
+
 ;; ** Hidden mode line
 
 ;; Found the following mode line hiding function at
@@ -2409,6 +2410,14 @@ This binding shall make the close more convenient."
             ;; (setq dired-guess-shell-gnutar "gtar")
             ;; (setq dired-x-hands-off-my-keys nil)
             ))
+;; #+END_SRC
+
+;; ** eww on file in dired
+
+;; Setting key e for opening a file in eww.  Note there is already key
+;; W for opening a file of dired in a browser.
+
+;; #+BEGIN_SRC emacs-lisp
 (add-hook 'dired-mode-hook
           (lambda ()
             ;; Set dired-x buffer-local variables here.  For example:
