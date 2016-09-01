@@ -2315,6 +2315,8 @@ Rename a possibly existing buffer *eww*."
 
 ;; *** eww on region
 
+;; eww
+
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-eww-on-region ()
   (interactive)
