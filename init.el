@@ -2318,7 +2318,7 @@ Rename a possibly existing buffer *eww*."
 ;; eww
 
 ;; #+BEGIN_SRC emacs-lisp
-(defun mw-eww-on-region ()
+(defun mw-eww-trigger-with-region-text ()
   (interactive)
   (eww (buffer-substring
         (region-beginning)
