@@ -2414,8 +2414,8 @@ This binding shall make the close more convenient."
 
 ;; ** eww on file in dired
 
-;; Setting key e for opening a file in eww.  Note there is already key
-;; W for opening a file of dired in a browser.
+;; Setting key e for opening the file at point in eww.  Note there is
+;; already key W for opening the file at point in some browser.
 
 ;; #+BEGIN_SRC emacs-lisp
 (add-hook 'dired-mode-hook
