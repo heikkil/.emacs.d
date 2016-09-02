@@ -712,7 +712,9 @@
 ;; (org-defkey org-mode-map (kbd "<C-M-return>") #'hkey-either)
 (global-set-key (kbd "<C-M-return>") #'hkey-either)
 
-(add-hook 'org-mode-hook (lambda () (local-set-key (kbd "C-c .") 'org-time-stamp))) ;; override a binding of hyperbole for org-mode
+(add-hook 'org-mode-hook
+          (lambda () (local-set-key (kbd "C-c .")
+                               'org-time-stamp))) ;; override a binding of hyperbole for org-mode
 ;; #+END_SRC
 
 ;; ** emr
@@ -2748,7 +2750,7 @@ Originates from gnu.emacs.help group 2006."
 ;; activate some page-related extensions
 (require 'page-ext)
 (define-key pages-directory-mode-map "q" 'quit-window) ; fixes hyperbole
-(define-key pages-directory-mode-map "q" 'ignore)
+;; (define-key pages-directory-mode-map "q" 'ignore)
 
 (display-time)
 ;; #+END_SRC
