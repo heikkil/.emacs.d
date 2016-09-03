@@ -1214,6 +1214,12 @@
 
 ;;; Lab:
 
+Location of research emacs-libraries.
+
+;; #+BEGIN_SRC emacs-lisp
+(push "~/p/elisp/mw/lab" load-path)
+;; #+END_SRC
+
 ;; ** Fira Code
 
 ;; The following was disappointing. [2016-07-18]
