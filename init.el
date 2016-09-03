@@ -1214,7 +1214,7 @@
 
 ;;; Lab:
 
-Location of research emacs-libraries.
+;; Location of research emacs-libraries.
 
 ;; #+BEGIN_SRC emacs-lisp
 (push "~/p/elisp/mw/lab" load-path)
