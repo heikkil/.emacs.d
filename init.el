@@ -1218,6 +1218,7 @@ Location of research emacs-libraries.
 
 ;; #+BEGIN_SRC emacs-lisp
 (push "~/p/elisp/mw/lab" load-path)
+(require 'mw-marking)
 ;; #+END_SRC
 
 ;; ** Fira Code
