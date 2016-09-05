@@ -1695,6 +1695,9 @@ agenda buffer e.g. C-k.
 
 ;; ***** Timetravel Org
 
+;; When you want to see or change something in the agenda at a
+;; different day the following functions might be helpful.
+
 ;; This fun allows (afaict) the view on an Org agenda when setting an
 ;; other date as current.
 
