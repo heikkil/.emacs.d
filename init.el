@@ -1699,13 +1699,13 @@ agenda buffer e.g. C-k.
 ;; other date as current.
 
 ;; #+BEGIN_SRC emacs-lisp
-(defun mw-org-timemachine ()
+(defun mw-org-timemachine-set-other-today ()
   "Choose a day from the calendar as today for Org."
   (interactive)
   (setq org-extend-today-until
         (truncate (- (/ (org-time-stamp-to-now (org-read-date) t) 60 60)))))
 
-(defun mw-org-timemachine-reset ()
+(defun mw-org-timemachine-reset-today ()
   "Reset timetravel to zero."
   ;; For me it's okay, but maybe better reset to the original
   ;; value which might have been something.different from zero.
