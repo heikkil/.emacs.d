@@ -2020,8 +2020,8 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
         ;; going to an org buffer is necessary for starting
         ;; an org timer.
         (mw-org-trigger-timer-for-pause
-         (if (% *mw-pomodoros-completed-in-session*
-                *mw-pomodoros-before-longer-break*)
+         (if (= 0 (% *mw-pomodoros-completed-in-session*
+                     *mw-pomodoros-before-longer-break*))
              *mw-pomodoro-pause-duration*
            *mw-pomodoro-longer-pause-duration*))
         (message
