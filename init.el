@@ -2014,15 +2014,15 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
           )
       (progn
         (setq *mw-pomodoros-completed-in-session*
-              (if (= *mw-pomodoros-before-longer-break* (1+ *mw-pomodoros-completed-in-session*))
-                  0
-                (1+ *mw-pomodoros-completed-in-session*)))
+              (1+ *mw-pomodoros-completed-in-session*))
         (org-clock-goto)
         ;; going to an org buffer is necessary for starting
         ;; an org timer.
-        (mw-org-trigger-timer-for-pause (if (= 0 *mw-pomodoros-completed-in-session*)
-                                            *mw-pomodoro-longer-pause-duration*
-                                          *mw-pomodoro-pause-duration*))
+        (mw-org-trigger-timer-for-pause
+         (if (% *mw-pomodoros-completed-in-session*
+                *mw-pomodoros-before-longer-break*)
+             *mw-pomodoro-pause-duration*
+           *mw-pomodoro-longer-pause-duration*))
         (message
          "Tomato done at %s.  Il est vraiment temps de prendre une pause."
          (format-time-string "%T"))
