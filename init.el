@@ -1947,6 +1947,7 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
 ;; So that drag’n’drop with the left mouse button and control and shift
 ;; pressed is bound to the command above.
 
+
 ;; ** Pomodoro
 
 ;; Support the famous tomato-technique.  The idea is to work
@@ -2064,6 +2065,7 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
     (error "Mw-org-trigger-timer-for-pause: Not in an Org buffer")))
 ;; #+END_SRC
 
+
 ;; ** navi-mode
 
 ;; Recall function [[help:navi-search-and-switch][navi-search-and-switch]] to activate a navi-buffer.
