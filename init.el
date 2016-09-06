@@ -1416,10 +1416,6 @@
 ;; Slight change to capitalize.  Capitalize the word backwards when on
 ;; end of it.
 
-;; [2016-09-06 Tue 11:31] not so happy with this command because
-;; point gets stuck at the end of a word when repeating the command.
-;; Just discovered capitalize-dwim.  What is capitalize-dwim?
-
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-capitalize-word (arg)
   "At end of word capitalize it.  Else do `capitalize-word'.
@@ -1433,6 +1429,10 @@ Argument ARG see `capitalize-word'."
   ;; (forward-char)
   )
 ;; #+END_SRC
+
+;; [2016-09-06 Tue 11:31] not so happy with this command because
+;; point gets stuck at the end of a word when repeating the command.
+;; Just discovered capitalize-dwim.  What is capitalize-dwim?
 
 ;; #+BEGIN_SRC emacs-lisp
 ;; (global-set-key "\M-c" #'mw-capitalize-word)
