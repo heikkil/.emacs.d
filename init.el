@@ -1965,7 +1965,7 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
 (defvar *mw-pomodoros-completed-in-session* 0
   "Number of pomodoros in the current emacs-session.")
 
-(defvar *mw-pomodoros-before-longer-break* 4
+(defvar *mw-pomodoros-before-longer-break* 3
   "Number of pomodoros to reach for a longer break.")
 
 (defcustom *mw-pomodoro-pause-duration* 3
