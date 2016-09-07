@@ -2022,8 +2022,8 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
         (mw-org-trigger-timer-for-pause
          (if (= 0 (% *mw-pomodoros-completed-in-session*
                      *mw-pomodoros-before-longer-break*))
-             *mw-pomodoro-pause-duration*
-           *mw-pomodoro-longer-pause-duration*))
+             *mw-pomodoro-longer-pause-duration*
+           *mw-pomodoro-pause-duration*))
         (message
          "Tomato done at %s.  Il est vraiment temps de prendre une pause."
          (format-time-string "%T"))
@@ -2062,7 +2062,7 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
         (org-timer-set-timer '(64))
         (setq org-timer-default-timer saved-org-timer-default-timer)
         (setq mw-org-pause-state t))
-    (error "Mw-org-trigger-timer-for-pause: Not in an Org buffer")))
+    (error "mw-org-trigger-timer-for-pause: Not in an Org buffer")))
 ;; #+END_SRC
 
 
