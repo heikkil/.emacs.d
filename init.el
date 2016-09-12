@@ -1995,6 +1995,8 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
 ;; improve and go into the details...
 (setf org-show-notification-handler #'ignore)
 
+(setq mw-org-pause-state nil) ; TODO: make mw-org-pause-state more locally, please!
+
 (add-hook
  'org-timer-done-hook
  '(lambda ()
@@ -2038,8 +2040,6 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
                        "125" ;; word speed
                        "The tomato rings.  Take a rest, now, please.")
         (zone-nyan-preview)))))
-
-(setq mw-org-pause-state nil) ; TODO: make mw-org-pause-state more locally, please!
 
 (defun mw-org-trigger-timer-for-pause (&optional duration)
   "Start a timer for a pause of `DURATION' minutes.
