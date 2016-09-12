@@ -2039,7 +2039,7 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
                        "The tomato rings.  Take a rest, now, please.")
         (zone-nyan-preview)))))
 
-(setq mw-org-pause-state nil) ; global.  TODO: can this be more locally, please?
+(setq mw-org-pause-state nil) ; TODO: make mw-org-pause-state more locally, please!
 
 (defun mw-org-trigger-timer-for-pause (&optional duration)
   "Start a timer for a pause of `DURATION' minutes.
