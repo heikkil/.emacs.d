@@ -713,8 +713,11 @@
 (global-set-key (kbd "<C-M-return>") #'hkey-either)
 
 (add-hook 'org-mode-hook
-          (lambda () (local-set-key (kbd "C-c .")
-                               'org-time-stamp))) ;; override a binding of hyperbole for org-mode
+          (lambda () (local-set-key [f10] #'org-time-stamp)))
+(add-hook 'org-mode-hook
+          (lambda () (local-set-key (kbd "C-c .") ; no success to override of the hyperbole 'C-c .' like so.
+                               'org-time-stamp)))
+;; override a binding of hyperbole for org-mode
 ;; #+END_SRC
 
 ;; ** emr
