@@ -705,7 +705,7 @@
 ;; (unless (package-installed-p 'hyperbole)
 ;;   (package-refresh-contents)
 ;;   (package-install 'hyperbole))
-(require 'hyperbole)
+;;;uncomment this to activate hyperbole: (require 'hyperbole)
 ;; #+END_SRC
 
 ;; #+BEGIN_SRC emacs-lisp
@@ -1605,8 +1605,9 @@ Argument ARG see `capitalize-word'."
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-org-agenda-hide-line-or-region ()
   "Hide the line containing point or lines in the region from the agenda.
-This action just affects the agenda buffer and not the source of the data.
-I.e. the lines appear again at the next refresh for an agenda.
+This action is just cosmetics in the agenda buffer and does not
+affect the sources.  I.e. the lines appear again at the next
+refresh for an agenda.
 
 Note: This function has been derived from
 `org-agenda-drag-line-forward'.
