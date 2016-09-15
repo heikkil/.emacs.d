@@ -41,10 +41,12 @@
 ;; [2015-07-23 Thu 12:19] Currently for lentic to work reasonably the top
 ;; level headings must consist of exactly one word.
 
+;; 
 ;;; Commentary:                                            :artificial:noexport:
 
 ;; This section exists to please checkdoc, the elisp documentation checker.
 
+;; 
 ;;; Code:                                                  :artificial:noexport:
 
 ;;; Firstfirst:
