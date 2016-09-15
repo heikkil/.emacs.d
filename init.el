@@ -1417,6 +1417,8 @@
 
 ;; **
 
+;; #+BEGIN_SRC emacs-lisp
+
 ;; (defun mw-org-colums-modify-some (column-title value)
 ;;   (if (string= "ITEM" column-title)
 ;;       value))
