@@ -44,7 +44,8 @@
 ;; **** Issues
 
 ;;  - [2016-09-15 Thu 11:30] The setting of `max-lisp-eval-depth' has been an issue.
-;;  - [2016-09-15 Thu 11:30] Setting `max-lisp-eval-depth' to 10000 (from 800) fixed the issue.
+;;  - [2016-09-15 Thu 11:30] Setting `max-lisp-eval-depth' to 10000
+;;    (from 800) fixed the issue.
 
 ;; *** Meta trick
 
