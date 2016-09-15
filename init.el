@@ -1415,7 +1415,7 @@
 ;; (add-hook 'prog-mode-hook
 ;;           #'add-fira-code-symbol-keywords)
 
-;; **
+;; ** gaa
 
 ;; #+BEGIN_SRC emacs-lisp
 
@@ -1424,6 +1424,7 @@
 ;;       value))
 
 ;; (setq org-columns-modify-value-for-display-function 'mw-org-colums-modify-some)
+;; #+END_SRC
 ;; ** Move Word
 
 ;; #+BEGIN_SRC emacs-lisp
