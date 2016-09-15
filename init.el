@@ -1415,6 +1415,13 @@
 ;; (add-hook 'prog-mode-hook
 ;;           #'add-fira-code-symbol-keywords)
 
+;; **
+
+;; (defun mw-org-colums-modify-some (column-title value)
+;;   (if (string= "ITEM" column-title)
+;;       value))
+
+;; (setq org-columns-modify-value-for-display-function 'mw-org-colums-modify-some)
 ;; ** Move Word
 
 ;; #+BEGIN_SRC emacs-lisp
