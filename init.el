@@ -41,6 +41,13 @@
 ;; [2015-07-23 Thu 12:19] Currently for lentic to work reasonably the top
 ;; level headings must consist of exactly one word.
 
+;; **** Issues
+
+;;  - [2016-09-15 Thu 11:30] The setting of `max-lisp-eval-depth' has been an issue.
+;;  - [2016-09-15 Thu 11:30] Setting `max-lisp-eval-depth' to 10000 (from 800) fixed the issue.
+
+;; *** Meta trick
+
 ;; 
 ;;; Commentary:                                            :artificial:noexport:
 
@@ -769,10 +776,10 @@
 
 ;;; From: Source:
 
-(add-to-list 'load-path "~/p/elisp/external/lentic")
-(add-to-list 'load-path "~/p/elisp/external/m-buffer-el")
-(require 'lentic-mode)
-(global-lentic-mode)
+;; (add-to-list 'load-path "~/p/elisp/external/lentic")
+;; (add-to-list 'load-path "~/p/elisp/external/m-buffer-el")
+;; (require 'lentic-mode)
+;; (global-lentic-mode)
 ;; ** refine
 
 ;; Package for editing lists.
@@ -1953,7 +1960,7 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
 ;; So that drag’n’drop with the left mouse button and control and shift
 ;; pressed is bound to the command above.
 
-
+;; 
 ;; ** Pomodoro
 
 ;; Support the famous tomato-technique.  The idea is to work
@@ -2071,7 +2078,7 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
     (error "mw-org-trigger-timer-for-pause: Not in an Org buffer")))
 ;; #+END_SRC
 
-
+;; 
 ;; ** navi-mode
 
 ;; Recall function [[help:navi-search-and-switch][navi-search-and-switch]] to activate a navi-buffer.
