@@ -1415,16 +1415,16 @@
 ;; (add-hook 'prog-mode-hook
 ;;           #'add-fira-code-symbol-keywords)
 
-;; ** gaa
+;; ** Drop the stars from ITEM in column view                              :org:
 
 ;; #+BEGIN_SRC emacs-lisp
+(defun mw-org-colums-modify-some (column-title value)
+  (if (string= "ITEM" column-title)
+      value))
 
-;; (defun mw-org-colums-modify-some (column-title value)
-;;   (if (string= "ITEM" column-title)
-;;       value))
-
-;; (setq org-columns-modify-value-for-display-function 'mw-org-colums-modify-some)
+(setq org-columns-modify-value-for-display-function 'mw-org-colums-modify-some)
 ;; #+END_SRC
+
 ;; ** Move Word
 
 ;; #+BEGIN_SRC emacs-lisp
