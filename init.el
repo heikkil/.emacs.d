@@ -720,7 +720,8 @@
 
 ;; #+BEGIN_SRC emacs-lisp
 ;; (org-defkey org-mode-map (kbd "<C-M-return>") #'hkey-either)
-(global-set-key (kbd "<C-M-return>") #'hkey-either)
+(global-set-key (kbd "C-M-6") #'hkey-either)
+(global-set-key (kbd "C-M-7") #'assist-key)
 
 (add-hook 'org-mode-hook
           (lambda () (local-set-key [f10] #'org-time-stamp)))
