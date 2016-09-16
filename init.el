@@ -383,7 +383,6 @@
 
 ;; ** lentic
 
-;; Note: Currently I use lentic from source.
 ;; Activattion of lentic as proposed in lentics documentation lentic.el.
 
 ;; #+BEGIN_SRC emacs-lisp
