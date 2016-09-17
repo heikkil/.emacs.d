@@ -793,7 +793,7 @@
 
 ;; ** slime
 
-;; *** via local-git
+;; *** the local-git slime
 
 ;; #+BEGIN_SRC emacs-lisp
 ;; (add-to-list 'load-path "~/p/elisp/external/slime")
@@ -806,7 +806,8 @@
 ;;                        "~/p/elisp/external/slime/doc")))
 ;; #+END_SRC
 
-;; *** via quicklisp
+;; *** the quicklisp slime
+
 ;; CL-USER> (ql:quickload "quicklisp-slime-helper")
 ;; To use, add this to your ~/.emacs:
 
