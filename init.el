@@ -815,8 +815,6 @@
 (setq inferior-lisp-program "sbcl")
 ;; #+END_SRC
 
-CL-USER> 
-
 ;; ** Org                                                                 :org:
 
 ;; *** Personal Org Indentation
