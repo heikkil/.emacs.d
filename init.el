@@ -795,14 +795,13 @@
 
 ;; #+BEGIN_SRC emacs-lisp
 ;; (add-to-list 'load-path "~/p/elisp/external/slime")
-(require 'slime-autoloads)
-(setq inferior-lisp-program "/usr/bin/sbcl")
-(setq slime-contribs '(slime-fancy))
-;; info
-(eval-after-load 'info
-  '(progn (info-initialize)
-          (add-to-list 'Info-directory-list
-                       "~/p/elisp/external/slime/doc")))
+;; (require 'slime-autoloads)
+;; (setq inferior-lisp-program "/usr/bin/sbcl")
+;; (setq slime-contribs '(slime-fancy))
+;; (eval-after-load 'info
+;;   '(progn (info-initialize)
+;;           (add-to-list 'Info-directory-list
+;;                        "~/p/elisp/external/slime/doc")))
 ;; #+END_SRC
 
 ;; ** Org                                                                 :org:
