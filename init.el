@@ -793,35 +793,28 @@
 
 ;; ** slime
 
-;; #+BEGIN_SRC emacs-lisp
-(add-to-list 'load-path "~/p/elisp/external/slime")
-(require 'slime-autoloads)
-(setq inferior-lisp-program "/usr/bin/sbcl")
-(setq slime-contribs '(slime-fancy))
-(eval-after-load 'info
-  '(progn (info-initialize)
-          (add-to-list 'Info-directory-list
-                       "~/p/elisp/external/slime/doc")))
-;; #+END_SRC
+;; *** via local-git
 
 ;; #+BEGIN_SRC emacs-lisp
-CL-USER> (ql:quickload "quicklisp-slime-helper")
-To load "quicklisp-slime-helper":
-  Load 1 ASDF system:
-    quicklisp-slime-helper
-; Loading "quicklisp-slime-helper"
-[package swank-loader]............................
-[package quicklisp-slime-helper]
-slime-helper.el installed in "/home/b/p/quicklisp/slime-helper.el"
-
-To use, add this to your ~/.emacs:
-
-  (load (expand-file-name "~/p/quicklisp/slime-helper.el"))
-  ;; Replace "sbcl" with the path to your implementation
-  (setq inferior-lisp-program "sbcl")
-
+;; (add-to-list 'load-path "~/p/elisp/external/slime")
+;; (require 'slime-autoloads)
+;; (setq inferior-lisp-program "/usr/bin/sbcl")
+;; (setq slime-contribs '(slime-fancy))
+;; (eval-after-load 'info
+;;   '(progn (info-initialize)
+;;           (add-to-list 'Info-directory-list
+;;                        "~/p/elisp/external/slime/doc")))
 ;; #+END_SRC
-("quicklisp-slime-helper")
+
+;; *** via quicklisp
+;; CL-USER> (ql:quickload "quicklisp-slime-helper")
+;; To use, add this to your ~/.emacs:
+
+;; #+BEGIN_SRC emacs-lisp
+(load (expand-file-name "~/p/quicklisp/slime-helper.el"))
+(setq inferior-lisp-program "sbcl")
+;; #+END_SRC
+
 CL-USER> 
 
 ;; ** Org                                                                 :org:
