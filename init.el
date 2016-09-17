@@ -2913,7 +2913,7 @@ Originates from gnu.emacs.help group 2006."
 ;; #+BEGIN_SRC emacs-lisp
 (defvar mw-individual-keymap
   (let ((map (make-sparse-keymap)))
-    (define-key map "f" #'mw-kill-buffer-filename)
+    (define-key map "f" #'mw-buffer-filename-as-kill)
     (define-key map "g" #'git-auto-commit-mode)
     (define-key map "l" #'clone-indirect-buffer)
     (define-key map "a" #'mw-append-to-scratch)
@@ -2951,7 +2951,6 @@ Originates from gnu.emacs.help group 2006."
     (define-key map "e" #'evil-mode)
     (define-key map "E" (lambda () "Erase org-stored-links" (interactive) (setq org-stored-links nil)))
     (define-key map "(" #'paredit-mode)
-    (define-key map ")" #'disable-paredit-mode)
     (define-key map "W" #'calc-embedded-word) ; recall 'q' to leave the mode.
     (define-key map "s" (lambda () (interactive) (switch-to-buffer "*scratch*")))
     (define-key map "o" #'mw-org-kill-new-outline-path) ; Has been useful for refile.
