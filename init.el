@@ -804,6 +804,26 @@
                        "~/p/elisp/external/slime/doc")))
 ;; #+END_SRC
 
+;; #+BEGIN_SRC emacs-lisp
+CL-USER> (ql:quickload "quicklisp-slime-helper")
+To load "quicklisp-slime-helper":
+  Load 1 ASDF system:
+    quicklisp-slime-helper
+; Loading "quicklisp-slime-helper"
+[package swank-loader]............................
+[package quicklisp-slime-helper]
+slime-helper.el installed in "/home/b/p/quicklisp/slime-helper.el"
+
+To use, add this to your ~/.emacs:
+
+  (load (expand-file-name "~/p/quicklisp/slime-helper.el"))
+  ;; Replace "sbcl" with the path to your implementation
+  (setq inferior-lisp-program "sbcl")
+
+;; #+END_SRC
+("quicklisp-slime-helper")
+CL-USER> 
+
 ;; ** Org                                                                 :org:
 
 ;; *** Personal Org Indentation
