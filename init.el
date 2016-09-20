@@ -2474,7 +2474,7 @@ This binding shall make the close more convenient."
 ;; #+END_SRC
 
 ;; #+BEGIN_SRC emacs-lisp
-(add-hook 'dired-load-hook
+(add-hook 'dired-mode-hook
           (lambda ()
             (define-key dired-mode-map "E" #'dired-ediff)))
 
@@ -2488,6 +2488,18 @@ This binding shall make the close more convenient."
                                   (dired-get-filename t t)))))
     (when (and file other (not (equal file other)))
       (ediff file other))))
+
+(defun diff-ediff ()
+  "Run ediff for the diff at point."
+  (interactive)
+  (ediff
+   (diff-find-file-name nil nil)
+   (diff-find-file-name t nil)))
+
+(add-hook 'diff-mode-hook
+          (lambda ()
+            (define-key diff-mode-map "E" #'diff-ediff)))
+
 ;; #+END_SRC
 
 ;; ** eww on file in dired
