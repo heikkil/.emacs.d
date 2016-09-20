@@ -2473,6 +2473,8 @@ This binding shall make the close more convenient."
             ))
 ;; #+END_SRC
 
+;; ** from dired to ediff
+
 ;; #+BEGIN_SRC emacs-lisp
 (add-hook 'dired-mode-hook
           (lambda ()
@@ -2488,6 +2490,12 @@ This binding shall make the close more convenient."
                                   (dired-get-filename t t)))))
     (when (and file other (not (equal file other)))
       (ediff file other))))
+;; #+END_SRC
+
+;; ** from diff to ediff
+
+;; #+BEGIN_SRC emacs-lisp
+(add-hook 'diff-mode-hook (lambda () (define-key diff-mode-map "E" #'diff-ediff)))
 
 (defun diff-ediff ()
   "Run ediff for the diff at point."
@@ -2496,7 +2504,6 @@ This binding shall make the close more convenient."
    (diff-find-file-name nil nil)
    (diff-find-file-name t nil)))
 
-(add-hook 'diff-mode-hook (lambda () (define-key diff-mode-map "E" #'diff-ediff)))
 
 ;; #+END_SRC
 
