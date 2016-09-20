@@ -2503,8 +2503,6 @@ This binding shall make the close more convenient."
   (ediff
    (diff-find-file-name nil nil)
    (diff-find-file-name t nil)))
-
-
 ;; #+END_SRC
 
 ;; ** eww on file in dired
