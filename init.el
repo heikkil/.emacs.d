@@ -2479,6 +2479,7 @@ This binding shall make the close more convenient."
             (define-key dired-mode-map "E" #'dired-ediff)))
 
 (defun dired-ediff ()
+  "Run ediff on the files at point and mark from dired."
   (interactive)
   (let
       ((file (dired-get-filename t))
