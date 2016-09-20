@@ -2473,6 +2473,19 @@ This binding shall make the close more convenient."
             ))
 ;; #+END_SRC
 
+;; #+BEGIN_SRC emacs-lisp
+(define-key dired-mode-map "E" #'dired-ediff)
+(defun dired-ediff ()
+  (interactive)
+  (let
+      ((file (dired-get-filename t))
+       (other (if (and transient-mark-mode mark-active)
+                  (save-excursion (goto-char (mark t))
+                                  (dired-get-filename t t)))))
+    (when (and file other (not (equal file other)))
+      (ediff file other))))
+;; #+END_SRC
+
 ;; ** eww on file in dired
 
 ;; Setting key e for opening the file at point in eww.  Note there is
