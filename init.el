@@ -2474,7 +2474,10 @@ This binding shall make the close more convenient."
 ;; #+END_SRC
 
 ;; #+BEGIN_SRC emacs-lisp
-(define-key dired-mode-map "E" #'dired-ediff)
+(add-hook 'dired-load-hook
+          (lambda ()
+            (define-key dired-mode-map "E" #'dired-ediff)))
+
 (defun dired-ediff ()
   (interactive)
   (let
