@@ -2345,8 +2345,7 @@ Optional argument RELOAD for w3m-view-this-url-1."
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-eww-duplicate-buffer ()
-  "In eww-mode create a new buffer *eww* with current url.
-Rename a possibly existing buffer *eww*."
+  "Create a further eww buffer for current url."
   (interactive)
   (when (eq major-mode 'eww-mode)
     (eww-browse-url (plist-get eww-data :url) t)))
