@@ -2350,7 +2350,6 @@ Rename a possibly existing buffer *eww*."
   (interactive)
   (when (eq major-mode 'eww-mode)
     (eww-browse-url (plist-get eww-data :url) t)))
-
 ;; #+END_SRC
 
 ;; *** Rename Current Page
