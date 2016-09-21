@@ -2349,11 +2349,8 @@ Optional argument RELOAD for w3m-view-this-url-1."
 Rename a possibly existing buffer *eww*."
   (interactive)
   (when (eq major-mode 'eww-mode)
-    (let ((url (plist-get eww-data :url)))
-      (when (get-buffer "*eww*")
-        (switch-to-buffer "*eww*")
-        (rename-uniquely))
-      (eww url))))
+    (eww-browse-url (plist-get eww-data :url) t)))
+
 ;; #+END_SRC
 
 ;; *** Rename Current Page
