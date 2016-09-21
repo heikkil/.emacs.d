@@ -415,7 +415,6 @@
   (key-chord-define-global "o8" #'ace-link)
   (key-chord-define-global "s-" #'beacon-blink) ; locate the cursor easily
   (key-chord-define-global "ao" #'other-window)
-  (key-chord-define-global "qq" #'other-frame)
   (key-chord-define-global ";q" #'other-frame)
   (key-chord-define-global "qj" #'mw-exchange-to-buddy)
   (key-chord-define-global "><" #'previous-buffer)
