@@ -816,6 +816,22 @@
 (setq inferior-lisp-program "sbcl")
 ;; #+END_SRC
 
+;; *** hyperspec access
+
+;; common-lisp-hyperspec-root is a variable defined in ‘hyperspec.el’.
+;; Its value is "http://www.lispworks.com/reference/HyperSpec/"
+
+;; Documentation:
+;; The root of the Common Lisp HyperSpec URL.
+;; If you copy the HyperSpec to your local system, set this variable to
+;; something like "file://usr/local/doc/HyperSpec/".
+
+;; #+BEGIN_SRC emacs-lisp
+(add-hook
+ 'slime-mode-hook
+ (lambda ()
+   (setq common-lisp-hyperspec-root "file:///home/b/media/texts/it/lisp/HyperSpec")))
+;; #+END_SRC
 
 ;; ** Org                                                                 :org:
 
