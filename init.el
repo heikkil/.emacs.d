@@ -830,7 +830,7 @@
 (add-hook
  'slime-mode-hook
  (lambda ()
-   (setq common-lisp-hyperspec-root "file:///home/b/media/texts/it/lisp/HyperSpec")))
+   (setq common-lisp-hyperspec-root "file:///home/b/media/texts/it/lisp/HyperSpec/")))
 ;; #+END_SRC
 
 ;; ** Org                                                                 :org:
