@@ -2396,6 +2396,8 @@ Optional argument RELOAD for w3m-view-this-url-1."
   (eww (buffer-substring
         (region-beginning)
         (region-end))))
+(defalias 'mw-eww-on-region 'mw-eww-trigger-with-region-text
+  "Shorter name.")
 ;; #+END_SRC
 
 
