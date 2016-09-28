@@ -120,7 +120,10 @@
   	    (add-to-list
 	     'Info-directory-list
 	     (concat (expand-file-name "~/p/org/org-mode") ; orgmodelocation
-		     "/doc")))))
+		     "/doc"))))
+  (eval-after-load 'eww
+    '(progn (org-link-set-parameters "eww" :follow #'eww :store #'org-eww-store-link))))
+
 (require 'org)
 ;; #+END_SRC
 
