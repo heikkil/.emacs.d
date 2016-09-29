@@ -2189,10 +2189,12 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
 (require 'emacsshot)
 (global-set-key
  [print] ; (kbd "<print>")
- (lambda (&optional current-window)
-   (interactive "P")
-   (if current-window (emacsshot-snap-window)
-     (emacsshot-snap-frame))))
+ (lambda (&optional prefix)
+   (interactive "p")
+   (case prefix
+     (1 (emacsshot-snap-window))
+     (4 (emacsshot-snap-frame))
+     (16 (emacsshot-snap-window-include-modeline)))))
 ;; #+END_SRC
 
 ;; ** Hippie expand
