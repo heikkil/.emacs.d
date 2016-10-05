@@ -1307,7 +1307,7 @@ Optional NOLOCATION non-nil means do not print the location."
 Accurate to a few seconds."
   (or (and calendar-latitude calendar-longitude calendar-time-zone)
       (solar-setup))
-  (solar-sunrise-sunset-string date))
+  (solar-sunset-string date))
 ;; #+END_SRC
 
 ;; Direct call like so:
