@@ -1272,7 +1272,9 @@
 (require 'mw-mark)
 ;; #+END_SRC
 
-;; ** Sunset to Appts
+;; ** Separate Sunrise/Sunset for calendar
+
+;; See diary file.
 
 ;; *** Provide a string with the sunset
 
@@ -1281,6 +1283,19 @@
 ;; :END:
 
 ;; #+BEGIN_SRC emacs-lisp
+(defun solar-sunrise-string (date &optional nolocation)
+  "String of *local* times of sunrise and daylight on Gregorian DATE.
+Optional NOLOCATION non-nil means do not print the location."
+  (let ((l (solar-sunrise-sunset date)))
+    (format
+     "%s%s (%s hrs daylight)"
+     (if (car l)
+         (concat "Sunrise " (apply 'solar-time-string (car l)))
+       "No sunrise")
+     (if nolocation ""
+       (format " at %s" (eval calendar-location-name)))
+     (nth 2 l))))
+
 (defun solar-sunset-string (date &optional nolocation)
   "String of *local* times of sunset, and daylight on Gregorian DATE.
 Optional NOLOCATION non-nil means do not print the location."
@@ -1302,6 +1317,13 @@ Optional NOLOCATION non-nil means do not print the location."
 ;; :END:
 
 ;; #+BEGIN_SRC emacs-lisp
+(defun diary-sunrise ()
+  "Local time of sunset as a diary entry.
+Accurate to a few seconds."
+  (or (and calendar-latitude calendar-longitude calendar-time-zone)
+      (solar-setup))
+  (solar-sunrise-string date))
+
 (defun diary-sunset ()
   "Local time of sunset as a diary entry.
 Accurate to a few seconds."
