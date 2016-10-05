@@ -732,6 +732,9 @@
 (add-hook 'org-mode-hook
           (lambda () (local-set-key (kbd "C-c .") ; no success to override of the hyperbole 'C-c .' like so.
                                'org-time-stamp)))
+(eval-after-load "org"
+  '(progn
+     (org-defkey org-mode-map (kbd "C-c r") #'org-reveal)))
 ;; override a binding of hyperbole for org-mode
 ;; #+END_SRC
 
