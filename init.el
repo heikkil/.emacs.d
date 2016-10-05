@@ -1274,6 +1274,8 @@
 
 ;; ** Get Sunset to Appts
 
+;; *** Provide a string with the sunset
+
 ;; :origin:
 ;; [[file:~/p/emacs/lisp/calendar/solar.el::defun%20solar-sunrise-sunset-string][Function: solar-sunrise-sunset-string]]
 ;; :END:
@@ -1292,6 +1294,27 @@ Optional NOLOCATION non-nil means do not print the location."
        (format " at %s" (eval calendar-location-name)))
      (nth 2 l))))
 ;; #+END_SRC
+
+;; *** Create a calendar function
+
+;; :origin:
+;; [[file:~/p/emacs/lisp/calendar/solar.el::defun%20diary-sunrise-sunset][Function: diary-sunrise-sunset]]
+;; :END:
+
+;; #+BEGIN_SRC emacs-lisp
+(defun diary-sunset ()
+  "Local time of sunset as a diary entry.
+Accurate to a few seconds."
+  (or (and calendar-latitude calendar-longitude calendar-time-zone)
+      (solar-setup))
+  (solar-sunrise-sunset-string date))
+;; #+END_SRC
+
+;; Direct call like so:
+
+;; #+BEGIN_EXAMPLE
+;; (let ((date (calendar-current-date))) (diary-sunrise-sunset))
+;; #+END_EXAMPLE
 
 ;; ** Fira Code
 
