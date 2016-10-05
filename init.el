@@ -1272,6 +1272,27 @@
 (require 'mw-mark)
 ;; #+END_SRC
 
+;; ** Get Sunset to Appts
+
+;; :origin:
+;; [[file:~/p/emacs/lisp/calendar/solar.el::defun%20solar-sunrise-sunset-string][Function: solar-sunrise-sunset-string]]
+;; :END:
+
+;; #+BEGIN_SRC emacs-lisp
+(defun solar-sunset-string (date &optional nolocation)
+  "String of *local* times of sunset, and daylight on Gregorian DATE.
+Optional NOLOCATION non-nil means do not print the location."
+  (let ((l (solar-sunrise-sunset date)))
+    (format
+     "%s, %s%s (%s hrs daylight)"
+     (if (cadr l)
+         (concat "sunset " (apply 'solar-time-string (cadr l)))
+       "no sunset")
+     (if nolocation ""
+       (format " at %s" (eval calendar-location-name)))
+     (nth 2 l))))
+;; #+END_SRC
+
 ;; ** Fira Code
 
 ;; The following was disappointing. [2016-07-18]
