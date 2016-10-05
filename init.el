@@ -1272,7 +1272,7 @@
 (require 'mw-mark)
 ;; #+END_SRC
 
-;; ** Get Sunset to Appts
+;; ** Sunset to Appts
 
 ;; *** Provide a string with the sunset
 
