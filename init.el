@@ -1286,7 +1286,7 @@
 Optional NOLOCATION non-nil means do not print the location."
   (let ((l (solar-sunrise-sunset date)))
     (format
-     "%s, %s%s (%s hrs daylight)"
+     "%s, %s (%s hrs daylight)"
      (if (cadr l)
          (concat "sunset " (apply 'solar-time-string (cadr l)))
        "no sunset")
