@@ -1275,6 +1275,24 @@
 (require 'mw-mark)
 ;; #+END_SRC
 
+;; ** Insert url from mozrepl
+
+;; #+BEGIN_SRC emacs-lisp
+;; (defun mw-insert-current-url-from-mozrepl-hackish ()
+;;   "Try to insert the current url from mozrepl at point.
+
+;; Note: This function may fail sometimes even when mozrepl and
+;; Emacs are in proper state.  This is due to the expectation that
+;; the url has arrived in Emacs after some timespan.
+
+;; NTH: Check if there is a callback variant to achive the
+;; functionality."
+;;   (interactive)
+;;   (moz-controller-get-current-url)
+;;   (sleep-for 0 10)
+;;   (yank))
+;; #+END_SRC
+
 ;; ** Separate Sunrise/Sunset for calendar
 
 ;; See diary file.
