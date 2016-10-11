@@ -1278,19 +1278,19 @@
 ;; ** Insert url from mozrepl
 
 ;; #+BEGIN_SRC emacs-lisp
-;; (defun mw-insert-current-url-from-mozrepl-hackish ()
-;;   "Try to insert the current url from mozrepl at point.
+(defun mw-insert-current-url-from-mozrepl-hackish ()
+  "Try to insert the current url from mozrepl at point.
 
-;; Note: This function may fail sometimes even when mozrepl and
-;; Emacs are in proper state.  This is due to the expectation that
-;; the url has arrived in Emacs after some timespan.
+Note: This function may fail sometimes even when mozrepl and
+Emacs are in proper state.  This is due to the expectation that
+the url has arrived in Emacs after some timespan.
 
-;; NTH: Check if there is a callback variant to achive the
-;; functionality."
-;;   (interactive)
-;;   (moz-controller-get-current-url)
-;;   (sleep-for 0 10)
-;;   (yank))
+NTH: Check if there is a callback variant to achive the
+functionality."
+  (interactive)
+  (moz-controller-get-current-url)
+  (sleep-for 0 10)
+  (yank))
 ;; #+END_SRC
 
 ;; ** Separate Sunrise/Sunset for calendar
@@ -3172,6 +3172,12 @@ easily create a new frame."
 ;; #+END_SRC
 
 ;; With M-> point goes to the last char (and not one before that.)
+
+;; ** Communication with Mozilla
+
+;; #+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "C-c m y") #'mw-insert-current-url-from-mozrepl-hackish)
+;; #+END_SRC
 
 ;; ** Various Keysettings
 
