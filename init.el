@@ -1275,6 +1275,14 @@
 (require 'mw-mark)
 ;; #+END_SRC
 
+;; ** tweet-this
+
+;; #+BEGIN_SRC emacs-lisp
+(defun tweet-this (b e)
+ (interactive "r")
+ (twittering-update-status (buffer-substring b e)))
+;; #+END_SRC
+
 ;; ** Insert url from mozrepl
 
 ;; #+BEGIN_SRC emacs-lisp
