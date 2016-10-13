@@ -1283,6 +1283,33 @@
  (twittering-update-status (buffer-substring b e)))
 ;; #+END_SRC
 
+;; ** bbdb-this
+
+;; #+BEGIN_SRC emacs-lisp
+(defun bbdb-this (b e)
+  "Ask bbdb about the region."
+  (interactive "r")
+  (bbdb (buffer-substring b e)))
+;; #+END_SRC
+
+;; ** Convenient Drill
+
+;; #+BEGIN_SRC emacs-lisp
+(defun mw-open-next-line-from-agenda-as-drill-item ()
+  "Switch to next drill item.
+Precondition: The agenda contains a relevant heading in the next
+agenda line."
+  (interactive)
+  (switch-to-buffer (get-buffer "*Org Agenda*"))
+  (org-agenda-next-item 1)
+  (org-agenda-goto)
+  (org-narrow-to-element)
+  (org-show-children)
+  (outline-next-heading)
+  (org-show-subtree)
+  (delete-other-windows))
+;; #+END_SRC
+
 ;; ** Insert url from mozrepl
 
 ;; #+BEGIN_SRC emacs-lisp
