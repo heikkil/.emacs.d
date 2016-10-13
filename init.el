@@ -1324,7 +1324,7 @@ NTH: Check if there is a callback variant to achive the
 functionality."
   (interactive)
   (moz-controller-get-current-url)
-  (sleep-for 0 10)
+  (sleep-for 0 100)
   (yank))
 ;; #+END_SRC
 
