@@ -1322,6 +1322,7 @@ the url has arrived in Emacs after some timespan.
 
 NTH: Check if there is a callback variant to achive the
 functionality."
+  ;; see also `mw-eww-goto-moz-page'.  merge?
   (interactive)
   (moz-controller-get-current-url)
   (sleep-for 0 100)
