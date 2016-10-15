@@ -1295,10 +1295,14 @@
 ;; ** Convenient Drill
 
 ;; #+BEGIN_SRC emacs-lisp
-(defun mw-open-next-line-from-agenda-as-drill-item ()
+(defun mw-agenda-open-next-line-as-drill-item ()
   "Switch to next drill item.
-Precondition: The agenda contains a relevant heading in the next
-agenda line."
+Precondition:
+
+ - The agenda contains a relevant heading in the next agenda
+line.
+
+ - The drill items have a very special form."
   (interactive)
   (switch-to-buffer (get-buffer "*Org Agenda*"))
   (org-agenda-next-item 1)
