@@ -3084,7 +3084,12 @@ Originates from gnu.emacs.help group 2006."
   ("k" . org-capture)
   ("9" . org-decrypt-entry)
   ("N" org-speed-move-safe 'outline-next-visible-heading)
-  ("P" org-speed-move-safe 'outline-previous-visible-heading)))
+  ("P" org-speed-move-safe 'outline-previous-visible-heading)
+  ("u" . (lambda () (interactive)
+           (let ((start-level (funcall outline-level)))
+             (if (<= start-level 1)
+                 (goto-char (point-min))
+               (org-speed-move-safe (quote outline-up-heading))))))))
 ;; #+END_SRC
 
 ;; ** Individual keymap
@@ -3144,7 +3149,7 @@ easily create a new frame."
                             (mw-set-minibuffer-in-default-frame))
                           (mapc #'delete-frame (frame-list))
                           ))
-      map)
+    map)
   "Personal convenience keymap.")
 (global-set-key (kbd "\C-z") mw-individual-keymap)
 ;; #+END_SRC
