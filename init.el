@@ -3085,7 +3085,7 @@ Originates from gnu.emacs.help group 2006."
   ("9" . org-decrypt-entry)
   ("N" org-speed-move-safe 'outline-next-visible-heading)
   ("P" org-speed-move-safe 'outline-previous-visible-heading)
-  ("u" . (lambda () (interactive)
+  ("`" . (lambda () (interactive)
            (let ((start-level (funcall outline-level)))
              (if (<= start-level 1)
                  (goto-char (point-min))
