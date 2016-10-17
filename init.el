@@ -3071,6 +3071,13 @@ Originates from gnu.emacs.help group 2006."
 
 ;; #+BEGIN_SRC emacs-lisp
 
+(defun mw-org-up ()
+  (interactive)
+  (let ((start-level (funcall outline-level)))
+    (if (<= start-level 1)
+        (goto-char (point-min))
+      (org-speed-move-safe (quote outline-up-heading)))))
+
 (add-hook
  org-load-hook
  (lambda ()
@@ -3089,11 +3096,7 @@ Originates from gnu.emacs.help group 2006."
            ("9" . org-decrypt-entry)
            ("N" org-speed-move-safe 'outline-next-visible-heading)
            ("P" org-speed-move-safe 'outline-previous-visible-heading)
-           ("`" . (lambda () (interactive)
-                    (let ((start-level (funcall outline-level)))
-                      (if (<= start-level 1)
-                          (goto-char (point-min))
-                        (org-speed-move-safe (quote outline-up-heading))))))))))
+           ("`" . mw-org-up)))))
 ;; #+END_SRC
 
 ;; ** Individual keymap
