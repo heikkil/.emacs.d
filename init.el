@@ -3101,7 +3101,8 @@ Originates from gnu.emacs.help group 2006."
                     (let ((start-level (funcall outline-level)))
                       (if (<= start-level 1)
                           (goto-char (point-min))
-                        (org-speed-move-safe (quote outline-up-heading)))))mw-org-up)))))
+                        (org-speed-move-safe (quote outline-up-heading)))))
+            )))))
 ;; #+END_SRC
 
 ;; ** Individual keymap
