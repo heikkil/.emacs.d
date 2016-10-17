@@ -3079,7 +3079,7 @@ Originates from gnu.emacs.help group 2006."
       (org-speed-move-safe (quote outline-up-heading)))))
 
 (add-hook
- org-load-hook
+ 'org-load-hook
  (lambda ()
    (setq org-speed-commands-user
          '(("S" . widen)
