@@ -3070,26 +3070,30 @@ Originates from gnu.emacs.help group 2006."
 ;; ** For Org Files
 
 ;; #+BEGIN_SRC emacs-lisp
-(setq org-speed-commands-user
-'(("S" . widen)
-  ("y" . mw-org-property-action)
-  (";" . org-timer-set-timer)
-  ("d" . org-attach)
-  ("z" . org-add-note)
-  ("J" . org-clock-goto)
-  ("T" . org-tree-to-indirect-buffer)
-  ("q" . org-columns-quit)
-  ("H" . org-rise)
-  ("x" . org-export-dispatch)
-  ("k" . org-capture)
-  ("9" . org-decrypt-entry)
-  ("N" org-speed-move-safe 'outline-next-visible-heading)
-  ("P" org-speed-move-safe 'outline-previous-visible-heading)
-  ("`" . (lambda () (interactive)
-           (let ((start-level (funcall outline-level)))
-             (if (<= start-level 1)
-                 (goto-char (point-min))
-               (org-speed-move-safe (quote outline-up-heading))))))))
+
+(add-hook
+ org-load-hook
+ (lambda ()
+   (setq org-speed-commands-user
+         '(("S" . widen)
+           ("y" . mw-org-property-action)
+           (";" . org-timer-set-timer)
+           ("d" . org-attach)
+           ("z" . org-add-note)
+           ("J" . org-clock-goto)
+           ("T" . org-tree-to-indirect-buffer)
+           ("q" . org-columns-quit)
+           ("H" . org-rise)
+           ("x" . org-export-dispatch)
+           ("k" . org-capture)
+           ("9" . org-decrypt-entry)
+           ("N" org-speed-move-safe 'outline-next-visible-heading)
+           ("P" org-speed-move-safe 'outline-previous-visible-heading)
+           ("`" . (lambda () (interactive)
+                    (let ((start-level (funcall outline-level)))
+                      (if (<= start-level 1)
+                          (goto-char (point-min))
+                        (org-speed-move-safe (quote outline-up-heading))))))))))
 ;; #+END_SRC
 
 ;; ** Individual keymap
