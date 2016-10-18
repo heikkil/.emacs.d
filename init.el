@@ -3265,7 +3265,9 @@ easily create a new frame."
 (global-set-key (kbd "C-x C-c") #'save-buffers-kill-emacs) ; also kill the daemon
 
 ;; cycle through amounts of spacing
-(global-set-key (kbd "M-SPC") 'cycle-spacing)
+(global-set-key (kbd "M-SPC") #'cycle-spacing)
+
+(global-set-key (kbd "C-6") #'mw-repeat-last-command) ; possibly see extended-command-history
 
 (define-key global-map (kbd "<f9>")
   (lambda (&optional prefix)
