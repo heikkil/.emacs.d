@@ -1295,7 +1295,7 @@
 ;; ** Convenient Drill
 
 ;; #+BEGIN_SRC emacs-lisp
-(defun mw-agenda-open-next-line-as-drill-item ()
+(defun mw-org-agenda-open-next-line-as-drill-item ()
   "Switch to next drill item.
 Precondition:
 
