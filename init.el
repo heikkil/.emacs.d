@@ -3270,7 +3270,8 @@ easily create a new frame."
 (global-set-key
  (kbd "C-6")
  (lambda (arg) (interactive "P")
-   "Direct command Repeat.  With prefix arg show the candidate in the queue."
+   "Direct command Repeat.  With prefix arg show the candidate in
+the queue."
    (funcall
     (if arg
         #'mw-message-last-command
