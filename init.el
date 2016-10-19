@@ -3267,7 +3267,13 @@ easily create a new frame."
 ;; cycle through amounts of spacing
 (global-set-key (kbd "M-SPC") #'cycle-spacing)
 
-(global-set-key (kbd "C-6") #'mw-repeat-last-command) ; possibly see extended-command-history
+(global-set-key
+ (kbd "C-6")
+ (lambda (arg) (interactive "P")
+   (funcall
+    (if arg
+        #'mw-message-last-command
+      #'mw-repeat-last-command))))
 
 (define-key global-map (kbd "<f9>")
   (lambda (&optional prefix)
