@@ -3084,7 +3084,7 @@ Originates from gnu.emacs.help group 2006."
  'org-mode-hook
  (lambda ()
    (setq org-speed-commands-user
-         '(("S" . widen)
+         '(("S" . mw-org-widen-one-level)
            ("y" . mw-org-property-action)
            (";" . org-timer-set-timer)
            ("d" . org-attach)
