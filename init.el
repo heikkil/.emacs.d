@@ -275,7 +275,9 @@
             (wrap-region-add-wrapper "_" "_" nil 'org-mode)
             (wrap-region-add-wrapper "=" "=" nil 'org-mode)
             (wrap-region-add-wrapper "#+begin_quote\n" "\n#+end_quote" "q" 'org-mode)
-            (wrap-region-add-wrapper "#+begin_example\n" "\n#+end_example" "e" 'org-mode)))
+            (wrap-region-add-wrapper "#+begin_example\n" "\n#+end_example" "e" 'org-mode)
+            (wrap-region-add-wrapper "#+begin_verse\n" "\n#+end_verse" "v" 'org-mode)
+            (wrap-region-add-wrapper "#+begin_src \n" "\n#+end_src" "s" 'org-mode)))
 ;; #+END_SRC
 ;; ** auth-password-store
 
