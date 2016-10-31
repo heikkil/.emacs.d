@@ -443,7 +443,9 @@
   (key-chord-define-global "c8" #'delete-window) ; for kinesis keyboard
   (key-chord-define-global "g8" #'delete-window) ; for cherry keyboard
   (key-chord-define-global "m1" #'magit-status)
-  (key-chord-define-global "y5" (lambda () (interactive)
+  (key-chord-define-global "y5" (lambda ()
+                                  "Switch to org agenda."
+                                  (interactive)
                                   (if (get-buffer "*Org Agenda*")
                                       (switch-to-buffer (get-buffer "*Org Agenda*"))
                                     (org-agenda-list))))
