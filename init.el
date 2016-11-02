@@ -1281,19 +1281,19 @@
 (require 'mw-mark)
 ;; #+END_SRC
 
+;; ** org-ephermal-section-numbers
+
+;; #+BEGIN_SRC emacs-lisp
+(push "~/p/elisp/mw/org-ephermal-section-numbers" load-path)
+(require 'org-ephermal-section-numbers)
+;; #+END_SRC
+
 ;; ** tweet-this
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun tweet-this (b e)
  (interactive "r")
  (twittering-update-status (buffer-substring b e)))
-;; #+END_SRC
-
-;; ** org-ephermal-section-numbers
-
-;; #+BEGIN_SRC emacs-lisp
-(push "~/p/elisp/mw/org-ephermal-section-numbers" load-path)
-(require 'org-ephermal-section-numbers)
 ;; #+END_SRC
 
 ;; ** bbdb-this
