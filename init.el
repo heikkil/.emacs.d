@@ -281,12 +281,13 @@
 ;; #+END_SRC
 ;; ** auth-password-store
 
+;; [2016-11-03 Thu 10:50] i suspect this to give me trouble.
 ;; auth-stuff -> pass(word-store)
 
 ;; #+BEGIN_SRC emacs-lisp
-(use-package auth-password-store
-  :ensure t
-  :config (auth-pass-enable))
+;; (use-package auth-password-store
+;;   :ensure t
+;;   :config (auth-pass-enable))
 ;; #+END_SRC
 
 ;; ** avy
