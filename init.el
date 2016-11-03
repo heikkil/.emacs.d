@@ -434,6 +434,7 @@
   (key-chord-define-global "r9" #'rope-read-mode)
   (key-chord-define-global "yy" #'mw-duplicate-line)
   (key-chord-define-global "''" #'mw-umlautify-before-point)
+  (key-chord-define-global "'," #'mw-umlautify-before-point)
   (key-chord-define-global "uu" (lambda (&optional in-place)
                                   (interactive "P")
                                   (if in-place (mw-translate-in-place-eng+deu)
