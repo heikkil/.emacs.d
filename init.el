@@ -282,7 +282,9 @@
 ;; ** auth-password-store
 
 ;; [2016-11-03 Thu 10:50] i suspect this to interfer with the
-;; gnus-gmail connection.  auth-stuff -> pass(word-store)
+;; gnus-gmail connection.
+
+;; auth-stuff -> pass(word-store)
 
 ;; #+BEGIN_SRC emacs-lisp
 ;; (use-package auth-password-store
