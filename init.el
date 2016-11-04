@@ -70,6 +70,26 @@
 ;; (setq debug-on-error t)
 ;; #+END_SRC
 
+;;; ** Customize
+
+;; Early load of the custom.el to avoid irritating overridings from
+;; custom-el.
+
+;; Emacs allows to specify the storage-location of customization done via
+;; the emacs-customize interface.  The default is to keep the
+;; customization in the init-file.
+
+;; Take care about overrides due to customizations.
+
+;; #+BEGIN_SRC emacs-lisp
+(setq custom-file "~/.emacs.d/init/.emacs-custom.el")
+(load custom-file)
+;; #+END_SRC
+
+;;; Config:
+
+;; (load-file "init-config.el")
+
 ;; ** Workarounds
 
 ;; The following might help to keep this file going.  Ideally this
@@ -3133,23 +3153,6 @@ Originates from gnu.emacs.help group 2006."
 (add-hook 'emacs-lisp-mode-hook #'imenu-add-menubar-index)
 (add-hook 'emacs-lisp-mode-hook #'checkdoc-minor-mode)
 ;; #+END_SRC
-
-;;; Customize:: Settings
-
-;; Emacs allows to specify the storage-location of customization done via
-;; the emacs-customize interface.  The default is to keep the
-;; customization in the init-file.
-
-;; Take care about overrides due to customizations.
-
-;; #+BEGIN_SRC emacs-lisp
-(setq custom-file "~/.emacs.d/init/.emacs-custom.el")
-(load custom-file)
-;; #+END_SRC
-
-;;; Config:
-
-;; (load-file "init-config.el")
 
 ;; ** helm-bibtex
 
