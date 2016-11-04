@@ -97,11 +97,49 @@
 
 ;; [2016-02-05 Fri 22:53] Try out minibuffer in extra frame.
 
-;; This has something!
+;; This has something!  Unfortunately I'm not 100% content.  Maybe
+;; I need to exercise more.
 
 ;; #+BEGIN_SRC emacs-lisp
 ;; (setq initial-frame-alist '((minibuffer . nil)))
 ;; (setq default-frame-alist '((minibuffer . nil)))
+;; #+END_SRC
+
+;; ** Speed Keys For Org Files
+
+;; #+BEGIN_SRC emacs-lisp
+
+(defun mw-org-up ()
+  (interactive)
+  (let ((start-level (funcall outline-level)))
+    (if (<= start-level 1)
+        (goto-char (point-min))
+      (org-speed-move-safe (quote outline-up-heading)))))
+
+(add-hook
+ ; [2016-11-04 Fri 10:40] 'org-mode-hook
+ 'org-load-hook
+ (lambda ()
+   (setq org-speed-commands-user
+         '(("S" . mw-org-widen-one-level)
+           ("y" . mw-org-property-action)
+           (";" . org-timer-set-timer)
+           ("d" . org-attach)
+           ("z" . org-add-note)
+           ("J" . org-clock-goto)
+           ("T" . org-tree-to-indirect-buffer)
+           ("q" . org-columns-quit)
+           ("H" . org-rise)
+           ("x" . org-export-dispatch)
+           ("k" . org-capture)
+           ("9" . org-decrypt-entry)
+           ("N" org-speed-move-safe 'outline-next-visible-heading)
+           ("P" org-speed-move-safe 'outline-previous-visible-heading)
+           ("`" . mw-org-up)
+           ("m" . org-teleport))
+         )
+   ;; (add-to-list 'org-speed-commands-user (cons "m" 'org-teleport))
+   ))
 ;; #+END_SRC
 
 ;; ** Org from Source
@@ -3146,43 +3184,6 @@ Originates from gnu.emacs.help group 2006."
 
 ;; #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "C-c o") 'org-open-at-point-global)
-;; #+END_SRC
-
-;; ** For Org Files
-
-;; #+BEGIN_SRC emacs-lisp
-
-(defun mw-org-up ()
-  (interactive)
-  (let ((start-level (funcall outline-level)))
-    (if (<= start-level 1)
-        (goto-char (point-min))
-      (org-speed-move-safe (quote outline-up-heading)))))
-
-(add-hook
- ; [2016-11-04 Fri 10:40] 'org-mode-hook
- 'org-load-hook
- (lambda ()
-   (setq org-speed-commands-user
-         '(("S" . mw-org-widen-one-level)
-           ("y" . mw-org-property-action)
-           (";" . org-timer-set-timer)
-           ("d" . org-attach)
-           ("z" . org-add-note)
-           ("J" . org-clock-goto)
-           ("T" . org-tree-to-indirect-buffer)
-           ("q" . org-columns-quit)
-           ("H" . org-rise)
-           ("x" . org-export-dispatch)
-           ("k" . org-capture)
-           ("9" . org-decrypt-entry)
-           ("N" org-speed-move-safe 'outline-next-visible-heading)
-           ("P" org-speed-move-safe 'outline-previous-visible-heading)
-           ("`" . mw-org-up)
-           ("m" . org-teleport))
-         )
-   ;; (add-to-list 'org-speed-commands-user (cons "m" 'org-teleport))
-   ))
 ;; #+END_SRC
 
 ;; ** Individual keymap
