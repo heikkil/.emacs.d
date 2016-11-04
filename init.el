@@ -3172,9 +3172,8 @@ Originates from gnu.emacs.help group 2006."
            ("9" . org-decrypt-entry)
            ("N" org-speed-move-safe 'outline-next-visible-heading)
            ("P" org-speed-move-safe 'outline-previous-visible-heading)
-           ("`" . mw-org-up
-            ))
-         (add-to-list 'org-speed-commands-user (cons "m" 'org-teleport)))))
+           ("`" . mw-org-up)))
+   (add-to-list 'org-speed-commands-user (cons "m" 'org-teleport))))
 ;; #+END_SRC
 
 ;; ** Individual keymap
