@@ -1343,6 +1343,7 @@ is positive, move after, and if negative, move before."
   (outline-hide-leaves))
 ;; #+end_src
 
+;; ** org-mime
 ;; ** org-ephermal-section-numbers
 
 ;; #+BEGIN_SRC emacs-lisp
@@ -2785,8 +2786,6 @@ This binding shall make the close more convenient."
 
 ;; *** TODO Test this                                                 :noexport:
 
-;;; Rest:
-
 ;; ** Mouse Avoidance
 
 ;; Documentation says
@@ -3086,7 +3085,7 @@ Originates from gnu.emacs.help group 2006."
 (add-hook 'emacs-lisp-mode-hook #'checkdoc-minor-mode)
 ;; #+END_SRC
 
-;; Customize: Settings
+;;; Customize:: Settings
 
 ;; Emacs allows to specify the storage-location of customization done via
 ;; the emacs-customize interface.  The default is to keep the
@@ -3154,7 +3153,8 @@ Originates from gnu.emacs.help group 2006."
       (org-speed-move-safe (quote outline-up-heading)))))
 
 (add-hook
- 'org-mode-hook
+ ; [2016-11-04 Fri 10:40] 'org-mode-hook
+ 'org-load-hook
  (lambda ()
    (setq org-speed-commands-user
          '(("S" . mw-org-widen-one-level)
