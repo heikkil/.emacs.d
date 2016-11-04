@@ -1292,6 +1292,63 @@
 (require 'org-ephermal-section-numbers)
 ;; #+END_SRC
 
+;; ** org-teleport
+
+;; #+begin_src emacs-lisp
+;; (defun org-teleport (&optional arg)
+;;   "Teleport the current heading to after a headline selected with avy.
+;; With a prefix ARG move the headline to before the selected
+;; headline. With a numeric prefix, set the headline level. If ARG
+;; is positive, move after, and if negative, move before."
+;;   (interactive "P")
+;;   ;; Kill current headline
+;;   (org-mark-subtree)
+;;   (kill-region (region-beginning) (region-end))
+;;   ;; Jump to a visible headline
+;;   (avy-with avy-goto-line (avy--generic-jump "^\\*+" nil avy-style))
+;;   (cond
+;;    ;; Move before  and change headline level
+;;    ((and (numberp arg) (> 0 arg))
+;;     (save-excursion
+;;       (yank))
+;;     ;; arg is what we want, second is what we have
+;;     ;; if n is positive, we need to demote (increase level)
+;;     (let ((n (- (abs arg) (car (org-heading-components)))))
+;;       (cl-loop for i from 1 to (abs n)
+;;                do
+;;                (if (> 0 n)
+;;                    (org-promote-subtree)
+;;                  (org-demote-subtree)))))
+;;    ;; Move after and change level
+;;    ((and (numberp arg) (< 0 arg))
+;;     (org-mark-subtree)
+;;     (goto-char (region-end))
+;;     (when (eobp) (insert "\n"))
+;;     (save-excursion
+;;       (yank))
+;;     ;; n is what we want and second is what we have
+;;     ;; if n is positive, we need to demote
+;;     (let ((n (- (abs arg) (car (org-heading-components)))))
+;;       (cl-loop for i from 1 to (abs n)
+;;                do
+;;                (if (> 0 n) (org-promote-subtree)
+;;                  (org-demote-subtree)))))
+
+;;    ;; move to before selection
+;;    ((equal arg '(4))
+;;     (save-excursion
+;;       (yank)))
+;;    ;; move to after selection
+;;    (t
+;;     (org-mark-subtree)
+;;     (goto-char (region-end))
+;;     (when (eobp) (insert "\n"))
+;;     (save-excursion
+;;       (yank))))
+;;   (outline-hide-leaves))
+;; #+end_src
+
+
 ;; ** tweet-this
 
 ;; #+BEGIN_SRC emacs-lisp
