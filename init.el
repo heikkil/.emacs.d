@@ -1285,13 +1285,6 @@
 (require 'mw-mark)
 ;; #+END_SRC
 
-;; ** org-ephermal-section-numbers
-
-;; #+BEGIN_SRC emacs-lisp
-(push "~/p/elisp/mw/org-ephermal-section-numbers" load-path)
-(require 'org-ephermal-section-numbers)
-;; #+END_SRC
-
 ;; ** org-teleport
 
 ;; http://kitchingroup.cheme.cmu.edu/blog/2016/03/18/Org-teleport-headlines/
@@ -1350,6 +1343,12 @@ is positive, move after, and if negative, move before."
   (outline-hide-leaves))
 ;; #+end_src
 
+;; ** org-ephermal-section-numbers
+
+;; #+BEGIN_SRC emacs-lisp
+(push "~/p/elisp/mw/org-ephermal-section-numbers" load-path)
+(require 'org-ephermal-section-numbers)
+;; #+END_SRC
 
 ;; ** tweet-this
 
