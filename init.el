@@ -1349,7 +1349,7 @@ is positive, move after, and if negative, move before."
 ;; (require 'org-mime)
 ;; #+end_src
 
-;; Use =org-mime-subtree= to mail a tree.
+;; Use e.g. =org-mime-subtree= to mail a tree.
 
 ;; ** org-ephermal-section-numbers
 
