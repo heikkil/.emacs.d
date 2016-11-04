@@ -156,9 +156,10 @@
            ("N" org-speed-move-safe 'outline-next-visible-heading)
            ("P" org-speed-move-safe 'outline-previous-visible-heading)
            ("`" . mw-org-up)
-           ("m" . org-teleport))
+           ("m" . org-teleport)
+           ("," . avy-goto-line))
          )
-   ;; (add-to-list 'org-speed-commands-user (cons "m" 'org-teleport))
+   ;; (add-to-list 'org-speed-commands-user (cons ","  #'avy-goto-line))
    ))
 ;; #+END_SRC
 
@@ -517,6 +518,7 @@
                                     (org-edit-src-exit))))
   (key-chord-define-global "1'" #'org-previous-visible-heading)
   (key-chord-define-global "mw" #'list-buffers)
+  (key-chord-define-global "jk" #'ibuffer)
   (key-chord-define-global "n1" #'sp-narrow-to-sexp)
   (key-chord-define-global "a7" #'mw-set-ariadne-point)
   (key-chord-define-global "a8" #'mw-goto-ariadne-point)
