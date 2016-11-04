@@ -1331,14 +1331,15 @@
 (defun org-teleport (&optional arg)
   "Teleport the current heading to after a headline selected with avy.
 With a prefix ARG move the headline to before the selected
-headline. With a numeric prefix, set the headline level. If ARG
+headline.  With a numeric prefix, set the headline level.  If ARG
 is positive, move after, and if negative, move before."
   (interactive "P")
   ;; Kill current headline
   (org-mark-subtree)
   (kill-region (region-beginning) (region-end))
   ;; Jump to a visible headline
-  (avy-with avy-goto-line (avy--generic-jump "^\\*+" nil avy-style))
+  (let ((avy-all-windows t))
+    (avy-with avy-goto-line (avy--generic-jump "^\\*+" nil avy-style)))
   (cond
    ;; Move before  and change headline level
    ((and (numberp arg) (> 0 arg))
