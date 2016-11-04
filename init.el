@@ -1344,6 +1344,13 @@ is positive, move after, and if negative, move before."
 ;; #+end_src
 
 ;; ** org-mime
+
+;; #+begin_src
+;; (require 'org-mime)
+;; #+end_src
+
+;; Use =org-mime-subtree= to mail a tree.
+
 ;; ** org-ephermal-section-numbers
 
 ;; #+BEGIN_SRC emacs-lisp
