@@ -160,6 +160,7 @@
            ("," . avy-goto-line))
          )
    ;; (add-to-list 'org-speed-commands-user (cons ","  #'avy-goto-line))
+   ;; (add-to-list 'org-speed-commands-user (cons "S" #'mw-org-narrow-to-one-level-above))
    ))
 ;; #+END_SRC
 
