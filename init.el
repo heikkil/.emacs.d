@@ -70,7 +70,7 @@
 ;; (setq debug-on-error t)
 ;; #+END_SRC
 
-;;; ** Customize
+;; ;;; ** Customize
 
 ;; Early load of the custom.el to avoid irritating overridings from
 ;; custom-el.
@@ -1290,8 +1290,26 @@
 ;; My little collection of Emacs stuff.
 
 ;; #+BEGIN_SRC emacs-lisp
-(push  "~/p/elisp/mw/little-helpers" load-path)
+(push  (expand-file-name "~/p/elisp/mw/little-helpers") load-path)
 (require 'little-helpers)
+;; #+END_SRC
+
+;; #+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "C-<") #'mw-recenter-jump-to-top)
+;; #+END_SRC
+
+;; ** Little helpers
+
+;; My little collection of Emacs stuff.
+
+;; #+BEGIN_SRC emacs-lisp
+(assert (reduce
+         (lambda (not-found b)
+           (if not-found
+               (string= b (expand-file-name "~/p/elisp/mw/little-helpers"))
+             t))
+         load-path :initial-value t))
+(require 'org-supplements)
 ;; #+END_SRC
 
 ;; #+BEGIN_SRC emacs-lisp
