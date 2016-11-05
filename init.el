@@ -141,7 +141,7 @@
  'org-load-hook
  (lambda ()
    (setq org-speed-commands-user
-         '(("S" . mw-org-widen-one-level)
+         '(("S" . mw-org-narrow-to-one-level-above)
            ("y" . mw-org-property-action)
            (";" . org-timer-set-timer)
            ("d" . org-attach)
