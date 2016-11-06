@@ -3378,6 +3378,9 @@ easily create a new frame."
 (global-set-key (kbd "M-SPC") #'cycle-spacing)
 
 (global-set-key
+ (kbd "C-5") #'repeat)
+
+(global-set-key
  (kbd "C-6")
  (lambda (arg) (interactive "P")
    "Direct command Repeat.  With prefix arg show the candidate in
