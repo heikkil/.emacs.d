@@ -3377,8 +3377,7 @@ easily create a new frame."
 ;; cycle through amounts of spacing
 (global-set-key (kbd "M-SPC") #'cycle-spacing)
 
-(global-set-key
- (kbd "C-5") #'repeat)
+(global-set-key (kbd "C-5") #'repeat)
 
 (global-set-key
  (kbd "C-6")
