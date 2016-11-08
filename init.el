@@ -1306,8 +1306,7 @@
 (assert (reduce
          (lambda (not-found b)
            (if not-found
-               (string= b (expand-file-name "~/p/elisp/mw/little-helpers"))
-             t))
+               (not (string= b (expand-file-name "~/p/elisp/mw/little-helpers")))))
          load-path :initial-value t))
 (require 'org-supplements)
 ;; #+END_SRC
