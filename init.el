@@ -1303,11 +1303,13 @@
 ;; My little collection of Emacs stuff.
 
 ;; #+BEGIN_SRC emacs-lisp
-(assert (reduce
-         (lambda (not-found b)
-           (if not-found
-               (not (string= b (expand-file-name "~/p/elisp/mw/little-helpers")))))
-         load-path :initial-value t))
+(assert
+ (not
+  (reduce
+   (lambda (not-found b)
+     (if not-found
+         (not (string= b (expand-file-name "~/p/elisp/mw/little-helpers")))))
+   load-path :initial-value t)))
 (require 'org-supplements)
 ;; #+END_SRC
 
