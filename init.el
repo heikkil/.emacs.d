@@ -467,7 +467,7 @@
 (use-package magit
   :ensure t
   :config (define-key magit-file-section-map "C" 'magit-commit-add-log) ;; "C" also on filename-lines
-  (put 'git-rebase-kill-line :advertised-binding "k, C-k") )
+ )
 ;; #+END_SRC
 
 ;; ** company mode
