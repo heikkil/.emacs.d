@@ -1435,11 +1435,11 @@ is positive, move after, and if negative, move before."
 
 ;; Use e.g. =org-mime-subtree= to mail a tree.
 
-;; ** org-ephermal-section-numbers
+;; ** org-section-numbers
 
 ;; #+BEGIN_SRC emacs-lisp
-(push "~/p/elisp/mw/org-ephermal-section-numbers" load-path)
-(require 'org-ephermal-section-numbers)
+(push "~/p/elisp/mw/org-section-numbers" load-path)
+(require 'org-section-numbers)
 ;; #+END_SRC
 
 ;; ** tweet-this
