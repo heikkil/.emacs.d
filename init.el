@@ -528,9 +528,9 @@
   (key-chord-define-global "d1" #'mw-org-link-remove-file-decoration)
   (key-chord-define-global "s1" #'slime-repl)
   (key-chord-define-global "y5" #'kmacro-start-macro-or-insert-counter)
-  (key-chord-define-global "f6" #'kmacro-call-macro) ; need end macro
-                                                     ; by
+  (key-chord-define-global "f6" #'kmacro-call-macro) ; need
                                                      ; non-key-chord
+                                                     ; to end macro
                                                      ; AFAICS.
   )
 ;; #+END_SRC
