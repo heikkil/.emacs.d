@@ -529,6 +529,7 @@
   (key-chord-define-global "s1" #'slime-repl)
   (key-chord-define-global "f3" #'kmacro-start-macro-or-insert-counter)
   (key-chord-define-global "f4" #'kmacro-end-or-call-macro)
+  (key-chord-define-global "f6" #'kmacro-end-or-call-macro)
   )
 ;; #+END_SRC
 
