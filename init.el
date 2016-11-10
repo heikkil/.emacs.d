@@ -508,7 +508,7 @@
   (key-chord-define-global "c8" #'delete-window) ; for kinesis keyboard
   (key-chord-define-global "g8" #'delete-window) ; for cherry keyboard
   (key-chord-define-global "m1" #'magit-status)
-  (key-chord-define-global "y5" (lambda ()
+  (key-chord-define-global "yi" (lambda ()
                                   "Switch to org agenda."
                                   (interactive)
                                   (if (get-buffer "*Org Agenda*")
@@ -528,6 +528,7 @@
   (key-chord-define-global "d1" #'mw-org-link-remove-file-decoration)
   (key-chord-define-global "s1" #'slime-repl)
   (key-chord-define-global "f3" #'kmacro-start-macro-or-insert-counter)
+  (key-chord-define-global "y5" #'kmacro-start-macro-or-insert-counter)
   (key-chord-define-global "f4" #'kmacro-end-or-call-macro)
   (key-chord-define-global "f6" #'kmacro-end-or-call-macro)
   )
