@@ -527,6 +527,8 @@
   (key-chord-define-global "c1" #'chronos-add-timer)
   (key-chord-define-global "d1" #'mw-org-link-remove-file-decoration)
   (key-chord-define-global "s1" #'slime-repl)
+  (key-chord-define-global "f3" #'kmacro-start-macro-or-insert-counter)
+  (key-chord-define-global "f4" #'kmacro-end-or-call-macro)
   )
 ;; #+END_SRC
 
