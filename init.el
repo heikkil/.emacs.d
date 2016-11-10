@@ -527,10 +527,11 @@
   (key-chord-define-global "c1" #'chronos-add-timer)
   (key-chord-define-global "d1" #'mw-org-link-remove-file-decoration)
   (key-chord-define-global "s1" #'slime-repl)
-  (key-chord-define-global "f3" #'kmacro-start-macro-or-insert-counter)
   (key-chord-define-global "y5" #'kmacro-start-macro-or-insert-counter)
-  (key-chord-define-global "f4" #'kmacro-end-or-call-macro)
-  (key-chord-define-global "f6" #'kmacro-end-or-call-macro)
+  (key-chord-define-global "f6" #'kmacro-call-macro) ; need end macro
+                                                     ; by
+                                                     ; non-key-chord
+                                                     ; AFAICS.
   )
 ;; #+END_SRC
 
