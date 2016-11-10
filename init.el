@@ -1749,6 +1749,7 @@ Accurate to a few seconds."
 (add-hook 'prog-mode-hook
           #'add-fira-code-symbol-keywords)
 
+;; (remove-hook 'prog-mode-hook #'add-fira-code-symbol-keywords)
 ;; ** Drop the stars from ITEM in column view                              :org:
 
 ;; #+BEGIN_SRC emacs-lisp
