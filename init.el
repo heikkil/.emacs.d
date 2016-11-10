@@ -86,6 +86,26 @@
 (load custom-file)
 ;; #+END_SRC
 
+;; #+BEGIN_SRC emacs-lisp
+(setq org-structure-template-alist
+      (("s" "#+begin_src ?\n\n#+end_src")
+       ("e" "#+begin_example\n?\n#+end_example")
+       ("q" "#+begin_quote\n?\n#+end_quote")
+       ("v" "#+begin_verse\n?\n#+end_verse")
+       ("V" "#+begin_verbatim\n?\n#+end_verbatim")
+       ("c" "#+begin_center\n?\n#+end_center")
+       ("l" "#+begin_latex\n?\n#+end_latex")
+       ("L" "#+latex: ")
+       ("h" "#+begin_html\n?\n#+end_html")
+       ("H" "#+html: ")
+       ("a" "#+begin_ascii\n?\n#+end_ascii")
+       ("A" "#+ascii: ")
+       ("i" "#+index: ?")
+       ("I" "#+include: %file ?")
+       ("n" "#+name: ?")
+       ("t" "*************** ?\n*************** end")))
+;; #+END_SRC
+
 ;;; Config:
 
 ;; (load-file "init-config.el")
