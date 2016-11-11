@@ -504,6 +504,7 @@
   :config
   (key-chord-mode 1) ;; recall: e.g. (key-chord-unset-global "bb") for undef a key-chord.
   (key-chord-define-global "o6" #'org-open-at-point-global)
+  (key-chord-define-global "r1" #'recompile)
   (key-chord-define-global "o8" #'ace-link)
   (key-chord-define-global "s-" #'beacon-blink) ; locate the cursor easily
   (key-chord-define-global "ao" #'other-window)
@@ -549,9 +550,9 @@
   (key-chord-define-global "s1" #'slime-repl)
   (key-chord-define-global "y5" #'kmacro-start-macro-or-insert-counter)
   (key-chord-define-global "f6" #'kmacro-call-macro) ; need
-                                                     ; non-key-chord
-                                                     ; to end macro
-                                                     ; AFAICS.
+                                        ; non-key-chord
+                                        ; to end macro
+                                        ; AFAICS.
   )
 ;; #+END_SRC
 
