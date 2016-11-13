@@ -3268,9 +3268,7 @@ Originates from gnu.emacs.help group 2006."
             (emms-player-pause)
           (progn
             (mw-sound-set-enjoyable-volume)
-            (emms-play-url "http://bassdrive.com/bassdrive.m3u"
-                           ;; "http://www.bassdrive.com/BassDrive.m3u"
-                           )))))
+            (emms-play-url "http://www.bassdrive.com/BassDrive.m3u")))))
     (define-key map "p" #'password-store-copy)
     (define-key map "P" #'org-toggle-pretty-entities)
     (define-key map "j" #'org-clock-goto)
