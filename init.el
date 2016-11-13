@@ -1767,8 +1767,11 @@ Accurate to a few seconds."
 (defun add-fira-code-symbol-keywords ()
   (font-lock-add-keywords nil fira-code-font-lock-keywords-alist))
 
+;; [2016-11-13 Sun 14:47] disabled because sometimes these characters
+;; come out not so nicely.
 ;; (add-hook 'prog-mode-hook
-;;           #'add-fira-code-symbol-keywords)
+;; #'add-fira-code-symbol-keywords)
+;; [2016-11-13 Sun 14:47] end of disable.
 
 ;; (remove-hook 'prog-mode-hook #'add-fira-code-symbol-keywords)
 ;; ** Drop the stars from ITEM in column view                              :org:
