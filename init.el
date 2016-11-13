@@ -1650,7 +1650,7 @@ Accurate to a few seconds."
                    (compose-region (match-beginning 1)
                                    (match-end 1)
                                    ;; The first argument to concat is a string containing a literal tab
-                                   ,(concat "   " (list (decode-char 'ucs (cadr regex-char-pair)))))))))
+                                   ,(concat "    " (list (decode-char 'ucs (cadr regex-char-pair)))))))))
           '(("\\(www\\)"                   #Xe100) ;;;    ;; 
             ("[^/]\\(\\*\\*\\)[^/]"        #Xe101) ;    
             ("\\(\\*\\*\\*\\)"             #Xe102) ;    
@@ -1767,8 +1767,8 @@ Accurate to a few seconds."
 (defun add-fira-code-symbol-keywords ()
   (font-lock-add-keywords nil fira-code-font-lock-keywords-alist))
 
-(add-hook 'prog-mode-hook
-          #'add-fira-code-symbol-keywords)
+;; (add-hook 'prog-mode-hook
+;;           #'add-fira-code-symbol-keywords)
 
 ;; (remove-hook 'prog-mode-hook #'add-fira-code-symbol-keywords)
 ;; ** Drop the stars from ITEM in column view                              :org:
