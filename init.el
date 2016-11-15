@@ -1148,11 +1148,10 @@
   "Trigger ‘org-attach-screenshot’ with target as Org standard attachment.
 Create the attachment dir if not exists."
   (interactive)
-  ;; (org-attach-dir t)
-  (let* ((shots-name (format-time-string
+  (org-attach-dir t)
+  (let* ((shot-name (format-time-string
                       "screenshot-%Y%m%d-%H%M%S.png")))
-    (org-attach-screenshot nil shots-name)
-    (org-attach-attach shots-name nil 'mv)))
+    (org-attach-screenshot nil shot-name)))
 
 (add-hook
  'org-mode-hook
