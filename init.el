@@ -1139,6 +1139,13 @@
 (require 'org-attach-screenshot)
 ;; #+END_SRC
 
+;; #+BEGIN_SRC emacs-lisp
+(defun mw-org-attach-screenshot-as-standard-attachment (org-attach-dir t)
+  (interactive)
+  (org-attach-screenshot nil (format-time-string
+                              "screenshot-%Y%m%d-%H%M%S.png")))
+;; #+END_SRC
+
 ;; *** Disable key C-,
 
 ;; Want C-, not bound to org-cycle-agenda-files, which is also on C-'
