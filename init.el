@@ -1,4 +1,4 @@
-;;; init.el --- personal emacs config file
+;;; init.el --- personal emacs config file -*-  -*-
 ;; #+STARTUP: oddeven
 ;; #+options: toc:2
 
@@ -1489,23 +1489,23 @@ is positive, move after, and if negative, move before."
 ;; ** Convenient Drill
 
 ;; #+BEGIN_SRC emacs-lisp
-(defun mw-org-agenda-open-next-line-as-drill-item ()
-  "Switch to next drill item.
+( (defun mw-org-agenda-open-next-line-as-drill-item ()
+   "Switch to next drill item.
 Precondition:
 
  - The agenda contains a relevant heading in the next agenda
 line.
 
  - The drill items have a very special form."
-  (interactive)
-  (switch-to-buffer (get-buffer "*Org Agenda*"))
-  (org-agenda-next-item 1)
-  (org-agenda-goto)
-  (org-narrow-to-element)
-  (org-show-children)
-  (outline-next-heading)
-  (org-show-subtree)
-  (delete-other-windows))
+   (interactive)
+   (switch-to-buffer (unless agenda-buffer (get-buffer "*Org Agenda*")))
+   (org-agenda-next-item 1)
+   (org-agenda-goto)
+   (org-narrow-to-element)
+   (org-show-children)
+   (outline-next-heading)
+   (org-show-subtree)
+   (delete-other-windows)))
 ;; #+END_SRC
 
 ;; ** Insert url from mozrepl
