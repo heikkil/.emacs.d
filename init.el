@@ -1153,7 +1153,9 @@ Create the attachment dir if not exists."
    nil
    (format-time-string
     "screenshot-%Y%m%d-%H%M%S.png")))
+;; #+END_SRC
 
+;; #+BEGIN_SRC emacs-lisp
 (add-hook
  'org-mode-hook
  (lambda ()
