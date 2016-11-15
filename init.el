@@ -1141,6 +1141,8 @@
 ;; (require 'org-attach-screenshot)
 ;; #+END_SRC
 
+;; screenshots for orgees.  in particular during capturing.
+
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-org-attach-screenshot-as-standard-attachment ()
   "Trigger ‘org-attach-screenshot’ with target as Org standard attachment.
@@ -1150,8 +1152,11 @@ Create the attachment dir if not exists."
   (org-attach-screenshot nil (format-time-string
                               "screenshot-%Y%m%d-%H%M%S.png")))
 
-(add-hook 'org-mode-hook (lambda ()
-                           (key-chord-define-local "t1" #'mw-org-attach-screenshot-as-standard-attachment)))
+(add-hook
+ 'org-mode-hook
+ (lambda ()
+   (key-chord-define-local
+    "t1" #'mw-org-attach-screenshot-as-standard-attachment)))
 ;; #+END_SRC
 
 ;; *** Disable key C-,
