@@ -1141,7 +1141,7 @@
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-org-attach-screenshot-as-standard-attachment ()
-  "Trigger org-attach-screenshot with target as Org standard attachment.
+  "Trigger ‘org-attach-screenshot’ with target as Org standard attachment.
 Create the attachment dir if not exists."
   (interactive)
   (org-attach-dir t)
