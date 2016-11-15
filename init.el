@@ -1503,7 +1503,7 @@ line.
 
  - The drill items have a very special form."
     (interactive)
-    (switch-to-buffer (unless agenda-buffer-for-drill (get-buffer "*Org Agenda*")))
+    (set-buffer (or agenda-buffer-for-drill (get-buffer "*Org Agenda*")))
     (org-agenda-next-item 1)
     (org-agenda-goto)
     (org-narrow-to-element)
