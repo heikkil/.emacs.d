@@ -1149,8 +1149,9 @@
 Create the attachment dir if not exists."
   (interactive)
   (org-attach-dir t)
-  (let* ((shot-name (format-time-string
-                      "screenshot-%Y%m%d-%H%M%S.png")))
+  (let* ((shot-name
+          (format-time-string
+           "screenshot-%Y%m%d-%H%M%S.png")))
     (org-attach-screenshot nil shot-name)))
 
 (add-hook
