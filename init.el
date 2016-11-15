@@ -1140,10 +1140,16 @@
 ;; #+END_SRC
 
 ;; #+BEGIN_SRC emacs-lisp
-(defun mw-org-attach-screenshot-as-standard-attachment (org-attach-dir t)
+(defun mw-org-attach-screenshot-as-standard-attachment ()
+  "Trigger org-attach-screenshot with target as Org standard attachment.
+Create the attachment dir if not exists."
   (interactive)
+  (org-attach-dir t)
   (org-attach-screenshot nil (format-time-string
                               "screenshot-%Y%m%d-%H%M%S.png")))
+
+(add-hook 'org-mode-hook (lambda ()
+                           (key-chord-define-local "t1" #'mw-org-attach-screenshot-as-standard-attachment)))
 ;; #+END_SRC
 
 ;; *** Disable key C-,
@@ -1152,7 +1158,9 @@
 ;; anyways.
 
 ;; #+BEGIN_SRC emacs-lisp
-(add-hook 'org-mode-hook (lambda () (local-unset-key (kbd "C-,"))))
+(add-hook 'org-mode-hook (lambda ()
+                           (local-unset-key (kbd "C-,"))
+                           ))
 ;; #+END_SRC
 
 ;; *** Jump from the agenda to the stars
