@@ -1134,9 +1134,11 @@
 
 ;; *** org-screenshot
 
+;; using org-screenshot as a package now.
+
 ;; #+BEGIN_SRC emacs-lisp
-(push "~/p/elisp/external/org-attach-screenshot" load-path)
-(require 'org-attach-screenshot)
+;; (push "~/p/elisp/external/org-attach-screenshot" load-path)
+;; (require 'org-attach-screenshot)
 ;; #+END_SRC
 
 ;; #+BEGIN_SRC emacs-lisp
