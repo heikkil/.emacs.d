@@ -1489,23 +1489,28 @@ is positive, move after, and if negative, move before."
 ;; ** Convenient Drill
 
 ;; #+BEGIN_SRC emacs-lisp
-( (defun mw-org-agenda-open-next-line-as-drill-item ()
-   "Switch to next drill item.
+(let (agenda-buffer-for-drill)
+  (defun mw-org-agenda-open-next-line-as-drill-item-set-source-buffer ()
+    (interactive)
+    (setf agenda-buffer-for-drill (current-buffer)))
+
+  (defun mw-org-agenda-open-next-line-as-drill-item ()
+    "Switch to next drill item.
 Precondition:
 
  - The agenda contains a relevant heading in the next agenda
 line.
 
  - The drill items have a very special form."
-   (interactive)
-   (switch-to-buffer (unless agenda-buffer (get-buffer "*Org Agenda*")))
-   (org-agenda-next-item 1)
-   (org-agenda-goto)
-   (org-narrow-to-element)
-   (org-show-children)
-   (outline-next-heading)
-   (org-show-subtree)
-   (delete-other-windows)))
+    (interactive)
+    (switch-to-buffer (unless agenda-buffer-for-drill (get-buffer "*Org Agenda*")))
+    (org-agenda-next-item 1)
+    (org-agenda-goto)
+    (org-narrow-to-element)
+    (org-show-children)
+    (outline-next-heading)
+    (org-show-subtree)
+    (delete-other-windows)))
 ;; #+END_SRC
 
 ;; ** Insert url from mozrepl
