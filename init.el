@@ -1135,8 +1135,8 @@
 ;; *** org-screenshot
 
 ;; #+BEGIN_SRC emacs-lisp
-(push "~/p/elisp/external/org-screenshot" load-path)
-(require 'org-screenshot)
+(push "~/p/elisp/external/org-attach-screenshot" load-path)
+(require 'org-attach-screenshot)
 ;; #+END_SRC
 
 ;; *** Disable key C-,
