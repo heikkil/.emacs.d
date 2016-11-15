@@ -1,4 +1,4 @@
-;;; init.el --- personal emacs config file -*-  -*-
+;;; init.el --- personal emacs config file -*- lexical-binding: t -*-
 ;; #+STARTUP: oddeven
 ;; #+options: toc:2
 
