@@ -1155,6 +1155,8 @@ Create the attachment dir if not exists."
     "screenshot-%Y%m%d-%H%M%S.png")))
 ;; #+END_SRC
 
+;; Define a shortcut key:
+
 ;; #+BEGIN_SRC emacs-lisp
 (add-hook
  'org-mode-hook
