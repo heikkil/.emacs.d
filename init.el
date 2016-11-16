@@ -70,7 +70,7 @@
 ;; (setq debug-on-error t)
 ;; #+END_SRC
 
-;; ;;; ** Customize
+;; ** Customize
 
 ;; Early load of the custom.el to avoid irritating overridings from
 ;; custom-el.
