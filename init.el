@@ -1485,7 +1485,9 @@ is positive, move after, and if negative, move before."
 ;; ** misty-rose
 
 ;; #+BEGIN_SRC emacs-lisp
-(defun)
+(defun misty-rose-background ()
+  (interactive)
+  (set-background-color "mistyrose"))
 ;; #+END_SRC
 
 ;; ** org-mime
