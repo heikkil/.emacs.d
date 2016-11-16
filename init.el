@@ -47,7 +47,7 @@
 ;;  - [2016-09-15 Thu 11:30] Setting `max-lisp-eval-depth' to 10000
 ;;    (from 800) fixed the issue.
 
-;; *** Meta trick
+;; *** Trick
 
 ;; 
 ;;; Commentary:                                            :artificial:noexport:
