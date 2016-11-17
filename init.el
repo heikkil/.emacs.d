@@ -1148,6 +1148,7 @@
   "Trigger ‘org-attach-screenshot’ with target as Org standard attachment.
 Create the attachment dir if not exists."
   (interactive)
+  (require 'org-attach)
   (org-attach-dir t)
   (org-attach-screenshot
    nil
