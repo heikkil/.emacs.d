@@ -1420,6 +1420,14 @@ Create the attachment dir if not exists."
 (require 'mw-mark)
 ;; #+END_SRC
 
+;; ** org-structure-as-dirs-and-files
+
+;; org-structure-as-dirs-and-files.el
+;; #+BEGIN_SRC emacs-lisp
+(push "~/p/elisp/lab/org-structure-as-dirs-and-files" load-path)
+(require 'org-structure-as-dirs-and-files)
+;; #+END_SRC
+
 ;; ** org-teleport
 
 ;; I really like this.
@@ -1481,7 +1489,6 @@ is positive, move after, and if negative, move before."
       (yank))))
   (outline-hide-leaves))
 ;; #+end_src
-
 ;; ** misty-rose
 
 ;; #+BEGIN_SRC emacs-lisp
