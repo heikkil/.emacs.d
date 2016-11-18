@@ -169,7 +169,10 @@
            ("J" . org-clock-goto)
            ("N" org-speed-move-safe 'outline-next-visible-heading)
            ("P" org-speed-move-safe 'outline-previous-visible-heading)
-           ("S" . mw-org-narrow-to-one-level-above)
+           ("S" . (lambda (arg) (interactive "P")
+                    (mw-org-narrow-to-one-level-above)
+                    (unless arg
+                      (mw-org-up))))
            ("T" . org-tree-to-indirect-buffer)
            ("W" . widen)
            ("`" . mw-org-up)
