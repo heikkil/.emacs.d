@@ -3311,7 +3311,7 @@ Originates from gnu.emacs.help group 2006."
     (define-key map "l" #'clone-indirect-buffer)
     (define-key map "a" #'mw-append-to-scratch)
     (define-key map "r" #'mw-auxies-toggle-default-frame-reverse-state)
-    (define-key map "d" #'mw-display-mode-line-as-message)
+    (define-key map "d" #'mw-mode-line-as-message)
     (define-key map "m" #'menu-bar-mode)
     (define-key map "h" #'mw-strip)
     (define-key map "F" #'fringe-mode)
