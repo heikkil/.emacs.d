@@ -516,7 +516,7 @@
   (key-chord-define-global ";q" #'other-frame)
   (key-chord-define-global "qj" #'mw-exchange-to-buddy)
   (key-chord-define-global ".," #'next-buffer)
-  (key-chord-define-global "><"         ; this is S-., with dovorak
+  (key-chord-define-global "><"         ; this is S-., on dovorak layout
                            #'previous-buffer)
   (key-chord-define-global "r9" #'rope-read-mode)
   (key-chord-define-global "yy" #'mw-duplicate-line)
