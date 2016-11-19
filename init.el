@@ -172,6 +172,7 @@
            ("S" . (lambda (arg) (interactive "P")
                     (mw-org-narrow-to-one-level-above)
                     (unless arg
+                      (org-mark-ring-push)
                       (mw-org-up))))
            ("T" . org-tree-to-indirect-buffer)
            ("W" . widen)
