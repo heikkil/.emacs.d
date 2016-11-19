@@ -1529,10 +1529,15 @@ is positive, move after, and if negative, move before."
 ;; ** bbdb-this
 
 ;; #+BEGIN_SRC emacs-lisp
-(defun bbdb-this (b e)
+(defun mw-bbdb-this (b e)
   "Ask bbdb about the region."
   (interactive "r")
   (bbdb (buffer-substring b e)))
+
+(defun mw-bbdb-word-at-point ()
+  "Ask bbdb about word at point."
+  (interactive)
+  (bbdb (thing-at-point 'word t)))
 ;; #+END_SRC
 
 ;; ** Convenient Drill
