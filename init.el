@@ -1427,6 +1427,27 @@ Create the attachment dir if not exists."
 (require 'mw-mark)
 ;; #+END_SRC
 
+;; ** Pick often used pw from authinfo
+
+;; #+BEGIN_SRC emacs-lisp
+(defun mw-kill-marco.wahl@gmail.com-secret ()
+  "Kill passwort for user marco.wahl@gmail.com out of my authinfo."
+  (interactive)
+  (let* ((delay-to-callback 42)
+         (target
+          (kill-new
+           (car (aref (aref (plist-get
+                             (car
+                              (auth-source-search :user  "marco.wahl@gmail.com"))
+                             :secret)
+                            2)
+                      0)))))
+    (run-with-timer
+     delay-to-callback nil
+     (lambda ()
+       (setf kill-ring  (delete target kill-ring))))))
+;; #+END_SRC
+
 ;; ** org-structure-as-dirs-and-files
 
 ;; org-structure-as-dirs-and-files.el
