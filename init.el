@@ -1427,6 +1427,18 @@ Create the attachment dir if not exists."
 (require 'mw-mark)
 ;; #+END_SRC
 
+;; ** org-link-textify
+
+;; #+BEGIN_SRC emacs-lisp
+(defun org-link-textify ()
+  "Replace the link at point with its description."
+  (interactive)
+  (when (org-in-regexp org-bracket-link-regexp 1)
+    (let ((remove (list (match-beginning 0) (match-end 0)))
+          (desc (match-string-no-properties 3)))
+      (replace-match desc))))
+;; #+END_SRC
+
 ;; ** Pick often used pw from authinfo
 
 ;; #+BEGIN_SRC emacs-lisp
