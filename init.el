@@ -773,7 +773,7 @@
 
 ;; ** hydra
 
-;; Hydra allows some convenient key maps organization.
+;; Hydra provides some convenient key maps organization.
 
 ;; #+BEGIN_SRC emacs-lisp
 (use-package hydra)
