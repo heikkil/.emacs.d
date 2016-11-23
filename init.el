@@ -171,6 +171,7 @@
            ("P" org-speed-move-safe 'outline-previous-visible-heading)
            ("S" . (lambda (arg) (interactive "P")
                     (mw-org-narrow-to-one-level-above)
+                    (org-orgee-as-top-level-tree-establish)
                     (unless arg
                       (org-mark-ring-push)
                       (mw-org-up))))
