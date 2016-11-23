@@ -306,8 +306,7 @@
 ;; ** swiper
 
 ;; #+BEGIN_SRC emacs-lisp
-(use-package swiper
-  :bind ("C->" . swiper))
+(use-package swiper)
 ;; #+END_SRC
 
 ;; ** dired-narrow
@@ -389,6 +388,7 @@
 (use-package avy
   :ensure t
   :bind (("C-." . avy-goto-char)
+         ("C->" . avy-goto-char-in-line)
          ("C-," . avy-goto-line))
   :config
   (setq avy-keys
