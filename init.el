@@ -171,10 +171,10 @@
            ("P" org-speed-move-safe 'outline-previous-visible-heading)
            ("S" . (lambda (arg) (interactive "P")
                     (mw-org-narrow-to-one-level-above)
-                    (org-orgee-as-top-level-tree-establish)
                     (unless arg
                       (org-mark-ring-push)
-                      (mw-org-up))))
+                      (mw-org-up)
+                      (org-orgee-as-top-level-tree-establish))))
            ("T" . org-tree-to-indirect-buffer)
            ("W" . widen)
            ("`" . mw-org-up)
@@ -182,6 +182,9 @@
            ("k" . org-capture)
            ("m" . org-teleport)
            ("q" . org-columns-quit)
+           ("s" . (lambda () (interactive)
+                    (org-narrow-to-subtree)
+                    (org-orgee-as-top-level-tree-establish)))
            ("x" . org-export-dispatch)
            ("y" . mw-org-property-action)
            ("z" . org-add-note)
@@ -1153,7 +1156,11 @@
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-org-attach-screenshot-as-standard-attachment ()
   "Trigger ‘org-attach-screenshot’ with target as Org standard attachment.
-Create the attachment dir if not exists."
+Create the attachment dir if not exists.
+
+The enhancement compared with pure org-attach-screenshot is that
+no decision about how to store the image has to be made.
+"
   (interactive)
   (require 'org-attach)
   (org-attach-dir t)
