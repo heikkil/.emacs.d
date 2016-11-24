@@ -163,6 +163,7 @@
    (setq org-speed-commands-user
          '(
            ("," . avy-goto-line)
+           ("." . avy-goto-char)
            ("9" . org-decrypt-entry)
            (";" . org-timer-set-timer)
            ("H" . org-rise)
