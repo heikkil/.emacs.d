@@ -164,7 +164,7 @@
          '(
            ("," . (lambda (&optional arg)
                     (interactive "P")
-                    (avy-goto-char "*" arg)))
+                    (avy-goto-char ?* arg)))
            ("." . avy-goto-char)
            ("9" . org-decrypt-entry)
            (";" . org-timer-set-timer)
