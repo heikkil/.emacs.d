@@ -1441,7 +1441,7 @@ no decision about how to store the image has to be made.
 ;; ** org-link-textify
 
 ;; #+BEGIN_SRC emacs-lisp
-(defun org-link-textify ()
+(defun mw-org-link-textify ()
   "Replace the link at point with its description."
   (interactive)
   (when (org-in-regexp org-bracket-link-regexp 1)
