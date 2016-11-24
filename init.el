@@ -1450,7 +1450,9 @@ no decision about how to store the image has to be made.
     (let ((remove (list (match-beginning 0) (match-end 0)))
           (link (match-string-no-properties 1))
           (desc (match-string-no-properties 3)))
-      ((replace-match (if (string= desc "") link desc))))))
+      ((replace-match (if (string= desc "")
+                          link
+                        desc))))))
 ;; #+END_SRC
 
 ;; ** Pick often used pw from authinfo
