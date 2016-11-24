@@ -1438,7 +1438,9 @@ no decision about how to store the image has to be made.
 (require 'mw-mark)
 ;; #+END_SRC
 
-;; ** org-link-textify
+;; ** textify org-link
+
+;; Strip the link part
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-org-link-textify ()
@@ -1446,8 +1448,9 @@ no decision about how to store the image has to be made.
   (interactive)
   (when (org-in-regexp org-bracket-link-regexp 1)
     (let ((remove (list (match-beginning 0) (match-end 0)))
+          (link (match-string-no-properties 1))
           (desc (match-string-no-properties 3)))
-      (replace-match desc))))
+      ((replace-match (if (string= desc "") link desc))))))
 ;; #+END_SRC
 
 ;; ** Pick often used pw from authinfo
