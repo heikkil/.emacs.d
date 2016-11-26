@@ -2164,6 +2164,23 @@ agenda buffer e.g. C-k.
 
 ;; ** Org Lab
 
+;; ***** org hide above first heading
+
+;; #+BEGIN_SRC emacs-lisp
+(defun org-first-heading ()
+  (goto-char (point-min))
+  (if (re-search-forward (concat "^\\(" org-outline-regexp "\\)") nil t)
+      (goto-char (match-beginning 0))))
+
+(defun org-flag-region-before-first-heading (&optional show)
+  (interactive "P")
+  (goto-char (point-min))
+  (outline-flag-region
+   (point)
+   (progn (org-first-heading) (point))
+   (not show)))
+;; #+END_SRC
+
 ;; ***** org-show-context-detail
 
 ;; #+BEGIN_SRC emacs-lisp
