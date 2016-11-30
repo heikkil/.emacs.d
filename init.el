@@ -188,7 +188,7 @@
            ("s" . (lambda () (interactive)
                     (org-narrow-to-subtree)
                     (org-orgee-as-top-level-tree-establish)))
-           ("x" . (lambda (arg) (interactive "P")
+           ("x" . (lambda (arg) "Org export of orgee." (interactive "P")
                     (let ((org-export-initial-scope 'buffer))
                       (org-export-dispatch))))
            ("y" . mw-org-property-action)
