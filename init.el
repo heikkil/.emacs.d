@@ -1620,7 +1620,8 @@ line.
 ;; ** Play with url from mozrepl
 
 ;; #+BEGIN_SRC emacs-lisp
-(defun eww-show-firefox-page ()
+(defun eww-open-ff-page ()
+  "Open current firefox url with eww."
   (interactive)
   (moz-controller-get-current-url)
   (eww moz-controller-repl-output))
