@@ -2841,8 +2841,9 @@ Optional argument RELOAD for w3m-view-this-url-1."
 (require 'eww)
 (if (boundp 'eww-mode-map)
     (progn
-      (define-key eww-mode-map "x" #'mw-eww-duplicate-buffer);'rename-uniquely
-      (message "Added 'x' in eww-mode-map."))
+      (define-key eww-mode-map "x" #'mw-eww-duplicate-buffer) ;'rename-uniquely
+      (message "Added 'x' in eww-mode-map.")
+      (define-key eww-mode-map " " #'eww-open-ff-page))
   (message
    (concat
     "FAILED adding 'x' to eww-mode-map."
