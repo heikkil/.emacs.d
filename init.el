@@ -1617,9 +1617,14 @@ line.
     (delete-other-windows)))
 ;; #+END_SRC
 
-;; ** Insert url from mozrepl
+;; ** Play with url from mozrepl
 
 ;; #+BEGIN_SRC emacs-lisp
+(defun eww-show-firefox-page ()
+  (interactive)
+  (moz-controller-get-current-url)
+  (eww moz-controller-repl-output))
+
 (defun mw-insert-current-url-from-mozrepl-hackish ()
   "Try to insert the current url from mozrepl at point.
 
