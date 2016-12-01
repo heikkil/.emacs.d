@@ -1624,7 +1624,7 @@ line.
   "Open current firefox url with eww."
   (interactive)
   (moz-controller-get-current-url)
-  (sleep-for 3)
+  (sleep-for 1)
   (eww moz-controller-repl-output))
 
 (defun mw-insert-current-url-from-mozrepl-hackish ()
