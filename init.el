@@ -2908,9 +2908,17 @@ Optional argument RELOAD for w3m-view-this-url-1."
     (unless hidden-mode-line-mode
       (hidden-mode-line-mode))))
 
+(defun mw-hidden-mode-line-deactivate-for-all ()
+  (interactive)
+  (dolist (buffer (buffer-list))
+    (set-buffer buffer)
+    (when hidden-mode-line-mode
+      (hidden-mode-line-mode))))
 ;; #+END_SRC
 
 ;; ** Strip
+
+;; Go further from hidden-mode-line-mode.
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-strip ()
