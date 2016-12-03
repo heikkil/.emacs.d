@@ -2900,6 +2900,14 @@ Optional argument RELOAD for w3m-view-this-url-1."
 
 ;; If you want to hide the mode-line in every buffer by default
 ;; (add-hook 'after-change-major-mode-hook 'hidden-mode-line-mode)
+
+(defun mw-hidden-mode-line-for-all ()
+  (interactive)
+  (dolist (buffer (buffer-list))
+    (set-buffer buffer)
+    (unless hidden-mode-line-mode
+      (hidden-mode-line-mode))))
+
 ;; #+END_SRC
 
 ;; ** Strip
