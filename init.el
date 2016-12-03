@@ -518,6 +518,7 @@
 (use-package key-chord
   :config
   (key-chord-mode 1) ;; recall: e.g. (key-chord-unset-global "bb") for undef a key-chord.
+  (key-chord-define-global "l1" #'mw-mark-line)
   (key-chord-define-global "o6" #'org-open-at-point-global)
   (key-chord-define-global "r1" #'recompile)
   (key-chord-define-global "o8" #'ace-link)
@@ -526,7 +527,7 @@
   (key-chord-define-global ";q" #'other-frame)
   (key-chord-define-global "qj" #'mw-exchange-to-buddy)
   (key-chord-define-global ".," #'next-buffer)
-  (key-chord-define-global "><"         ; this is S-., on dovorak layout
+  (key-chord-define-global "><"       ; this is S-., on dovorak layout
                            #'previous-buffer)
   (key-chord-define-global "r9" #'rope-read-mode)
   (key-chord-define-global "yy" #'mw-duplicate-line)
