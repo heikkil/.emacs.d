@@ -518,9 +518,10 @@
 (use-package key-chord
   :config
   (key-chord-mode 1) ;; recall: e.g. (key-chord-unset-global "bb") for undef a key-chord.
+  (key-chord-define-global "r1" #'mw-carry-region-toggle)
   (key-chord-define-global "l1" #'mw-mark-line)
   (key-chord-define-global "o6" #'org-open-at-point-global)
-  (key-chord-define-global "r1" #'recompile)
+  (key-chord-define-global "c4" #'recompile)
   (key-chord-define-global "o8" #'ace-link)
   (key-chord-define-global "s-" #'beacon-blink) ; locate the cursor easily
   (key-chord-define-global "ao" #'other-window)
