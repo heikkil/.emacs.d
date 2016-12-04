@@ -2874,7 +2874,6 @@ Optional argument RELOAD for w3m-view-this-url-1."
   "Shorter name.")
 ;; #+END_SRC
 
-
 ;; ** Hidden mode line
 
 ;; Found the following mode line hiding function at
