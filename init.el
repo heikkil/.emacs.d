@@ -1451,6 +1451,7 @@ no decision about how to store the image has to be made.
 ;; *** keybinding
 
 ;; #+begin_src
+;; (local-set-key (kbd "C-c r") #'mw-carry-region-toggle)
 ;; (global-set-key (kbd "C-c r") #'mw-carry-region-toggle)
 ;; #+end_src
 
