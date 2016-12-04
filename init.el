@@ -124,7 +124,7 @@
 ;; #+END_SRC
 
 ;; ** Don't load outdated byte code
-;; 1
+
 ;; #+BEGIN_SRC emacs-lisp
 (setq load-prefer-newer t)
 ;; #+END_SRC
@@ -1441,6 +1441,13 @@ no decision about how to store the image has to be made.
 (require 'mw-mark)
 ;; #+END_SRC
 
+;; ** carry-region
+
+;; #+BEGIN_SRC emacs-lisp
+(push "~/p/elisp/mw/carry-region" load-path)
+(require 'carry-region)
+;; #+END_SRC
+
 ;; ** textify org-link
 
 ;; Strip the link part
@@ -1455,7 +1462,6 @@ no decision about how to store the image has to be made.
           (desc (match-string-no-properties 3)))
       (replace-match (or desc link)))))
 ;; #+END_SRC
-
 ;; ** Pick often used pw from authinfo
 
 ;; #+BEGIN_SRC emacs-lisp
