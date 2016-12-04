@@ -1448,6 +1448,12 @@ no decision about how to store the image has to be made.
 (require 'carry-region)
 ;; #+END_SRC
 
+;; *** keybinding
+
+;; #+begin_src
+;; (global-set-key (kbd "C-c r") #'mw-carry-region-toggle)
+;; #+end_src
+
 ;; ** textify org-link
 
 ;; Strip the link part
