@@ -729,6 +729,8 @@
   )
 ;; #+END_SRC
 
+
+
 ;; ** AUR access
 
 ;; ~aurel~ helps with the management of the AUR-packages of the
