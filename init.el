@@ -2891,6 +2891,8 @@ Optional argument RELOAD for w3m-view-this-url-1."
     (browse-url-at-point))))
 ;; #+END_SRC
 
+;; Also consider to call `browse-url-firefox' directly.
+
 ;; ** Hidden mode line
 
 ;; Found the following mode line hiding function at
