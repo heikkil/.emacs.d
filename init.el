@@ -2882,6 +2882,14 @@ Optional argument RELOAD for w3m-view-this-url-1."
   "Shorter name.")
 ;; #+END_SRC
 
+;; ** open url at point in firefox
+
+;; BEGIN_SRCDEFUN mw-browse-url-at emacs-lisp
+;; (defun-point-firefox (;;   (interactive)
+;;   (let ((browse-url-browser-function #'browse-url-firefox))
+;;     (browse-url-at-point)))
+;; #+end_src
+;; ; END_SRC
 ;; ** Hidden mode line
 
 ;; Found the following mode line hiding function at
