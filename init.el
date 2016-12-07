@@ -1637,6 +1637,8 @@ line.
 ;; ** Play with url from mozrepl
 
 ;; #+BEGIN_SRC emacs-lisp
+(moz-controller-global-on)
+
 (defun eww-open-ff-page ()
   "Open current firefox url with eww."
   (interactive)
