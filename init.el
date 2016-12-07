@@ -2888,7 +2888,7 @@ Optional argument RELOAD for w3m-view-this-url-1."
 (defun mw-browse-url-at-point-firefox ()
   (interactive)
   (let ((browse-url-browser-function #'browse-url-firefox))
-    (browse-url-at-point))))
+    (browse-url-at-point)))
 ;; #+END_SRC
 
 ;; Also consider to call `browse-url-firefox' directly.
