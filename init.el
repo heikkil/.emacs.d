@@ -1637,6 +1637,7 @@ line.
 ;; ** Play with url from mozrepl
 
 ;; #+BEGIN_SRC emacs-lisp
+(use-package moz-controller)
 (moz-controller-global-on)
 
 (defun eww-open-ff-page ()
