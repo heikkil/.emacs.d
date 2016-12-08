@@ -1475,7 +1475,7 @@ no decision about how to store the image has to be made.
 ;; ** Pick often used pw from authinfo
 
 ;; #+BEGIN_SRC emacs-lisp
-(defun mw-kill-marco.wahl@gmail.com-secret ()
+(defun mw-password-for-marco.wahl@gmail.com ()
   "Kill passwort for user marco.wahl@gmail.com out of my authinfo."
   (interactive)
   (let* ((delay-to-callback 42)
