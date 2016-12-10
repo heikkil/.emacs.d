@@ -1178,7 +1178,8 @@ no decision about how to store the image has to be made.
   (org-attach-screenshot
    nil
    (format-time-string
-    "screenshot-%Y%m%d-%H%M%S.png")))
+    "screenshot-%Y%m%d-%H%M%S.png"))
+  (org-attach-sync))
 ;; #+END_SRC
 
 ;; Define a shortcut key:
