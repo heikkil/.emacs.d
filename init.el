@@ -521,6 +521,8 @@
 (use-package key-chord
   :config
   (key-chord-mode 1) ;; recall: e.g. (key-chord-unset-global "bb") for undef a key-chord.
+  (key-chord-define-global "r7" #'mw-org-refile-set-direct-target-bm)
+  (key-chord-define-global "r8" #'mw-org-refile-refile-to-direct-target)
   (key-chord-define-global "r1" #'mw-carry-region-toggle)
   (key-chord-define-global "l1" #'mw-mark-line)
   (key-chord-define-global "o6" #'org-open-at-point-global)
