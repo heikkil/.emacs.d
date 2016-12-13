@@ -3409,7 +3409,10 @@ Originates from gnu.emacs.help group 2006."
 ;; :ID:       87eef969-ff13-4812-9c4e-2c79f9c3f7c6
 ;; :END:
 
-;; ** imenu:
+;; ** imenu
+
+;; imenu provides a mechanism to jump to locations of interest for
+;; several file types, e.g. Org.
 
 ;; #+BEGIN_SRC emacs-lisp
 (local-set-key (kbd "C-*") 'imenu)
