@@ -522,6 +522,7 @@
   :config
   (key-chord-mode 1) ;; recall: e.g. (key-chord-unset-global "bb") for undef a key-chord.
   (key-chord-define-global "7g" #'split-window-below)
+  (key-chord-define-global "4p" #'split-window-horizontally)
   (key-chord-define-global "r7" #'mw-org-refile-set-direct-target-bm)
   (key-chord-define-global "r8" #'mw-org-refile-refile-to-direct-target)
   (key-chord-define-global "r1" #'mw-carry-region-toggle)
