@@ -3409,6 +3409,12 @@ Originates from gnu.emacs.help group 2006."
 ;; :ID:       87eef969-ff13-4812-9c4e-2c79f9c3f7c6
 ;; :END:
 
+;; ** imenu:
+
+;; #+BEGIN_SRC emacs-lisp
+(local-set-key (kbd "C-*") 'imenu)
+;; #+END_SRC
+
 ;; ** Rectangle
 
 ;; #+BEGIN_SRC emacs-lisp
