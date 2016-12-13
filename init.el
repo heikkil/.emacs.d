@@ -2665,7 +2665,7 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
 ;; #+BEGIN_SRC emacs-lisp
 (push "~/p/elisp/mw/rope-read-mode" load-path)
 (require 'rope-read-mode)
-(define-key rope-read-mode-map "n" #'rope-read-next-paragraph)
+(define-key rope-read-mode-map "d" #'rope-read-next-paragraph)
 ;; (define-key rope-read-mode-map "d" 'rope-read-reol) ;; start from current line with rope-read
 ;; (define-key rope-read-mode-map "r" 'rope-read-delete-overlays)
 ;; (global-set-key (kbd "<Scroll_Lock> <Scroll_Lock>") #'rope-read-mode)
