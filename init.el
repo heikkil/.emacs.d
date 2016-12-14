@@ -3415,7 +3415,7 @@ Originates from gnu.emacs.help group 2006."
 ;; several file types, e.g. Org.
 
 ;; #+BEGIN_SRC emacs-lisp
-(local-set-key (kbd "C-*") 'imenu)
+(global-set-key (kbd "C-*") 'imenu)
 ;; #+END_SRC
 
 ;; ** Rectangle
