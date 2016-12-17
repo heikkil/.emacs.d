@@ -2363,8 +2363,8 @@ POINTLINE is the line containing point."
 pointline is the line containing point."
   (format "%4d" line))
 
-(setq linum-format 'the-line)
-(setq linum-format 'delta5)
+;; (setq linum-format 'the-line)
+;; (setq linum-format 'delta5)
 ;; #+END_SRC
 
 ;; ** Toggle-letter-case
