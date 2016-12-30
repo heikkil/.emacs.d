@@ -2265,8 +2265,23 @@ agenda buffer e.g. C-k.
   (setq org-extend-today-until 0))
 ;; #+END_SRC
 
-;; *****
+;; ***** org-todo with certain date
 
+;; recall: there is already org-todo-yesterday.
+
+;; #+BEGIN_SRC emacs-lisp
+(defun mw-org-todo-with-other-date (&optional arg)
+  "Like `org-todo' but ask for an other date."
+  (interactive "P")
+  (let* ((org-use-effective-time t)
+         (hour
+          (truncate
+           (- (/ (org-time-stamp-to-now
+                  (org-read-date) t)
+                 60 60))))
+          (org-extend-today-until (1+ hour)))
+    (org-todo arg)))
+;; #+END_SRC
 
 ;; ** Unset a Register
 
