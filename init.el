@@ -2273,7 +2273,7 @@ agenda buffer e.g. C-k.
 (defun mw-org-todo-with-other-date (&optional arg date)
   "Like `org-todo' but ask for an other DATE.
 Optional argument ARG prefix arg."
-  (interactive  (list "P" (org-read-date)))
+  (interactive (list current-prefix-arg (org-read-date)))
   (let* ((org-use-effective-time t)
          (hour
           (truncate
