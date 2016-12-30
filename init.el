@@ -2270,15 +2270,14 @@ agenda buffer e.g. C-k.
 ;; recall: there is already org-todo-yesterday.
 
 ;; #+BEGIN_SRC emacs-lisp
-(defun mw-org-todo-with-other-date (&optional arg date)
+(defun mw-org-todo-with-other-date (date &optional arg)
   "Like `org-todo' but ask for an other DATE.
 Optional argument ARG prefix arg."
-  (interactive (list current-prefix-arg (org-read-date)))
+  (interactive (list (org-read-date) current-prefix-arg))
   (let* ((org-use-effective-time t)
          (hour
           (truncate
-           (- (/ (org-time-stamp-to-now
-                  (org-time-string-to-time date) t)
+           (- (/ (org-time-stamp-to-now date t)
                  60 60))))
           (org-extend-today-until (1+ hour)))
     (org-todo arg)))
