@@ -2199,7 +2199,7 @@ agenda buffer e.g. C-k.
   '(progn (define-key Info-mode-map (kbd "a") #'Info-search-next)))
 ;; #+END_SRC
 
-;; ** Org Lab
+;; ** Org Labs
 
 ;; ***** org hide above first heading
 
@@ -2264,6 +2264,9 @@ agenda buffer e.g. C-k.
   (interactive)
   (setq org-extend-today-until 0))
 ;; #+END_SRC
+
+;; *****
+
 
 ;; ** Unset a Register
 
