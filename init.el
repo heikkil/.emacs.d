@@ -3469,7 +3469,7 @@ Originates from gnu.emacs.help group 2006."
 ;; #+BEGIN_SRC emacs-lisp
 (defvar mw-individual-keymap
   (let ((map (make-sparse-keymap)))
-    (define-key map "f" #'mw-buffer-filename-as-kill)
+    (define-key map "f" #'mw-kill-buffer-filename)
     (define-key map "g" #'git-auto-commit-mode)
     (define-key map "l" #'clone-indirect-buffer)
     (define-key map "a" #'mw-append-to-scratch)
