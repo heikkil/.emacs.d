@@ -1466,9 +1466,21 @@ no decision about how to store the image has to be made.
 ;; (global-set-key (kbd "C-c r") #'mw-carry-region-toggle)
 ;; #+end_src
 
-;; ** textify org-link
+;; ** more avy-goto via one command
 
-;; Strip the link part
+;; BEGIN_SR emacs-lisp
+;; (defun mw-avy-goto-char (arg)
+;;   "Call avy-goto-char variant dependend of universal-argument.
+;; Double C-u for `avy-goto-char-in-line' else call `avy-goto-char'.
+;; "
+;;   (interactive "P")
+;;   (cond
+;;    ((equal '(16) arg)
+;;     (call-interactively #'avy-goto-char-in-line))
+;;    ((call-interactively #'avy-goto-char))))
+;; END_SRCTEXTIFY org-link
+
+;; ** textifylink part
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-org-link-textify ()
