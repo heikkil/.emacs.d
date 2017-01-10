@@ -165,7 +165,7 @@
            ("," . (lambda (&optional arg)
                     (interactive "P")
                     (avy-goto-char ?* arg)))
-           ("." . avy-goto-char)
+           ("." . mw-avy-goto-char)
            ("9" . org-decrypt-entry)
            (";" . org-timer-set-timer)
            ("H" . org-rise)
@@ -399,7 +399,7 @@
 ;; #+BEGIN_SRC emacs-lisp
 (use-package avy
   :ensure t
-  :bind (("C-." . avy-goto-char)
+  :bind (("C-." . mw-avy-goto-char)
          ("C->" . avy-goto-char-in-line)
          ("C-," . avy-goto-line))
   :config
