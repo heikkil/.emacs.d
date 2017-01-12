@@ -248,7 +248,7 @@
 ;; #+END_SRC
 
 ;; '(package-initialize)' gets added automatically according to
-;; [[help:package-initialize]].  But maybe too late.
+;; help:package-initialize.  But maybe too late.
 
 ;; ** use-package
 
