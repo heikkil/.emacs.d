@@ -318,7 +318,8 @@
 ;; ** swiper
 
 ;; #+BEGIN_SRC emacs-lisp
-(use-package swiper)
+(use-package swiper
+  :bind ("C-S-s" . swiper))
 ;; #+END_SRC
 
 ;; ** dired-narrow
