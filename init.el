@@ -162,7 +162,7 @@
  (lambda ()
    (setq org-speed-commands-user
          '(
-           ("," . (lambda (&optional arg)
+           ("*" . (lambda (&optional arg)
                     (interactive "P")
                     (avy-goto-char ?* arg)))
            ("." . mw-avy-goto-char)
