@@ -183,6 +183,7 @@
                     (org-orgee-as-top-level-tree-unravel)
                     ;; (widen)
                     ))
+           ("Y" . org-agenda)
            ("`" . mw-org-up)
            ("d" . org-attach)
            ("k" . org-capture)
