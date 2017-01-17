@@ -196,6 +196,7 @@
                       (org-export-dispatch))))
            ("y" . mw-org-property-action)
            ("z" . org-add-note)
+           ("h" . org-refile-dwim)
            ))
    ;; (add-to-list 'org-speed-commands-user (cons ","  #'avy-goto-line))
    ;; (add-to-list 'org-speed-commands-user (cons "S" #'mw-org-narrow-to-one-level-above))
