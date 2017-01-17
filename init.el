@@ -2699,7 +2699,6 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
 (define-key rope-read-mode-map "d" #'rope-read-next-paragraph)
 ;; (define-key rope-read-mode-map "d" 'rope-read-reol) ;; start from current line with rope-read
 ;; (define-key rope-read-mode-map "r" 'rope-read-delete-overlays)
-;; (global-set-key (kbd "<Scroll_Lock> <Scroll_Lock>") #'rope-read-mode)
 ;; #+END_SRC
 
 ;; ** Convenient snapshot of emacs from within
@@ -3605,6 +3604,12 @@ easily create a new frame."
 
 ;; #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "C-c m y") #'mw-hackish-insert-current-url-from-mozrepl)
+;; #+END_SRC
+
+;; ** Breaking evil
+
+;; #+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "<Scroll_Lock> <Scroll_Lock>") #'evil-mode)
 ;; #+END_SRC
 
 ;; ** Various Keysettings
