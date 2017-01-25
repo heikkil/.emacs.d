@@ -3482,6 +3482,7 @@ Originates from gnu.emacs.help group 2006."
 ;; #+BEGIN_SRC emacs-lisp
 (defvar mw-individual-keymap
   (let ((map (make-sparse-keymap)))
+    (define-key map "y" #'mw-moz-controller-hackish-insert-current-url-from-mozrepl)
     (define-key map "f" #'mw-kill-buffer-filename)
     (define-key map "g" #'git-auto-commit-mode)
     (define-key map "l" #'clone-indirect-buffer)
@@ -3603,8 +3604,9 @@ easily create a new frame."
 
 ;; ** Communication with Mozilla
 
+;; see individual key map
+
 ;; #+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "C-c m y") #'mw-moz-controller-hackish-insert-current-url-from-mozrepl)
 ;; #+END_SRC
 
 ;; ** Breaking evil
