@@ -1669,7 +1669,7 @@ line.
   (sleep-for 1)
   (eww moz-controller-repl-output))
 
-(defun mw-hackish-insert-current-url-from-mozrepl ()
+(defun mw-moz-controller-hackish-insert-current-url-from-mozrepl ()
   "Try to insert the current url from mozrepl at point.
 
 Note: This function may fail sometimes even when mozrepl and
@@ -3604,7 +3604,7 @@ easily create a new frame."
 ;; ** Communication with Mozilla
 
 ;; #+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "C-c m y") #'mw-hackish-insert-current-url-from-mozrepl)
+(global-set-key (kbd "C-c m y") #'mw-moz-controller-hackish-insert-current-url-from-mozrepl)
 ;; #+END_SRC
 
 ;; ** Breaking evil
