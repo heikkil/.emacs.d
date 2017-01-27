@@ -206,7 +206,7 @@
 ;; ** Org from Source
 
 ;; #+BEGIN_SRC emacs-lisp
-(let ((orgmodelocation (expand-file-name "~/p/org/org-mode")))
+(let ((orgmodelocation (expand-file-name "~/p/org/org-mode-readonly")))
   (push (concat orgmodelocation "/lisp") load-path)
   (push (concat orgmodelocation "/contrib/lisp") load-path)
   (eval-after-load "org-agenda"
