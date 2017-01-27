@@ -1455,6 +1455,8 @@ no decision about how to store the image has to be made.
 ;; #+END_SRC
 
 ;; ** carry-region
+;; :PROPERTIES:
+;; :END:
 
 ;; #+BEGIN_SRC emacs-lisp
 (push "~/p/elisp/mw/carry-region" load-path)
@@ -1468,18 +1470,25 @@ no decision about how to store the image has to be made.
 ;; (global-set-key (kbd "C-c r") #'mw-carry-region-toggle)
 ;; #+end_src
 
+;; ** org-bullets
+
+;; #+BEGIN_SRC emacs-lisp
+(push "~/p/elisp/external/org-bullets" load-path)
+(require 'org-bullets)
+;; #+END_SRC
+
 ;; ** more avy-goto via one command
 
 ;; BEGIN_SR emacs-lisp
-(defun mw-avy-goto-char (arg)
-  "Call avy-goto-char variant dependend of universal-argument.
-Double C-u for `avy-goto-char-in-line' else call `avy-goto-char'.
-"
-  (interactive "P")
-  (cond
-   ((equal '(16) arg)
-    (call-interactively #'avy-goto-char-in-line))
-   ((call-interactively #'avy-goto-char))))
+;; (defun mw-avy-goto-char (arg)
+;;   "Call avy-goto-char variant dependend of universal-argument.
+;; Double C-u for `avy-goto-char-in-line' else call `avy-goto-char'.
+;; "
+;;   (interactive "P")
+;;   (cond
+;;    ((equal '(16) arg)
+;;     (call-interactively #'avy-goto-char-in-line))
+;;    ((call-interactively #'avy-goto-char))))
 ;; END_SRCTEXTIFY org-link
 
 ;; ** textifylink part
