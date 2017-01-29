@@ -402,7 +402,8 @@
 ;; #+BEGIN_SRC emacs-lisp
 (use-package avy
   :ensure t
-  :bind (("C-." . mw-avy-goto-char)
+  :bind ( ;; ("C-." . mw-avy-goto-char) ; somehow this conflicts with auctex (see also other apearances)
+         ("C-." . avy-goto-char)
          ("C->" . avy-goto-char-in-line)
          ("C-," . avy-goto-line))
   :config
