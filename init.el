@@ -1458,6 +1458,14 @@ no decision about how to store the image has to be made.
 (require 'mw-mark)
 ;; #+END_SRC
 
+;; ** hack-time
+
+;; #+BEGIN_SRC
+(push "~/p/elisp/mw/hack-time" load-path)
+(require 'hack-time)
+
+;; #+END_SRC
+
 ;; ** carry-region
 ;; :PROPERTIES:
 ;; :END:
