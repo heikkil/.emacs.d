@@ -3498,6 +3498,12 @@ Originates from gnu.emacs.help group 2006."
 (global-set-key (kbd "C-c o") 'org-open-at-point-global)
 ;; #+END_SRC
 
+;; ** Exit org src edit with C-cc
+
+;; #+BEGIN_SRC emacs-lisp
+(define-key org-src-mode-map "\C-c\C-c" 'org-edit-src-exit)
+;; #+END_SRC
+
 ;; ** Individual keymap
 
 ;; #+BEGIN_SRC emacs-lisp
