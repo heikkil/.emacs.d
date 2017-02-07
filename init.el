@@ -1967,7 +1967,7 @@ Accurate to a few seconds."
 
 ;; #+BEGIN_SRC emacs-lisp
 (defhydra hydra-transport-word (global-map "C-c t")
-  "Focus on one word to transpose left or right."
+  "Transport word left or right."
   ("n" (transpose-words 1))
   ("p" (transpose-words -1)))
 ;; #+END_SRC
@@ -3661,6 +3661,12 @@ easily create a new frame."
 
 (global-set-key (kbd "<XF86AudioLowerVolume>") #'emms-volume-lower)
 (global-set-key (kbd "<XF86AudioRaiseVolume>") #'emms-volume-raise)
+
+(defhydra hydra-transport-word (global-map "C-c 1")
+  "Transport word left or right."
+  ("1" (emms-volume-lower))
+  ("2" (emms-volume-raise)))
+
 (global-set-key (kbd "<XF86AudioMute>") #'mw-sound-0%)
 (global-set-key (kbd "<XF86AudioNext>") #'mw-sound-100%)
 (global-set-key (kbd "<XF86AudioPlay>") #'mw-sound-set-enjoyable-volume)
