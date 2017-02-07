@@ -1966,7 +1966,7 @@ Accurate to a few seconds."
 ;; ** Move Word
 
 ;; #+BEGIN_SRC emacs-lisp
-(defhydra hydra-org-drawers (global-map "C-c t")
+(defhydra hydra-transport-word (global-map "C-c t")
   "Focus on one word to transpose left or right."
   ("n" (transpose-words 1))
   ("p" (transpose-words -1)))
