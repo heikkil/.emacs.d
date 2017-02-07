@@ -3662,8 +3662,8 @@ easily create a new frame."
 (global-set-key (kbd "<XF86AudioLowerVolume>") #'emms-volume-lower)
 (global-set-key (kbd "<XF86AudioRaiseVolume>") #'emms-volume-raise)
 
-(defhydra hydra-transport-word (global-map "C-c 1")
-  "Transport word left or right."
+(defhydra hydra-volume-control (global-map "C-c 1")
+  "Volume control."
   ("1" (emms-volume-lower))
   ("2" (emms-volume-raise)))
 
