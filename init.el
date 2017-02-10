@@ -86,6 +86,7 @@
 (load custom-file)
 ;; #+END_SRC
 
+;; [2017-02-10 Fri 09:23] the override with the small letters did not work.
 ;; #+BEGIN_SRC emacs-lisp
 (setq org-structure-template-alist
       '(("s" "#+begin_src ?\n\n#+end_src")
