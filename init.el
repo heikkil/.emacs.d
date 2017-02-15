@@ -170,6 +170,7 @@
            ("." . avy-goto-char)
            ("9" . org-decrypt-entry)
            (";" . org-timer-set-timer)
+           ("G" . ace-link)
            ("H" . org-rise)
            ("J" . org-clock-goto)
            ("N" org-speed-move-safe 'outline-next-visible-heading)
@@ -849,7 +850,7 @@
 ;; (unless (package-installed-p 'hyperbole)
 ;;   (package-refresh-contents)
 ;;   (package-install 'hyperbole))
-;;;uncomment this to activate hyperbole: (require 'hyperbole)
+(require 'hyperbole)
 ;; #+END_SRC
 
 ;; #+BEGIN_SRC emacs-lisp
