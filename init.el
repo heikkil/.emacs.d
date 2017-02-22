@@ -3538,7 +3538,11 @@ Originates from gnu.emacs.help group 2006."
     (define-key map "z" #'mw-auxies-delete-to-direction)
     (define-key map "k" #'key-chord-mode) ; sometimes i need turning it off and on again.
     (define-key map "c" #'calendar)
-    (define-key map "q" #'bury-buffer)
+    (define-key map "q" (lambda (arg)
+                          (interactive "P")
+                          (if (equal arg '(4))
+                              (unbury-buffer)
+                            bury-buffer)))
     (define-key map "u" #'unexpand-abbrev)
     (define-key map "i" #'ido-hacks-mode)
     (define-key map "w" #'org-refile-goto-last-stored)
