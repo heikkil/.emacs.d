@@ -3542,7 +3542,7 @@ Originates from gnu.emacs.help group 2006."
                           (interactive "P")
                           (if (equal arg '(4))
                               (unbury-buffer)
-                            bury-buffer)))
+                            (bury-buffer))))
     (define-key map "u" #'unexpand-abbrev)
     (define-key map "i" #'ido-hacks-mode)
     (define-key map "w" #'org-refile-goto-last-stored)
