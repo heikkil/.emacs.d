@@ -1463,7 +1463,7 @@ no decision about how to store the image has to be made.
 ;; ** hack-time
 
 ;; #+BEGIN_SRC
-(push "~/p/elisp/mw/hack-time" load-path)
+(push "~/p/elisp/mw/hack-time/generated" load-path)
 (require 'hack-time)
 
 ;; #+END_SRC
