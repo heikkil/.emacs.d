@@ -553,7 +553,7 @@
                                   (interactive "P")
                                   (if in-place (mw-translate-in-place-eng+deu)
                                     (mw-translate-as-message-eng+deu))))
-  (key-chord-define-global "HH" (lambda () (interactive) (recenter 0))) ; #'recenter-top-bottom; afair H is a respecive vim binding?
+  (key-chord-define-global "hh" (lambda () (interactive) (recenter 0))) ; #'recenter-top-bottom; afair H is a respecive vim binding?
   (key-chord-define-global "``" #'mw-alternate-up)
   (key-chord-define-global "~~" #'dired-jump)
   (key-chord-define-global ",," #'lentic-mode-move-lentic-window)
