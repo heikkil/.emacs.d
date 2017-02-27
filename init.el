@@ -1460,6 +1460,14 @@ no decision about how to store the image has to be made.
 (require 'mw-mark)
 ;; #+END_SRC
 
+;; ** Ariadne
+
+;; #+BEGIN_SRC emacs-lisp
+(add-to-list 'load-path "~/p/elisp/mw/ariadne")
+(require 'ariadne)
+;; #+END_SRC
+
+
 ;; ** hack-time
 
 ;; #+BEGIN_SRC
