@@ -1467,7 +1467,6 @@ no decision about how to store the image has to be made.
 (require 'ariadne)
 ;; #+END_SRC
 
-
 ;; ** hack-time
 
 ;; #+BEGIN_SRC
