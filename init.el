@@ -167,7 +167,7 @@
                     (interactive "P")
                     (avy-goto-char ?* arg)))
            ;; ("." . mw-avy-goto-char) ; somehow this conflicts with auctex
-           ("." . avy-goto-char)
+           ("." . (lambda () (interactive) (let ((avy-all-windows nil)) (call-interactively #'avy-goto-char))))
            ("9" . org-decrypt-entry)
            (";" . org-timer-set-timer)
            ("G" . ace-link)
