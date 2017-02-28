@@ -579,7 +579,7 @@
   ;; (key-chord-define-global "a8" #'mw-goto-extra-point)
   (key-chord-define-global "a6" #'ariadne-backward)
   (key-chord-define-global "a7" #'ariadne-set-mark)
-  (key-chord-define-global "a8" #'ariadne-delete)
+  (key-chord-define-global "a8" #'ariadne-unset)
   (key-chord-define-global "a9" #'ariadne-goto-end)
   (key-chord-define-global "c1" #'chronos-add-timer)
   (key-chord-define-global "d1" #'mw-org-link-remove-file-decoration)
