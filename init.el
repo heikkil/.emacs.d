@@ -193,9 +193,11 @@
            ("k" . org-capture)
            ("m" . org-teleport)
            ("q" . org-columns-quit)
-           ("s" . (lambda () (interactive)
+           ("s" . (lambda (&optional arg)
+                    (interactive "P")
                     (org-narrow-to-subtree)
-                    (org-orgee-as-top-level-tree-establish)))
+                    (unless arg
+                      (org-orgee-as-top-level-tree-establish))))
            ("x" . (lambda (arg) "Org export of orgee." (interactive "P")
                     (let ((org-export-initial-scope 'subtree))
                       (org-export-dispatch))))
