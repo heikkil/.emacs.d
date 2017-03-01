@@ -2608,6 +2608,10 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
 (setf org-show-notification-handler #'ignore)
 
 (setq mw-org-pause-state nil) ; TODO: make mw-org-pause-state more locally, please!
+(defun mw-org-pause-state-show ()
+  "Diplay `mw-org-pause-state-show'."
+  (interactive)
+  (message "%s mw-org-pause-state" mw-org-pause-state))
 
 (add-hook
  'org-timer-done-hook
