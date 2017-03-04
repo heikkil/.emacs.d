@@ -1393,8 +1393,8 @@ no decision about how to store the image has to be made.
 ;; My little collection of Emacs stuff.
 
 ;; #+BEGIN_SRC emacs-lisp
-;; (push  (expand-file-name "~/p/elisp/mw/little-helpers") load-path)
-;; (require 'little-helpers)
+(push  (expand-file-name "~/p/elisp/mw/little-helpers") load-path)
+(require 'little-helpers)
 ;; #+END_SRC
 
 ;; #+BEGIN_SRC emacs-lisp
