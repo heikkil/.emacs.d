@@ -2068,7 +2068,7 @@ Argument ARG see `capitalize-word'."
   (org-add-agenda-custom-command
    `("x" "Volatile agenda setting" agenda ""
      ((org-agenda-overriding-header
-       "Volatile agenda.  Set with `mw-org-agenda-pick-current-agenda-filters' on a freshly restricted agenda.")
+       "Volatile agenda.  Set with `mw-org-agenda-pick-current-agenda-filters' on an agenda.")
       (org-agenda-category-filter-preset
        ',org-agenda-category-filter)
       (org-agenda-tag-filter-preset
