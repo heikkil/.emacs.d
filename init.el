@@ -2253,7 +2253,28 @@ agenda buffer e.g. C-k."
 
 ;; ** Org Labs
 
-;; ***** org hide above first heading
+;; *** list items with a date
+
+;; #+BEGIN_SRC emacs-lisp
+(defun org-list-insert-inactive-ts-item ()
+  "Insert a list item starting with an inactive timestamp."
+  (interactive)
+  (let ((itemp (org-in-item-p)) (pos (point)))
+    (when itemp
+      (goto-char itemp)
+      (let* ((struct (org-list-struct))
+	     (prevs (org-list-prevs-alist struct))
+	     (s (concat (with-temp-buffer
+                          (org-insert-time-stamp nil t t)
+                          (buffer-string)) " ")))
+        (setq struct (org-list-insert-item pos struct prevs nil s))
+        (org-list-write-struct struct (org-list-parents-alist struct))
+        (looking-at org-list-full-item-re)
+	(goto-char (match-end 0))
+        (end-of-line)))))
+;; #+END_SRC
+
+;; *** org hide above first heading
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun org-first-heading ()
@@ -2270,7 +2291,7 @@ agenda buffer e.g. C-k."
    (not show)))
 ;; #+END_SRC
 
-;; ***** org-show-context-detail
+;; *** org-show-context-detail
 
 ;; #+BEGIN_SRC emacs-lisp
 (setq org-show-context-detail
@@ -2280,7 +2301,7 @@ agenda buffer e.g. C-k."
         (default . ancestors)))
 ;; #+END_SRC
 
-;; ***** Agenda for deadlines only
+;; *** Agenda for deadlines only
 
 ;; #+BEGIN_SRC emacs-lisp
      (eval-after-load "org-agenda"
@@ -2294,7 +2315,7 @@ agenda buffer e.g. C-k."
 ;; http://emacs.stackexchange.com/questions/12930/display-org-todo-list-of-entries-with-deadlines
 ;; ;;
 
-;; ***** Timetravel Org
+;; *** Timetravel Org
 
 ;; When you want to see or change something in the agenda at a
 ;; different day the following functions might be helpful.
@@ -2317,7 +2338,7 @@ agenda buffer e.g. C-k."
   (setq org-extend-today-until 0))
 ;; #+END_SRC
 
-;; ***** org-todo with certain date
+;; *** org-todo with certain date
 
 ;; recall: there is already org-todo-yesterday.
 
