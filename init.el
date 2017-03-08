@@ -243,7 +243,7 @@
 (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/") t)
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
-(add-to-list 'package-archives '("RSW-Packages" . "http://www.plasmas.biz/rswe/") t)
+;; (add-to-list 'package-archives '("RSW-Packages" . "http://www.plasmas.biz/rswe/") t)
 ;; #+END_SRC
 
 ;; [2016-02-08 Mon 12:57] Possibly drop usage of the custom file
