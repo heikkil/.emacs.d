@@ -2069,12 +2069,12 @@ Argument ARG see `capitalize-word'."
    `("x" "Volatile agenda setting" agenda ""
      ((org-agenda-overriding-header
        "Volatile agenda.  Set with `mw-org-agenda-pick-current-agenda-filters' on an agenda.")
-      (org-agenda-category-filter-preset
-       ',org-agenda-category-filter)
       (org-agenda-tag-filter-preset
        ',org-agenda-tag-filter)
       (org-agenda-regexp-filter-preset
-        ',org-agenda-regexp-filter)))))
+        ',org-agenda-regexp-filter)
+      (org-agenda-category-filter-preset
+       ',org-agenda-category-filter)))))
 ;; #+END_SRC
 ;; ** Personalize emacs-lisp-mode
 
