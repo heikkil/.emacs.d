@@ -2063,10 +2063,10 @@ Argument ARG see `capitalize-word'."
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-org-agenda-pick-current-agenda-filters ()
-  "Make current settings of agenda the settings for agenda command \"v\" ."
+  "Make current settings of agenda the settings for agenda command \"x\" ."
   (interactive)
   (org-add-agenda-custom-command
-   `("v" "Volatile agenda setting" agenda ""
+   `("x" "Volatile agenda setting" agenda ""
      ((org-agenda-overriding-header
        "Volatile agenda.  Set with `mw-org-agenda-pick-current-agenda-filters' on a freshly restricted agenda.")
       (org-agenda-category-filter-preset
