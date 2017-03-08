@@ -3671,12 +3671,12 @@ easily create a new frame."
 
 ;; #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "<f1>") #'ignore) ;; e.g. for leaving the zone.
-(global-set-key (kbd "<f6>") 'flyspell-mode)
-(global-set-key (kbd "<f7>") 'cycle-ispell-language-and-input-method)
-(global-set-key (kbd "M-<f7>") 'mw-cycle-ispell-completion-dict)
-(global-set-key (kbd "C-$") 'ispell-complete-word)
-(global-set-key (kbd "S-<f11>") 'mw-rotate-split)
-(global-set-key (kbd "<f12>") 'other-frame)
+(global-set-key (kbd "<f6>") #'flyspell-mode)
+(global-set-key (kbd "<f7>") #'cycle-ispell-language-and-input-method)
+(global-set-key (kbd "M-<f7>") #'mw-cycle-ispell-completion-dict)
+(global-set-key (kbd "C-$") #'ispell-complete-word)
+(global-set-key (kbd "S-<f11>") #'mw-rotate-split)
+(global-set-key (kbd "<f12>") #')
 (global-set-key (kbd "<f5>") #'mw-rectangle-ephermal-enumerate-lines)
 
 ;; the following collides with parmode:
