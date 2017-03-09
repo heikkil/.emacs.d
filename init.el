@@ -2062,7 +2062,7 @@ Argument ARG see `capitalize-word'."
 ;; helps some.
 
 ;; #+BEGIN_SRC emacs-lisp
-(defun mw-org-agenda-save-current-as-a-template ()
+(defun mw-org-agenda-store-current-filters-in-ephemeral-template ()
   "Make current settings of agenda the settings for agenda command \"x\" ."
   (interactive)
   (org-add-agenda-custom-command
