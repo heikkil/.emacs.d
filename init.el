@@ -577,7 +577,10 @@
                                     (org-edit-src-exit))))
   (key-chord-define-global "1'" #'org-previous-visible-heading)
   (key-chord-define-global "mw" #'list-buffers)
-  (key-chord-define-global "jk" #'ibuffer)
+  (key-chord-define-global "jk" (lambda () (interactive)
+                                  (cond
+                                   ((eq major-mode 'buffer-mode) (ibuffer))
+                                   (t (list-buffers)))))
   (key-chord-define-global "n1" #'sp-narrow-to-sexp)
   ;; (key-chord-define-global "a7" #'mw-set-extra-point)
   ;; (key-chord-define-global "a8" #'mw-goto-extra-point)
