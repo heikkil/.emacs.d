@@ -3170,7 +3170,7 @@ This binding shall make the close more convenient."
 ;; #+BEGIN_SRC emacs-lisp
 (require 'cl)
 (defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
-           (flet ((process-list ())) ad-do-it))
+           (cl-flet ((process-list ())) ad-do-it))
 ;; #+END_SRC
 
 ;; Source: [[http://timothypratley.blogspot.de/2015/07/seven-specialty-emacs-settings-with-big.html][Programming: Seven specialty Emacs settings with big payoffs]].
