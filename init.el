@@ -2066,9 +2066,9 @@ Argument ARG see `capitalize-word'."
   "Make current settings of agenda the settings for agenda command \"x\" ."
   (interactive)
   (org-add-agenda-custom-command
-   `("x" "Volatile agenda setting" agenda ""
+   `("x" "Filter settings stored from an agenda" agenda ""
      ((org-agenda-overriding-header
-       "Volatile agenda.  Set with `mw-org-agenda-pick-current-agenda-filters' on an agenda.")
+       "Filter settings just stored from an agenda")
       (org-agenda-tag-filter-preset
        ',org-agenda-tag-filter)
       (org-agenda-regexp-filter-preset
