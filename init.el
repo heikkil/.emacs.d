@@ -579,7 +579,7 @@
   ;; (key-chord-define-global "mw" #'list-buffers)
   (key-chord-define-global "jk" (lambda () (interactive)
                                   (cond
-                                   ((eq major-mode 'buffer-mode) (ibuffer))
+                                   ((eq major-mode 'Buffer-menu-mode) (ibuffer))
                                    (t (list-buffers)))))
   (key-chord-define-global "n1" #'sp-narrow-to-sexp)
   ;; (key-chord-define-global "a7" #'mw-set-extra-point)
