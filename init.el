@@ -576,7 +576,6 @@
                                       (org-edit-special)
                                     (org-edit-src-exit))))
   (key-chord-define-global "1'" #'org-previous-visible-heading)
-  ;; (key-chord-define-global "mw" #'list-buffers)
   (key-chord-define-global "jk" (lambda () (interactive)
                                   (cond
                                    ((eq major-mode 'Buffer-menu-mode) (ibuffer))
