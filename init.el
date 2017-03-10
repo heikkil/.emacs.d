@@ -1485,9 +1485,9 @@ no decision about how to store the image has to be made.
 ;; #+BEGIN_SRC emacs-lisp
 (defhydra hydra-ariadne (global-map "C-c C-a")
   "Ariadne bindings."
-  ("SPC" (ariadne-set-mark))
-  ("b" (ariadne-backward) "go to next mark or to last if not on a mark")
-  ("e" (ariadne-goto-end) "goto last placed mark")
+  ("SPC" (ariadne-set-mark) "set a mark")
+  ("b" (ariadne-backward) "go to next mark (or last if not on a mark)")
+  ("e" (ariadne-goto-end) "goto last mark")
   ("k" (ariadne-unset) "delete current mark")
   ("d" (ariadne-unset-all) "delete all marks"))
 ;; #+END_SRC
