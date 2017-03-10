@@ -586,8 +586,8 @@
   (key-chord-define-global "a6" #'ariadne-goto-end)
   (key-chord-define-global "a7" #'ariadne-backward)
   (key-chord-define-global "a8" #'ariadne-set-mark)
-  (key-chord-define-global "a9" (lambda (&optional arg) (interactive "P")
-                                  (funcall (if arg
+  (key-chord-define-global "a9" (lambda (arg) (interactive "P")
+                                  (call-interactively (if arg
                                                #'ariadne-unset-all
                                              #'ariadne-unset))))
   (key-chord-define-global "c1" #'chronos-add-timer)
