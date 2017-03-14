@@ -1466,6 +1466,19 @@ no decision about how to store the image has to be made.
 
 ;;; Lab:
 
+;; control of `repeat'
+
+(defun repeat-message-last-command ()
+  "Haha.  This function is not so helpful because it pollutes `last-repeatable-command'.
+Maybe fix somehow if time."
+  (interactive)
+  (message
+   "%s <- last repeatable command. %s <- before last"
+   last-repeatable-command
+   repeat-previous-repeated-command))
+
+(global-set-key (kbd "C-M-5") #'repeat-message-last-command)
+
 ;; Location of research emacs-libraries.
 
 ;; #+BEGIN_SRC emacs-lisp
