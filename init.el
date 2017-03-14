@@ -166,7 +166,7 @@
            ("+" . mw-org-show-meta-info-lines)
            ("*" . (lambda (&optional arg)
                     (interactive "P")
-                    (avy-goto-char ?* arg)))
+                    (avy-goto-char-2 ?* 32 arg)))
            ;; ("." . mw-avy-goto-char) ; somehow this conflicts with auctex
            ("." . (lambda () (interactive)
                     (org-narrow-to-subtree)
