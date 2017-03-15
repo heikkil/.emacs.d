@@ -534,8 +534,8 @@
   (key-chord-mode 1) ;; recall: e.g. (key-chord-unset-global "bb") for undef a key-chord.
   (key-chord-define-global "v1" #'emms-volume-lower)
   (key-chord-define-global "v2" #'emms-volume-raise)
-  (key-chord-define-global "7g" #'split-window-below)
-  (key-chord-define-global "4p" #'split-window-horizontally)
+  (key-chord-define-global "7g" #'mw-split-window-horizontally-at-point)
+  (key-chord-define-global "4p" #'mw-split-window-vertically-at-point)
   (key-chord-define-global "x6" (lambda () (interactive)
                                   (dotimes (_ 2)
                                     (mw-rotate-split))))
