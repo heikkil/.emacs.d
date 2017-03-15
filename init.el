@@ -536,6 +536,9 @@
   (key-chord-define-global "v2" #'emms-volume-raise)
   (key-chord-define-global "7g" #'split-window-below)
   (key-chord-define-global "4p" #'split-window-horizontally)
+  (key-chord-define-global "x6" (lambda () (interactive)
+                                  (dotimes (_ 2)
+                                    (mw-rotate-split))))
   (key-chord-define-global "r7" #'mw-org-refile-set-direct-target-bm)
   (key-chord-define-global "r8" #'mw-org-refile-refile-to-direct-target)
   (key-chord-define-global "r1" #'mw-carry-region-toggle)
@@ -589,8 +592,8 @@
   (key-chord-define-global "a8" #'ariadne-set-mark)
   (key-chord-define-global "a9" (lambda (arg) (interactive "P")
                                   (call-interactively (if arg
-                                               #'ariadne-unset-all
-                                             #'ariadne-unset))))
+                                                          #'ariadne-unset-all
+                                                        #'ariadne-unset))))
   (key-chord-define-global "c1" #'chronos-add-timer)
   (key-chord-define-global "d1" #'mw-org-link-remove-file-decoration)
   (key-chord-define-global "s1" #'slime-repl)
