@@ -1511,8 +1511,8 @@ Maybe fix somehow if time."
 ;; ** hack-time
 
 ;; #+BEGIN_SRC
-(push "~/p/elisp/mw/hack-time/generated" load-path)
-(require 'hack-time)
+(push "~/p/elisp/mw/hack-time-mode" load-path)
+(require 'hack-time-mode)
 
 ;; #+END_SRC
 
