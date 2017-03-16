@@ -110,6 +110,7 @@
 ;;; Config:
 
 ;; (load-file "init-config.el")
+(setq shr-external-browser 'browse-url-firefox)
 
 ;; ** Workarounds
 
