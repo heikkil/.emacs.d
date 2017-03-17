@@ -2071,13 +2071,15 @@ Argument ARG see `capitalize-word'."
 
 ;; ** Handle bottommost-tagged after sorting
 
+;; this was an attempt to keep an orgee at the bottom.
+
 ;; #+BEGIN_SRC emacs-lisp
-(setf org-after-sorting-entries-or-items-hook
-      (lambda ()
-        (search-forward  ":bottommost:")
-        (org-cut-subtree)
-        (goto-char (point-max))
-        (org-paste-subtree 1)))
+;; (setf org-after-sorting-entries-or-items-hook
+;;       (lambda ()
+;;         (search-forward  ":bottommost:")
+;;         (org-cut-subtree)
+;;         (goto-char (point-max))
+;;         (org-paste-subtree 1)))
 ;; #+END_SRC
 
 ;; ** Double space at end of sentences
@@ -2088,8 +2090,8 @@ Argument ARG see `capitalize-word'."
 (defun if-sentence-end-space-make-it-space
     () (interactive)
     (let ((sentence-end-double-space nil))
-       (forward-sentence)
-       (when (looking-at " +") (replace-match "  "))))
+      (forward-sentence)
+      (when (looking-at " +") (replace-match "  "))))
 ;; #+END_SRC
 
 ;; ** Maxima
