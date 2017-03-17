@@ -592,6 +592,7 @@
   (key-chord-define-global "a7" #'ariadne-backward)
   (key-chord-define-global "a8" #'ariadne-set-mark)
   (key-chord-define-global "a9" (lambda (arg) (interactive "P")
+                                  "Unset current ariadne mark.  Prefix argument to delete all."
                                   (call-interactively (if arg
                                                           #'ariadne-unset-all
                                                         #'ariadne-unset))))
