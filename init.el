@@ -2071,7 +2071,8 @@ Argument ARG see `capitalize-word'."
 
 ;; ** Handle bottommost-tagged after sorting
 
-;; This was an attempt to keep an orgee at the bottom.
+;; This was an attempt to keep an orgee at the bottom.  Switched to
+;; define stuff in .dir-locals.el.
 
 ;; #+BEGIN_SRC emacs-lisp
 ;; (setf org-after-sorting-entries-or-items-hook
