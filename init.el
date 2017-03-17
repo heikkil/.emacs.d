@@ -1179,7 +1179,7 @@
 
 ;; #+BEGIN_SRC emacs-lisp
 ;(add-hook 'org-agenda-finalize-hook (lambda () (delete-other-windows)))
-(setq org-agenda-window-setup 'only-window)
+;; (setq org-agenda-window-setup 'only-window)
 ;; #+END_SRC
 
 ;; **** Source
