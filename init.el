@@ -993,6 +993,14 @@
 
 ;; ** Org                                                                 :org:
 
+;; *** Org todo dependencies
+
+;; Activate dependency checks.
+
+;; #+BEGIN_SRC emacs-lisp
+(setq org-enforce-todo-dependencies t)
+;; #+END_SRC
+
 ;; *** Personal Org Indentation
 
 ;; #+BEGIN_SRC emacs-lisp
