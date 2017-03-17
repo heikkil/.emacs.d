@@ -533,6 +533,8 @@
 (use-package key-chord
   :config
   (key-chord-mode 1) ;; recall: e.g. (key-chord-unset-global "bb") for undef a key-chord.
+  (key-chord-define-global "v3" (lambda () (interactive) (mw-org-hide-meta-info-lines)))
+  (key-chord-define-global "v4" (lambda () (interactive) (mw-org-show-meta-info-lines)))
   (key-chord-define-global "v1" #'emms-volume-lower)
   (key-chord-define-global "v2" #'emms-volume-raise)
   (key-chord-define-global "7g" #'mw-split-window-horizontally-at-point)
