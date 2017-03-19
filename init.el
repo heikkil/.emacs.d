@@ -2764,15 +2764,7 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
 ;(require 'navi-mode)
 ;; #+END_SRC
 
-;; ** Quickly access the web through w3m                                 :weak:
-
-;; Ask the default search engine.
-
-;; #+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "<Scroll_Lock> a") 'w3m-search)
-;; #+END_SRC
-
-;; L for look up the word at point in leo.
+;; ** Quickly access dict.leo.org                                 :weak:
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-ask-leo-about-word-at-point ()
@@ -3402,7 +3394,7 @@ This binding shall make the close more convenient."
 ;; Scroll lock mode gives another buffer movement feeling.
 
 ;; #+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "<Scroll_Lock> m") 'scroll-lock-mode)
+;; (global-set-key ( "<Scroll_Lock>") 'scroll-lock-mode)
 ;; #+END_SRC
 
 ;; ** Rotate windows
@@ -3731,12 +3723,6 @@ easily create a new frame."
 ;; see individual key map
 
 ;; #+BEGIN_SRC emacs-lisp
-;; #+END_SRC
-
-;; ** Breaking evil
-
-;; #+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "<Scroll_Lock> <Scroll_Lock>") #'evil-mode)
 ;; #+END_SRC
 
 ;; ** Various Keysettings
