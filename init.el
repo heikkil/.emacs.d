@@ -3394,7 +3394,7 @@ This binding shall make the close more convenient."
 ;; Scroll lock mode gives another buffer movement feeling.
 
 ;; #+BEGIN_SRC emacs-lisp
-;; (global-set-key ( "<Scroll_Lock>") 'scroll-lock-mode)
+(global-set-key (kbd "<Scroll_Lock>") 'scroll-lock-mode)
 ;; #+END_SRC
 
 ;; ** Rotate windows
