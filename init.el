@@ -1527,8 +1527,8 @@ Maybe fix somehow if time."
 ;; ** cursor-color-code-mode
 
 ;; #+BEGIN_SRC emacs-lisp
-;; (push "~/p/elisp/mw/cursor-color-code-mode" load-path)
-;; (require 'hack-time-mode)
+(push "~/p/elisp/mw/cursor-color-code-mode" load-path)
+(require 'cursor-color-code-mode)
 ;; #+END_SRC
 
 ;; ** hack-time
