@@ -1524,12 +1524,18 @@ Maybe fix somehow if time."
   ("d" (ariadne-unset-all) "delete all marks"))
 ;; #+END_SRC
 
+;; ** cursor-color-code-mode
+
+;; #+BEGIN_SRC emacs-lisp
+;; (push "~/p/elisp/mw/cursor-color-code-mode" load-path)
+;; (require 'hack-time-mode)
+;; #+END_SRC
+
 ;; ** hack-time
 
-;; #+BEGIN_SRC
-(push "~/p/elisp/mw/hack-time-mode" load-path)
-(require 'hack-time-mode)
-
+;; #+BEGIN_SRC emacs-lisp
+;; (push "~/p/elisp/mw/hack-time-mode" load-path)
+;; (require 'hack-time-mode)
 ;; #+END_SRC
 
 ;; ** carry-region
