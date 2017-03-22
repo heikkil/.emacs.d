@@ -591,14 +591,14 @@
   (key-chord-define-global "n1" #'sp-narrow-to-sexp)
   ;; (key-chord-define-global "a7" #'mw-set-extra-point)
   ;; (key-chord-define-global "a8" #'mw-goto-extra-point)
-  (key-chord-define-global "a6" #'ariadne-goto-end)
-  (key-chord-define-global "a7" #'ariadne-backward)
-  (key-chord-define-global "a8" #'ariadne-set-mark)
+  (key-chord-define-global "a6" #'ariadne-marks-goto-end)
+  (key-chord-define-global "a7" #'ariadne-marks-backward)
+  (key-chord-define-global "a8" #'ariadne-marks-set-mark)
   (key-chord-define-global "a9" (lambda (arg) (interactive "P")
                                   "Unset current ariadne mark.  Prefix argument to delete all."
                                   (call-interactively (if arg
-                                                          #'ariadne-unset-all
-                                                        #'ariadne-unset))))
+                                                          #'ariadne-marks-unset-all
+                                                        #'ariadne-marks-unset))))
   (key-chord-define-global "c1" #'chronos-add-timer)
   (key-chord-define-global "d1" #'mw-org-link-remove-file-decoration)
   (key-chord-define-global "s1" #'slime-repl)
@@ -1508,8 +1508,8 @@ Maybe fix somehow if time."
 ;; ** Ariadne
 
 ;; #+BEGIN_SRC emacs-lisp
-(add-to-list 'load-path "~/p/elisp/mw/ariadne")
-(require 'ariadne)
+(add-to-list 'load-path "~/p/elisp/mw/ariadne-marks")
+(require 'ariadne-marks)
 ;; #+END_SRC
 
 ;; *** Bindings with a hydra
@@ -1517,11 +1517,11 @@ Maybe fix somehow if time."
 ;; #+BEGIN_SRC emacs-lisp
 (defhydra hydra-ariadne (global-map "C-c C-a")
   "Ariadne bindings."
-  ("SPC" (ariadne-set-mark) "set a mark")
-  ("b" (ariadne-backward) "go to next mark (or last if not on a mark)")
-  ("e" (ariadne-goto-end) "goto last mark")
-  ("k" (ariadne-unset) "delete current mark")
-  ("d" (ariadne-unset-all) "delete all marks"))
+  ("SPC" (ariadne-marks-set-mark) "set a mark")
+  ("b" (ariadne-marks-backward) "go to next mark (or last if not on a mark)")
+  ("e" (ariadne-marks-goto-end) "goto last mark")
+  ("k" (ariadne-marks-unset) "delete current mark")
+  ("d" (ariadne-marks-unset-all) "delete all marks"))
 ;; #+END_SRC
 
 ;; ** cursor-color-code-mode
