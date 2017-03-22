@@ -2881,6 +2881,7 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
 
 ;; ** Switch sound on/off
 
+;; [2017-03-22 Wed 13:00] When calling the sound goes to 0%!
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-sound-100% ()
   "Pull all rulers in the amixer to 100%."
