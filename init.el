@@ -1150,12 +1150,17 @@
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-org-property-action ()
-  "Activate ‘org-property-action’ from headline."
+  "Do an action on properties."
   (interactive)
-  (save-excursion
-    (org-insert-drawer t)
-    (search-forward ":PROPERTIES:\n")
-    (org-property-action)))
+  (org-at-property-p)
+  (message "Property Action:  [s]et  [d]elete  [D]elete globally  [c]ompute")
+  (let ((c (read-char-exclusive)))
+    (cl-case c
+      (?s (call-interactively #'org-set-property))
+      (?d (call-interactively #'org-delete-property))
+      (?D (call-interactively #'org-delete-property-globally))
+      (?c (call-interactively #'org-compute-property-at-point))
+      (otherwise (user-error "No such property action %c" c)))))
 ;; #+END_SRC
 
 ;; This function can be bound to a speed key.  See variable
