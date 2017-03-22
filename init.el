@@ -1481,22 +1481,39 @@ no decision about how to store the image has to be made.
 (require 'auxies-eww)
 ;; #+END_SRC
 
+;;; Auxilliaries:
+
+;; General functions
+
+;; #+BEGIN_SRC emacs-lisp
+(defun ---agenda-buffers ()
+  "Return agenda buffers in a list."
+  (cl-remove-if-not
+   (lambda (x)
+     (set-buffer x)
+     (eq major-mode 'org-agenda-mode))
+   (buffer-list)))
+;; #+END_SRC
+
 ;;; Lab:
 
 ;; control of `repeat'
 
 ;; Linked to the binding of `repeat'.
 
+;; #+BEGIN_SRC emacs-lisp
+
 ;; (global-set-key (kbd "C-M-5") #'repeat-message-last-command)
 
 (defun repeat-message-last-command ()
   "Haha.  This function is not so helpful because it pollutes `last-repeatable-command'.
-Maybe fix somehow if time."
+ Maybe fix somehow if time."
   (interactive)
   (message
    "%s <- last repeatable command. %s <- before last"
    last-repeatable-command
    repeat-previous-repeated-command))
+;; #+END_SRC
 
 ;; Location of research emacs-libraries.
 
