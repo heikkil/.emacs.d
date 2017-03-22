@@ -1724,14 +1724,6 @@ is positive, move after, and if negative, move before."
 
 ;; ** Convenient Drill
 
-(defun ---agenda-buffers ()
-    "Return agenda buffers in a list."
-    (cl-remove-if-not
-     (lambda (x)
-       (set-buffer x)
-       (eq major-mode 'org-agenda-mode))
-     (buffer-list)))
-
 ;; #+BEGIN_SRC emacs-lisp
 (let (agenda-buffer-for-drill)
   (defun mw-org-agenda-open-next-line-as-drill-item-set-source-buffer ()
