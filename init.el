@@ -3763,7 +3763,7 @@ easily create a new frame."
 
 (global-set-key (kbd "C-x o") 'ace-window)
 
-(global-set-key (kbd "C-x C-c") #'save-buffers-kill-emacs) ; also kill the daemon (quit, exit)
+(global-set-key (kbd "C-x C-c") #'save-buffers-kill-emacs) ; also kill the daemon (catchwords: quit, exit)
 
 ;; cycle through amounts of spacing
 (global-set-key (kbd "M-SPC") #'cycle-spacing)
