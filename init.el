@@ -1150,7 +1150,8 @@
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-org-property-action ()
-  "Do an action on properties."
+  "Do an action on properties.
+This is almost `org-property-action' but more liberal."
   (interactive)
   (org-at-property-p)
   (message "Property Action:  [s]et  [d]elete  [D]elete globally  [c]ompute")
