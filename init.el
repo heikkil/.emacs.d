@@ -3774,9 +3774,11 @@ easily create a new frame."
 
 (defhydra hydra-volume-control (global-map "C-c 1")
   "Volume control."
-  ("1" (emms-volume-lower))
-  ("2" (emms-volume-raise))
-  ("3" (ignore) "quit this volume setting" :exit t))
+  ("1" (dotimes (_ 50) (emms-volume-lower)))
+  ("2" (emms-volume-lower))
+  ("3" (emms-volume-raise))
+  ("4" (dotimes (_ 50) (emms-volume-raise)))
+  ("q" (ignore) "quit this volume setting" :exit t))
 
 (global-set-key (kbd "<XF86AudioMute>") #'mw-sound-0%)
 (global-set-key (kbd "<XF86AudioNext>") #'mw-sound-100%)
