@@ -1750,6 +1750,7 @@ line.
     (set-buffer
      (or agenda-buffer-for-drill
          (get-buffer (car (---agenda-buffers)))))
+    (mw-org-agenda-open-next-line-as-drill-item-set-source-buffer)
     (org-agenda-next-item 1)
     (org-agenda-goto)
     (org-narrow-to-element)
