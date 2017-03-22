@@ -2883,7 +2883,7 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-sound-100% ()
-  "Pull all rulers in the amixer to 100% ."
+  "Pull all rulers in the amixer to 100%."
   (interactive)
   (start-process "" "*mw-amixer*"
                  "amixer" "set" "Master" "64")
