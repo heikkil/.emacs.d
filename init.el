@@ -2051,14 +2051,17 @@ Accurate to a few seconds."
 ;; [2016-11-13 Sun 14:47] end of disable.
 
 ;; (remove-hook 'prog-mode-hook #'add-fira-code-symbol-keywords)
-;; ** Drop the stars from ITEM in column view                              :org:
+
+;; ** Drop the leading stars from ITEMs in column view                              :org:
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-org-colums-modify-some (column-title value)
   (if (string= "ITEM" (upcase column-title))
       value))
 
-(setq org-columns-modify-value-for-display-function 'mw-org-colums-modify-some)
+(setq
+ org-columns-modify-value-for-display-function
+ 'mw-org-colums-modify-some)
 ;; #+END_SRC
 
 ;; ** Move Word
