@@ -2055,8 +2055,10 @@ Accurate to a few seconds."
 ;; ** Drop the leading stars from ITEMs in column view                              :org:
 
 ;; #+BEGIN_SRC emacs-lisp
-(defun -org-col-mod (col val) (if (string= "ITEM" (upcase col)) val))
-(setq org-columns-modify-value-for-display-function '-org-col-mod)
+(defun mw-org-columns-modify-value-for-display (column-title value)
+  (if (string= "ITEM" (upcase column-title))
+      value))
+(setq org-columns-modify-value-for-display-function 'mw-org-columns-modify-value-for-display)
 ;; #+END_SRC
 
 ;; ** Move Word
