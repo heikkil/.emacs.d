@@ -2058,7 +2058,9 @@ Accurate to a few seconds."
 (defun mw-org-columns-modify-value-for-display (column-title value)
   (if (string= "ITEM" (upcase column-title))
       value))
-(setq org-columns-modify-value-for-display-function 'mw-org-columns-modify-value-for-display)
+
+(setq org-columns-modify-value-for-display-function
+      'mw-org-columns-modify-value-for-display)
 ;; #+END_SRC
 
 ;; ** Move Word
