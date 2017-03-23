@@ -2055,7 +2055,7 @@ Accurate to a few seconds."
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun mw-org-colums-modify-some (column-title value)
-  (if (string= "ITEM" column-title)
+  (if (string= "ITEM" (upcase column-title))
       value))
 
 (setq org-columns-modify-value-for-display-function 'mw-org-colums-modify-some)
