@@ -203,7 +203,7 @@
            ("x" . (lambda (arg) "Org export of orgee." (interactive "P")
                     (let ((org-export-initial-scope 'subtree))
                       (org-export-dispatch))))
-           ("y" . mw-org-property-action)
+           ("y" . org-property-action)
            ("z" . org-add-note)
            ("h" . org-refile-dwim)
            ))
@@ -1145,27 +1145,6 @@
 ;; to capture something.
 
 ;; I use the global key setting C-c v for org-velocity.
-
-;; *** Trigger property edit from the headline
-
-;; #+BEGIN_SRC emacs-lisp
-(defun mw-org-property-action ()
-  "Do an action on properties.
-This is almost `org-property-action' but more liberal."
-  (interactive)
-  (org-at-property-p)
-  (message "Property Action:  [s]et  [d]elete  [D]elete globally  [c]ompute")
-  (let ((c (read-char-exclusive)))
-    (cl-case c
-      (?s (call-interactively #'org-set-property))
-      (?d (call-interactively #'org-delete-property))
-      (?D (call-interactively #'org-delete-property-globally))
-      (?c (call-interactively #'org-compute-property-at-point))
-      (otherwise (user-error "No such property action %c" c)))))
-;; #+END_SRC
-
-;; This function can be bound to a speed key.  See variable
-;; org-speed-commands-user.
 
 ;; *** org-protocol for receiving from the outside
 
