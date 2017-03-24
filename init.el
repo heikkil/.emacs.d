@@ -1486,6 +1486,8 @@ no decision about how to store the image has to be made.
 
 ;;; Lab:
 
+;; ** repeat
+
 ;; control of `repeat'
 
 ;; Linked to the binding of `repeat'.
@@ -1503,6 +1505,8 @@ no decision about how to store the image has to be made.
    last-repeatable-command
    repeat-previous-repeated-command))
 ;; #+END_SRC
+
+;; ** lab libraries
 
 ;; Location of research emacs-libraries.
 
