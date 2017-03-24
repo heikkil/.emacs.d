@@ -1486,6 +1486,23 @@ no decision about how to store the image has to be made.
 
 ;;; Lab:
 
+;; ** teleport region
+
+;; #+BEGIN_SRC emacs-lisp
+(defun mw-teleport-region-to-other-window (start end)
+  "Move region to position in other window."
+  (interactive "r")
+  (let ((buf (save-excursion
+               (other-window 1)
+               (current-buffer))))
+    (when buf
+      (with-current-buffer buf
+        (push-mark))
+      (append-to-buffer buf start end)
+      (delete-region start end)
+      (switch-to-buffer buf))))
+;; #+END_SRC
+
 ;; ** repeat
 
 ;; control of `repeat'
