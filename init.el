@@ -1526,11 +1526,11 @@ no decision about how to store the image has to be made.
   ("d" (ariadne-marks-unset-all) "delete all marks"))
 ;; #+END_SRC
 
-;; ** cursor-color-code-mode
+;; ** cursor-color-mode
 
 ;; #+BEGIN_SRC emacs-lisp
-(push "~/p/elisp/mw/cursor-color-code-mode" load-path)
-(require 'cursor-color-code-mode)
+(push "~/p/elisp/mw/cursor-color-mode" load-path)
+(require 'cursor-color-mode)
 ;; #+END_SRC
 
 ;; ** hack-time
