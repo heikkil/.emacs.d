@@ -3678,17 +3678,18 @@ Originates from gnu.emacs.help group 2006."
     (define-key map "W" #'calc-embedded-word) ; recall 'q' to leave the mode.
     (define-key map "s" (lambda () (interactive) (switch-to-buffer "*scratch*")))
     (define-key map "o" #'mw-org-kill-new-outline-path) ; Has been useful for refile.
-    (define-key map "t" (lambda ()
-                          "Switch the minibuffer externalization for new frames.
-And delete all frames.
-This works good when an Emacs daemon runs and thus allows
-easily create a new frame."
-                          (interactive)
-                          (if (cdr (assoc 'minibuffer default-frame-alist))
-                              (mw-unset-minibuffer-in-default-frame)
-                            (mw-set-minibuffer-in-default-frame))
-                          (mapc #'delete-frame (frame-list))
-                          ))
+    (define-key map "t" #'mw-teleport-region-to-other-window)
+    ;;     (define-key map "t" (lambda ()
+    ;;                           "Switch the minibuffer externalization for new frames.
+    ;; And delete all frames.
+    ;; This works good when an Emacs daemon runs and thus allows
+    ;; easily create a new frame."
+    ;;                           (interactive)
+    ;;                           (if (cdr (assoc 'minibuffer default-frame-alist))
+    ;;                               (mw-unset-minibuffer-in-default-frame)
+    ;;                             (mw-set-minibuffer-in-default-frame))
+    ;;                           (mapc #'delete-frame (frame-list))
+    ;;                           ))
     map)
   "Personal convenience keymap.")
 (global-set-key (kbd "\C-z") mw-individual-keymap)
