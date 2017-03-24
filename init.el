@@ -321,8 +321,12 @@
 (use-package chronos
   :config (setf chronos-text-to-speech-program "espeak"
                 chronos-text-to-speech-program-parameters "-s 111"
-                chronos-expiry-functions '(chronos-buffer-notify
-                                           chronos-text-to-speech-notify)))
+                chronos-expiry-functions
+                '(chronos-buffer-notify
+                  chronos-text-to-speech-notify
+                  (lambda (c)
+                    (browse-url-firefox
+                     "https://www.youtube.com/watch?v=32FB-gYr49Y")))))
 ;; #+END_SRC
 
 ;; ** swiper
