@@ -2844,7 +2844,11 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
 ;; local dev version:
 ;; (push "~/p/elisp/mw/rope-read-mode" load-path)
 ;; (require 'rope-read-mode)
-(define-key rope-read-mode-map "d" #'rope-read-next-paragraph)
+(use-package rope-read-mode
+  :config
+  (progn
+    (define-key rope-read-mode-map "d" #'rope-read-next-paragraph)))
+
 ;; (define-key rope-read-mode-map "d" 'rope-read-reol) ;; start from current line with rope-read
 ;; (define-key rope-read-mode-map "r" 'rope-read-delete-overlays)
 ;; #+END_SRC
