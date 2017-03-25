@@ -3681,6 +3681,7 @@ Originates from gnu.emacs.help group 2006."
     (define-key map "e" #'evil-mode)
     (define-key map "E" (lambda () "Erase org-stored-links" (interactive) (setq org-stored-links nil)))
     (define-key map "(" #'paredit-mode)
+    (define-key map ")" #'lispy-mode)
     (define-key map "W" #'calc-embedded-word) ; recall 'q' to leave the mode.
     (define-key map "s" (lambda () (interactive) (switch-to-buffer "*scratch*")))
     (define-key map "o" #'mw-org-kill-new-outline-path) ; Has been useful for refile.
