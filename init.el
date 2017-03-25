@@ -2845,7 +2845,6 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
 ;; (push "~/p/elisp/mw/rope-read-mode" load-path)
 ;; (require 'rope-read-mode)
 (use-package rope-read-mode
-  :disabled
   :config
   (progn
     (define-key rope-read-mode-map "d" #'rope-read-next-paragraph)))
