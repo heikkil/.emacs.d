@@ -3729,6 +3729,13 @@ Originates from gnu.emacs.help group 2006."
   (">" enlarge-window-horizontally))
 ;; #+END_SRC
 
+(defun mw-set-profont ()
+  (set-face-attribute 'default nil
+                      :family "Profont"
+                      :height 150
+                      :weight 'normal
+                      :width 'normal))
+
 ;; #+BEGIN_SRC emacs-lisp
 (defhydra hydra-winsize (global-map "C-c C-f")
   "switch-font-for-frame"
