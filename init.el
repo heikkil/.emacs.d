@@ -3730,6 +3730,7 @@ Originates from gnu.emacs.help group 2006."
 ;; #+END_SRC
 
 (defun mw-set-profont ()
+  (interactive)
   (set-face-attribute 'default nil
                       :family "Profont"
                       :height 150
