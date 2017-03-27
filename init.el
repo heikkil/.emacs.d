@@ -3708,11 +3708,13 @@ Originates from gnu.emacs.help group 2006."
 ;; too much for me though.  [2015-10-12 Mon 14:55]
 
 ;; #+BEGIN_SRC emacs-lisp
-(defhydra hydra-zoom (global-map "C-x <right>")
+(defhydra hydra-buffer-cycling
+  (global-map "C-x <right>")
   "buffer-switch-entry-right"
   ("<right>" next-buffer)
   ("<left>" previous-buffer))
-(defhydra hydra-zoom (global-map "C-x <left>")
+(defhydra hydra-buffer-cycling-b
+  (global-map "C-x <left>")
   "buffer-switch-entry-left"
   ("<right>" next-buffer)
   ("<left>" previous-buffer))
@@ -3726,6 +3728,13 @@ Originates from gnu.emacs.help group 2006."
   ("<" shrink-window-horizontally)
   (">" enlarge-window-horizontally))
 ;; #+END_SRC
+
+;; #+BEGIN_SRC emacs-lisp
+(defhydra hydra-winsize (global-map "C-c C-f")
+  "switch-font-for-frame"
+  ("p" mw-set-profont))
+;; #+END_SRC
+
 
 ;; ** Dired Key for Alternate up
 ;; :PROPERTIES:
