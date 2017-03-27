@@ -3743,7 +3743,6 @@ Originates from gnu.emacs.help group 2006."
   ("p" mw-set-profont))
 ;; #+END_SRC
 
-
 ;; ** Dired Key for Alternate up
 ;; :PROPERTIES:
 ;; :ID:       0481cbe3-19d9-43ce-91a1-70fd845ff864
