@@ -3757,7 +3757,11 @@ Originates from gnu.emacs.help group 2006."
   "switch-font-for-frame"
   ("p" mw-set-profont)
   ("-" mw-decrease-height)
-  ("+" mw-increase-height))
+  ("+" (set-face-attribute
+        'default nil
+        :height (+ (face-attribute 'default :height) 10)))
+  ("q" (ignore) "quit" :exit t))
+
 ;; #+END_SRC
 
 ;; ** Dired Key for Alternate up
@@ -3832,7 +3836,7 @@ Originates from gnu.emacs.help group 2006."
   ("2" (emms-volume-lower) "lower")
   ("3" (emms-volume-raise) "raise")
   ("4" (dotimes (_ 50) (emms-volume-raise)) "full")
-  ("q" (ignore) "quit this volume setting" :exit t))
+  ("q" (ignore) "quit" :exit t))
 
 (global-set-key (kbd "<XF86AudioMute>") #'mw-sound-0%)
 (global-set-key (kbd "<XF86AudioNext>") #'mw-sound-100%)
