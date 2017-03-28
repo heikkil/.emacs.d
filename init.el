@@ -3746,7 +3746,7 @@ Originates from gnu.emacs.help group 2006."
         :family "sourcecodepro") "sourcecodepro")
   ("c" (set-face-attribute
         'default nil
-        :family "courier new") "courier new")
+        :family "courier") "courier")
   ("q" (ignore) "quit" :exit t))
 ;; #+END_SRC
 
