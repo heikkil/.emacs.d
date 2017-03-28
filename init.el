@@ -3732,15 +3732,18 @@ Originates from gnu.emacs.help group 2006."
 ;; #+BEGIN_SRC emacs-lisp
 (defhydra hydra-font-control (global-map "C-c C-S-f")
   "Control the font."
-  ("p" (set-face-attribute
-          'default nil
-          :family "Profont"))
   ("-" (set-face-attribute
         'default nil
         :height (max 50 (- (face-attribute 'default :height) 20))))
   ("+" (set-face-attribute
         'default nil
         :height (+ (face-attribute 'default :height) 20)))
+  ("p" (set-face-attribute
+        'default nil
+        :family "profont") "profont")
+  ("s" (set-face-attribute
+        'default nil
+        :family "sourcecodepro") "sourcecodepro")
   ("q" (ignore) "quit" :exit t))
 
 ;; #+END_SRC
