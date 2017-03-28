@@ -3729,6 +3729,7 @@ Originates from gnu.emacs.help group 2006."
   (">" enlarge-window-horizontally))
 ;; #+END_SRC
 
+;; #+BEGIN_SRC emacs-lisp
 (defun mw-set-profont ()
   (interactive)
   (set-face-attribute
@@ -3749,11 +3750,14 @@ Originates from gnu.emacs.help group 2006."
   (set-face-attribute
    'default nil
    :height (+ (face-attribute 'default :height) 10)))
+;; #+END_SRC
 
 ;; #+BEGIN_SRC emacs-lisp
 (defhydra hydra-winsize (global-map "C-c C-f")
   "switch-font-for-frame"
-  ("p" mw-set-profont))
+  ("p" mw-set-profont)
+  ("-" mw-decrease-height)
+  ("+" mw-increase-height))
 ;; #+END_SRC
 
 ;; ** Dired Key for Alternate up
