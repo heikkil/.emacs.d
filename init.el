@@ -3730,7 +3730,7 @@ Originates from gnu.emacs.help group 2006."
 ;; #+END_SRC
 
 ;; #+BEGIN_SRC emacs-lisp
-(defhydra hydra-font-control (global-map "C-c C-f")
+(defhydra hydra-font-control (global-map "C-c C-S-f")
   "Control the font."
   ("p" (set-face-attribute
           'default nil
