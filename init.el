@@ -3748,7 +3748,6 @@ Originates from gnu.emacs.help group 2006."
         'default nil
         :family "courier new") "courier new")
   ("q" (ignore) "quit" :exit t))
-
 ;; #+END_SRC
 
 ;; ** Dired Key for Alternate up
