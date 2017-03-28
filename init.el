@@ -3731,11 +3731,24 @@ Originates from gnu.emacs.help group 2006."
 
 (defun mw-set-profont ()
   (interactive)
-  (set-face-attribute 'default nil
-                      :family "Profont"
-                      :height 150
-                      :weight 'normal
-                      :width 'normal))
+  (set-face-attribute
+   'default nil
+   :family "Profont"
+   :height 150
+   :weight 'normal
+   :width 'normal))
+
+(defun mw-decrease-height ()
+  (interactive)
+  (set-face-attribute
+   'default nil
+   :height (- (face-attribute 'default :height) 10)))
+
+(defun mw-increase-height ()
+  (interactive)
+  (set-face-attribute
+   'default nil
+   :height (+ (face-attribute 'default :height) 10)))
 
 ;; #+BEGIN_SRC emacs-lisp
 (defhydra hydra-winsize (global-map "C-c C-f")
