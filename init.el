@@ -3739,27 +3739,20 @@ Originates from gnu.emacs.help group 2006."
    :weight 'normal
    :width 'normal))
 
-(defun mw-decrease-height ()
-  (interactive)
-  (set-face-attribute
-   'default nil
-   :height (- (face-attribute 'default :height) 10)))
-
-(defun mw-increase-height ()
-  (interactive)
-  (set-face-attribute
-   'default nil
-   :height (+ (face-attribute 'default :height) 10)))
 ;; #+END_SRC
 
 ;; #+BEGIN_SRC emacs-lisp
-(defhydra hydra-winsize (global-map "C-c C-f")
-  "switch-font-for-frame"
-  ("p" mw-set-profont)
-  ("-" mw-decrease-height)
+(defhydra hydra-font-control (global-map "C-c C-f")
+  "Control the font."
+  ("p" (set-face-attribute
+          'default nil
+          :family "Profont"))
+  ("-" (set-face-attribute
+        'default nil
+        :height (max 50 (- (face-attribute 'default :height) 20))))
   ("+" (set-face-attribute
         'default nil
-        :height (+ (face-attribute 'default :height) 10)))
+        :height (+ (face-attribute 'default :height) 20)))
   ("q" (ignore) "quit" :exit t))
 
 ;; #+END_SRC
