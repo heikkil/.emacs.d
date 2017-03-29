@@ -3738,6 +3738,12 @@ Originates from gnu.emacs.help group 2006."
   ("+" (set-face-attribute
         'default nil
         :height (+ (face-attribute 'default :height) 20)))
+  ("b" (set-face-attribute
+        'default nil
+        :weight 'bold))
+  ("n" (set-face-attribute
+        'default nil
+        :weight 'normal))
   ("p" (set-face-attribute
         'default nil
         :family "profont") "profont")
@@ -3747,6 +3753,7 @@ Originates from gnu.emacs.help group 2006."
   ("c" (set-face-attribute
         'default nil
         :family "courier") "courier")
+  ("?" nil "info")
   ("q" (ignore) "ok, quit" :exit t))
 ;; #+END_SRC
 
