@@ -3753,7 +3753,6 @@ Originates from gnu.emacs.help group 2006."
   ("c" (set-face-attribute
         'default nil
         :family "courier") "courier")
-  ("?" nil "info")
   ("q" (ignore) "ok, quit" :exit t))
 ;; #+END_SRC
 
