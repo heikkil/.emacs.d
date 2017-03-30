@@ -3214,9 +3214,9 @@ This binding shall make the close more convenient."
 ;; ** from diff to ediff
 
 ;; #+BEGIN_SRC emacs-lisp
-(add-hook 'diff-mode-hook (lambda () (define-key diff-mode-map "E" #'diff-ediff)))
+(add-hook 'diff-mode-hook (lambda () (define-key diff-mode-map "E" #'mw-diff-ediff)))
 
-(defun diff-ediff ()
+(defun mw-diff-ediff ()
   "Run ediff for the diff at point."
   (interactive)
   (ediff
