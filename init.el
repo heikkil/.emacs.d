@@ -876,14 +876,16 @@
 ;; (unless (package-installed-p 'hyperbole)
 ;;   (package-refresh-contents)
 ;;   (package-install 'hyperbole))
-(require 'hyperbole)
+
+;;;; (require 'hyperbole)
+
 ;; #+END_SRC
 
 ;; #+BEGIN_SRC emacs-lisp
 ;; (org-defkey org-mode-map (kbd "<C-M-return>") #'hkey-either)
 
-(global-set-key (kbd "C-M-7") #'hkey-either)
-(global-set-key (kbd "C-M-8") #'assist-key)
+;;;; (global-set-key (kbd "C-M-7") #'hkey-either)
+;;;; (global-set-key (kbd "C-M-8") #'assist-key)
 
 (add-hook 'org-mode-hook
           (lambda () (local-set-key [f10] #'org-time-stamp)))
@@ -1485,6 +1487,13 @@ no decision about how to store the image has to be made.
 ;; #+END_SRC
 
 ;;; Lab:
+
+;; ** txr-mode
+
+;; #+BEGIN_SRC emacs-lisp
+(push "~/p/elisp/external/txr-mode" load-path)
+(require 'txr-mode)
+;; #+END_SRC
 
 ;; ** teleport region
 
