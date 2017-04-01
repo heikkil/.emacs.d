@@ -1490,8 +1490,7 @@ no decision about how to store the image has to be made.
 
 ;; ** override special scroll-lock-mode behavior
 
-;; this is totally personal I guess.
-
+;; I prefer to have scroll lock style all the time.
 
 ;; #+BEGIN_SRC emacs-lisp
 (defun scroll-lock-next-line (&optional arg)
