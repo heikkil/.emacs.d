@@ -2369,6 +2369,12 @@ agenda buffer e.g. C-k."
 
 ;; ** Org Labs
 
+;; *** property-action from agenda
+
+;; #+BEGIN_SRC emacs-lisp
+(org-defkey org-agenda-mode-map "\C-c\C-xy" #'org-agenda-property-action)
+;; #+END_SRC
+
 ;; *** list items with a date
 
 ;; #+BEGIN_SRC emacs-lisp
