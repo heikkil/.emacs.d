@@ -1488,6 +1488,21 @@ no decision about how to store the image has to be made.
 
 ;;; Lab:
 
+;; ** override special scroll-lock-mode behavior
+
+;; #+BEGIN_SRC emacs-lisp
+(defun scroll-lock-next-line (&optional arg)
+  "Scroll up ARG lines keeping point fixed."
+  (interactive "p")
+  (or arg (setq arg 1))
+  (scroll-lock-update-goal-column)
+  ;; (if (pos-visible-in-window-p (point-max))
+  ;;     (forward-line arg)
+    (scroll-up arg)
+    ;; )
+  (scroll-lock-move-to-column scroll-lock-temporary-goal-column))
+;; #+END_SRC
+
 ;; ** txr-mode
 
 ;; #+BEGIN_SRC emacs-lisp
