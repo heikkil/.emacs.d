@@ -1490,6 +1490,9 @@ no decision about how to store the image has to be made.
 
 ;; ** override special scroll-lock-mode behavior
 
+;; this is totally personal I guess.
+
+
 ;; #+BEGIN_SRC emacs-lisp
 (defun scroll-lock-next-line (&optional arg)
   "Scroll up ARG lines keeping point fixed."
