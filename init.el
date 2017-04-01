@@ -598,12 +598,7 @@
   (key-chord-define-global "a6" #'ariadne-marks-goto-end)
   (key-chord-define-global "a7" #'ariadne-marks-backward)
   (key-chord-define-global "a8" #'ariadne-marks-set-mark)
-  (key-chord-define-global "a9" (lambda (arg) (interactive "P")
-                                  "Unset current ariadne mark.  Prefix argument to delete all."
-                                  (call-interactively
-                                   (if arg
-                                       #'ariadne-marks-unset-all
-                                     #'ariadne-marks-unset))))
+  (key-chord-define-global "a9" #'ariadne-marks-unset)
   (key-chord-define-global "a0" #'ariadne-marks-unset-all)
   (key-chord-define-global "c1" #'chronos-add-timer)
   (key-chord-define-global "d1" #'mw-org-link-remove-file-decoration)
