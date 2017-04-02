@@ -163,7 +163,8 @@
  'org-load-hook
  (lambda ()
    (setq org-speed-commands-user
-         '(("-" . mw-org-hide-meta-info-lines)
+         '(("K" . org-cut-subtree)
+           ("-" . mw-org-hide-meta-info-lines)
            ("+" . mw-org-show-meta-info-lines)
            ("*" . (lambda (&optional arg)
                     (interactive "P")
