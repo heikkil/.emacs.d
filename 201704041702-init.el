@@ -1,6 +1,7 @@
 ;;; init.el --- personal emacs config file -*- lexical-binding: t -*-
 ;; #+STARTUP: oddeven
 ;; #+options: toc:2
+;; #+PROPERTY: header-args:emacs-lisp :tangle init.el
 
 ;;; Copyright:                                                        :noexport:
 
