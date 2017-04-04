@@ -64,6 +64,9 @@ This section exists to please checkdoc, the elisp documentation checker.
 :END:
 
 ** Debugging
+:PROPERTIES:
+:ID:       7cb42826-a8c0-49be-b880-e5c5edad2023
+:END:
 
 Switch on debugging in case.
 
@@ -72,6 +75,9 @@ Switch on debugging in case.
 #+END_SRC
 
 ** Customize
+:PROPERTIES:
+:ID:       f572690d-b639-4b28-a58c-3d5fe1eab821
+:END:
 
 Early load of the custom.el to avoid irritating overridings from
 custom-el.
@@ -114,6 +120,9 @@ Take care about overrides due to customizations.
 (setq shr-external-browser 'browse-url-firefox)
 
 ** Workarounds
+:PROPERTIES:
+:ID:       a592b13a-4e61-40d5-a391-f67614fcb544
+:END:
 
 The following might help to keep this file going.  Ideally this
 section does not exist.
@@ -127,6 +136,9 @@ section does not exist.
 #+END_SRC
 
 ** Don't load outdated byte code
+:PROPERTIES:
+:ID:       8fa15afd-71c1-44f3-bdca-2e547bd9f603
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (setq load-prefer-newer t)
@@ -137,6 +149,9 @@ https://github.com/lunaryorn/.emacs.d/blob/master/init.el
 [2015-05-18 Mon 21:56].
 
 ** Frame Config
+:PROPERTIES:
+:ID:       576a103f-c461-4f83-bb13-12187141d810
+:END:
 
 [2016-02-05 Fri 22:53] Try out minibuffer in extra frame.
 
@@ -149,6 +164,9 @@ I need to exercise more.
 #+END_SRC
 
 ** Speed Keys For Org Files
+:PROPERTIES:
+:ID:       bb85cbf0-0ad9-40a3-a770-0d9c1a53281f
+:END:
 
 #+BEGIN_SRC emacs-lisp
 
@@ -215,6 +233,9 @@ I need to exercise more.
 #+END_SRC
 
 ** Org from Source
+:PROPERTIES:
+:ID:       15ae3b79-0786-41d0-b7d4-1933d4b75c5b
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (let ((orgmodelocation (expand-file-name "~/p/org/org-mode")))
@@ -238,6 +259,9 @@ I need to exercise more.
 #+END_SRC
 
 ** Package Resources
+:PROPERTIES:
+:ID:       baff0889-3d65-48fa-a31e-b96c40012ea2
+:END:
 
 The gnu package repo is not included from the start.
 
@@ -254,6 +278,9 @@ The gnu package repo is not included from the start.
 entirely for more clarity in the init process.
 
 ** Package Initialization
+:PROPERTIES:
+:ID:       13572b22-efe5-4f24-80b3-abac8ca26245
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (package-initialize)
@@ -263,6 +290,9 @@ entirely for more clarity in the init process.
 help:package-initialize.  But maybe too late.
 
 ** use-package
+:PROPERTIES:
+:ID:       e86f38d0-7910-4dcd-81d5-edf553e55e6d
+:END:
 
 =use-package= allows convenient emacs package configuration.
 
@@ -273,6 +303,9 @@ help:package-initialize.  But maybe too late.
 * Packages
 
 ** async
+:PROPERTIES:
+:ID:       df37af31-8c32-4004-92c8-8f9d2f12f150
+:END:
 
 
 #+BEGIN_SRC emacs-lisp
@@ -280,6 +313,9 @@ help:package-initialize.  But maybe too late.
 #+END_SRC
 
 ** camcorder
+:PROPERTIES:
+:ID:       75d25b4e-7872-40ba-b87e-f1719803cbbd
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (use-package camcorder
@@ -287,6 +323,9 @@ help:package-initialize.  But maybe too late.
 #+END_SRC
 
 ** ace-link
+:PROPERTIES:
+:ID:       54e121e0-f32a-45e9-a3db-efa7e2cb5980
+:END:
 
 Quickly follow links in certain modes e.g. info-mode.
 
@@ -299,6 +338,9 @@ Quickly follow links in certain modes e.g. info-mode.
 
 [2016-05-03 Tue 09:01] Read about this on the project page.
 ** evil-numbers
+:PROPERTIES:
+:ID:       7ea0fc4b-dbdb-4b40-88f5-2ab1eafb3d00
+:END:
 
 Quickly add to integers in buffer with prefix-arguments for
 adding/subtracting that value.  Default is 1.
@@ -315,6 +357,9 @@ adding/subtracting that value.  Default is 1.
 There are more packages in this field.
 
 ** chronos
+:PROPERTIES:
+:ID:       b5728916-4338-40ca-8f9f-a945d98267d4
+:END:
 
 ~chronos~ allows to conveniently set timers and say a text when the
 timer is done.
@@ -332,6 +377,9 @@ timer is done.
 #+END_SRC
 
 ** swiper
+:PROPERTIES:
+:ID:       51429cfc-a12a-4cda-826c-5d59dc6c2c65
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (use-package swiper
@@ -339,6 +387,9 @@ timer is done.
 #+END_SRC
 
 ** dired-narrow
+:PROPERTIES:
+:ID:       5579337d-b273-4cdd-b211-9ba702055dbf
+:END:
 
 At very first invocation do ~M-x dired-narrow~ in a dired buffer.
 After that the key binding is active.
@@ -351,6 +402,9 @@ Recall g for getting rid of all filtering.
 #+END_SRC
 
 ** stumpwm-mode
+:PROPERTIES:
+:ID:       e0f2ee47-0ce8-4f48-9ff0-d6de1363ec8e
+:END:
 
 Stumpish integration.
 
@@ -361,6 +415,9 @@ Stumpish integration.
 #+END_SRC
 
 ** keyfreq
+:PROPERTIES:
+:ID:       a6cb2d15-2bd8-4db1-a39e-033789041e75
+:END:
 
 From the documentation at https://github.com/dacap/keyfreq:
 
@@ -375,6 +432,9 @@ From the documentation at https://github.com/dacap/keyfreq:
 #+END_SRC
 
 ** wrap-region
+:PROPERTIES:
+:ID:       429b4d6c-0c11-4f4b-b43a-2540809b772a
+:END:
 
 Press a key to decorate region .
 
@@ -395,6 +455,9 @@ Press a key to decorate region .
             (wrap-region-add-wrapper "#+begin_src \n" "\n#+end_src" "s" 'org-mode)))
 #+END_SRC
 ** auth-password-store
+:PROPERTIES:
+:ID:       f3cd686b-49bb-404f-9e7a-e13df534b5ca
+:END:
 
 [2016-11-03 Thu 10:50] i suspect this to interfer with the
 gnus-gmail connection.
@@ -408,6 +471,9 @@ auth-stuff -> pass(word-store)
 #+END_SRC
 
 ** avy
+:PROPERTIES:
+:ID:       72c5f7a8-60b1-494e-ace6-69b608b3f674
+:END:
 
 Move cursor onto a visible character.
 
@@ -435,6 +501,9 @@ that gets maintained.
 #+END_SRC
 
 ** avy-zap
+:PROPERTIES:
+:ID:       c0bfb12b-f9fc-4597-8736-492fc536ef06
+:END:
 
 A replacement of zap-to-char.
 
@@ -445,6 +514,9 @@ A replacement of zap-to-char.
 #+END_SRC
 
 ** on-screen
+:PROPERTIES:
+:ID:       2c8a926f-d92f-4824-846d-cfc85689e24a
+:END:
 
 Adds a visual symbol about the previous page after scrolling a page.
 This might help sometimes.  Try together with rope-read.
@@ -478,6 +550,9 @@ Display page breaks nicely.  Similar to [[id:1b9e0af1-1669-4b6e-bfcf-846f550f7c5
 #+END_SRC
 
 ** browse-kill-ring
+:PROPERTIES:
+:ID:       20de8639-3711-45ef-aa5e-8fcd31703369
+:END:
 
 Activate any time with M-x browse-kill-ring or with M-y but the
 latter only if _not_ immediately after yank.
@@ -489,6 +564,9 @@ latter only if _not_ immediately after yank.
 #+END_SRC
 
 ** expand-region
+:PROPERTIES:
+:ID:       196f772e-5a6f-4e19-8b6f-81a38cb0c9a6
+:END:
 
 =expand-region= often expands the region to what i mean.
 
@@ -499,6 +577,9 @@ latter only if _not_ immediately after yank.
 #+END_SRC
 
 ** ido-hacks
+:PROPERTIES:
+:ID:       66bdba19-c2bf-4c68-b30d-493af73c92e7
+:END:
 
 ido-hacks sits on top of ido and makes ido even cooler.  When
 ido-hacks-mode comes into the way then just switch it off.
@@ -510,6 +591,9 @@ ido-hacks-mode comes into the way then just switch it off.
 #+END_SRC
 
 ** lentic
+:PROPERTIES:
+:ID:       0fe5c819-7945-47f3-9c85-8c146405547d
+:END:
 
 Activattion of lentic as proposed in lentics documentation lentic.el.
 
@@ -519,6 +603,9 @@ Activattion of lentic as proposed in lentics documentation lentic.el.
 #+END_SRC
 
 ** magit
+:PROPERTIES:
+:ID:       4016460d-1156-49df-8811-d1667d057292
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (use-package magit
@@ -528,6 +615,9 @@ Activattion of lentic as proposed in lentics documentation lentic.el.
 #+END_SRC
 
 ** company mode
+:PROPERTIES:
+:ID:       09620e2a-f12e-4b6a-bd06-68312c1b5264
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (use-package company
@@ -535,6 +625,9 @@ Activattion of lentic as proposed in lentics documentation lentic.el.
 #+END_SRC
 
 ** key chord
+:PROPERTIES:
+:ID:       653ed90b-c5ff-415a-bbc9-ead0527da736
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (use-package key-chord
@@ -616,6 +709,9 @@ Activattion of lentic as proposed in lentics documentation lentic.el.
 
 
 ** paredit
+:PROPERTIES:
+:ID:       ce94c391-0d41-4ef9-95f2-979cd85d9fa3
+:END:
 
 Very helpful mode for editing elisp.
 
@@ -631,6 +727,9 @@ Very helpful mode for editing elisp.
 
 
 ** Lispy
+:PROPERTIES:
+:ID:       dc92f6e4-01ae-4f78-8846-76aad2457c2d
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (use-package lispy
@@ -647,6 +746,9 @@ Very helpful mode for editing elisp.
 #+END_SRC
 
 ** smartparens
+:PROPERTIES:
+:ID:       11c6416f-02e7-43e5-8b77-a4760525e11f
+:END:
 
 [2016-01-08 Fri 14:49] At first I thought smartparens-mode will replace paredit for me.  But
 somehow I always come back to paredit.
@@ -658,6 +760,9 @@ somehow I always come back to paredit.
 #+END_SRC
 
 ** gnorb
+:PROPERTIES:
+:ID:       50b10169-5b1b-4af8-8eed-ba3f5d387525
+:END:
 
 gnorb is integration of gnus and org and bbdb .
 
@@ -721,6 +826,9 @@ gnorb is integration of gnus and org and bbdb .
 #+END_SRC
 
 ** rase
+:PROPERTIES:
+:ID:       840cc11e-5a99-49d6-a091-72fae9c03e0d
+:END:
 
 =rase= is for triggering actions at sunrise and sunset.
 
@@ -773,6 +881,9 @@ Reversing the colors of Emacs at sunrise and at sunset.
 
 
 ** AUR access
+:PROPERTIES:
+:ID:       5c3c8a77-546a-4260-b415-d73b822e76c2
+:END:
 
 ~aurel~ helps with the management of the AUR-packages of the
 Arch-Linux system.
@@ -793,6 +904,9 @@ Arch-Linux system.
 AUR-packages.
 
 ** zeitgeist
+:PROPERTIES:
+:ID:       c93d05fd-70f4-43fa-9a5a-9ea24e098e7e
+:END:
 
 The zeitgeist software keeps track of file-operations.  Not sure if I
 have this still up.
@@ -803,6 +917,9 @@ have this still up.
 
 *** TODO Check the zeitgeist stuff                                 :noexport:
 ** helm
+:PROPERTIES:
+:ID:       277e966f-aa7b-4785-b7d2-f3516910009a
+:END:
 
 Actually i don't use helm consciously.  [2015-06-27 Sat 10:57]
 
@@ -813,6 +930,9 @@ Actually i don't use helm consciously.  [2015-06-27 Sat 10:57]
 [2016-04-29 Fri 14:31] I do use helm-emms to switch on bassdrive.
 
 ** gnuplot
+:PROPERTIES:
+:ID:       46863a10-761b-4483-8d3a-8a289850e819
+:END:
 
 The following lines go back to a recommendation of an arch linux
 install.
@@ -826,6 +946,9 @@ install.
 #+END_SRC
 
 ** hydra
+:PROPERTIES:
+:ID:       8b5cc921-e0bb-410d-86e6-d7598f8eb2a7
+:END:
 
 Hydra provides some convenient key maps organization.
 
@@ -834,6 +957,9 @@ Hydra provides some convenient key maps organization.
 #+END_SRC
 
 ** sotlisp
+:PROPERTIES:
+:ID:       f09730a1-c8ef-4be2-84a9-d2dec56fbd1c
+:END:
 
 Helpful for jumping around!
 
@@ -842,6 +968,9 @@ Helpful for jumping around!
 #+END_SRC
 
 ** nyan-mode
+:PROPERTIES:
+:ID:       13a7baa3-2b09-4239-bd29-fb01966bf211
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (use-package nyan-mode
@@ -849,6 +978,9 @@ Helpful for jumping around!
 #+END_SRC
 
 ** git-auto-commit-mode
+:PROPERTIES:
+:ID:       70ec63c9-3eaf-405b-b159-084a7c8fb207
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (use-package git-auto-commit-mode
@@ -857,6 +989,9 @@ Helpful for jumping around!
 #+END_SRC
 
 ** epa
+:PROPERTIES:
+:ID:       1d2839a8-b4a8-47ae-9d7a-6dab21dc5b80
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (require 'epa)
@@ -866,6 +1001,9 @@ Helpful for jumping around!
 * LabPkgs
 
 ** hyperbole
+:PROPERTIES:
+:ID:       8963d400-1720-4887-b113-b0e90dddb43b
+:END:
 
 Give hyperbole a try.
 
@@ -899,6 +1037,9 @@ Give hyperbole a try.
 #+END_SRC
 
 ** emr
+:PROPERTIES:
+:ID:       910630f4-e846-4fd6-8772-4e9f46ff99d7
+:END:
 
 emr is a refactoring tool.
 
@@ -914,6 +1055,9 @@ emr is a refactoring tool.
 *** TODO Show the emr menu with M-RET                              :noexport:
 
 ** beacon
+:PROPERTIES:
+:ID:       735f3e2f-3a98-4b36-b30e-1e86945efca0
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (use-package beacon
@@ -923,6 +1067,9 @@ emr is a refactoring tool.
 #+END_SRC
 
 ** elmacro
+:PROPERTIES:
+:ID:       57c20c8f-995f-4369-8ef5-65cfc4956638
+:END:
 
 I can only remember that I liked the name and the idea of this
 package.
@@ -935,6 +1082,9 @@ package.
 *** TODO What is this?                                             :noexport:
 
 ** git-timemachine
+:PROPERTIES:
+:ID:       ee4ea8cb-e93a-4dd5-ae0d-3bf311c45023
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (use-package git-timemachine
@@ -950,6 +1100,9 @@ Start git-timemachine on a file to travel time on it.
 (require 'lentic-mode)
 (global-lentic-mode)
 ** refine
+:PROPERTIES:
+:ID:       f9e04b7d-515c-4dbf-b172-1fea2d5790b7
+:END:
 
 Package for editing lists.
 
@@ -961,6 +1114,9 @@ Package for editing lists.
 ** slime
 
 *** the local-git slime
+:PROPERTIES:
+:ID:       488225b9-bce0-4031-a753-f5b124b3f625
+:END:
 
 #+BEGIN_SRC emacs-lisp
 ;; (add-to-list 'load-path "~/p/elisp/external/slime")
@@ -974,6 +1130,9 @@ Package for editing lists.
 #+END_SRC
 
 *** the quicklisp slime
+:PROPERTIES:
+:ID:       24a75320-5d6f-48b4-a716-e17be2db42fc
+:END:
 
 CL-USER> (ql:quickload "quicklisp-slime-helper")
 To use, add this to your ~/.emacs:
@@ -984,6 +1143,9 @@ To use, add this to your ~/.emacs:
 #+END_SRC
 
 *** hyperspec access
+:PROPERTIES:
+:ID:       052ca2b7-a6b2-44ce-acba-d519c35e9e1c
+:END:
 
 common-lisp-hyperspec-root is a variable defined in ‘hyperspec.el’.
 Its value is "http://www.lispworks.com/reference/HyperSpec/"
@@ -1003,6 +1165,9 @@ something like "file://usr/local/doc/HyperSpec/".
 ** Org                                                                 :org:
 
 *** Org todo dependencies
+:PROPERTIES:
+:ID:       ca70c911-9c5a-4d07-b499-9b854fed6e07
+:END:
 
 Activate dependency checks.
 
@@ -1011,6 +1176,9 @@ Activate dependency checks.
 #+END_SRC
 
 *** Personal Org Indentation
+:PROPERTIES:
+:ID:       fef018c8-f725-47ef-8608-ef2045b88cfa
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (setq org-adapt-indentation nil
@@ -1019,12 +1187,18 @@ Activate dependency checks.
 #+END_SRC
 
 *** To Org Attachments
+:PROPERTIES:
+:ID:       26bf9d8b-f6aa-40db-bf28-3ed5e8efef88
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (setq org-attach-commit nil)
 #+END_SRC
 
 *** Org Agenda include inactive timestamps
+:PROPERTIES:
+:ID:       df559437-3db6-4198-8878-c18efbbe0f33
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (setq org-agenda-include-inactive-timestamps t) ;;
@@ -1032,6 +1206,9 @@ Activate dependency checks.
 #+END_SRC
 
 *** Org column settings
+:PROPERTIES:
+:ID:       5bed4d4e-1d89-4cd8-8af9-f8ff04009a6c
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (setq
@@ -1042,6 +1219,9 @@ Activate dependency checks.
 *** Org Babel
 
 **** Jump to org block bound
+:PROPERTIES:
+:ID:       304ea5c8-51b5-4c79-a945-a3c0cd200d21
+:END:
 
 The following bindings allow to find the next occurance of string '#+'
 which typically indicate an org-block meta thing.
@@ -1074,6 +1254,9 @@ in, e.g. org-next-block which sets point to the /beginning/ of the
 next block.
 
 **** Tab jump from code-block 'end' to 'begin'
+:PROPERTIES:
+:ID:       d0679e88-199a-4036-99f2-5aeb1995dd4a
+:END:
 
 #+BEGIN_SRC emacs-lisp
 ;; Experimentation for more convenient block handling.
@@ -1100,6 +1283,9 @@ next block.
 #+END_SRC
 
 **** Convenient go up to the beginning of a block
+:PROPERTIES:
+:ID:       999d0bbe-9e0b-43f6-9fb2-9bf367081cf0
+:END:
 
 #+BEGIN_SRC emacs-lisp
 ;; Experimentation for more convenient block handling.
@@ -1112,6 +1298,9 @@ next block.
 #+END_SRC
 
 **** More key bindings for babeling
+:PROPERTIES:
+:ID:       7b38b04a-1ce9-48fc-a460-17562527b750
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (require 'ob-keys)
@@ -1131,6 +1320,9 @@ next block.
 #+END_SRC
 
 *** Org Velocity
+:PROPERTIES:
+:ID:       6a1165bb-f429-463a-ace1-05bb7c59c4d7
+:END:
 
 org velocity is a org-mode contrib extension.
 
@@ -1153,6 +1345,9 @@ to capture something.
 I use the global key setting C-c v for org-velocity.
 
 *** org-protocol for receiving from the outside
+:PROPERTIES:
+:ID:       833fb525-34bb-4403-aa83-0853ccce0088
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (require 'org-protocol)
@@ -1162,6 +1357,9 @@ The org-protocol is useful for actions which come from the outside.
 E.g. capturing from conkeror into org.
 
 *** Highlight current line in agenda
+:PROPERTIES:
+:ID:       e9df3a2c-6adb-4687-a36f-8810c07ae578
+:END:
 
 From [[gnus:nntp+news.gmane.org:gmane.emacs.orgmode#87egnh7oos.fsf@mbork.pl][Email from Marcin Borkowski: Hl-line mode in agenda]]:
 
@@ -1170,6 +1368,9 @@ From [[gnus:nntp+news.gmane.org:gmane.emacs.orgmode#87egnh7oos.fsf@mbork.pl][Ema
 #+END_SRC
 
 *** Save the o-press when opening the agenda
+:PROPERTIES:
+:ID:       fd89d958-98f7-4668-9d5d-3d2f9d92115f
+:END:
 
 #+BEGIN_SRC emacs-lisp
 ;(add-hook 'org-agenda-finalize-hook (lambda () (delete-other-windows)))
@@ -1181,6 +1382,9 @@ From [[gnus:nntp+news.gmane.org:gmane.emacs.orgmode#87egnh7oos.fsf@mbork.pl][Ema
 http://mbork.pl/2015-09-26_A_few_org-agenda_hacks
 
 *** Delete other windows after jump from agenda
+:PROPERTIES:
+:ID:       8b469c82-b9f8-47d6-8501-b4ef64c5b67d
+:END:
 
 #+BEGIN_SRC emacs-lisp
 ;; (eval-after-load "org-agenda"
@@ -1188,6 +1392,9 @@ http://mbork.pl/2015-09-26_A_few_org-agenda_hacks
 #+END_SRC
 
 *** org-screenshot
+:PROPERTIES:
+:ID:       e5fc742e-7d15-4c37-8fc1-78ab99b2ba2d
+:END:
 
 using org-screenshot as a package now.
 
@@ -1227,6 +1434,9 @@ Define a shortcut key:
 #+END_SRC
 
 *** Disable key C-,
+:PROPERTIES:
+:ID:       67717574-2742-494f-90f2-33b92ee81baa
+:END:
 
 Want C-, not bound to org-cycle-agenda-files, which is also on C-'
 anyways.
@@ -1238,6 +1448,9 @@ anyways.
 #+END_SRC
 
 *** Jump from the agenda to the stars
+:PROPERTIES:
+:ID:       c71cdcc8-4135-4869-b9d7-4c1d73330a0b
+:END:
 
 In the agenda 'tab' per default jumps to the beginning of the headline
 text.  For me it's a bit more convenient to jump to the beginning of
@@ -1249,6 +1462,9 @@ the stars.  Fortunately there is org-agenda-after-show-hook.
 #+END_SRC
 
 *** Speed commands also on first char
+:PROPERTIES:
+:ID:       9aeec743-8b52-40c4-9b54-5faf04c54e84
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (setq org-use-speed-commands
@@ -1261,6 +1477,9 @@ Taken the looking around code from the documentation of
 ~org-use-speed-commands~.
 
 *** Refile Targets Config
+:PROPERTIES:
+:ID:       edb7f61b-b12e-44d2-adf0-d7d0af042c0b
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (setq org-refile-targets
@@ -1271,6 +1490,9 @@ Taken the looking around code from the documentation of
 #+END_SRC
 
 ** gnus
+:PROPERTIES:
+:ID:       76eb595e-d246-4828-92aa-e8aa746c4d15
+:END:
 
 #+BEGIN_SRC emacs-lisp
 ;; (push (expand-file-name "~/p/elisp/external/gnus/lisp") load-path)
@@ -1282,6 +1504,9 @@ Taken the looking around code from the documentation of
 #+END_SRC
 
 *** To html mail in gnus
+:PROPERTIES:
+:ID:       eab9b9c5-355b-47b1-83b9-71d54270a1a6
+:END:
 
 The following helps with html-mail in some cases.
 
@@ -1297,6 +1522,9 @@ Source: [[gnus:gnu.emacs.help#mailman.5546.1405582006.1147.help-gnu-emacs@gnu.or
 #+END_SRC
 
 ** ledger
+:PROPERTIES:
+:ID:       6cfc4835-cb82-4608-a0c4-2a7361bfd9ba
+:END:
 
 Refer to a local version of ledger.
 
@@ -1350,6 +1578,9 @@ Refer to a local version of ledger.
 #+END_SRC
 
 ** emms
+:PROPERTIES:
+:ID:       005ce28c-c1ba-4f5c-84cf-74145b1b7aff
+:END:
 
 Emms is for playing sound.  I use emms mostly for playing internet
 radio.
@@ -1367,6 +1598,9 @@ BTW =emms-streams= has configured some nice stations AFAICT.
 #+END_SRC
 
 ** Big Brother DB
+:PROPERTIES:
+:ID:       11bf1040-515f-430a-81ac-1484a42c6308
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (push (expand-file-name "~/p/elisp/external/bbdb/lisp") load-path)
@@ -1389,6 +1623,9 @@ BTW =emms-streams= has configured some nice stations AFAICT.
 #+END_SRC
 
 ** Zen reward mode
+:PROPERTIES:
+:ID:       1b87e4e3-743a-47eb-9b20-651cd45b7c2d
+:END:
 
 Get points for task-status-changes in org.  But where is the zen here?
 
@@ -1402,6 +1639,9 @@ Get points for task-status-changes in org.  But where is the zen here?
 Found this in a newsgroup.  See the source for more info.
 
 ** Little helpers
+:PROPERTIES:
+:ID:       527a2699-830c-49da-8377-24e62c08281c
+:END:
 
 My little collection of Emacs stuff.
 
@@ -1415,6 +1655,9 @@ My little collection of Emacs stuff.
 #+END_SRC
 
 ** Little helpers
+:PROPERTIES:
+:ID:       beec8c1e-a1e6-4458-826b-caf10242f0d4
+:END:
 
 My little collection of Emacs stuff.
 
@@ -1434,12 +1677,18 @@ My little collection of Emacs stuff.
 #+END_SRC
 
 ** Hide Buffer Part
+:PROPERTIES:
+:ID:       12452d25-be10-4303-8429-9b867d201a94
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (push  "~/p/elisp/mw/hide-buffer-part" load-path)
 #+END_SRC
 
 ** Auxies
+:PROPERTIES:
+:ID:       f1df9204-3090-4333-a5ab-4884d0556c82
+:END:
 
 Another collection of Emacs stuff.
 
@@ -1455,6 +1704,9 @@ Another collection of Emacs stuff.
 - Can auxies be restructured.
 
 *** Hacks
+:PROPERTIES:
+:ID:       d8b58f6a-d388-4212-a17d-a4bf9b0cbd0c
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (push "~/p/elisp/mw/hacks" load-path)
@@ -1466,6 +1718,9 @@ Another collection of Emacs stuff.
 #+END_SRC
 
 *** Auxies-eww
+:PROPERTIES:
+:ID:       c5c38c29-acf8-4283-8977-ffef26e1176f
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (push "~/p/elisp/mw/auxies" load-path)
@@ -1473,6 +1728,9 @@ Another collection of Emacs stuff.
 #+END_SRC
 
 * Auxilliaries
+:PROPERTIES:
+:ID:       06d23ad3-863e-49c9-a5f7-9acbd2a68fbc
+:END:
 
 General functions
 
@@ -1489,6 +1747,9 @@ General functions
 * Lab
 
 ** Display Org-properties conveniently
+:PROPERTIES:
+:ID:       e5a42da8-fea8-4057-8b10-2b9ca1029c74
+:END:
 
 #+begin_src emacs-lisp
 (defun org-display-org-properties ()
@@ -1507,6 +1768,9 @@ General functions
 #+end_src
 
 ** Widen to show the sexp up
+:PROPERTIES:
+:ID:       5814cb6d-9e73-48cc-98fa-d4acd7b3814c
+:END:
 
 #+begin_src emacs-lisp
 (defun mw-narrow-to-up-sexp ()
@@ -1518,6 +1782,9 @@ General functions
 #+end_src
 
 ** override special scroll-lock-mode behavior
+:PROPERTIES:
+:ID:       c6605b4c-1cf2-47b0-8a86-266e5a2c47a2
+:END:
 
 I prefer to have scroll lock style all the time.
 
@@ -1535,6 +1802,9 @@ I prefer to have scroll lock style all the time.
 #+END_SRC
 
 ** txr-mode
+:PROPERTIES:
+:ID:       6b8c441d-50f3-46c6-823f-9b9e7f07be99
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (push "~/p/elisp/external/txr-mode" load-path)
@@ -1542,6 +1812,9 @@ I prefer to have scroll lock style all the time.
 #+END_SRC
 
 ** teleport region
+:PROPERTIES:
+:ID:       e0d66cd9-ba5e-4026-83cf-4e6f0919ceea
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (defun mw-teleport-region-to-other-window (start end)
@@ -1559,6 +1832,9 @@ I prefer to have scroll lock style all the time.
 #+END_SRC
 
 ** repeat
+:PROPERTIES:
+:ID:       3f92313b-cdc6-4168-b596-d13a905d3f0f
+:END:
 
 control of `repeat'
 
@@ -1579,6 +1855,9 @@ Linked to the binding of `repeat'.
 #+END_SRC
 
 ** lab libraries
+:PROPERTIES:
+:ID:       6a7e74d4-fff6-4771-84ba-0612d29f01ae
+:END:
 
 Location of research emacs-libraries.
 
@@ -1588,6 +1867,9 @@ Location of research emacs-libraries.
 #+END_SRC
 
 ** Ariadne
+:PROPERTIES:
+:ID:       c40b4f41-a75f-44d0-84a2-c650824359c6
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'load-path "~/p/elisp/mw/ariadne-marks")
@@ -1595,6 +1877,9 @@ Location of research emacs-libraries.
 #+END_SRC
 
 *** Bindings with a hydra
+:PROPERTIES:
+:ID:       7ed0b08a-99b3-4dce-b96a-88e5af2d3898
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (defhydra hydra-ariadne (global-map "C-c C-a")
@@ -1607,6 +1892,9 @@ Location of research emacs-libraries.
 #+END_SRC
 
 ** cursor-color-mode
+:PROPERTIES:
+:ID:       aeef29ac-d726-4a15-8b0d-fdab5812c0b7
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (push "~/p/elisp/mw/cursor-color-mode" load-path)
@@ -1614,6 +1902,9 @@ Location of research emacs-libraries.
 #+END_SRC
 
 ** hack-time
+:PROPERTIES:
+:ID:       0eb75da4-c436-4a52-9597-f68a318137f5
+:END:
 
 #+BEGIN_SRC emacs-lisp
 ;; (push "~/p/elisp/mw/hack-time-mode" load-path)
@@ -1622,6 +1913,7 @@ Location of research emacs-libraries.
 
 ** carry-region
 :PROPERTIES:
+:ID:       1fe74b31-e22b-498b-9779-2e1649f50883
 :END:
 
 #+BEGIN_SRC emacs-lisp
@@ -1637,6 +1929,9 @@ Location of research emacs-libraries.
 #+end_src
 
 ** org-bullets
+:PROPERTIES:
+:ID:       b43bd556-05c9-4d1a-be97-b1dca5bba221
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (push "~/p/elisp/external/org-bullets" load-path)
@@ -1658,6 +1953,9 @@ Double C-u for `avy-goto-char-in-line' else call `avy-goto-char'.
 END_SRCTEXTIFY org-link
 
 ** textifylink part
+:PROPERTIES:
+:ID:       f4d7f7d6-82aa-4b89-8321-a471290a3dce
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (defun mw-org-link-textify ()
@@ -1670,6 +1968,9 @@ END_SRCTEXTIFY org-link
       (replace-match (or desc link)))))
 #+END_SRC
 ** Pick often used pw from authinfo
+:PROPERTIES:
+:ID:       515fd637-b0bb-4710-8ece-17dfed8b4e54
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (defun mw-password-for-marco.wahl@gmail.com ()
@@ -1691,6 +1992,9 @@ END_SRCTEXTIFY org-link
 #+END_SRC
 
 ** org-structure-as-dirs-and-files
+:PROPERTIES:
+:ID:       0b4d8cb9-6b9c-4dc0-b01e-b908ad97ca66
+:END:
 
 org-structure-as-dirs-and-files.el
 #+BEGIN_SRC emacs-lisp
@@ -1699,6 +2003,9 @@ org-structure-as-dirs-and-files.el
 #+END_SRC
 
 ** org-teleport
+:PROPERTIES:
+:ID:       18368c44-5b4b-49ff-a6f7-4b3d5f8e5adf
+:END:
 
 I really like this.
 
@@ -1760,6 +2067,9 @@ is positive, move after, and if negative, move before."
   (outline-hide-leaves))
 #+end_src
 ** misty-rose
+:PROPERTIES:
+:ID:       31ab3269-f8c8-4bad-a41d-4e3b3384983a
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (defun mistyrose ()
@@ -1776,6 +2086,9 @@ is positive, move after, and if negative, move before."
 Use e.g. =org-mime-subtree= to mail a tree.
 
 ** org-section-numbers
+:PROPERTIES:
+:ID:       a613b467-845b-48db-a416-0d62f4d7e627
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (push "~/p/elisp/mw/org-section-numbers" load-path)
@@ -1783,6 +2096,9 @@ Use e.g. =org-mime-subtree= to mail a tree.
 #+END_SRC
 
 ** tweet-this
+:PROPERTIES:
+:ID:       6e7fe962-d7dc-4036-90a3-5208847842a9
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (defun tweet-this (b e)
@@ -1791,6 +2107,9 @@ Use e.g. =org-mime-subtree= to mail a tree.
 #+END_SRC
 
 ** bbdb-this
+:PROPERTIES:
+:ID:       708cae26-6304-4cc0-be6e-6451c5dc7f8e
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (defun mw-bbdb-this (b e)
@@ -1805,6 +2124,9 @@ Use e.g. =org-mime-subtree= to mail a tree.
 #+END_SRC
 
 ** Convenient Drill
+:PROPERTIES:
+:ID:       c864c6bb-253e-4a58-83c0-aaa6a733bb2c
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (let (agenda-buffer-for-drill)
@@ -1835,6 +2157,9 @@ line.
 #+END_SRC
 
 ** Play with url from mozrepl
+:PROPERTIES:
+:ID:       66d9b36a-20ce-4e42-9427-7a6cd62a520e
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (use-package moz-controller)
@@ -1868,6 +2193,9 @@ functionality."
 See diary file.
 
 *** Provide a string with the sunset
+:PROPERTIES:
+:ID:       f4b4c313-3ef5-420c-918e-22afaa4ea146
+:END:
 
 :origin:
 [[file:~/p/emacs/lisp/calendar/solar.el::defun%20solar-sunrise-sunset-string][Function: solar-sunrise-sunset-string]]
@@ -1902,6 +2230,9 @@ Optional NOLOCATION non-nil means do not print the location."
 #+END_SRC
 
 *** Create a calendar function
+:PROPERTIES:
+:ID:       e8eccb17-a229-4111-8f55-df98b2dc940d
+:END:
 
 :origin:
 [[file:~/p/emacs/lisp/calendar/solar.el::defun%20diary-sunrise-sunset][Function: diary-sunrise-sunset]]
@@ -1930,6 +2261,9 @@ Direct call like so:
 #+END_EXAMPLE
 
 ** Fira Code
+:PROPERTIES:
+:ID:       ead76a35-9c1c-423a-b382-dc6a44690885
+:END:
 
 The following was disappointing. [2016-07-18]
 source: https://github.com/tonsky/FiraCode/wiki/Setting-up-Emacs
@@ -2112,6 +2446,9 @@ come out not so nicely.
 (remove-hook 'prog-mode-hook #'add-fira-code-symbol-keywords)
 
 ** Drop the leading stars from ITEMs in column view                              :org:
+:PROPERTIES:
+:ID:       54866367-7522-49ce-b865-094d9a15dc4d
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (defun mw-org-columns-modify-value-for-display (column-title value)
@@ -2123,6 +2460,9 @@ come out not so nicely.
 #+END_SRC
 
 ** Move Word
+:PROPERTIES:
+:ID:       f7851e7a-3228-4262-940a-cab9eca4cf16
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (defhydra hydra-transport-word (global-map "C-c t")
@@ -2132,6 +2472,9 @@ come out not so nicely.
 #+END_SRC
 
 ** Capitalize Word
+:PROPERTIES:
+:ID:       e144174c-c4f3-4161-90d9-b09a03930b5f
+:END:
 
 Slight change to capitalize.  Capitalize the word backwards when on
 end of it.
@@ -2166,6 +2509,9 @@ Interesting how many little details one finds when realizing such easy
 looking feature.
 
 ** Handle bottommost-tagged after sorting
+:PROPERTIES:
+:ID:       c9c32c4e-f1d0-4eb0-acf2-209f42819d5b
+:END:
 
 This was an attempt to keep an orgee at the bottom.  Switched to
 define stuff in .dir-locals.el.
@@ -2180,6 +2526,9 @@ define stuff in .dir-locals.el.
 #+END_SRC
 
 ** Double space at end of sentences
+:PROPERTIES:
+:ID:       4f8a68c5-f950-4aaa-9dee-5da99753e2ec
+:END:
 
 Function to convert single space sentence endings to double space.
 
@@ -2192,6 +2541,9 @@ Function to convert single space sentence endings to double space.
 #+END_SRC
 
 ** Maxima
+:PROPERTIES:
+:ID:       34329cbe-bfd6-477a-8e2d-f2790c89cca4
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (push "~/p/elisp/external/maxima" load-path)
@@ -2226,6 +2578,9 @@ helps some.
 Set some personal stuff via customize.
 
 ** Prefix Lines with Timesstamp
+:PROPERTIES:
+:ID:       60e8371c-be2b-4aa0-aa5f-ea7ac19e2588
+:END:
 
 Prefix lines with a timesstamp.
 
@@ -2242,12 +2597,18 @@ Unclear yet: Is this the shit?
 #+END_SRC
 
 ** org-crypt
+:PROPERTIES:
+:ID:       47a72486-e30d-4653-9a2a-dc5465c37580
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (eval-after-load 'org-crypt '(org-crypt-use-before-save-magic))
 #+END_SRC
 
 ** jl-encrypt                                                         :crypto:
+:PROPERTIES:
+:ID:       b08f7a09-241a-4d66-adeb-44e02aa4b34b
+:END:
 
 Don't forget the crypto.
 
@@ -2259,6 +2620,9 @@ Don't forget the crypto.
 #+END_SRC
 
 ** exwm
+:PROPERTIES:
+:ID:       04b85506-c926-4849-9a42-4ebc9fd647f7
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (require 'exwm)
@@ -2276,6 +2640,9 @@ Don't forget the crypto.
 #+END_SRC
 
 ** Jump to other Drawers                                                :org:
+:PROPERTIES:
+:ID:       d91359bd-684b-4e4a-b34b-ea873430660c
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (defun org-next-drawer (count)
@@ -2312,6 +2679,9 @@ Don't forget the crypto.
 #+END_SRC
 
 ** Hide Lines in the Agenda                                             :org:
+:PROPERTIES:
+:ID:       260d148a-634d-48cf-b6d2-c35d811e97f4
+:END:
 
 Be able to hide a line of the org agenda.
 
@@ -2365,6 +2735,9 @@ agenda buffer e.g. C-k."
 #+END_SRC
 
 *** Keybinding
+:PROPERTIES:
+:ID:       37660ab1-382f-4799-b0da-f92f0669b7dc
+:END:
 
 Using the key 'h' which reminds of hide.  'h' is the standard binding
 to popup holidays, but they are still accessable on key 'H'.
@@ -2377,6 +2750,9 @@ to popup holidays, but they are still accessable on key 'H'.
 ** A key for Info-search-next                                          :info:
 
 *** Example
+:PROPERTIES:
+:ID:       dd1212ef-947d-4277-b115-b62bf7890795
+:END:
 
 X wants to find "mysearchstring" muliple times.  It's possible already
 by typing
@@ -2399,12 +2775,18 @@ a
 ** Org Labs
 
 *** property-action from agenda
+:PROPERTIES:
+:ID:       9ddca184-0601-4564-b43e-354619687119
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (org-defkey org-agenda-mode-map "\C-c\C-xy" #'org-agenda-property-action)
 #+END_SRC
 
 *** list items with a date
+:PROPERTIES:
+:ID:       be1be03d-f736-4990-9c12-f18d51cf93d4
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (defun org-list-insert-inactive-ts-item ()
@@ -2426,6 +2808,9 @@ a
 #+END_SRC
 
 *** org hide above first heading
+:PROPERTIES:
+:ID:       d6da5aa9-578e-4664-991e-2219adf59665
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (defun org-first-heading ()
@@ -2443,6 +2828,9 @@ a
 #+END_SRC
 
 *** org-show-context-detail
+:PROPERTIES:
+:ID:       4ce2db4c-b01c-430e-a811-6abb70dd7925
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (setq org-show-context-detail
@@ -2453,6 +2841,9 @@ a
 #+END_SRC
 
 *** Agenda for deadlines only
+:PROPERTIES:
+:ID:       786a3036-7e15-42ae-be82-8904abb07ea5
+:END:
 
 #+BEGIN_SRC emacs-lisp
      (eval-after-load "org-agenda"
@@ -2467,6 +2858,9 @@ http://emacs.stackexchange.com/questions/12930/display-org-todo-list-of-entries-
 ;;
 
 *** Timetravel Org
+:PROPERTIES:
+:ID:       30abc2f7-9f3a-4f90-8402-4d0fbfe9904f
+:END:
 
 When you want to see or change something in the agenda at a
 different day the following functions might be helpful.
@@ -2490,6 +2884,9 @@ other date as current.
 #+END_SRC
 
 *** org-todo with certain date
+:PROPERTIES:
+:ID:       690374f5-f4b8-4ee2-9325-3514acf8e242
+:END:
 
 recall: there is already org-todo-yesterday.
 
@@ -2508,6 +2905,9 @@ Optional argument ARG prefix arg."
 #+END_SRC
 
 ** Unset a Register
+:PROPERTIES:
+:ID:       fbe2c382-6db3-414c-94ee-870280ee9f2b
+:END:
 
 I think this functionality is not in Emacs core yet.
 
@@ -2519,6 +2919,9 @@ I think this functionality is not in Emacs core yet.
 #+END_SRC
 
 ** Controlled Garbage Collection
+:PROPERTIES:
+:ID:       486b2663-8cf1-48dc-85e8-a98312f01015
+:END:
 
 This is from
 http://bling.github.io/blog/2016/01/18/why-are-you-changing-gc-cons-threshold/.
@@ -2535,6 +2938,9 @@ http://bling.github.io/blog/2016/01/18/why-are-you-changing-gc-cons-threshold/.
 #+END_SRC
 
 ** LOB
+:PROPERTIES:
+:ID:       9486fcf2-e34d-42ab-9dd6-3ea8013fb2f6
+:END:
 
 Library of Babel is a collection of Org source blocks.  This code is for adding my additions to the lob.
 
@@ -2543,6 +2949,9 @@ Library of Babel is a collection of Org source blocks.  This code is for adding 
 #+END_SRC
 
 ** Switch buffers between frames
+:PROPERTIES:
+:ID:       92d781a8-abfb-4dc3-9213-cbd86e953f27
+:END:
 
 Found at [[http://www.emacswiki.org/emacs/SwitchingBuffers#toc5][EmacsWiki: Switching Buffers]] provided by YoniRabkinKatzenell
 AFAICS.  I think this can be useful for me.
@@ -2564,6 +2973,9 @@ AFAICS.  I think this can be useful for me.
 ** VCS
 
 ***** This is a Typical Procedere with Commit Message for the Author
+:PROPERTIES:
+:ID:       94bdf8f2-7dba-4272-bf05-a6ec42efc1f8
+:END:
 
 Automate the typical thing and get happy.  ^_^
 
@@ -2588,6 +3000,9 @@ Automate the typical thing and get happy.  ^_^
 #+END_SRC
 
 ** linum experiments                                                 :linum:
+:PROPERTIES:
+:ID:       64fe7c5b-7cb8-4d93-bee4-416b7b7358c0
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (defun delta (line pointline)
@@ -2610,6 +3025,9 @@ pointline is the line containing point."
 #+END_SRC
 
 ** Toggle-letter-case
+:PROPERTIES:
+:ID:       b42a6e0d-0a8c-4575-a3b5-1464961792fe
+:END:
 
 #+BEGIN_SRC emacs-lisp
 ;; http://www.star.bris.ac.uk/bjm/emacs-tips.html#sec-1-14
@@ -2652,6 +3070,9 @@ Toggles between: “all lower”, “Init Caps”, “ALL CAPS”."
 #+END_SRC
 
 ** ispell and org
+:PROPERTIES:
+:ID:       91013af9-c3c6-44b9-a4e9-42ea23f495da
+:END:
 
 [[gnus:nntp+news.gwene.org:gwene.org.emacsen.planet#x1-OJQzcaDHUGvOvCmRSA6fSHKcoWE@gwene.org][Email from Artur Malabarba: Endless Parentheses: Making Is]]
 
@@ -2681,6 +3102,9 @@ quickly turns into irritation. Here’s how you fix it.
 #+END_SRC
 
 ** ediff
+:PROPERTIES:
+:ID:       95a7af9e-1050-461b-8324-96fc103d15c3
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (add-hook 'ediff-keymap-setup-hook
@@ -2691,6 +3115,9 @@ quickly turns into irritation. Here’s how you fix it.
 #+END_SRC
 
 ** Drag windows
+:PROPERTIES:
+:ID:       f83d1053-b269-4647-ac28-085493f17bd2
+:END:
 
 Found [2015-03-03 Tue 17:18]
 Link: https://tsdh.wordpress.com/2015/03/03/swapping-emacs-windows-using-dragndrop/
@@ -2735,6 +3162,9 @@ pressed is bound to the command above.
 
 
 ** Pomodoro
+:PROPERTIES:
+:ID:       5fae4b2e-b6dc-4193-b0c4-bca7b5c87c71
+:END:
 
 Support the famous tomato-technique.  The idea is to work
 concentrated for a while (tomato) and then take a break.  This shall
@@ -2857,6 +3287,9 @@ Author there: Frédéric Couchet le mercredi, août 4 2010, 22:53
 
 
 ** navi-mode
+:PROPERTIES:
+:ID:       6b809606-6e13-438a-84f6-0a07c1519fb8
+:END:
 
 Recall function [[help:navi-search-and-switch][navi-search-and-switch]] to activate a navi-buffer.
 
@@ -2865,6 +3298,9 @@ Recall function [[help:navi-search-and-switch][navi-search-and-switch]] to activ
 #+END_SRC
 
 ** Quickly access dict.leo.org                                 :weak:
+:PROPERTIES:
+:ID:       29eb9c88-24c3-4159-b51f-ea597b9523ab
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (defun mw-ask-leo-about-word-at-point ()
@@ -2897,6 +3333,9 @@ Recall function [[help:navi-search-and-switch][navi-search-and-switch]] to activ
   (eww (format "http://pda.leo.org/?lp=ende&search=%s&searchLoc=0&resultOrder=basic&multiwordShowSingle=on" arg)))
 
 ** Rope Read to save eye-movements
+:PROPERTIES:
+:ID:       2c64db40-7503-4c19-a245-2686d6759164
+:END:
 
 Most important package!  Save eye movements!
 Use via package manager to test if it's okay.
@@ -2915,6 +3354,9 @@ Use via package manager to test if it's okay.
 #+END_SRC
 
 ** Convenient snapshot of emacs from within
+:PROPERTIES:
+:ID:       236c5b50-a3b6-4c02-a40f-96101519d184
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (push "~/p/elisp/mw/emacsshot" load-path)
@@ -2930,6 +3372,9 @@ Use via package manager to test if it's okay.
 #+END_SRC
 
 ** Hippie expand
+:PROPERTIES:
+:ID:       858cfba2-7bb2-48a2-9ec1-d3cc037840ef
+:END:
 
 Hippie expand is using various sources as potential for expansion.
 
@@ -2938,6 +3383,9 @@ Hippie expand is using various sources as potential for expansion.
 #+END_SRC
 
 ** Special holidays
+:PROPERTIES:
+:ID:       2a68711a-fb74-45cc-9ac5-145c2758f971
+:END:
 
 Special Holidays can be defined in a function.  Hooking can be done
 via variable `holiday-other-holidays'.
@@ -2959,6 +3407,9 @@ Note: The code here looks not so good.  Improvement would be good.
 #+END_SRC
 
 ** Switch sound on/off
+:PROPERTIES:
+:ID:       07d4ced5-486f-448f-9d47-74f6023a0c2f
+:END:
 
 [2017-03-22 Wed 13:00] When calling the sound goes to 0%!
 #+BEGIN_SRC emacs-lisp
@@ -3024,6 +3475,9 @@ concurrently.
 #+END_SRC
 
 ** ill an url at point
+:PROPERTIES:
+:ID:       e8a974e9-b453-41ab-88c7-c7878ef79a11
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (defun mw-kill-url-at-point ()
@@ -3034,6 +3488,9 @@ concurrently.
 #+END_SRC
 
 ** Duplicate a w3m-session
+:PROPERTIES:
+:ID:       75b8c4c4-eb78-405a-9594-70c94d0c6b68
+:END:
 
 - [2014-07-18 Fri 17:14] It looks like the defun below is already
   there in w3m: "M-n runs the command w3m-copy-buffer."
@@ -3051,6 +3508,9 @@ Optional argument RELOAD for w3m-view-this-url-1."
 #+END_SRC
 
 ** wcheck
+:PROPERTIES:
+:ID:       550a98a3-e82b-4bec-80d5-f56b2b042ee8
+:END:
 
 wcheck is a mode for checking things in a buffer.  Might be worth to
 invest some energy into its configuration for spell checking.
@@ -3081,6 +3541,9 @@ trailing whitespace.
 ** Additions around eww
 
 *** Switch from w3m to eww and vice versa
+:PROPERTIES:
+:ID:       613121b1-9af0-4815-8120-ac236527cc30
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (defun mw-w3m-switch-to-eww ()
@@ -3097,6 +3560,9 @@ trailing whitespace.
 #+END_SRC
 
 *** Duplicate eww buffer
+:PROPERTIES:
+:ID:       48c2f799-f29f-477b-903d-114dc89ca484
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (defun mw-eww-duplicate-buffer ()
@@ -3107,6 +3573,9 @@ trailing whitespace.
 #+END_SRC
 
 *** Rename Current Page
+:PROPERTIES:
+:ID:       0524e938-4baf-4552-a999-c3cafce51c14
+:END:
 
 This is for somehow saving the page to not loosing it at the next eww
 call.
@@ -3126,6 +3595,9 @@ call.
 #+END_SRC
 
 *** eww on region
+:PROPERTIES:
+:ID:       96c018f3-33b7-451f-974e-aba9dfdf12e0
+:END:
 
 eww
 
@@ -3152,6 +3624,9 @@ eww
 Also consider to call `browse-url-firefox' directly.
 
 ** Hidden mode line
+:PROPERTIES:
+:ID:       54610295-83bb-4d71-b7f7-2a04e19ebd04
+:END:
 
 Found the following mode line hiding function at
 http://bzg.fr/emacs-hide-mode-line.html.  (Bastien)
@@ -3200,6 +3675,9 @@ http://bzg.fr/emacs-hide-mode-line.html.  (Bastien)
 #+END_SRC
 
 ** Strip
+:PROPERTIES:
+:ID:       13bcd1d1-39a9-423c-813a-b26ba46ffbab
+:END:
 
 Go further from hidden-mode-line-mode.
 
@@ -3214,6 +3692,9 @@ Go further from hidden-mode-line-mode.
 #+END_SRC
 
 ** Key sequences to open browser
+:PROPERTIES:
+:ID:       9bf0ae82-8fcc-4b7f-8309-964e731ffb89
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "\C-cg") 'eww)
@@ -3222,6 +3703,9 @@ Go further from hidden-mode-line-mode.
 #+END_SRC
 
 ** mpages
+:PROPERTIES:
+:ID:       cc89df5d-a0f8-4b36-aaff-9939161f5c5d
+:END:
 
 Using a local branch and not the package to test a version with
 encryption.
@@ -3242,6 +3726,9 @@ This binding shall make the close more convenient."
 #+END_SRC
 
 ** dired-x
+:PROPERTIES:
+:ID:       50e7e452-65c7-4153-97b0-84db4413bb1e
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (add-hook 'dired-load-hook
@@ -3254,6 +3741,9 @@ This binding shall make the close more convenient."
 #+END_SRC
 
 ** from dired to ediff
+:PROPERTIES:
+:ID:       afbf5575-7fac-4e9f-a71c-b644c19c77ab
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (add-hook 'dired-mode-hook
@@ -3273,6 +3763,9 @@ This binding shall make the close more convenient."
 #+END_SRC
 
 ** from diff to ediff
+:PROPERTIES:
+:ID:       ec3fdb80-6d3f-486f-bdbe-c4bb0304aad3
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (add-hook 'diff-mode-hook (lambda () (define-key diff-mode-map "E" #'mw-diff-ediff)))
@@ -3286,6 +3779,9 @@ This binding shall make the close more convenient."
 #+END_SRC
 
 ** eww on file in dired
+:PROPERTIES:
+:ID:       e1525a65-3612-431e-b903-4da4f7f0dd3f
+:END:
 
 Setting key e for opening the file at point in eww.  Note there is
 already key W for opening the file at point in some browser.
@@ -3307,6 +3803,9 @@ already key W for opening the file at point in some browser.
 #+END_SRC
 
 ** Delete blank lines also above
+:PROPERTIES:
+:ID:       adfb87e8-132c-4e68-a2a7-76c8fb25f39c
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (global-set-key  (kbd "C-x C-o") #'mw-delete-blank-lines)
@@ -3316,6 +3815,9 @@ already key W for opening the file at point in some browser.
 blank lines above proves useful.
 
 ** Disable query about active processes at quit
+:PROPERTIES:
+:ID:       94d56b20-f316-40a5-9c9b-b0935a17a2d1
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (require 'cl)
@@ -3326,6 +3828,9 @@ blank lines above proves useful.
 Source: [[http://timothypratley.blogspot.de/2015/07/seven-specialty-emacs-settings-with-big.html][Programming: Seven specialty Emacs settings with big payoffs]].
 
 ** Open line below
+:PROPERTIES:
+:ID:       26da7498-cddb-4ece-8abd-764893ddda36
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "C-S-o") #'mw-open-line-below)
@@ -3333,6 +3838,9 @@ Source: [[http://timothypratley.blogspot.de/2015/07/seven-specialty-emacs-settin
 #+END_SRC
 
 ** Real delete
+:PROPERTIES:
+:ID:       2ff4a92f-b510-4fcd-a17e-6cd70f3c5da5
+:END:
 
 Real delete of region, not this 'play it save and put the delete into
 kill-ring' stuff.
@@ -3344,6 +3852,9 @@ kill-ring' stuff.
 *** TODO Test this                                                 :noexport:
 
 ** Mouse Avoidance
+:PROPERTIES:
+:ID:       ddb352a3-a10c-4e13-a54b-6b7553522d25
+:END:
 
 Documentation says
 #+BEGIN_QUOTE
@@ -3356,6 +3867,9 @@ Should be one of the symbols ‘banish’, ‘exile’, ‘jump’, ‘animate�
 #+END_SRC
 
 ** Delete trailing ws on save
+:PROPERTIES:
+:ID:       94ffe130-b09b-4a67-ae99-0bbbe5172ddb
+:END:
 
 This is thought to keep the files cleaner.  This is thought to need
 no more thought about trailing whitespace.
@@ -3376,6 +3890,9 @@ no more thought about trailing whitespace.
 #+END_SRC
 
 ** Enable more Emacs features
+:PROPERTIES:
+:ID:       6d9446c2-447f-4a92-9873-a9ec8a186eb7
+:END:
 
 Enable features that are disabled by default.
 
@@ -3391,6 +3908,9 @@ Enable features that are disabled by default.
 #+END_SRC
 
 ** Abbrevs
+:PROPERTIES:
+:ID:       7a5f0b0f-567a-4482-aa1d-889841fc5498
+:END:
 
 Started with the suggestion about abbreviations on
 http://www.star.bris.ac.uk/bjm/emacs-tips.html#sec-1-19.
@@ -3406,6 +3926,9 @@ http://www.star.bris.ac.uk/bjm/emacs-tips.html#sec-1-19.
 #+END_SRC
 
 ** Appointments from Org
+:PROPERTIES:
+:ID:       59b215f3-bfd9-4a7e-bd2a-96f5d1fef14d
+:END:
 
 Take into account the appointments for today from the org-agenda.
 Note that this is done for the current org-agenda files.
@@ -3420,6 +3943,9 @@ See also [[id:f5e3d91a-1137-4640-b453-96c64eba2d16][Personalize the sound of the
 the respective audio signal.
 
 ** Battery
+:PROPERTIES:
+:ID:       c3a8b888-a846-4c9a-ac43-cf96e53292f1
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (display-battery-mode)
@@ -3428,6 +3954,9 @@ the respective audio signal.
 ** Beautification
 
 *** Elisp
+:PROPERTIES:
+:ID:       1b2358a9-59b6-40cc-8698-f5b841870714
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (add-hook 'emacs-lisp-mode-hook
@@ -3438,6 +3967,9 @@ the respective audio signal.
 #+END_SRC
 
 *** Python
+:PROPERTIES:
+:ID:       5c5e7b4a-c459-44c0-91c0-8490ae64f7cd
+:END:
 
 [[gnus:nntp+news.aioe.org:gnu.emacs.help#mailman.17951.1421331793.1147.help-gnu-emacs@gnu.org][Email from Stefan Monnier: Re: can emacs do this]]
 
@@ -3453,6 +3985,9 @@ the respective audio signal.
 #+END_SRC
 
 ** Natural Language Environment
+:PROPERTIES:
+:ID:       fc702171-43b8-4815-b911-40df2d9d37bf
+:END:
 
 Convenient switching of the input-method and the spell-checking.
 
@@ -3497,6 +4032,9 @@ This code is derived from http://www.emacswiki.org/emacs/FlySpell
 #+END_SRC
 
 ** Scroll-Lock-Mode
+:PROPERTIES:
+:ID:       53615d33-2c09-4563-8476-0b385a8fc2d6
+:END:
 
 Scroll lock mode gives another buffer movement feeling.
 
@@ -3505,6 +4043,9 @@ Scroll lock mode gives another buffer movement feeling.
 #+END_SRC
 
 ** Rotate windows
+:PROPERTIES:
+:ID:       30f174db-4c99-445a-bc67-c2fef0b30b94
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (defun mw-rotate-split ()
@@ -3528,6 +4069,9 @@ Originates from gnu.emacs.help group 2006."
 #+END_SRC
 
 ** Screen
+:PROPERTIES:
+:ID:       4bf02c92-06c4-4ca2-aa65-dcc906528f63
+:END:
 
 Seamless exchange with screen.
 
@@ -3538,6 +4082,9 @@ Seamless exchange with screen.
 #+END_SRC
 
 *** Screen like commands for slurp and write
+:PROPERTIES:
+:ID:       6499898f-fec7-4123-8d85-83cc1bde1f04
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (defun mw-screen-exchange-slurp-insert ()
@@ -3550,6 +4097,9 @@ Seamless exchange with screen.
 #+END_SRC
 
 *** Editing the screen-exchange file
+:PROPERTIES:
+:ID:       f5354f6b-9262-44a4-841c-71902283a01a
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (defun mw-screen-exchange-open-buffer ()
@@ -3560,6 +4110,9 @@ Seamless exchange with screen.
 #+END_SRC
 
 ** Timeclock
+:PROPERTIES:
+:ID:       70d4f852-9ef0-4ed8-828d-2ec5edf3e63c
+:END:
 
 Use the timeclock keymap as noted in the timeclock source.
 
@@ -3579,6 +4132,9 @@ Use the timeclock keymap as noted in the timeclock source.
 #+END_SRC
 
 ** Diary
+:PROPERTIES:
+:ID:       862fc5d0-8951-491a-a6bb-9ca7ec8ef86a
+:END:
 
 Diary entries are useful sometimes.  E.g. it's possible to import ics
 files into a diary.
@@ -3593,6 +4149,9 @@ off.
 #+END_SRC
 
 ** ERC
+:PROPERTIES:
+:ID:       4b406e7e-e0cf-43d9-9c1f-eac2db792324
+:END:
 
 Direct client-to-client support for erc.
 
@@ -3601,6 +4160,9 @@ Direct client-to-client support for erc.
 #+END_SRC
 
 ** Personal Emacs Settings
+:PROPERTIES:
+:ID:       e1e65f87-da4c-473c-86d7-34c120afbf7f
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -3624,6 +4186,9 @@ Direct client-to-client support for erc.
 #+END_SRC
 
 ** Zone
+:PROPERTIES:
+:ID:       99bb1105-bfd6-40d3-8f5d-caa68a14a8f3
+:END:
 
 zone is builtin.  I use zone as signal.
 
@@ -3635,6 +4200,9 @@ seconds.
 #+END_SRC
 
 ** Emacs Lisp Hook
+:PROPERTIES:
+:ID:       5fc7403b-e78e-4f65-b0d7-247262e18269
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (add-hook 'emacs-lisp-mode-hook #'eldoc-mode)
@@ -3643,6 +4211,9 @@ seconds.
 #+END_SRC
 
 ** helm-bibtex
+:PROPERTIES:
+:ID:       b8f873fe-ddd5-4bb8-8700-ee97ca469db2
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (setq bibtex-completion-bibliography "/home/b/media/references/references.bib")
@@ -3654,6 +4225,9 @@ seconds.
 :END:
 
 ** imenu
+:PROPERTIES:
+:ID:       7c7d3dfd-a0cc-4003-8ddd-6dfdaeeccefb
+:END:
 
 imenu provides a mechanism to jump to locations of interest for
 several file types, e.g. Org.
@@ -3663,12 +4237,18 @@ several file types, e.g. Org.
 #+END_SRC
 
 ** Rectangle
+:PROPERTIES:
+:ID:       0433147d-df2b-4fa6-938b-cdee6202fa60
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "C-x r u") #'clear-register)
 #+END_SRC
 
 ** Org
+:PROPERTIES:
+:ID:       4584f701-7645-43d1-bcee-553898f68989
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (global-set-key "\C-cl" 'org-store-link)
@@ -3682,6 +4262,9 @@ several file types, e.g. Org.
 #+END_SRC
 
 ** Following org-mode links given in other modes
+:PROPERTIES:
+:ID:       056989f0-a039-4043-a776-6f102786518a
+:END:
 
 To be able to follow an org-mode link in an arbitrary file can be
 nice, e.g. to get to the original from within a tangled file.
@@ -3691,12 +4274,18 @@ nice, e.g. to get to the original from within a tangled file.
 #+END_SRC
 
 ** Exit org src edit with C-cc
+:PROPERTIES:
+:ID:       36981807-e987-4918-bdf4-ad5fb09654cd
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (define-key org-src-mode-map "\C-c\C-c" 'org-edit-src-exit)
 #+END_SRC
 
 ** Individual keymap
+:PROPERTIES:
+:ID:       21856110-1ce5-4833-99da-8db3aefe35de
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (defvar mw-individual-keymap
@@ -3764,6 +4353,9 @@ nice, e.g. to get to the original from within a tangled file.
 #+END_SRC
 
 ** Hydras
+:PROPERTIES:
+:ID:       834bc884-e391-4dd2-9adf-af03da2077cf
+:END:
 
 This was thought to switch buffers quickly.  The overhead at start is
 too much for me though.  [2015-10-12 Mon 14:55]
@@ -3833,6 +4425,9 @@ alternate dired.
 #+END_SRC
 
 ** Dired Key for Narrow
+:PROPERTIES:
+:ID:       9ef15de4-8f07-4466-b729-854a693d3ad3
+:END:
 
 Expand ~dired-mode-map~ with a key for filtering the list of files.
 
@@ -3843,6 +4438,9 @@ Expand ~dired-mode-map~ with a key for filtering the list of files.
 #+END_SRC
 
 ** Go to last line in Buffer List
+:PROPERTIES:
+:ID:       37de8dcf-392d-419d-aa9a-f69f409e2010
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (add-hook
@@ -3857,6 +4455,9 @@ Expand ~dired-mode-map~ with a key for filtering the list of files.
 With M-> point goes to the last char (and not one before that.)
 
 ** Communication with Mozilla
+:PROPERTIES:
+:ID:       2ee535a1-6f7a-45c2-b42c-d012ede8b780
+:END:
 
 see individual key map
 
@@ -3864,6 +4465,9 @@ see individual key map
 #+END_SRC
 
 ** Various Keysettings
+:PROPERTIES:
+:ID:       a5e292d4-96d1-45b8-928f-9df99e1beb44
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "<f1>") #'ignore) ;; e.g. for leaving the zone.
@@ -3930,6 +4534,9 @@ the queue."
 #+END_SRC
 
 * Triggers
+:PROPERTIES:
+:ID:       464102cc-43b3-48f9-bc96-07403d6d2f0e
+:END:
 
 Let Emacs say something at start.
 
@@ -3956,6 +4563,9 @@ Let Emacs say something at start.
 * Meta                                                             :noexport:
 
 ** Correct a typical editing error
+:PROPERTIES:
+:ID:       57b21c63-c3c3-4102-9146-ab61535b9a6c
+:END:
 
 The error can occur at save of the lentic-org representation.  This
 is not part of the Emacs config.  Just evaluate to fix the last line.
