@@ -594,6 +594,7 @@
                                    ((eq major-mode 'Buffer-menu-mode) (ibuffer))
                                    (t (list-buffers)))))
   (key-chord-define-global "n1" #'sp-narrow-to-sexp)
+  (key-chord-define-global "n2" #'mw-narrow-to-up-sexp)
   ;; (key-chord-define-global "a7" #'mw-set-extra-point)
   ;; (key-chord-define-global "a8" #'mw-goto-extra-point)
   (key-chord-define-global "a6" #'ariadne-marks-goto-end)
@@ -1488,7 +1489,7 @@ no decision about how to store the image has to be made.
 
 ;; ** Widen to show the sexp up
 
-(defun mw-narrow-to-backward-up-sexp ()
+(defun mw-narrow-to-up-sexp ()
   "Go one level up in sexps and narrow to it."
   (interactive)
   (widen)
