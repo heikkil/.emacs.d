@@ -1491,8 +1491,9 @@ no decision about how to store the image has to be made.
 (defun mw-narrow-to-backward-up-sexp ()
   "Go one level up in sexps and narrow to it."
   (interactive)
-  (sp-backward-up-sexp)
-  (sp-narrow-to-sexp))
+  (widen)
+  (sp-narrow-to-sexp 1)
+  (sp-backward-up-sexp))
 
 ;; ** override special scroll-lock-mode behavior
 
