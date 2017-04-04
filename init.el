@@ -1494,8 +1494,7 @@ no decision about how to store the image has to be made.
   (interactive)
   (widen)
   (sp-narrow-to-sexp 1)
-  (sp-backward-up-sexp)
-  (forward-char))
+  (sp-backward-up-sexp))
 
 ;; ** override special scroll-lock-mode behavior
 
