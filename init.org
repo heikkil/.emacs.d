@@ -1488,7 +1488,23 @@ General functions
 
 * Lab
 
-**
+** Display Org-properties conveniently
+
+#+begin_src emacs-lisp
+(defun org-display-org-properties ()
+"Display Org properties in a dedicated window."
+  (interactive)
+  (assert (eq 'org-mode major-mode))
+  (let ((range-property-block (org-get-property-block))
+        (show-properties-buffer (get-buffer-create "*Org Properties")))
+    (with-current-buffer show-properties-buffer
+      (erase-buffer))
+    (when range-property-block
+      (append-to-buffer
+       show-properties-buffer
+       (car range-property-block) (cdr range-property-block)))
+    (display-buffer show-properties-buffer)))
+#+end_src
 
 ** Widen to show the sexp up
 
