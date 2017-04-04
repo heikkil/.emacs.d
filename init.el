@@ -1250,7 +1250,7 @@ no decision about how to store the image has to be made.
 
 ;; #+BEGIN_SRC emacs-lisp
 (setq org-use-speed-commands
-      (lambda () (or (= 1 (point))
+      (lambda () (or (= (point-min) (point))
                 (and (looking-at org-outline-regexp)
                      (looking-back "^\**")))))
 ;; #+END_SRC
