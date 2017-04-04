@@ -1486,6 +1486,14 @@ no decision about how to store the image has to be made.
 
 ;;; Lab:
 
+;; ** Widen to show the sexp up
+
+(defun mw-narrow-to-backward-up-sexp ()
+  "Go one level up in sexps and narrow to it."
+  (interactive)
+  (sp-backward-up-sexp)
+  (sp-narrow-to-sexp))
+
 ;; ** override special scroll-lock-mode behavior
 
 ;; I prefer to have scroll lock style all the time.
