@@ -4478,8 +4478,9 @@ see individual key map
   "Volume control."
   ("1" (dotimes (_ 50) (emms-volume-lower)) "silence")
   ("2" (emms-volume-lower) "lower")
-  ("3" (emms-volume-raise) "raise")
-  ("4" (dotimes (_ 50) (emms-volume-raise)) "full")
+  ("3" (progn (dotimes (_ 50) (emms-volume-lower)) (dotimes (_ 25) (emms-volume-raise))) "half")
+  ("4" (emms-volume-raise) "raise")
+  ("5" (dotimes (_ 50) (emms-volume-raise)) "full")
   ("q" (ignore) "quit" :exit t))
 
 (global-set-key (kbd "<XF86AudioMute>") #'mw-sound-0%)
