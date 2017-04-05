@@ -24,6 +24,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 This section is about this file itself.
 
 ** Trick
+:PROPERTIES:
+:ID:       50b27b8e-ef4e-4b89-a810-90c7c56bb665
+:END:
 
 This section exists to please checkdoc, the elisp documentation checker.
 
@@ -4549,6 +4552,9 @@ Let Emacs say something at start.
 #+END_SRC
 
 * Last line
+:PROPERTIES:
+:ID:       db249d39-55bb-4d29-9f4d-e088576236b7
+:END:
 
 #+begin_src emacs-lisp
 
