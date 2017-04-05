@@ -2,7 +2,7 @@
 #+options: toc:2
 #+PROPERTY: header-args:emacs-lisp :tangle init.el
 
-* Copyright                                                        :noexport:
+* Copyright
 
 Copyright (c) 2015-2017 Marco Wahl <marcowahlsoft@gmail.com>
 
@@ -19,43 +19,23 @@ General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-* Meta                                                             :noexport:
+* Meta
 
 This section is about this file itself.
 
-** Lentic Style
-
-This emacs configuration file is written in lentic style of type
-org/el.
-
-This file is an emacs-lisp program.  But this is not an ordinary
-emacs-lisp program.  This emacs-lisp is enriched with comments which
-allow the interpretation of this file as org mode file.  Lentic-mode
-allows to edit this file as org-file.
-
-[2015-06-10 Wed 11:14]: Activate lentic via
-lentic-mode-create-from-init (C-c , c).  This creates an org-mode view
-of the source file.  Switch between the views with
-lentic-mode-move-lentic-window (C-c , h).
-
-[2015-07-23 Thu 12:19] Currently for lentic to work reasonably the top
-level headings must consist of exactly one word.
-
-**** Issues
-
- - [2016-09-15 Thu 11:30] The setting of `max-lisp-eval-depth' has been an issue.
- - [2016-09-15 Thu 11:30] Setting `max-lisp-eval-depth' to 10000
-   (from 800) fixed the issue.
-
 ** Trick
-
-
-;;; Commentary:                                            :artificial:noexport:
 
 This section exists to please checkdoc, the elisp documentation checker.
 
+#+begin_src emacs-lisp
 
-;;; Code:                                                  :artificial:noexport:
+;;; Commentary:
+
+;; THIS FILE HAS BEEN GENERATED.
+
+
+;;; Code:
+#+end_src
 
 * Firstfirst
 :PROPERTIES:
@@ -4575,11 +4555,9 @@ Let Emacs say something at start.
 ;;; init:.el ends here
 #+end_src
 
+
 * Meta                                                             :noexport:
 
-** Local Variables
-
-
-# Local Variables:
-# eval: (git-auto-commit-mode)
-# End:
+Local Variables:
+eval: (git-auto-commit-mode)
+End:
