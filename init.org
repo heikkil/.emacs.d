@@ -18,11 +18,7 @@ General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-* Meta
-
-This section is about this file itself.
-
-** Conform to el-Tradition
+* Conform to el-Tradition
 :PROPERTIES:
 :ID:       50b27b8e-ef4e-4b89-a810-90c7c56bb665
 :END:
