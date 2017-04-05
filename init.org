@@ -22,12 +22,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 This section is about this file itself.
 
-** Trick
+** Conform to el-Tradition
 :PROPERTIES:
 :ID:       50b27b8e-ef4e-4b89-a810-90c7c56bb665
 :END:
 
-This section exists to please checkdoc, the elisp documentation checker.
+The following lines are traditionally in every elisp file.  These
+lines also pleases checkdoc, the elisp documentation checker.
 
 #+begin_src emacs-lisp
 
