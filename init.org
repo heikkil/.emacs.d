@@ -63,6 +63,9 @@ This section exists to please checkdoc, the elisp documentation checker.
 :END:
 
 ** First line
+:PROPERTIES:
+:ID:       2a5b2368-a53b-478a-a59a-ecaf4edfbcc3
+:END:
 
 #+begin_src emacs-lisp
 ;;; init.el --- personal emacs config file marco wahl -*- lexical-binding: t -*-
@@ -4565,30 +4568,18 @@ Let Emacs say something at start.
                "Hi guys! This is a fantastic day! Let's do something!")
 #+END_SRC
 
+* Last line
+
+#+begin_src emacs-lisp
+
+;;; init:.el ends here
+#+end_src
+
 * Meta                                                             :noexport:
-
-** Correct a typical editing error
-:PROPERTIES:
-:ID:       57b21c63-c3c3-4102-9146-ab61535b9a6c
-:END:
-
-The error can occur at save of the lentic-org representation.  This
-is not part of the Emacs config.  Just evaluate to fix the last line.
-
-#+BEGIN_SRC emacs-lisp
-; (replace-string "init:.el" "init.el")
-#+END_SRC
-
-I really like this item.
 
 ** Local Variables
 
 
 # Local Variables:
-# lentic-init: lentic-orgel-org-init
 # eval: (git-auto-commit-mode)
 # End:
-
-** Last line
-
-;;; init:.el ends here
