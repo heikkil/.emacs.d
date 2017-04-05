@@ -18,7 +18,21 @@ General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-* Conform to el-Tradition
+* Firstfirst
+:PROPERTIES:
+:ID:       bd4a3fcf-1669-40b8-a1c1-d9adf07fd947
+:END:
+
+** First line
+:PROPERTIES:
+:ID:       2a5b2368-a53b-478a-a59a-ecaf4edfbcc3
+:END:
+
+#+begin_src emacs-lisp
+;;; init.el --- personal emacs config file marco wahl -*- lexical-binding: t -*-
+#+end_src
+
+** Conform to el-Tradition
 :PROPERTIES:
 :ID:       50b27b8e-ef4e-4b89-a810-90c7c56bb665
 :END:
@@ -34,20 +48,6 @@ lines also pleases checkdoc, the elisp documentation checker.
 
 
 ;;; Code:
-#+end_src
-
-* Firstfirst
-:PROPERTIES:
-:ID:       bd4a3fcf-1669-40b8-a1c1-d9adf07fd947
-:END:
-
-** First line
-:PROPERTIES:
-:ID:       2a5b2368-a53b-478a-a59a-ecaf4edfbcc3
-:END:
-
-#+begin_src emacs-lisp
-;;; init.el --- personal emacs config file marco wahl -*- lexical-binding: t -*-
 #+end_src
 
 ** Debugging
