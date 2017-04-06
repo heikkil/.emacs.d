@@ -105,6 +105,9 @@ Take care about overrides due to customizations.
 #+END_SRC
 
 * Config
+:PROPERTIES:
+:ID:       c4fc8c97-a9d8-4228-a4e7-8bc97138a68f
+:END:
 
 #+begin_src emacs-lisp
 (load-file "init-config.el")
@@ -1724,6 +1727,9 @@ Another collection of Emacs stuff.
 :END:
 
 ** Org
+:PROPERTIES:
+:ID:       3e50b218-2b6a-461c-b023-4a86b9652ae7
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (defun ---agenda-buffers ()
@@ -1738,6 +1744,9 @@ Another collection of Emacs stuff.
 * Lab
 
 ** reverse-words
+:PROPERTIES:
+:ID:       dee2134c-0e50-404f-a68a-82124eb6616e
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (push "~/p/elisp/mw/reverse-words" load-path)
