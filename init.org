@@ -106,8 +106,10 @@ Take care about overrides due to customizations.
 
 * Config
 
+#+begin_src emacs-lisp
 (load-file "init-config.el")
 (setq shr-external-browser 'browse-url-firefox)
+#+end_src
 
 ** Workarounds
 :PROPERTIES:
@@ -867,8 +869,6 @@ Reversing the colors of Emacs at sunrise and at sunset.
   ;; (rase-start t) ;; This line is not enough to change the theme.
   )
 #+END_SRC
-
-
 
 ** AUR access
 :PROPERTIES:
@@ -1722,7 +1722,7 @@ Another collection of Emacs stuff.
 :ID:       06d23ad3-863e-49c9-a5f7-9acbd2a68fbc
 :END:
 
-General functions
+** Org
 
 #+BEGIN_SRC emacs-lisp
 (defun ---agenda-buffers ()
@@ -1735,6 +1735,13 @@ General functions
 #+END_SRC
 
 * Lab
+
+** reverse-words
+
+#+BEGIN_SRC emacs-lisp
+(push "~/p/elisp/mw/reverse-words" load-path)
+(require 'reverse-words)
+#+END_SRC
 
 ** Display Org-properties conveniently
 :PROPERTIES:
