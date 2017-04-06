@@ -38,7 +38,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 :END:
 
 The following lines are traditionally in every elisp file.  These
-lines also pleases checkdoc, the elisp documentation checker.
+lines also please checkdoc, the elisp documentation checker.
 
 #+begin_src emacs-lisp
 
@@ -55,7 +55,7 @@ lines also pleases checkdoc, the elisp documentation checker.
 :ID:       7cb42826-a8c0-49be-b880-e5c5edad2023
 :END:
 
-Switch on debugging in case.
+Switch on debugging, in case.
 
 #+BEGIN_SRC emacs-lisp
 ;; (setq debug-on-error t)
@@ -76,12 +76,15 @@ customization in the init-file.
 Take care about overrides due to customizations.
 
 #+BEGIN_SRC emacs-lisp
+
 (setq custom-file "~/.emacs.d/init/.emacs-custom.el")
 (load custom-file)
 #+END_SRC
 
 [2017-02-10 Fri 09:23] the override with the small letters did not work.
+
 #+BEGIN_SRC emacs-lisp
+
 (setq org-structure-template-alist
       '(("s" "#+begin_src ?\n\n#+end_src")
         ("e" "#+begin_example\n?\n#+end_example")
