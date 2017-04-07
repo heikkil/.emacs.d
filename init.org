@@ -1750,8 +1750,8 @@ Another collection of Emacs stuff.
 :END:
 
 #+BEGIN_SRC emacs-lisp
-(push "~/p/elisp/mw/reverse-words" load-path)
-(require 'reverse-words)
+(push "~/p/elisp/mw/reverse-words/dist" load-path)
+(require 'reverse-words "reverse-words-0.0.0.el")
 #+END_SRC
 
 ** Display Org-properties conveniently
