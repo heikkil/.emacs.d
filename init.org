@@ -24,8 +24,11 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ** Create the actual emacs config file
+:PROPERTIES:
+:ID:       c2c181f3-e02e-4754-b1ef-0798bcd61eda
+:END:
 
-#+begin_src emacs-lisp :tangle /dev/null
+#+begin_src emacs-lisp :tangle no :results none
 (org-babel-tangle)
 #+end_src
 
