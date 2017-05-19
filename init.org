@@ -3394,6 +3394,9 @@ Note: The code here looks not so good.  Improvement would be good.
 
 #+BEGIN_SRC emacs-lisp
 (defun mw-further-holidays-of-interest ()
+  "For specifying further holidays.
+This function can be stored in variable `holiday-other-holidays'
+for an effect."
   (if (= 2014 displayed-year)
       (if (or (= 4 displayed-month) (= 5 displayed-month) (= 6 displayed-month))
           '(((5 29 2014) "Christi Himmelfahrt"))
@@ -3472,6 +3475,7 @@ concurrently.
    "mplayer" "-af" "volume=-15"
    (expand-file-name "~/media/sound/birds/Tufted-Tit-Mouse-web-II.wav")))
 (setq ring-bell-function 'mw-play-little-bird-sound)
+;; turn off with: (setq ring-bell-function 'ignore)
 #+END_SRC
 
 ** ill an url at point
