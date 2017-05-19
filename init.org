@@ -4282,7 +4282,6 @@ can help to edit all occurances of a variable.
 - edit the word.
 - leave the mode with C-cc (or C-;).
 
-
 ** Rectangle
 :PROPERTIES:
 :ID:       0433147d-df2b-4fa6-938b-cdee6202fa60
