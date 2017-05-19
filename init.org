@@ -4266,6 +4266,23 @@ several file types, e.g. Org.
 (global-set-key (kbd "C-*") 'imenu)
 #+END_SRC
 
+** iedit
+
+can help to edit all occurances of a variable.
+
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "C-;") 'iedit-mode)
+#+END_SRC
+
+*** use case example
+
+- narrow to a part of interest.
+- have point on the word of interest.
+- activate imenu-mode (C-;).
+- edit the word.
+- leave the mode with C-cc (or C-;).
+
+
 ** Rectangle
 :PROPERTIES:
 :ID:       0433147d-df2b-4fa6-938b-cdee6202fa60
