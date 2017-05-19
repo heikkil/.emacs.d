@@ -38,7 +38,7 @@ Do the call by evaluating block
 
 or use key sequence =C-cv t=.
 
-** First line
+** First Line
 :PROPERTIES:
 :ID:       2a5b2368-a53b-478a-a59a-ecaf4edfbcc3
 :END:
