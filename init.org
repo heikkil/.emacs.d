@@ -193,7 +193,7 @@ I need to exercise more.
            ("H" . org-rise)
            ("J" . org-clock-goto)
            ("N" org-speed-move-safe 'outline-next-visible-heading)
-           ("P" . org-display-org-properties)
+           ("P" org-speed-move-safe 'outline-previous-visible-heading)
            ("4" . org-display-org-properties)
            ("S" . (lambda (arg) (interactive "P")
                     (mw-org-narrow-to-one-level-above)
