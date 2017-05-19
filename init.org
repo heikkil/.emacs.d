@@ -4411,7 +4411,7 @@ too much for me though.  [2015-10-12 Mon 14:55]
   "Control the font."
   ("-" (set-face-attribute
         'default nil
-        :height (max 50 (- (face-attribute 'default :height) 20))))
+        :height (max 0 (- (face-attribute 'default :height) 20))))
   ("+" (set-face-attribute
         'default nil
         :height (+ (face-attribute 'default :height) 20)))
