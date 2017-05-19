@@ -1734,26 +1734,6 @@ Another collection of Emacs stuff.
 (require 'elm-mode)
 #+END_SRC
 
-* Auxilliaries
-:PROPERTIES:
-:ID:       06d23ad3-863e-49c9-a5f7-9acbd2a68fbc
-:END:
-
-** Org
-:PROPERTIES:
-:ID:       3e50b218-2b6a-461c-b023-4a86b9652ae7
-:END:
-
-#+BEGIN_SRC emacs-lisp
-(defun ---agenda-buffers ()
-  "Return agenda buffers in a list."
-  (cl-remove-if-not
-   (lambda (x)
-     (set-buffer x)
-     (eq major-mode 'org-agenda-mode))
-   (buffer-list)))
-#+END_SRC
-
 * Lab
 
 ** reverse-words
@@ -4237,6 +4217,26 @@ seconds.
 
 #+BEGIN_SRC emacs-lisp
 (setq bibtex-completion-bibliography "/home/b/media/references/references.bib")
+#+END_SRC
+
+* Auxilliaries
+:PROPERTIES:
+:ID:       06d23ad3-863e-49c9-a5f7-9acbd2a68fbc
+:END:
+
+** Org
+:PROPERTIES:
+:ID:       3e50b218-2b6a-461c-b023-4a86b9652ae7
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(defun ---agenda-buffers ()
+  "Return agenda buffers in a list."
+  (cl-remove-if-not
+   (lambda (x)
+     (set-buffer x)
+     (eq major-mode 'org-agenda-mode))
+   (buffer-list)))
 #+END_SRC
 
 * Keysettings
