@@ -194,6 +194,7 @@ I need to exercise more.
            ("J" . org-clock-goto)
            ("N" org-speed-move-safe 'outline-next-visible-heading)
            ("P" . org-display-org-properties)
+           ("4" . org-display-org-properties)
            ("S" . (lambda (arg) (interactive "P")
                     (mw-org-narrow-to-one-level-above)
                     (unless arg
@@ -297,7 +298,8 @@ help:package-initialize.  But maybe too late.
 
 * Packages
 
-** async
+** In use
+*** async
 :PROPERTIES:
 :ID:       df37af31-8c32-4004-92c8-8f9d2f12f150
 :END:
@@ -307,7 +309,7 @@ help:package-initialize.  But maybe too late.
 (use-package async :config (dired-async-mode 1))
 #+END_SRC
 
-** camcorder
+*** camcorder
 :PROPERTIES:
 :ID:       75d25b4e-7872-40ba-b87e-f1719803cbbd
 :END:
@@ -317,7 +319,7 @@ help:package-initialize.  But maybe too late.
   :config (setf camcorder-output-directory "~/media/screencasts/camcorder"))
 #+END_SRC
 
-** ace-link
+*** ace-link
 :PROPERTIES:
 :ID:       54e121e0-f32a-45e9-a3db-efa7e2cb5980
 :END:
@@ -329,10 +331,10 @@ Quickly follow links in certain modes e.g. info-mode.
   :config (ace-link-setup-default))
 #+END_SRC
 
-*** TODO Check for integration with ert and more                   :noexport:
+**** TODO Check for integration with ert and more                  :noexport:
 
 [2016-05-03 Tue 09:01] Read about this on the project page.
-** evil-numbers
+*** evil-numbers
 :PROPERTIES:
 :ID:       7ea0fc4b-dbdb-4b40-88f5-2ab1eafb3d00
 :END:
@@ -347,11 +349,11 @@ adding/subtracting that value.  Default is 1.
   ("M--" . evil-numbers/dec-at-pt))
 #+END_SRC
 
-*** TODO Check Similar Packages                                    :noexport:
+**** TODO Check Similar Packages                                   :noexport:
 
 There are more packages in this field.
 
-** chronos
+*** chronos
 :PROPERTIES:
 :ID:       b5728916-4338-40ca-8f9f-a945d98267d4
 :END:
@@ -371,7 +373,7 @@ timer is done.
                      "https://www.youtube.com/watch?v=32FB-gYr49Y")))))
 #+END_SRC
 
-** swiper
+*** swiper
 :PROPERTIES:
 :ID:       51429cfc-a12a-4cda-826c-5d59dc6c2c65
 :END:
@@ -381,7 +383,7 @@ timer is done.
   :bind ("C-S-s" . swiper))
 #+END_SRC
 
-** dired-narrow
+*** dired-narrow
 :PROPERTIES:
 :ID:       5579337d-b273-4cdd-b211-9ba702055dbf
 :END:
@@ -396,7 +398,7 @@ Recall g for getting rid of all filtering.
   :ensure t)
 #+END_SRC
 
-** stumpwm-mode
+*** stumpwm-mode
 :PROPERTIES:
 :ID:       e0f2ee47-0ce8-4f48-9ff0-d6de1363ec8e
 :END:
@@ -409,7 +411,7 @@ Stumpish integration.
                 (expand-file-name "~/.stumpwm.d/modules/util/stumpish/stumpish")))
 #+END_SRC
 
-** keyfreq
+*** keyfreq
 :PROPERTIES:
 :ID:       a6cb2d15-2bd8-4db1-a39e-033789041e75
 :END:
@@ -426,7 +428,7 @@ From the documentation at https://github.com/dacap/keyfreq:
                  (keyfreq-autosave-mode 1)))
 #+END_SRC
 
-** wrap-region
+*** wrap-region
 :PROPERTIES:
 :ID:       429b4d6c-0c11-4f4b-b43a-2540809b772a
 :END:
@@ -449,7 +451,7 @@ Press a key to decorate region .
             (wrap-region-add-wrapper "#+begin_verse\n" "\n#+end_verse" "v" 'org-mode)
             (wrap-region-add-wrapper "#+begin_src \n" "\n#+end_src" "s" 'org-mode)))
 #+END_SRC
-** auth-password-store
+*** auth-password-store
 :PROPERTIES:
 :ID:       f3cd686b-49bb-404f-9e7a-e13df534b5ca
 :END:
@@ -465,7 +467,7 @@ auth-stuff -> pass(word-store)
 ;;   :config (auth-pass-enable))
 #+END_SRC
 
-** avy
+*** avy
 :PROPERTIES:
 :ID:       72c5f7a8-60b1-494e-ace6-69b608b3f674
 :END:
@@ -495,7 +497,7 @@ that gets maintained.
   )
 #+END_SRC
 
-** avy-zap
+*** avy-zap
 :PROPERTIES:
 :ID:       c0bfb12b-f9fc-4597-8736-492fc536ef06
 :END:
@@ -508,7 +510,7 @@ A replacement of zap-to-char.
          ("M-Z" . avy-zap-up-to-char-dwim)))
 #+END_SRC
 
-** on-screen
+*** on-screen
 :PROPERTIES:
 :ID:       2c8a926f-d92f-4824-846d-cfc85689e24a
 :END:
@@ -522,7 +524,7 @@ This might help sometimes.  Try together with rope-read.
   :config (global-on-screen-mode))
 #+END_SRC
 
-** page-break-lines
+*** page-break-lines
 :PROPERTIES:
 :ID:       1b9e0af1-1669-4b6e-bfcf-846f550f7c59
 :END:
@@ -533,7 +535,7 @@ Display page breaks nicely.  Similar to [[id:5e169d24-bc68-42da-ae9d-2f3d190a954
 (use-package page-break-lines)
 #+END_SRC
 
-** form-feed-mode
+*** form-feed-mode
 :PROPERTIES:
 :ID:       5e169d24-bc68-42da-ae9d-2f3d190a9547
 :END:
@@ -544,7 +546,7 @@ Display page breaks nicely.  Similar to [[id:1b9e0af1-1669-4b6e-bfcf-846f550f7c5
 (use-package form-feed)
 #+END_SRC
 
-** browse-kill-ring
+*** browse-kill-ring
 :PROPERTIES:
 :ID:       20de8639-3711-45ef-aa5e-8fcd31703369
 :END:
@@ -558,7 +560,7 @@ latter only if _not_ immediately after yank.
   (browse-kill-ring-default-keybindings)) ; M-y
 #+END_SRC
 
-** expand-region
+*** expand-region
 :PROPERTIES:
 :ID:       196f772e-5a6f-4e19-8b6f-81a38cb0c9a6
 :END:
@@ -571,7 +573,7 @@ latter only if _not_ immediately after yank.
   (global-set-key (kbd "C-=") #'er/expand-region))
 #+END_SRC
 
-** ido-hacks
+*** ido-hacks
 :PROPERTIES:
 :ID:       66bdba19-c2bf-4c68-b30d-493af73c92e7
 :END:
@@ -585,7 +587,7 @@ ido-hacks-mode comes into the way then just switch it off.
   :config (ido-hacks-mode))
 #+END_SRC
 
-** lentic
+*** lentic
 :PROPERTIES:
 :ID:       0fe5c819-7945-47f3-9c85-8c146405547d
 :END:
@@ -597,7 +599,7 @@ Activattion of lentic as proposed in lentics documentation lentic.el.
   :config (global-lentic-mode))
 #+END_SRC
 
-** magit
+*** magit
 :PROPERTIES:
 :ID:       4016460d-1156-49df-8811-d1667d057292
 :END:
@@ -609,7 +611,7 @@ Activattion of lentic as proposed in lentics documentation lentic.el.
  )
 #+END_SRC
 
-** company mode
+*** company mode
 :PROPERTIES:
 :ID:       09620e2a-f12e-4b6a-bd06-68312c1b5264
 :END:
@@ -619,7 +621,7 @@ Activattion of lentic as proposed in lentics documentation lentic.el.
   :config (global-company-mode))
 #+END_SRC
 
-** key chord
+*** key chord
 :PROPERTIES:
 :ID:       653ed90b-c5ff-415a-bbc9-ead0527da736
 :END:
@@ -700,11 +702,12 @@ Activattion of lentic as proposed in lentics documentation lentic.el.
                                         ; non-key-chord
                                         ; to end macro
                                         ; AFAICS.
+  (key-chord-define-global "--" (lambda () (interactive) (insert "_")))
   )
 #+END_SRC
 
 
-** paredit
+*** paredit
 :PROPERTIES:
 :ID:       ce94c391-0d41-4ef9-95f2-979cd85d9fa3
 :END:
@@ -722,7 +725,7 @@ Very helpful mode for editing elisp.
 #+END_SRC
 
 
-** Lispy
+*** Lispy
 :PROPERTIES:
 :ID:       dc92f6e4-01ae-4f78-8846-76aad2457c2d
 :END:
@@ -741,7 +744,7 @@ Very helpful mode for editing elisp.
    (key-chord-define-local "]1" (lambda () (interactive) (insert "]")))))
 #+END_SRC
 
-** smartparens
+*** smartparens
 :PROPERTIES:
 :ID:       11c6416f-02e7-43e5-8b77-a4760525e11f
 :END:
@@ -755,7 +758,7 @@ somehow I always come back to paredit.
   :config (turn-on-smartparens-mode))
 #+END_SRC
 
-** gnorb
+*** gnorb
 :PROPERTIES:
 :ID:       50b10169-5b1b-4af8-8eed-ba3f5d387525
 :END:
@@ -821,7 +824,7 @@ gnorb is integration of gnus and org and bbdb .
      (define-key message-mode-map (kbd "C-c t") 'gnorb-gnus-outgoing-do-todo)))
 #+END_SRC
 
-** rase
+*** rase
 :PROPERTIES:
 :ID:       840cc11e-5a99-49d6-a091-72fae9c03e0d
 :END:
@@ -874,7 +877,7 @@ Reversing the colors of Emacs at sunrise and at sunset.
   )
 #+END_SRC
 
-** AUR access
+*** AUR access
 :PROPERTIES:
 :ID:       5c3c8a77-546a-4260-b415-d73b822e76c2
 :END:
@@ -892,12 +895,12 @@ Arch-Linux system.
   (setq aurel-download-directory "~/AUR"))
 #+END_SRC
 
-*** history
+**** history
 
 - [2014-04-07 Mon 22:26] Just installed a package that might help with
 AUR-packages.
 
-** zeitgeist
+*** zeitgeist
 :PROPERTIES:
 :ID:       c93d05fd-70f4-43fa-9a5a-9ea24e098e7e
 :END:
@@ -909,8 +912,8 @@ have this still up.
 (use-package zeitgeist :disabled)
 #+END_SRC
 
-*** TODO Check the zeitgeist stuff                                 :noexport:
-** helm
+**** TODO Check the zeitgeist stuff                                :noexport:
+*** helm
 :PROPERTIES:
 :ID:       277e966f-aa7b-4785-b7d2-f3516910009a
 :END:
@@ -923,7 +926,7 @@ Actually i don't use helm consciously.  [2015-06-27 Sat 10:57]
 
 [2016-04-29 Fri 14:31] I do use helm-emms to switch on bassdrive.
 
-** gnuplot
+*** gnuplot
 :PROPERTIES:
 :ID:       46863a10-761b-4483-8d3a-8a289850e819
 :END:
@@ -939,7 +942,7 @@ install.
             (setq auto-mode-alist (append '(("\\.gp$" . gnuplot-mode)) auto-mode-alist))))
 #+END_SRC
 
-** hydra
+*** hydra
 :PROPERTIES:
 :ID:       8b5cc921-e0bb-410d-86e6-d7598f8eb2a7
 :END:
@@ -950,7 +953,7 @@ Hydra provides some convenient key maps organization.
 (use-package hydra)
 #+END_SRC
 
-** sotlisp
+*** sotlisp
 :PROPERTIES:
 :ID:       f09730a1-c8ef-4be2-84a9-d2dec56fbd1c
 :END:
@@ -961,7 +964,7 @@ Helpful for jumping around!
 (use-package sotlisp)
 #+END_SRC
 
-** nyan-mode
+*** nyan-mode
 :PROPERTIES:
 :ID:       13a7baa3-2b09-4239-bd29-fb01966bf211
 :END:
@@ -971,7 +974,7 @@ Helpful for jumping around!
   :config (nyan-mode))
 #+END_SRC
 
-** git-auto-commit-mode
+*** git-auto-commit-mode
 :PROPERTIES:
 :ID:       70ec63c9-3eaf-405b-b159-084a7c8fb207
 :END:
@@ -982,7 +985,7 @@ Helpful for jumping around!
 :config (git-auto-commit-mode t))
 #+END_SRC
 
-** epa
+*** epa
 :PROPERTIES:
 :ID:       1d2839a8-b4a8-47ae-9d7a-6dab21dc5b80
 :END:
@@ -992,9 +995,9 @@ Helpful for jumping around!
 (define-key epa-key-list-mode-map "N" #'mw-epa-mark-next-key)
 #+END_SRC
 
-* LabPkgs
+** LabPkgs
 
-** hyperbole
+*** hyperbole
 :PROPERTIES:
 :ID:       8963d400-1720-4887-b113-b0e90dddb43b
 :END:
@@ -1030,7 +1033,7 @@ Give hyperbole a try.
 ;; override a binding of hyperbole for org-mode
 #+END_SRC
 
-** emr
+*** emr
 :PROPERTIES:
 :ID:       910630f4-e846-4fd6-8772-4e9f46ff99d7
 :END:
@@ -1046,9 +1049,9 @@ emr is a refactoring tool.
    )
 #+END_SRC
 
-*** TODO Show the emr menu with M-RET                              :noexport:
+**** TODO Show the emr menu with M-RET                             :noexport:
 
-** beacon
+*** beacon
 :PROPERTIES:
 :ID:       735f3e2f-3a98-4b36-b30e-1e86945efca0
 :END:
@@ -1060,7 +1063,7 @@ emr is a refactoring tool.
   :config (beacon-mode 1))
 #+END_SRC
 
-** elmacro
+*** elmacro
 :PROPERTIES:
 :ID:       57c20c8f-995f-4369-8ef5-65cfc4956638
 :END:
@@ -1073,9 +1076,9 @@ package.
 :ensure t)
 #+END_SRC
 
-*** TODO What is this?                                             :noexport:
+**** TODO What is this?                                            :noexport:
 
-** git-timemachine
+*** git-timemachine
 :PROPERTIES:
 :ID:       ee4ea8cb-e93a-4dd5-ae0d-3bf311c45023
 :END:
@@ -1093,7 +1096,7 @@ Start git-timemachine on a file to travel time on it.
 (add-to-list 'load-path "~/p/elisp/external/m-buffer-el")
 (require 'lentic-mode)
 (global-lentic-mode)
-** refine
+*** refine
 :PROPERTIES:
 :ID:       f9e04b7d-515c-4dbf-b172-1fea2d5790b7
 :END:
@@ -1105,9 +1108,9 @@ Package for editing lists.
 (require 'refine)
 #+END_SRC
 
-** slime
+*** slime
 
-*** the local-git slime
+**** the local-git slime
 :PROPERTIES:
 :ID:       488225b9-bce0-4031-a753-f5b124b3f625
 :END:
@@ -1123,7 +1126,7 @@ Package for editing lists.
 ;;                        "~/p/elisp/external/slime/doc")))
 #+END_SRC
 
-*** the quicklisp slime
+**** the quicklisp slime
 :PROPERTIES:
 :ID:       24a75320-5d6f-48b4-a716-e17be2db42fc
 :END:
@@ -1136,7 +1139,7 @@ To use, add this to your ~/.emacs:
 (setq inferior-lisp-program "sbcl")
 #+END_SRC
 
-*** hyperspec access
+**** hyperspec access
 :PROPERTIES:
 :ID:       052ca2b7-a6b2-44ce-acba-d519c35e9e1c
 :END:
@@ -1156,9 +1159,9 @@ something like "file://usr/local/doc/HyperSpec/".
    (setq common-lisp-hyperspec-root "file:///home/b/media/texts/it/lisp/HyperSpec/")))
 #+END_SRC
 
-** Org                                                                 :org:
+*** Org                                                                 :org:
 
-*** Org todo dependencies
+**** Org todo dependencies
 :PROPERTIES:
 :ID:       ca70c911-9c5a-4d07-b499-9b854fed6e07
 :END:
@@ -1169,7 +1172,7 @@ Activate dependency checks.
 (setq org-enforce-todo-dependencies t)
 #+END_SRC
 
-*** Personal Org Indentation
+**** Personal Org Indentation
 :PROPERTIES:
 :ID:       fef018c8-f725-47ef-8608-ef2045b88cfa
 :END:
@@ -1180,7 +1183,7 @@ Activate dependency checks.
       org-odd-levels-only t)
 #+END_SRC
 
-*** To Org Attachments
+**** To Org Attachments
 :PROPERTIES:
 :ID:       26bf9d8b-f6aa-40db-bf28-3ed5e8efef88
 :END:
@@ -1189,7 +1192,7 @@ Activate dependency checks.
 (setq org-attach-commit nil)
 #+END_SRC
 
-*** Org Agenda include inactive timestamps
+**** Org Agenda include inactive timestamps
 :PROPERTIES:
 :ID:       df559437-3db6-4198-8878-c18efbbe0f33
 :END:
@@ -1199,7 +1202,7 @@ Activate dependency checks.
 ;; (setq org-agenda-include-inactive-timestamps nil) ;; for not seeing them.
 #+END_SRC
 
-*** Org column settings
+**** Org column settings
 :PROPERTIES:
 :ID:       5bed4d4e-1d89-4cd8-8af9-f8ff04009a6c
 :END:
@@ -1210,9 +1213,9 @@ Activate dependency checks.
  org-columns-default-format "%ITEM %TODO %PRIORITY %TAGS")
 #+END_SRC
 
-*** Org Babel
+**** Org Babel
 
-**** Jump to org block bound
+***** Jump to org block bound
 :PROPERTIES:
 :ID:       304ea5c8-51b5-4c79-a945-a3c0cd200d21
 :END:
@@ -1247,7 +1250,7 @@ There are useful bindings in connection with org-blocks already built
 in, e.g. org-next-block which sets point to the /beginning/ of the
 next block.
 
-**** Tab jump from code-block 'end' to 'begin'
+***** Tab jump from code-block 'end' to 'begin'
 :PROPERTIES:
 :ID:       d0679e88-199a-4036-99f2-5aeb1995dd4a
 :END:
@@ -1276,7 +1279,7 @@ next block.
     (add-to-list 'org-tab-first-hook 'mw-org-jump-to-beginning-of-block-maybe)))
 #+END_SRC
 
-**** Convenient go up to the beginning of a block
+***** Convenient go up to the beginning of a block
 :PROPERTIES:
 :ID:       999d0bbe-9e0b-43f6-9fb2-9bf367081cf0
 :END:
@@ -1291,7 +1294,7 @@ next block.
         (search-backward-regexp org-block-begin-line-regexp)))
 #+END_SRC
 
-**** More key bindings for babeling
+***** More key bindings for babeling
 :PROPERTIES:
 :ID:       7b38b04a-1ce9-48fc-a460-17562527b750
 :END:
@@ -1313,7 +1316,7 @@ next block.
                  (beginning-of-line)))))))
 #+END_SRC
 
-*** Org Velocity
+**** Org Velocity
 :PROPERTIES:
 :ID:       6a1165bb-f429-463a-ace1-05bb7c59c4d7
 :END:
@@ -1324,7 +1327,7 @@ org velocity is a org-mode contrib extension.
 (setq org-velocity-bucket (expand-file-name "bucket.org" org-directory))
 #+END_SRC
 
-**** History
+***** History
 
 First i hung the C-c v in on org-mode-hook [2014-10-22 Wed 10:25] like
 
@@ -1338,7 +1341,7 @@ to capture something.
 
 I use the global key setting C-c v for org-velocity.
 
-*** org-protocol for receiving from the outside
+**** org-protocol for receiving from the outside
 :PROPERTIES:
 :ID:       833fb525-34bb-4403-aa83-0853ccce0088
 :END:
@@ -1350,7 +1353,7 @@ I use the global key setting C-c v for org-velocity.
 The org-protocol is useful for actions which come from the outside.
 E.g. capturing from conkeror into org.
 
-*** Highlight current line in agenda
+**** Highlight current line in agenda
 :PROPERTIES:
 :ID:       e9df3a2c-6adb-4687-a36f-8810c07ae578
 :END:
@@ -1361,7 +1364,7 @@ From [[gnus:nntp+news.gmane.org:gmane.emacs.orgmode#87egnh7oos.fsf@mbork.pl][Ema
 (add-hook 'org-agenda-finalize-hook (lambda () (hl-line-mode 1)))
 #+END_SRC
 
-*** Save the o-press when opening the agenda
+**** Save the o-press when opening the agenda
 :PROPERTIES:
 :ID:       fd89d958-98f7-4668-9d5d-3d2f9d92115f
 :END:
@@ -1371,11 +1374,11 @@ From [[gnus:nntp+news.gmane.org:gmane.emacs.orgmode#87egnh7oos.fsf@mbork.pl][Ema
 ;; (setq org-agenda-window-setup 'only-window)
 #+END_SRC
 
-**** Source
+***** Source
 
 http://mbork.pl/2015-09-26_A_few_org-agenda_hacks
 
-*** Delete other windows after jump from agenda
+**** Delete other windows after jump from agenda
 :PROPERTIES:
 :ID:       8b469c82-b9f8-47d6-8501-b4ef64c5b67d
 :END:
@@ -1385,7 +1388,7 @@ http://mbork.pl/2015-09-26_A_few_org-agenda_hacks
 ;;   '(push #'delete-other-windows org-agenda-after-show-hook))
 #+END_SRC
 
-*** org-screenshot
+**** org-screenshot
 :PROPERTIES:
 :ID:       e5fc742e-7d15-4c37-8fc1-78ab99b2ba2d
 :END:
@@ -1427,7 +1430,7 @@ Define a shortcut key:
     "t1" #'mw-org-attach-screenshot-as-standard-attachment)))
 #+END_SRC
 
-*** Disable key C-,
+**** Disable key C-,
 :PROPERTIES:
 :ID:       67717574-2742-494f-90f2-33b92ee81baa
 :END:
@@ -1441,7 +1444,7 @@ anyways.
                            ))
 #+END_SRC
 
-*** Jump from the agenda to the stars
+**** Jump from the agenda to the stars
 :PROPERTIES:
 :ID:       c71cdcc8-4135-4869-b9d7-4c1d73330a0b
 :END:
@@ -1455,7 +1458,7 @@ the stars.  Fortunately there is org-agenda-after-show-hook.
   '(push #'beginning-of-line org-agenda-after-show-hook))
 #+END_SRC
 
-*** Speed commands also on first char
+**** Speed commands also on first char
 :PROPERTIES:
 :ID:       9aeec743-8b52-40c4-9b54-5faf04c54e84
 :END:
@@ -1470,7 +1473,7 @@ the stars.  Fortunately there is org-agenda-after-show-hook.
 Taken the looking around code from the documentation of
 ~org-use-speed-commands~.
 
-*** Refile Targets Config
+**** Refile Targets Config
 :PROPERTIES:
 :ID:       edb7f61b-b12e-44d2-adf0-d7d0af042c0b
 :END:
@@ -1484,7 +1487,7 @@ Taken the looking around code from the documentation of
 (setq org-refile-use-outline-path (quote file))
 #+END_SRC
 
-** gnus
+*** gnus
 :PROPERTIES:
 :ID:       76eb595e-d246-4828-92aa-e8aa746c4d15
 :END:
@@ -1498,7 +1501,7 @@ Taken the looking around code from the documentation of
 (gnus-registry-initialize) ; gnorb wants that, see (info "(gnorb)Setup").
 #+END_SRC
 
-*** To html mail in gnus
+**** To html mail in gnus
 :PROPERTIES:
 :ID:       eab9b9c5-355b-47b1-83b9-71d54270a1a6
 :END:
@@ -1516,7 +1519,7 @@ Source: [[gnus:gnu.emacs.help#mailman.5546.1405582006.1147.help-gnu-emacs@gnu.or
       shr-color-visible-luminance-min 60)
 #+END_SRC
 
-** ledger
+*** ledger
 :PROPERTIES:
 :ID:       6cfc4835-cb82-4608-a0c4-2a7361bfd9ba
 :END:
@@ -1572,7 +1575,7 @@ Refer to a local version of ledger.
         ("bal toplevel only" "ledger -f %(ledger-file) --depth 1 bal")))
 #+END_SRC
 
-** emms
+*** emms
 :PROPERTIES:
 :ID:       005ce28c-c1ba-4f5c-84cf-74145b1b7aff
 :END:
@@ -1592,7 +1595,7 @@ BTW =emms-streams= has configured some nice stations AFAICT.
           (add-to-list 'Info-directory-list "~/p/elisp/external/emms/doc")))
 #+END_SRC
 
-** Big Brother DB
+*** Big Brother DB
 :PROPERTIES:
 :ID:       11bf1040-515f-430a-81ac-1484a42c6308
 :END:
@@ -1617,7 +1620,7 @@ BTW =emms-streams= has configured some nice stations AFAICT.
 ;; ...[2016-02-05 Fri 13:15]
 #+END_SRC
 
-** Zen reward mode
+*** Zen reward mode
 :PROPERTIES:
 :ID:       1b87e4e3-743a-47eb-9b20-651cd45b7c2d
 :END:
@@ -1629,11 +1632,11 @@ Get points for task-status-changes in org.  But where is the zen here?
 (load-library "zen-reward-mode")
 #+END_SRC
 
-*** History
+**** History
 
 Found this in a newsgroup.  See the source for more info.
 
-** Little helpers
+*** Little helpers
 :PROPERTIES:
 :ID:       527a2699-830c-49da-8377-24e62c08281c
 :END:
@@ -1649,7 +1652,7 @@ My little collection of Emacs stuff.
 (global-set-key (kbd "C-<") #'mw-recenter-jump-to-top)
 #+END_SRC
 
-** Little helpers
+*** Little helpers
 :PROPERTIES:
 :ID:       beec8c1e-a1e6-4458-826b-caf10242f0d4
 :END:
@@ -1671,7 +1674,7 @@ My little collection of Emacs stuff.
 (global-set-key (kbd "C-<") #'mw-recenter-jump-to-top)
 #+END_SRC
 
-** Hide Buffer Part
+*** Hide Buffer Part
 :PROPERTIES:
 :ID:       12452d25-be10-4303-8429-9b867d201a94
 :END:
@@ -1680,7 +1683,7 @@ My little collection of Emacs stuff.
 (push  "~/p/elisp/mw/hide-buffer-part" load-path)
 #+END_SRC
 
-** Auxies
+*** Auxies
 :PROPERTIES:
 :ID:       f1df9204-3090-4333-a5ab-4884d0556c82
 :END:
@@ -1692,13 +1695,13 @@ Another collection of Emacs stuff.
 (require 'auxies-rest)
 #+END_SRC
 
-*** TODO Check the Source                                          :noexport:
+**** TODO Check the Source                                         :noexport:
 
 - Does auxies look good?
   - The name is not so promising AFAICS.
 - Can auxies be restructured.
 
-*** Hacks
+**** Hacks
 :PROPERTIES:
 :ID:       d8b58f6a-d388-4212-a17d-a4bf9b0cbd0c
 :END:
@@ -1712,7 +1715,7 @@ Another collection of Emacs stuff.
 (global-set-key (kbd "C-\"") #'org-cycle-agenda-files-backwards)
 #+END_SRC
 
-*** Auxies-eww
+**** Auxies-eww
 :PROPERTIES:
 :ID:       c5c38c29-acf8-4283-8977-ffef26e1176f
 :END:
@@ -1720,6 +1723,15 @@ Another collection of Emacs stuff.
 #+BEGIN_SRC emacs-lisp
 (push "~/p/elisp/mw/auxies" load-path)
 (require 'auxies-eww)
+#+END_SRC
+
+** From source
+
+*** elm-mode
+
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'load-path "/home/b/p/elisp/external/elm-mode")
+(require 'elm-mode)
 #+END_SRC
 
 * Auxilliaries
