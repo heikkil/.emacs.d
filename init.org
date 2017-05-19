@@ -32,9 +32,7 @@ Call =org-babel-tangle= on this Org file to get file =init.el=.
 
 Do the call by evaluating block
 
-#+begin_src emacs-lisp :tangle no :results none
-(org-babel-tangle)
-#+end_src
+[[elisp:(org-babel-tangle)][(org-babel-tangle)]]
 
 or use key sequence =C-cv t=.
 
