@@ -32,6 +32,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ;;; init.el --- personal emacs config file marco wahl -*- lexical-binding: t ; eval: (read-only-mode 1)-*-
 #+end_src
 
+Set to read-only to make edits harder.  Recall that the tangled file
+is not supposed to be edited.
+
 ** Conform to el-Tradition
 :PROPERTIES:
 :ID:       50b27b8e-ef4e-4b89-a810-90c7c56bb665
@@ -1728,6 +1731,9 @@ Another collection of Emacs stuff.
 ** From source
 
 *** elm-mode
+:PROPERTIES:
+:ID:       ec9a5502-13ec-4b8d-837e-b31fcdc39bb1
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'load-path "/home/b/p/elisp/external/elm-mode")
