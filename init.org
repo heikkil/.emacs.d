@@ -28,6 +28,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 :ID:       c2c181f3-e02e-4754-b1ef-0798bcd61eda
 :END:
 
+Call =org-babel-tangle= on this Org file to get file =init.el=.  Key sequence is =C-cv t=.
+
 #+begin_src emacs-lisp :tangle no :results none
 (org-babel-tangle)
 #+end_src
