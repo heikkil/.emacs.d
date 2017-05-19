@@ -23,6 +23,12 @@ General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+** Create the actual emacs config file
+
+#+begin_src emacs-lisp :tangle /dev/null
+
+#+end_src
+
 ** First line
 :PROPERTIES:
 :ID:       2a5b2368-a53b-478a-a59a-ecaf4edfbcc3
