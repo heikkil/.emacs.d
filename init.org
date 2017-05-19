@@ -29,7 +29,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 :END:
 
 #+begin_src emacs-lisp
-;;; init.el --- personal emacs config file marco wahl -*- lexical-binding: t ; -*-
+;;; init.el --- personal emacs config file marco wahl -*- lexical-binding: t ; eval: (read-only-mode 1)-*-
 #+end_src
 
 ** Conform to el-Tradition
