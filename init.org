@@ -1755,6 +1755,387 @@ Another collection of Emacs stuff.
 (require 'elm-mode)
 #+END_SRC
 
+* Auxilliaries
+:PROPERTIES:
+:ID:       06d23ad3-863e-49c9-a5f7-9acbd2a68fbc
+:END:
+
+** Org
+:PROPERTIES:
+:ID:       3e50b218-2b6a-461c-b023-4a86b9652ae7
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(defun ---agenda-buffers ()
+  "Return agenda buffers in a list."
+  (cl-remove-if-not
+   (lambda (x)
+     (set-buffer x)
+     (eq major-mode 'org-agenda-mode))
+   (buffer-list)))
+#+END_SRC
+
+* Keysettings
+:PROPERTIES:
+:ID:       87eef969-ff13-4812-9c4e-2c79f9c3f7c6
+:END:
+
+** imenu
+:PROPERTIES:
+:ID:       7c7d3dfd-a0cc-4003-8ddd-6dfdaeeccefb
+:END:
+
+imenu provides a mechanism to jump to locations of interest for
+several file types, e.g. Org.
+
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "C-*") 'imenu)
+#+END_SRC
+
+** iedit
+:PROPERTIES:
+:ID:       12098f10-f528-4a9f-9e51-190ad76fcba8
+:END:
+
+can help to edit all occurances of a variable.
+
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "C-;") 'iedit-mode)
+#+END_SRC
+
+*** use case example
+
+- narrow to a part of interest.
+- have point on the word of interest.
+- activate imenu-mode (C-;).
+- edit the word.
+- leave the mode with C-cc (or C-;).
+
+** Rectangle
+:PROPERTIES:
+:ID:       0433147d-df2b-4fa6-938b-cdee6202fa60
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "C-x r u") #'clear-register)
+#+END_SRC
+
+** Org
+:PROPERTIES:
+:ID:       4584f701-7645-43d1-bcee-553898f68989
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-cc" 'org-capture)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "C-c v") 'org-velocity)
+#+END_SRC
+
+** Following org-mode links given in other modes
+:PROPERTIES:
+:ID:       056989f0-a039-4043-a776-6f102786518a
+:END:
+
+To be able to follow an org-mode link in an arbitrary file can be
+nice, e.g. to get to the original from within a tangled file.
+
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "C-c o") 'org-open-at-point-global)
+#+END_SRC
+
+** Exit org src edit with C-cc
+:PROPERTIES:
+:ID:       36981807-e987-4918-bdf4-ad5fb09654cd
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(define-key org-src-mode-map "\C-c\C-c" 'org-edit-src-exit)
+#+END_SRC
+
+** Individual keymap
+:PROPERTIES:
+:ID:       21856110-1ce5-4833-99da-8db3aefe35de
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(defvar mw-individual-keymap
+  (let ((map (make-sparse-keymap)))
+    (define-key map "y" #'mw-moz-controller-hackish-insert-current-url-from-mozrepl)
+    (define-key map "f" #'mw-kill-buffer-filename)
+    (define-key map "g" #'git-auto-commit-mode)
+    (define-key map "l" #'clone-indirect-buffer)
+    (define-key map "a" #'mw-append-to-scratch)
+    (define-key map "r" #'mw-auxies-toggle-default-frame-reverse-state)
+    (define-key map "d" #'mw-mode-line-as-message)
+    (define-key map "m" #'menu-bar-mode)
+    (define-key map "h" #'mw-strip)
+    (define-key map "F" #'fringe-mode)
+    (define-key map "b"
+      (lambda ()
+        (interactive)
+        (if emms-player-playing-p
+            (emms-player-pause)
+          (progn
+            (mw-sound-set-enjoyable-volume)
+            (emms-play-url "http://www.bassdrive.com/BassDrive.m3u")))))
+    (define-key map "p" #'password-store-copy)
+    (define-key map "P" #'org-toggle-pretty-entities)
+    (define-key map "j" #'org-clock-goto)
+    (define-key map  (kbd "C-j")
+      (lambda nil "Add a note to the Org currently clocked."
+        (interactive) (org-clock-goto) (org-add-note)))
+    (define-key map "z" #'mw-auxies-delete-to-direction)
+    (define-key map "k" #'key-chord-mode) ; sometimes i need turning it off and on again.
+    (define-key map "c" #'calendar)
+    (define-key map "q" (lambda (arg)
+                          (interactive "P")
+                          (if (equal arg '(4))
+                              (unbury-buffer)
+                            (bury-buffer))))
+    (define-key map "u" #'unexpand-abbrev)
+    (define-key map "i" #'ido-hacks-mode)
+    (define-key map "w" #'org-refile-goto-last-stored)
+                                        ; recall: from org-files there is already C-u C-u C-c C-w.
+    (define-key map "<" #'mw-screen-exchange-slurp-insert)
+    (define-key map ">" #'mw-screen-exchange-write-region)
+    (define-key map "e" #'evil-mode)
+    (define-key map "E" (lambda () "Erase org-stored-links" (interactive) (setq org-stored-links nil)))
+    (define-key map "(" #'paredit-mode)
+    (define-key map ")" #'lispy-mode)
+    (define-key map "W" #'calc-embedded-word) ; recall 'q' to leave the mode.
+    (define-key map "s" (lambda () (interactive) (switch-to-buffer "*scratch*")))
+    (define-key map "o" #'mw-org-kill-new-outline-path) ; Has been useful for refile.
+    (define-key map "t" #'mw-teleport-region-to-other-window)
+    ;;     (define-key map "t" (lambda ()
+    ;;                           "Switch the minibuffer externalization for new frames.
+    ;; And delete all frames.
+    ;; This works good when an Emacs daemon runs and thus allows
+    ;; easily create a new frame."
+    ;;                           (interactive)
+    ;;                           (if (cdr (assoc 'minibuffer default-frame-alist))
+    ;;                               (mw-unset-minibuffer-in-default-frame)
+    ;;                             (mw-set-minibuffer-in-default-frame))
+    ;;                           (mapc #'delete-frame (frame-list))
+    ;;                           ))
+    map)
+  "Personal convenience keymap.")
+(global-set-key (kbd "\C-z") mw-individual-keymap)
+#+END_SRC
+
+** Hydras
+:PROPERTIES:
+:ID:       834bc884-e391-4dd2-9adf-af03da2077cf
+:END:
+
+This was thought to switch buffers quickly.  The overhead at start is
+too much for me though.  [2015-10-12 Mon 14:55]
+
+#+BEGIN_SRC emacs-lisp
+(defhydra hydra-buffer-cycling
+  (global-map "C-x <right>")
+  "buffer-switch-entry-right"
+  ("<right>" next-buffer)
+  ("<left>" previous-buffer))
+(defhydra hydra-buffer-cycling-b
+  (global-map "C-x <left>")
+  "buffer-switch-entry-left"
+  ("<right>" next-buffer)
+  ("<left>" previous-buffer))
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+(defhydra hydra-winsize (global-map "C-c ^")
+  "Shrink window."
+  ("6" shrink-window)
+  ("^" enlarge-window)
+  ("<" shrink-window-horizontally)
+  (">" enlarge-window-horizontally))
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+(defhydra hydra-font-control (global-map "C-c C-S-f")
+  "Control the font."
+  ("-" (set-face-attribute
+        'default nil
+        :height (max 0 (- (face-attribute 'default :height) 20))))
+  ("+" (set-face-attribute
+        'default nil
+        :height (+ (face-attribute 'default :height) 20)))
+  ("b" (set-face-attribute
+        'default nil
+        :weight 'bold))
+  ("n" (set-face-attribute
+        'default nil
+        :weight 'normal))
+  ("p" (set-face-attribute
+        'default nil
+        :family "profont") "profont")
+  ("s" (set-face-attribute
+        'default nil
+        :family "sourcecodepro") "sourcecodepro")
+  ("c" (set-face-attribute
+        'default nil
+        :family "courier") "courier")
+  ("q" (ignore) "ok, quit" :exit t))
+#+END_SRC
+
+** Dired Key for Alternate up
+:PROPERTIES:
+:ID:       0481cbe3-19d9-43ce-91a1-70fd845ff864
+:END:
+
+Expand ~dired-mode-map~ with a key for opening parent directory as
+alternate dired.
+
+#+BEGIN_SRC emacs-lisp
+(add-hook
+ 'dired-mode-hook
+ (lambda ()
+   (define-key dired-mode-map "`" #'mw-alternate-up)))
+#+END_SRC
+
+** Dired Key for Narrow
+:PROPERTIES:
+:ID:       9ef15de4-8f07-4466-b729-854a693d3ad3
+:END:
+
+Expand ~dired-mode-map~ with a key for filtering the list of files.
+
+#+BEGIN_SRC emacs-lisp
+(add-hook
+ 'dired-mode-hook
+ (lambda () (define-key dired-mode-map "/" #'dired-narrow-regexp)))
+#+END_SRC
+
+** Go to last line in Buffer List
+:PROPERTIES:
+:ID:       37de8dcf-392d-419d-aa9a-f69f409e2010
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(add-hook
+ 'Buffer-menu-mode-hook
+ (lambda ()
+   (local-set-key
+    ">" (lambda () (interactive)
+          (end-of-buffer)
+          (backward-char)))))
+#+END_SRC
+
+With M-> point goes to the last char (and not one before that.)
+
+** Communication with Mozilla
+:PROPERTIES:
+:ID:       2ee535a1-6f7a-45c2-b42c-d012ede8b780
+:END:
+
+see individual key map
+
+#+BEGIN_SRC emacs-lisp
+#+END_SRC
+
+** Various Keysettings
+:PROPERTIES:
+:ID:       a5e292d4-96d1-45b8-928f-9df99e1beb44
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "<f1>") #'ignore) ;; e.g. for leaving the zone.
+(global-set-key (kbd "<f6>") #'flyspell-mode)
+(global-set-key (kbd "<f7>") #'cycle-ispell-language-and-input-method)
+(global-set-key (kbd "M-<f7>") #'mw-cycle-ispell-completion-dict)
+(global-set-key (kbd "C-$") #'ispell-complete-word)
+(global-set-key (kbd "S-<f11>") #'mw-rotate-split)
+(global-set-key (kbd "<f12>") #'org-list-insert-inactive-ts-item)
+(global-set-key (kbd "<f5>") #'mw-rectangle-ephermal-enumerate-lines)
+
+;; the following collides with parmode:
+;; (global-set-key (kbd "C-M-<right>") #'next-buffer)
+;; (global-set-key (kbd "C-M-<left>") #'previous-buffer)
+;; [2015-10-12 Mon 15:03] trying key chords.
+
+(global-set-key (kbd "<XF86AudioLowerVolume>") #'emms-volume-lower)
+(global-set-key (kbd "<XF86AudioRaiseVolume>") #'emms-volume-raise)
+
+(defhydra hydra-volume-control (global-map "C-c 1")
+  "Volume control."
+  ("1" (dotimes (_ 50) (emms-volume-lower)) "silence")
+  ("2" (emms-volume-lower) "lower")
+  ("3" (progn (dotimes (_ 50) (emms-volume-lower)) (dotimes (_ 25) (emms-volume-raise))) "half")
+  ("4" (emms-volume-raise) "raise")
+  ("5" (dotimes (_ 50) (emms-volume-raise)) "full")
+  ("q" (ignore) "quit" :exit t))
+
+(global-set-key (kbd "<XF86AudioMute>") #'mw-sound-0%)
+(global-set-key (kbd "<XF86AudioNext>") #'mw-sound-100%)
+(global-set-key (kbd "<XF86AudioPlay>") #'mw-sound-set-enjoyable-volume)
+
+(global-set-key (kbd "C-x o") 'ace-window)
+
+(global-set-key (kbd "C-x C-c") #'save-buffers-kill-emacs) ; also kill the daemon (catchwords: quit, exit)
+
+;; cycle through amounts of spacing
+(global-set-key (kbd "M-SPC") #'cycle-spacing)
+
+(global-set-key (kbd "C-5") #'repeat)
+
+(global-set-key
+ (kbd "C-6")
+ (lambda (arg) (interactive "P")
+   "Direct command Repeat.  With prefix arg show the candidate in
+the queue."
+   (funcall
+    (if arg
+        #'mw-message-last-command
+      #'mw-repeat-last-command))))
+
+(define-key global-map (kbd "<f9>")
+  (lambda (&optional prefix)
+    "Try insert org-inactive-timestamp.  With prefix argument
+  try insert yyyymmddhhmm.  Special in org-agenda: toggle
+  inactive-timestamps-display."
+    (interactive "P")
+    (cond
+     ((eq major-mode 'org-agenda-mode)
+      (setq org-agenda-include-inactive-timestamps (eq nil org-agenda-include-inactive-timestamps))
+      (org-agenda-redo))
+     (t (if prefix
+            (insert (format-time-string "%Y%m%d%H%M"))
+          (org-insert-time-stamp nil t t))))))
+#+END_SRC
+
+* Triggers
+:PROPERTIES:
+:ID:       464102cc-43b3-48f9-bc96-07403d6d2f0e
+:END:
+
+Let Emacs say something at start.
+
+#+BEGIN_SRC emacs-lisp
+(add-hook 'org-finalize-agenda-hook 'org-agenda-to-appt) ; I want this!
+(appt-activate 1)    ; enable
+
+;; (org-agenda-list)
+;; (switch-to-buffer "*Org Agenda*")
+
+;; Vision: Extend the following code to be like the computer in the
+;; Heart of Gold.  E.g. be able to start a conversation like "Hey
+;; Emacs, please make some tee!"
+(start-process "play-a-sound" "*play-a-sound-output*"
+               "espeak"
+               "-v"
+               ;; "en-swedish"
+               "en"
+               "-s"
+               "155" ;; word speed
+               "Hi guys! This is a fantastic day! Let's do something!")
+#+END_SRC
+
 * Lab
 
 ** reverse-words
@@ -4242,387 +4623,6 @@ seconds.
 
 #+BEGIN_SRC emacs-lisp
 (setq bibtex-completion-bibliography "/home/b/media/references/references.bib")
-#+END_SRC
-
-* Auxilliaries
-:PROPERTIES:
-:ID:       06d23ad3-863e-49c9-a5f7-9acbd2a68fbc
-:END:
-
-** Org
-:PROPERTIES:
-:ID:       3e50b218-2b6a-461c-b023-4a86b9652ae7
-:END:
-
-#+BEGIN_SRC emacs-lisp
-(defun ---agenda-buffers ()
-  "Return agenda buffers in a list."
-  (cl-remove-if-not
-   (lambda (x)
-     (set-buffer x)
-     (eq major-mode 'org-agenda-mode))
-   (buffer-list)))
-#+END_SRC
-
-* Keysettings
-:PROPERTIES:
-:ID:       87eef969-ff13-4812-9c4e-2c79f9c3f7c6
-:END:
-
-** imenu
-:PROPERTIES:
-:ID:       7c7d3dfd-a0cc-4003-8ddd-6dfdaeeccefb
-:END:
-
-imenu provides a mechanism to jump to locations of interest for
-several file types, e.g. Org.
-
-#+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "C-*") 'imenu)
-#+END_SRC
-
-** iedit
-:PROPERTIES:
-:ID:       12098f10-f528-4a9f-9e51-190ad76fcba8
-:END:
-
-can help to edit all occurances of a variable.
-
-#+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "C-;") 'iedit-mode)
-#+END_SRC
-
-*** use case example
-
-- narrow to a part of interest.
-- have point on the word of interest.
-- activate imenu-mode (C-;).
-- edit the word.
-- leave the mode with C-cc (or C-;).
-
-** Rectangle
-:PROPERTIES:
-:ID:       0433147d-df2b-4fa6-938b-cdee6202fa60
-:END:
-
-#+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "C-x r u") #'clear-register)
-#+END_SRC
-
-** Org
-:PROPERTIES:
-:ID:       4584f701-7645-43d1-bcee-553898f68989
-:END:
-
-#+BEGIN_SRC emacs-lisp
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-cc" 'org-capture)
-(global-set-key "\C-ca" 'org-agenda)
-(global-set-key "\C-cb" 'org-iswitchb)
-#+END_SRC
-
-#+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "C-c v") 'org-velocity)
-#+END_SRC
-
-** Following org-mode links given in other modes
-:PROPERTIES:
-:ID:       056989f0-a039-4043-a776-6f102786518a
-:END:
-
-To be able to follow an org-mode link in an arbitrary file can be
-nice, e.g. to get to the original from within a tangled file.
-
-#+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "C-c o") 'org-open-at-point-global)
-#+END_SRC
-
-** Exit org src edit with C-cc
-:PROPERTIES:
-:ID:       36981807-e987-4918-bdf4-ad5fb09654cd
-:END:
-
-#+BEGIN_SRC emacs-lisp
-(define-key org-src-mode-map "\C-c\C-c" 'org-edit-src-exit)
-#+END_SRC
-
-** Individual keymap
-:PROPERTIES:
-:ID:       21856110-1ce5-4833-99da-8db3aefe35de
-:END:
-
-#+BEGIN_SRC emacs-lisp
-(defvar mw-individual-keymap
-  (let ((map (make-sparse-keymap)))
-    (define-key map "y" #'mw-moz-controller-hackish-insert-current-url-from-mozrepl)
-    (define-key map "f" #'mw-kill-buffer-filename)
-    (define-key map "g" #'git-auto-commit-mode)
-    (define-key map "l" #'clone-indirect-buffer)
-    (define-key map "a" #'mw-append-to-scratch)
-    (define-key map "r" #'mw-auxies-toggle-default-frame-reverse-state)
-    (define-key map "d" #'mw-mode-line-as-message)
-    (define-key map "m" #'menu-bar-mode)
-    (define-key map "h" #'mw-strip)
-    (define-key map "F" #'fringe-mode)
-    (define-key map "b"
-      (lambda ()
-        (interactive)
-        (if emms-player-playing-p
-            (emms-player-pause)
-          (progn
-            (mw-sound-set-enjoyable-volume)
-            (emms-play-url "http://www.bassdrive.com/BassDrive.m3u")))))
-    (define-key map "p" #'password-store-copy)
-    (define-key map "P" #'org-toggle-pretty-entities)
-    (define-key map "j" #'org-clock-goto)
-    (define-key map  (kbd "C-j")
-      (lambda nil "Add a note to the Org currently clocked."
-        (interactive) (org-clock-goto) (org-add-note)))
-    (define-key map "z" #'mw-auxies-delete-to-direction)
-    (define-key map "k" #'key-chord-mode) ; sometimes i need turning it off and on again.
-    (define-key map "c" #'calendar)
-    (define-key map "q" (lambda (arg)
-                          (interactive "P")
-                          (if (equal arg '(4))
-                              (unbury-buffer)
-                            (bury-buffer))))
-    (define-key map "u" #'unexpand-abbrev)
-    (define-key map "i" #'ido-hacks-mode)
-    (define-key map "w" #'org-refile-goto-last-stored)
-                                        ; recall: from org-files there is already C-u C-u C-c C-w.
-    (define-key map "<" #'mw-screen-exchange-slurp-insert)
-    (define-key map ">" #'mw-screen-exchange-write-region)
-    (define-key map "e" #'evil-mode)
-    (define-key map "E" (lambda () "Erase org-stored-links" (interactive) (setq org-stored-links nil)))
-    (define-key map "(" #'paredit-mode)
-    (define-key map ")" #'lispy-mode)
-    (define-key map "W" #'calc-embedded-word) ; recall 'q' to leave the mode.
-    (define-key map "s" (lambda () (interactive) (switch-to-buffer "*scratch*")))
-    (define-key map "o" #'mw-org-kill-new-outline-path) ; Has been useful for refile.
-    (define-key map "t" #'mw-teleport-region-to-other-window)
-    ;;     (define-key map "t" (lambda ()
-    ;;                           "Switch the minibuffer externalization for new frames.
-    ;; And delete all frames.
-    ;; This works good when an Emacs daemon runs and thus allows
-    ;; easily create a new frame."
-    ;;                           (interactive)
-    ;;                           (if (cdr (assoc 'minibuffer default-frame-alist))
-    ;;                               (mw-unset-minibuffer-in-default-frame)
-    ;;                             (mw-set-minibuffer-in-default-frame))
-    ;;                           (mapc #'delete-frame (frame-list))
-    ;;                           ))
-    map)
-  "Personal convenience keymap.")
-(global-set-key (kbd "\C-z") mw-individual-keymap)
-#+END_SRC
-
-** Hydras
-:PROPERTIES:
-:ID:       834bc884-e391-4dd2-9adf-af03da2077cf
-:END:
-
-This was thought to switch buffers quickly.  The overhead at start is
-too much for me though.  [2015-10-12 Mon 14:55]
-
-#+BEGIN_SRC emacs-lisp
-(defhydra hydra-buffer-cycling
-  (global-map "C-x <right>")
-  "buffer-switch-entry-right"
-  ("<right>" next-buffer)
-  ("<left>" previous-buffer))
-(defhydra hydra-buffer-cycling-b
-  (global-map "C-x <left>")
-  "buffer-switch-entry-left"
-  ("<right>" next-buffer)
-  ("<left>" previous-buffer))
-#+END_SRC
-
-#+BEGIN_SRC emacs-lisp
-(defhydra hydra-winsize (global-map "C-c ^")
-  "Shrink window."
-  ("6" shrink-window)
-  ("^" enlarge-window)
-  ("<" shrink-window-horizontally)
-  (">" enlarge-window-horizontally))
-#+END_SRC
-
-#+BEGIN_SRC emacs-lisp
-(defhydra hydra-font-control (global-map "C-c C-S-f")
-  "Control the font."
-  ("-" (set-face-attribute
-        'default nil
-        :height (max 0 (- (face-attribute 'default :height) 20))))
-  ("+" (set-face-attribute
-        'default nil
-        :height (+ (face-attribute 'default :height) 20)))
-  ("b" (set-face-attribute
-        'default nil
-        :weight 'bold))
-  ("n" (set-face-attribute
-        'default nil
-        :weight 'normal))
-  ("p" (set-face-attribute
-        'default nil
-        :family "profont") "profont")
-  ("s" (set-face-attribute
-        'default nil
-        :family "sourcecodepro") "sourcecodepro")
-  ("c" (set-face-attribute
-        'default nil
-        :family "courier") "courier")
-  ("q" (ignore) "ok, quit" :exit t))
-#+END_SRC
-
-** Dired Key for Alternate up
-:PROPERTIES:
-:ID:       0481cbe3-19d9-43ce-91a1-70fd845ff864
-:END:
-
-Expand ~dired-mode-map~ with a key for opening parent directory as
-alternate dired.
-
-#+BEGIN_SRC emacs-lisp
-(add-hook
- 'dired-mode-hook
- (lambda ()
-   (define-key dired-mode-map "`" #'mw-alternate-up)))
-#+END_SRC
-
-** Dired Key for Narrow
-:PROPERTIES:
-:ID:       9ef15de4-8f07-4466-b729-854a693d3ad3
-:END:
-
-Expand ~dired-mode-map~ with a key for filtering the list of files.
-
-#+BEGIN_SRC emacs-lisp
-(add-hook
- 'dired-mode-hook
- (lambda () (define-key dired-mode-map "/" #'dired-narrow-regexp)))
-#+END_SRC
-
-** Go to last line in Buffer List
-:PROPERTIES:
-:ID:       37de8dcf-392d-419d-aa9a-f69f409e2010
-:END:
-
-#+BEGIN_SRC emacs-lisp
-(add-hook
- 'Buffer-menu-mode-hook
- (lambda ()
-   (local-set-key
-    ">" (lambda () (interactive)
-          (end-of-buffer)
-          (backward-char)))))
-#+END_SRC
-
-With M-> point goes to the last char (and not one before that.)
-
-** Communication with Mozilla
-:PROPERTIES:
-:ID:       2ee535a1-6f7a-45c2-b42c-d012ede8b780
-:END:
-
-see individual key map
-
-#+BEGIN_SRC emacs-lisp
-#+END_SRC
-
-** Various Keysettings
-:PROPERTIES:
-:ID:       a5e292d4-96d1-45b8-928f-9df99e1beb44
-:END:
-
-#+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "<f1>") #'ignore) ;; e.g. for leaving the zone.
-(global-set-key (kbd "<f6>") #'flyspell-mode)
-(global-set-key (kbd "<f7>") #'cycle-ispell-language-and-input-method)
-(global-set-key (kbd "M-<f7>") #'mw-cycle-ispell-completion-dict)
-(global-set-key (kbd "C-$") #'ispell-complete-word)
-(global-set-key (kbd "S-<f11>") #'mw-rotate-split)
-(global-set-key (kbd "<f12>") #'org-list-insert-inactive-ts-item)
-(global-set-key (kbd "<f5>") #'mw-rectangle-ephermal-enumerate-lines)
-
-;; the following collides with parmode:
-;; (global-set-key (kbd "C-M-<right>") #'next-buffer)
-;; (global-set-key (kbd "C-M-<left>") #'previous-buffer)
-;; [2015-10-12 Mon 15:03] trying key chords.
-
-(global-set-key (kbd "<XF86AudioLowerVolume>") #'emms-volume-lower)
-(global-set-key (kbd "<XF86AudioRaiseVolume>") #'emms-volume-raise)
-
-(defhydra hydra-volume-control (global-map "C-c 1")
-  "Volume control."
-  ("1" (dotimes (_ 50) (emms-volume-lower)) "silence")
-  ("2" (emms-volume-lower) "lower")
-  ("3" (progn (dotimes (_ 50) (emms-volume-lower)) (dotimes (_ 25) (emms-volume-raise))) "half")
-  ("4" (emms-volume-raise) "raise")
-  ("5" (dotimes (_ 50) (emms-volume-raise)) "full")
-  ("q" (ignore) "quit" :exit t))
-
-(global-set-key (kbd "<XF86AudioMute>") #'mw-sound-0%)
-(global-set-key (kbd "<XF86AudioNext>") #'mw-sound-100%)
-(global-set-key (kbd "<XF86AudioPlay>") #'mw-sound-set-enjoyable-volume)
-
-(global-set-key (kbd "C-x o") 'ace-window)
-
-(global-set-key (kbd "C-x C-c") #'save-buffers-kill-emacs) ; also kill the daemon (catchwords: quit, exit)
-
-;; cycle through amounts of spacing
-(global-set-key (kbd "M-SPC") #'cycle-spacing)
-
-(global-set-key (kbd "C-5") #'repeat)
-
-(global-set-key
- (kbd "C-6")
- (lambda (arg) (interactive "P")
-   "Direct command Repeat.  With prefix arg show the candidate in
-the queue."
-   (funcall
-    (if arg
-        #'mw-message-last-command
-      #'mw-repeat-last-command))))
-
-(define-key global-map (kbd "<f9>")
-  (lambda (&optional prefix)
-    "Try insert org-inactive-timestamp.  With prefix argument
-  try insert yyyymmddhhmm.  Special in org-agenda: toggle
-  inactive-timestamps-display."
-    (interactive "P")
-    (cond
-     ((eq major-mode 'org-agenda-mode)
-      (setq org-agenda-include-inactive-timestamps (eq nil org-agenda-include-inactive-timestamps))
-      (org-agenda-redo))
-     (t (if prefix
-            (insert (format-time-string "%Y%m%d%H%M"))
-          (org-insert-time-stamp nil t t))))))
-#+END_SRC
-
-* Triggers
-:PROPERTIES:
-:ID:       464102cc-43b3-48f9-bc96-07403d6d2f0e
-:END:
-
-Let Emacs say something at start.
-
-#+BEGIN_SRC emacs-lisp
-(add-hook 'org-finalize-agenda-hook 'org-agenda-to-appt) ; I want this!
-(appt-activate 1)    ; enable
-
-;; (org-agenda-list)
-;; (switch-to-buffer "*Org Agenda*")
-
-;; Vision: Extend the following code to be like the computer in the
-;; Heart of Gold.  E.g. be able to start a conversation like "Hey
-;; Emacs, please make some tee!"
-(start-process "play-a-sound" "*play-a-sound-output*"
-               "espeak"
-               "-v"
-               ;; "en-swedish"
-               "en"
-               "-s"
-               "155" ;; word speed
-               "Hi guys! This is a fantastic day! Let's do something!")
 #+END_SRC
 
 * Last line
