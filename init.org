@@ -1,7 +1,12 @@
 #+STARTUP: oddeven
 #+PROPERTY: header-args:emacs-lisp :tangle init.el
 
-* Copyright
+* Firstfirst
+:PROPERTIES:
+:ID:       bd4a3fcf-1669-40b8-a1c1-d9adf07fd947
+:END:
+
+** Copyright
 
 Copyright (c) 2015-2017 Marco Wahl <marcowahlsoft@gmail.com>
 
@@ -17,11 +22,6 @@ General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-* Firstfirst
-:PROPERTIES:
-:ID:       bd4a3fcf-1669-40b8-a1c1-d9adf07fd947
-:END:
 
 ** First line
 :PROPERTIES:
