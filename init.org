@@ -30,7 +30,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Call =org-babel-tangle= on this Org file to get file =init.el=.
 
-Do the call by evaluating block
+Follow the link to do the call
 
 [[elisp:(org-babel-tangle)][(org-babel-tangle)]]
 
