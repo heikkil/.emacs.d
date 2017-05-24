@@ -3063,6 +3063,10 @@ Don't forget the crypto.
 (defun org-next-drawer (count)
   (interactive "p")
   (search-forward-regexp org-drawer-regexp nil nil count))
+
+(defun org-previous-drawer (count)
+  (interactive "p")
+  (search-backward-regexp org-drawer-regexp nil nil count))
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp
