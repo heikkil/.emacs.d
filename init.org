@@ -2883,7 +2883,6 @@ come out not so nicely.
   ("6" (mw-direct-command-repeat)))
 #+END_SRC
 
-
 ** Capitalize Word
 :PROPERTIES:
 :ID:       e144174c-c4f3-4161-90d9-b09a03930b5f
