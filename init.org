@@ -2876,6 +2876,9 @@ come out not so nicely.
 #+END_SRC
 
 ** repeat per hydra
+:PROPERTIES:
+:ID:       1fe2ee1d-ea08-49fd-abe4-b748970cc976
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (defhydra hydra-repeat (global-map "C-c C-6")
