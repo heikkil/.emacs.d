@@ -2084,15 +2084,17 @@ see individual key map
 
 (global-set-key (kbd "C-5") #'repeat)
 
+(defun mw-direct-command-repeat (&optional arg)
+  "Direct command Repeat.  With prefix arg show the candidate."
+  (interactive "P")
+  (funcall
+   (if arg
+       (function mw-message-last-command)
+     (function mw-repeat-last-command))))
+
 (global-set-key
  (kbd "C-6")
- (lambda (arg) (interactive "P")
-   "Direct command Repeat.  With prefix arg show the candidate in
-the queue."
-   (funcall
-    (if arg
-        #'mw-message-last-command
-      #'mw-repeat-last-command))))
+ #'mw-direct-command-repeat)
 
 (define-key global-map (kbd "<f9>")
   (lambda (&optional prefix)
@@ -2872,6 +2874,15 @@ come out not so nicely.
   ("n" (transpose-words 1))
   ("p" (transpose-words -1)))
 #+END_SRC
+
+** repeat per hydra
+
+#+BEGIN_SRC emacs-lisp
+(defhydra hydra-repeat (global-map "C-c C-6")
+  "Command repeat."
+  ("6" (mw-direct-command-repeat)))
+#+END_SRC
+
 
 ** Capitalize Word
 :PROPERTIES:
