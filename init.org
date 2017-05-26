@@ -317,11 +317,23 @@ help:package-initialize.  But maybe too late.
 * Packages
 
 ** In use
+*** elm-mode
+
+#+BEGIN_SRC emacs-lisp
+(use-package elm-mode  :ensure t)
+#+END_SRC
+
+**** elm-mode from local clone
+
+#+BEGIN_SRC emacs-lisp
+;; (add-to-list 'load-path "~/p/elisp/external/elm-mode")
+;; (require 'elm-mode)
+#+END_SRC
+
 *** async
 :PROPERTIES:
 :ID:       df37af31-8c32-4004-92c8-8f9d2f12f150
 :END:
-
 
 #+BEGIN_SRC emacs-lisp
 (use-package async :config (dired-async-mode 1))
@@ -1744,16 +1756,6 @@ Another collection of Emacs stuff.
 #+END_SRC
 
 ** From source
-
-*** elm-mode
-:PROPERTIES:
-:ID:       ec9a5502-13ec-4b8d-837e-b31fcdc39bb1
-:END:
-
-#+BEGIN_SRC emacs-lisp
-(add-to-list 'load-path "/home/b/p/elisp/external/elm-mode")
-(require 'elm-mode)
-#+END_SRC
 
 * Auxilliaries
 :PROPERTIES:
