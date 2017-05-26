@@ -318,12 +318,18 @@ help:package-initialize.  But maybe too late.
 
 ** In use
 *** elm-mode
+:PROPERTIES:
+:ID:       9c49fe85-e2e4-4cb7-a01f-3cb4a9ef3732
+:END:
 
 #+BEGIN_SRC emacs-lisp
 (use-package elm-mode  :ensure t)
 #+END_SRC
 
 **** elm-mode from local clone
+:PROPERTIES:
+:ID:       b501a0fc-f830-4203-8a82-85548500faf6
+:END:
 
 #+BEGIN_SRC emacs-lisp
 ;; (add-to-list 'load-path "~/p/elisp/external/elm-mode")
@@ -2143,6 +2149,9 @@ Let Emacs say something at start.
 * Lab
 
 ** org-logbook-sorter
+:PROPERTIES:
+:ID:       fdf07d65-3e72-4c3b-af3e-edb2cc476386
+:END:
 
 #+begin_src emacs-lisp
 (push "~/p/elisp/mw/logbook-sorter" load-path)
