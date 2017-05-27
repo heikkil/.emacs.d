@@ -3228,19 +3228,29 @@ a
 (defun org-list-insert-inactive-ts-item ()
   "Insert a list item starting with an inactive timestamp."
   (interactive)
-  (let ((itemp (org-in-item-p)) (pos (point)))
-    (when itemp
-      (goto-char itemp)
-      (let* ((struct (org-list-struct))
-	     (prevs (org-list-prevs-alist struct))
-	     (s (concat (with-temp-buffer
-                          (org-insert-time-stamp nil t t)
-                          (buffer-string)) " ")))
-        (setq struct (org-list-insert-item pos struct prevs nil s))
-        (org-list-write-struct struct (org-list-parents-alist struct))
-        (looking-at org-list-full-item-re)
-	(goto-char (match-end 0))
-        (end-of-line)))))
+  (let ((itemp (org-in-item-p))
+        (pos (point)))
+    (if itemp
+        (progn
+          (goto-char itemp)
+          (let* ((struct (org-list-struct))
+	         (prevs (org-list-prevs-alist struct))
+	         (s (concat (with-temp-buffer
+                              (org-insert-time-stamp nil t t)
+                              (buffer-string)) " ")))
+            (setq struct (org-list-insert-item pos struct prevs nil s))
+            (org-list-write-struct struct (org-list-parents-alist struct))
+            (looking-at org-list-full-item-re)
+	    (goto-char (match-end 0))
+            (end-of-line)))
+      (progn
+        (unless
+            (= (point)
+               (save-excursion (beginning-of-line) (point)))
+          (beginning-of-line))
+        (insert "- ")
+        (org-insert-time-stamp nil t t)
+        (insert " ")))))
 #+END_SRC
 
 *** org hide above first heading
