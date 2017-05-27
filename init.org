@@ -1,5 +1,5 @@
 #+STARTUP: oddeven
-#+PROPERTY: header-args:emacs-lisp :tangle init.el
+#+PROPERTY: header-args:emacs-lisp :tangle init.el :comments both
 
 * Firstfirst
 :PROPERTIES:
@@ -41,7 +41,7 @@ or use key sequence =C-cv t=.
 :ID:       2a5b2368-a53b-478a-a59a-ecaf4edfbcc3
 :END:
 
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :comments none
 ;;; init.el --- personal emacs config file marco wahl -*- lexical-binding: t ; eval: (read-only-mode 1)-*-
 #+end_src
 
@@ -182,7 +182,6 @@ I need to exercise more.
 :END:
 
 #+BEGIN_SRC emacs-lisp
-
 (defun mw-org-up ()
   (interactive)
   (let ((start-level (funcall outline-level)))
@@ -4665,7 +4664,7 @@ seconds.
 :ID:       db249d39-55bb-4d29-9f4d-e088576236b7
 :END:
 
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :comments none
 
 ;;; init:.el ends here
 #+end_src
