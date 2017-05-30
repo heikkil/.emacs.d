@@ -687,7 +687,7 @@ Activattion of lentic as proposed in lentics documentation lentic.el.
   (key-chord-define-global ";q" #'other-frame)
   (key-chord-define-global "qj" #'mw-exchange-to-buddy)
   (key-chord-define-global ".," #'next-buffer)
-  (key-chord-define-global "><"       ; this is S-., on dovorak layout
+  (key-chord-define-global "><"       ; this is "S-.," on dovorak layout
                            #'previous-buffer)
   (key-chord-define-global "r9" #'rope-read-mode)
   (key-chord-define-global "yy" #'mw-duplicate-line)
@@ -699,6 +699,7 @@ Activattion of lentic as proposed in lentics documentation lentic.el.
                                     (mw-translate-as-message-eng+deu))))
   (key-chord-define-global "hh" (lambda () (interactive) (recenter 0))) ; #'recenter-top-bottom; afair H is a respecive vim binding?
   (key-chord-define-global "``" #'mw-alternate-up)
+  (key-chord-define-global "u6" #'org-up-element)
   (key-chord-define-global "~~" #'dired-jump)
   (key-chord-define-global ",," #'lentic-mode-move-lentic-window)
   (key-chord-define-global "3." #'delete-other-windows)
