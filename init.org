@@ -205,6 +205,7 @@ I need to exercise more.
                     (org-narrow-to-subtree)
                     (let ((avy-all-windows nil)) (call-interactively #'avy-goto-char))))
            ("9" . org-decrypt-entry)
+           ("6" . org-count-sub-orgees)
            (";" . org-timer-set-timer)
            ("G" . ace-link)
            ("H" . org-rise)
