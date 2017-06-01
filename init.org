@@ -2186,6 +2186,7 @@ Starting somewhere
 (push "~/p/elisp/mw/logbook-sorter" load-path)
 (require 'logbook-sorter)
 #+end_src
+
 ** reverse-words
 :PROPERTIES:
 :ID:       dee2134c-0e50-404f-a68a-82124eb6616e
