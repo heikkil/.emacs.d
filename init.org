@@ -2160,6 +2160,23 @@ Let Emacs say something at start.
 
 * Lab
 
+** towards a slightshow thing
+:PROPERTIES:
+:ID:       fac5af60-1a77-43b1-a76b-a7b96961b7a4
+:END:
+
+Starting somewhere
+
+#+begin_src emacs-lisp :tangle no
+(seq-filter (lambda (name) (and (not (string= name "."))
+                           (not (string= name ".."))))
+            (directory-files "/home/b/media/images/b"))
+
+(start-process "bg-setting" nil "xsetbg" "/home/b/media/images/b/20170531231556.png")
+(start-process "bg-setting" nil "xsetbg" "/home/b/media/images/b/20170531231616.png")
+(start-process "bg-setting" nil "xsetbg" "/home/b/media/images/b/20170531231716.png")
+#+end_src
+
 ** org-logbook-sorter
 :PROPERTIES:
 :ID:       fdf07d65-3e72-4c3b-af3e-edb2cc476386
@@ -2169,7 +2186,6 @@ Let Emacs say something at start.
 (push "~/p/elisp/mw/logbook-sorter" load-path)
 (require 'logbook-sorter)
 #+end_src
-
 ** reverse-words
 :PROPERTIES:
 :ID:       dee2134c-0e50-404f-a68a-82124eb6616e
