@@ -148,6 +148,17 @@ section does not exist.
 
 - [2017-05-19 Fri] still needed.
 
+** Mark Clones
+
+A hook allows marking the clones easily.
+
+#+begin_src emacs-lisp
+(setq clone-indirect-buffer-hook
+      (lambda ()
+        (make-local-variable 'is-indirect-clone-p)
+        (setq is-indirect-clone-p t)))
+#+end_src
+
 ** Don't load outdated byte code
 :PROPERTIES:
 :ID:       8fa15afd-71c1-44f3-bdca-2e547bd9f603
