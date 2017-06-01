@@ -417,7 +417,9 @@ timer is done.
                   chronos-text-to-speech-notify
                   (lambda (c)
                     (browse-url-firefox
-                     "https://www.youtube.com/watch?v=32FB-gYr49Y")))))
+                    ; "https://www.youtube.com/watch?v=32FB-gYr49Y" ; heya
+                    "https://youtu.be/99myH1orbs4?t=27m17s" ; you make it easy
+                    )))))
 #+END_SRC
 
 *** swiper
