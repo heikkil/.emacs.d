@@ -2162,7 +2162,7 @@ Let Emacs say something at start.
 
 * Lab
 
-** towards a slightshow thing
+** towards a slide show thing
 :PROPERTIES:
 :ID:       fac5af60-1a77-43b1-a76b-a7b96961b7a4
 :END:
@@ -2170,13 +2170,27 @@ Let Emacs say something at start.
 Starting somewhere
 
 #+begin_src emacs-lisp :tangle no
+(start-process "bg-setting" nil "xsetbg" "/home/b/media/images/b/20170531231556.png")
+
 (seq-filter (lambda (name) (and (not (string= name "."))
                            (not (string= name ".."))))
             (directory-files "/home/b/media/images/b"))
 
-(start-process "bg-setting" nil "xsetbg" "/home/b/media/images/b/20170531231556.png")
-(start-process "bg-setting" nil "xsetbg" "/home/b/media/images/b/20170531231616.png")
-(start-process "bg-setting" nil "xsetbg" "/home/b/media/images/b/20170531231716.png")
+(setq lexical-binding t)
+#+end_src
+
+#+begin_src emacs-lisp
+(let ((myring (make-ring 3))
+      item)
+  (mapc (lambda (element) (ring-insert myring element))
+        '("/home/b/media/images/b/20170531231556.png"
+          "/home/b/media/images/b/20170531231616.png"
+          "/home/b/media/images/b/20170531231716.png"))
+  (setq item (car (ring-elements myring)))
+  (defun next-background ()
+    (interactive)
+    (setq item (ring-next myring item))
+    (start-process "bg-setting" nil "xsetbg" (ring-next myring item))))
 #+end_src
 
 ** org-logbook-sorter
